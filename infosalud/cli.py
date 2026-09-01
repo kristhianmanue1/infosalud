@@ -2,11 +2,11 @@
 
 Contrato: docs/f1-contratos.md (CONTRATO cli-infosalud v1.1).
 Comandos: fuente-alta, fuente-lista, fuente-buscar, fuente-detalle,
-vigencia-registrar, vigencia-verificar, vigencia-historia. Sin --json
-la salida es texto plano para el humano; con --json, un objeto JSON
-por ejecución en stdout (ADR-006). Códigos: 0 éxito, 1
-E-VALID/E-DUPLICADO, 2 E-NOEXISTE. Sin red, salvo vigencia-verificar
-(GET de sólo lectura; ADR-008).
+fuente-campos, vigencia-registrar, vigencia-verificar,
+vigencia-historia. Sin --json la salida es texto plano para el
+humano; con --json, un objeto JSON por ejecución en stdout (ADR-006).
+Códigos: 0 éxito, 1 E-VALID/E-DUPLICADO, 2 E-NOEXISTE. Sin red,
+salvo vigencia-verificar (GET de sólo lectura; ADR-008).
 """
 
 import argparse
@@ -21,6 +21,14 @@ from infosalud.catalogo import (
     guardar_catalogo,
     validar_fuente,
 )
+from infosalud.diccionario import (
+    ErrorDiccionario,
+    cargar as cargar_diccionario,
+    guardar as guardar_diccionario,
+    ruta_diccionario,
+    validar as validar_diccionario,
+)
+from infosalud.estructura import ErrorEstructura, extraer_estructura
 from infosalud.red import ErrorRed, descargar, nombre_desde_url
 from infosalud.vigencia import calcular_huella, determinar_resultado, fecha_hoy
 
@@ -41,7 +49,8 @@ class _Parser(argparse.ArgumentParser):
 def _construir_parser():
     parser = _Parser(
         prog="infosalud",
-        description="Catálogo local de fuentes de Infosalud (sin red).",
+        description="Catálogo local de fuentes de Infosalud "
+                    "(red sólo en vigencia-verificar; ADR-008).",
     )
     parser.add_argument("--version", action="version",
                         version=f"infosalud {__version__}")
@@ -71,6 +80,16 @@ def _construir_parser():
     p_detalle = con_catalogo(sub.add_parser(
         "fuente-detalle", help="muestra el registro completo de una fuente"))
     p_detalle.add_argument("id")
+
+    p_campos = con_catalogo(sub.add_parser(
+        "fuente-campos",
+        help="muestra o crea/actualiza el diccionario de datos "
+             "de una fuente (ADR-009)"))
+    p_campos.add_argument("id")
+    p_campos.add_argument(
+        "--archivo",
+        help="JSON conforme a diccionario-de-fuente v1 para "
+             "crear/actualizar")
 
     p_vreg = con_catalogo(sub.add_parser(
         "vigencia-registrar",
@@ -104,6 +123,7 @@ def main(argv=None):
         "fuente-lista": _fuente_lista,
         "fuente-buscar": _fuente_buscar,
         "fuente-detalle": _fuente_detalle,
+        "fuente-campos": _fuente_campos,
         "vigencia-registrar": _vigencia_registrar,
         "vigencia-verificar": _vigencia_verificar,
         "vigencia-historia": _vigencia_historia,
@@ -206,8 +226,72 @@ def _fuente_detalle(args):
     return 0
 
 
+def _fuente_campos(args):
+    """Consulta o alta/actualización del diccionario de datos
+    (CONTRATO diccionario-de-fuente v1, ADR-009)."""
+    try:
+        catalogo = cargar_catalogo(args.catalogo)
+    except ErrorCatalogo as exc:
+        return _salir(args, str(exc), 1)
+    if _buscar_fuente(catalogo, args.id) is None:
+        return _salir(args, f"id inexistente: '{args.id}'", 2)
+    ruta = ruta_diccionario(args.catalogo, args.id)
+    if args.archivo is None:
+        try:
+            diccionario = cargar_diccionario(ruta)
+        except ErrorDiccionario as exc:
+            return _salir(args, str(exc), 1)
+        if diccionario is None:
+            return _salir(
+                args,
+                f"fuente '{args.id}' sin diccionario de datos "
+                "(no existe data/diccionarios/<id>.json)", 2)
+        _emitir(args, {"id": args.id, "diccionario": diccionario},
+                _texto_diccionario(diccionario))
+        return 0
+    try:
+        with open(args.archivo, encoding="utf-8") as archivo:
+            diccionario = json.load(archivo)
+    except (OSError, json.JSONDecodeError) as exc:
+        return _salir(args, f"archivo de diccionario ilegible: {exc}", 1)
+    errores = validar_diccionario(diccionario)
+    if diccionario.get("id") != args.id:
+        errores.append(
+            f"id: '{diccionario.get('id')}' difiere del solicitado "
+            f"'{args.id}' (anti-huérfanos)")
+    for error in errores:
+        print(f"ERROR: {error}", file=sys.stderr)
+    if errores:
+        return 1
+    guardar_diccionario(ruta, diccionario)
+    _emitir(args, {"guardado": str(ruta),
+                   "campos": len(diccionario["campos"])},
+            f"diccionario guardado: {ruta} "
+            f"({len(diccionario['campos'])} campo(s))")
+    return 0
+
+
+def _texto_diccionario(diccionario):
+    lineas = []
+    if diccionario.get("descripcion"):
+        lineas.append(diccionario["descripcion"])
+    if diccionario.get("uso"):
+        lineas.append(f"Uso: {diccionario['uso']}")
+    if diccionario.get("fecha"):
+        lineas.append(f"Levantado: {diccionario['fecha']}")
+    lineas.append("nombre\ttipo\tobligatorio\tdescripcion")
+    for campo in diccionario["campos"]:
+        lineas.append("\t".join((
+            campo.get("nombre", ""),
+            campo.get("tipo", ""),
+            "sí" if campo.get("obligatorio") else "no",
+            campo.get("descripcion", ""))))
+    return "\n".join(lineas)
+
+
 def _agregar_verificacion(catalogo_ruta, catalogo, fuente, ruta,
-                          causa=None):
+                          causa=None, estructura=None,
+                          estructura_causa=None):
     """Calcula la huella de ruta (o registra causa de fallo), agrega
     la verificación al historial y guarda el catálogo atómicamente.
     Devuelve la verificación agregada (inaccesible incluida)."""
@@ -227,6 +311,10 @@ def _agregar_verificacion(catalogo_ruta, catalogo, fuente, ruta,
     else:
         verificacion["resultado"] = "inaccesible"
         verificacion["causa"] = causa[:200]
+    if estructura is not None:
+        verificacion["estructura"] = estructura
+    if estructura_causa is not None:
+        verificacion["estructura_causa"] = estructura_causa[:200]
     fuente["verificaciones"].append(verificacion)
     guardar_catalogo(catalogo_ruta, catalogo)
     return verificacion
@@ -285,7 +373,8 @@ def _vigencia_verificar(args):
         return _salir(args, f"descarga fallida: "
                       f"{verificacion['causa']}", 1)
     verificacion = _agregar_verificacion(
-        args.catalogo, catalogo, fuente, destino)
+        args.catalogo, catalogo, fuente, destino,
+        **_estructura_observada(fuente, destino))
     _emitir(args, {"id": args.id, "resultado": verificacion["resultado"],
                    "fecha": verificacion["fecha"],
                    "huella": verificacion["huella"],
@@ -293,6 +382,17 @@ def _vigencia_verificar(args):
             f"{args.id}: {verificacion['resultado']} "
             f"({verificacion['fecha']}) {destino}")
     return 0
+
+
+def _estructura_observada(fuente, destino):
+    """Extracción de mejor esfuerzo (ADR-009): nunca altera la
+    vigencia; su fallo sólo deja evidencia en estructura_causa."""
+    if fuente.get("formato") != "xlsx":
+        return {}
+    try:
+        return {"estructura": extraer_estructura(destino)}
+    except ErrorEstructura as exc:
+        return {"estructura_causa": str(exc)}
 
 
 def _destino_por_defecto(fuente):

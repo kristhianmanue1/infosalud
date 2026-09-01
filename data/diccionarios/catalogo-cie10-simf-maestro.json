@@ -1,0 +1,204 @@
+{
+  "id": "catalogo-cie10-simf-maestro",
+  "descripcion": "Clasificación Internacional de Enfermedades 10a revisión, maestro SIMF (versión 09/02/2024). Una fila por código CIE-10 con sus límites operativos.",
+  "uso": "(pendiente de levantamiento con el área). Hoja principal: Cat_CIE10_mtro_090224.",
+  "huella_base": "3d75192abb07b011352336814c71537c72ff4e9fe9d796d1d9b8b7dcf94ffdce",
+  "fecha": "2026-09-01",
+  "campos": [
+    {
+      "nombre": "Codigo",
+      "tipo": "clave",
+      "obligatorio": true
+    },
+    {
+      "nombre": "A",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Nombre",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Limite_Sexo",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Limite_Sexo_NECE",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Limite_Edad_Inferior",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Edad_Inferior_Semanas",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Limite_Edad_Superior",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Edad_Superior_Semanas",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Triv",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Errad",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Notif_Internacional",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Notif_Obligatoria",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Notif_Inmediata",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Notif_Inm_Morta_Obstetrica",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "No_Valida_Causa_Basica_Def",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "No_Valida_Afeccion_Princ_Hosp",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Valida_Muerte_Fetal",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Actualizaciones_CIE10",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Anio_Modificacion",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Anio_Vigencia",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Vigente",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Catalogo",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "IND_CRONICA",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "CVE_APARATO",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Ind_Transmisible",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Ind_Principal_Cons_Ext",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "IND_NIVEL1",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "IND_NIVEL2",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "IND_NIVEL3",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Renglon",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "NombreM",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Filtro",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "CveCapitulo",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "CveGrupo",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "CveSubGrupo",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "CveCategoria",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Exclusion",
+      "tipo": "otro",
+      "obligatorio": false
+    },
+    {
+      "nombre": "Agrupamiento",
+      "tipo": "otro",
+      "obligatorio": false
+    }
+  ]
+}

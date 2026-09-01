@@ -21,6 +21,82 @@
           "ruta_local": "data/descargas/catalogo-cie10-simf-maestro/Catálogo_CIE10_versión_09_02_2024_Maestro.xlsx",
           "resultado": "vigente",
           "huella": "3d75192abb07b011352336814c71537c72ff4e9fe9d796d1d9b8b7dcf94ffdce"
+        },
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogo-cie10-simf-maestro/Catálogo_CIE10_versión_09_02_2024_Maestro.xlsx",
+          "resultado": "vigente",
+          "huella": "3d75192abb07b011352336814c71537c72ff4e9fe9d796d1d9b8b7dcf94ffdce",
+          "estructura": [
+            {
+              "hoja": "Cat_CIE10_mtro_090224",
+              "columnas": [
+                "Codigo",
+                "A",
+                "Nombre",
+                "Limite_Sexo",
+                "Limite_Sexo_NECE",
+                "Limite_Edad_Inferior",
+                "Edad_Inferior_Semanas",
+                "Limite_Edad_Superior",
+                "Edad_Superior_Semanas",
+                "Triv",
+                "Errad",
+                "Notif_Internacional",
+                "Notif_Obligatoria",
+                "Notif_Inmediata",
+                "Notif_Inm_Morta_Obstetrica",
+                "No_Valida_Causa_Basica_Def",
+                "No_Valida_Afeccion_Princ_Hosp",
+                "Valida_Muerte_Fetal",
+                "Actualizaciones_CIE10",
+                "Anio_Modificacion",
+                "Anio_Vigencia",
+                "Vigente",
+                "Catalogo",
+                "IND_CRONICA",
+                "CVE_APARATO",
+                "Ind_Transmisible",
+                "Ind_Principal_Cons_Ext",
+                "IND_NIVEL1",
+                "IND_NIVEL2",
+                "IND_NIVEL3",
+                "Renglon",
+                "NombreM",
+                "Filtro",
+                "CveCapitulo",
+                "CveGrupo",
+                "CveSubGrupo",
+                "CveCategoria",
+                "Exclusion",
+                "Agrupamiento"
+              ]
+            },
+            {
+              "hoja": "090224",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Altas"
+              ]
+            },
+            {
+              "hoja": "Metadatos y equivalencia",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "notas": "Clasificación CIE-10 versión 09/02/2024; base para MOCE/SIMF"

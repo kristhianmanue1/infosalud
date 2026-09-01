@@ -13,6 +13,7 @@ python3 -m infosalud fuente-alta --archivo <fuente.json>
 python3 -m infosalud fuente-lista [--seccion <s>] [--formato <f>]
 python3 -m infosalud fuente-buscar <termino>
 python3 -m infosalud fuente-detalle <id>
+python3 -m infosalud fuente-campos <id> [--archivo <archivo-local>]
 python3 -m infosalud vigencia-registrar <id> --archivo <archivo-local>
 python3 -m infosalud vigencia-verificar <id> [--destino <ruta>]
 python3 -m infosalud vigencia-historia <id>

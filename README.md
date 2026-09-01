@@ -6,16 +6,16 @@ División de Información en Salud (DIS), Coordinación de Información e
 Inteligencia en Salud, Dirección de Prestaciones Médicas del IMSS.
 
 **Consumidor primario: agentes de IA.** Humanos en segunda línea
-(ADR-006). Sin red en la v1 (ADR-004): la herramienta nunca contacta
-el portal; el humano descarga y la herramienta registra evidencia
-(huella sha256, fecha).
+(ADR-006). Red mínima: sólo `vigencia-verificar` hace GET de sólo
+lectura al portal (ADR-008); lo demás opera sin red. La herramienta
+registra evidencia (huella sha256, fecha, estructura observada).
 
 ## Documentación
 
 - `docs/f0-analisis.md` — análisis y requerimientos (F0)
 - `docs/f1-specs.md` — especificaciones (F1)
 - `docs/f1-contratos.md` — contratos de frontera y máquina de estados
-- `docs/adr/` — decisiones (ADR-001…006)
+- `docs/adr/` — decisiones (ADR-001…009)
 
 ## Requisitos
 
@@ -34,7 +34,9 @@ python3 -m infosalud fuente-lista                     # texto (humano)
 python3 -m infosalud fuente-lista --json              # JSON (agente)
 python3 -m infosalud fuente-buscar cie10
 python3 -m infosalud fuente-detalle catalogo-cie10
+python3 -m infosalud fuente-campos catalogo-cie10     # diccionario de datos (ADR-009)
 python3 -m infosalud vigencia-registrar catalogo-cie10 --archivo cie10.xlsx
+python3 -m infosalud vigencia-verificar catalogo-cie10  # descarga read-only (ADR-008)
 python3 -m infosalud vigencia-historia catalogo-cie10
 ```
 
@@ -42,7 +44,8 @@ Todos los comandos aceptan `--catalogo <ruta>` (por defecto
 `data/fuentes.json`) y `--json` (contrato `cli-infosalud v1.1`,
 ADR-006). Códigos de salida: 0 éxito, 1 error de validación, 2 no
 encontrado. El esquema del registro está en `docs/f1-contratos.md`
-(`registro-de-fuente v1`).
+(`registro-de-fuente v1`); el diccionario de datos, en
+`diccionario-de-fuente v1` (`data/diccionarios/<id>.json`, ADR-009).
 
 ## Cómo probar
 
