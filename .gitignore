@@ -17,3 +17,7 @@ skevi/
 # Descargas locales de fuentes (la evidencia versionada es fecha+huella
 # en data/fuentes.json; el binario es copia local, REQ-7 Mac mini)
 data/descargas/
+
+# Exportaciones (productos derivados reproducibles; la evidencia
+# versionada vive en data/fuentes.json y data/diccionarios/)
+data/exportaciones/

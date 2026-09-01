@@ -15,7 +15,7 @@ registra evidencia (huella sha256, fecha, estructura observada).
 - `docs/f0-analisis.md` — análisis y requerimientos (F0)
 - `docs/f1-specs.md` — especificaciones (F1)
 - `docs/f1-contratos.md` — contratos de frontera y máquina de estados
-- `docs/adr/` — decisiones (ADR-001…009)
+- `docs/adr/` — decisiones (ADR-001…011)
 
 ## Requisitos
 
@@ -35,6 +35,7 @@ python3 -m infosalud fuente-lista --json              # JSON (agente)
 python3 -m infosalud fuente-buscar cie10
 python3 -m infosalud fuente-detalle catalogo-cie10
 python3 -m infosalud fuente-campos catalogo-cie10     # diccionario de datos (ADR-009)
+python3 -m infosalud fuente-exportar catalogo-cie10  # CSV/SQLite con evidencia (ADR-011)
 python3 -m infosalud vigencia-registrar catalogo-cie10 --archivo cie10.xlsx
 python3 -m infosalud vigencia-verificar catalogo-cie10  # descarga read-only (ADR-008)
 python3 -m infosalud vigencia-historia catalogo-cie10

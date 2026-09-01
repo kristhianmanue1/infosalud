@@ -1,0 +1,1789 @@
+{
+  "id": "siais-catalogo-acciones-promocion-prevencion",
+  "campos": [
+    {
+      "nombre": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+      "tipo": "clave"
+    }
+  ],
+  "metadatos": [
+    {
+      "hoja": "Promocion_Prevencion",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo de Acciones de Promoción y Prevención",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Registro de Atención Integral de la Salud (Formato RAIS - 012007)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Tipo Acción",
+          "contenido": "Clave Acción | Descripcion | Filtro | Vigente | Categoria"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "1 | Entrega de Cartilla | S | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "2 | Grupo Desnutricion Incorporacion | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "3 | Grupo Desnutricion Alta | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "4 | Grupo Obesidad y Desnutrición Incorporacion | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "5 | Grupo Obesidad y Desnutrición Alta | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "6 | Grupo Diabetes Mellitus Incorporacion | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "7 | Grupo Diabetes Mellitus Alta | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "8 | Grupo Hipertención Arterial Incorporacion | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "9 | Grupo Hipertención Arterial Alta | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "10 | Grupo Tabaquismo Incorporacion | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "11 | Grupo Tabaquismo Alta | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "12 | Grupo Alcoholismo Incorporacion | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "13 | Grupo Alcoholismo Alta | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "14 | Grupo Depresion Incorporacion | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "15 | Grupo Depresion Alta | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "16 | Grupo Violencia Familiar y de Genero Incorporacion | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "17 | Grupo Violencia Familiar y de Genero Alta | N | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "18 | Grupo Sobrepeso Incorporacion | S | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "19 | Grupo Sobrepeso Alta | S | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "20 | Grupo Obesidad Incorporacion | S | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "21 | Grupo Obesidad Alta | S | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "22 | Grupo Drogadicción Incorporacion | S | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "23 | Grupo Drogadicción Alta | S | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "24 | Grupo Accidentes y Lesiones Incorporacion | S | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "25 | Grupo Accidentes y Lesiones Alta | S | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "91 | Entrega Previa de Cartilla | S | Cartilla, Grupos de Ayuda"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "1 | Levogestrel Oral Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "2 | Levogestrel Oral Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "3 | Desogestrel Oral Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "4 | Desogestrel Oral Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "5 | Medroxiprogesterona Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "6 | Medroxiprogesterona Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "7 | Noretisterona Iny. Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "8 | Noretisterona Iny. Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "9 | Etonogestrel Implante Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "10 | Etonogestrel Implante Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "11 | DIU TCu Estandard Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "12 | DIU TCu Estandard Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "13 | DIU Brazos Estandard Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "14 | DIU Brazos Estandard Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "15 | DIU Brazos Nuliparas Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "16 | DIU Brazos Nuliparas Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "17 | 1TCu Nuliparas Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "18 | 1TCu Nuliparas Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "19 | Preservativo Hule Latex Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "20 | Preservativo Hule Latex Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "21 | Vasectomia Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "22 | Vasectomia Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "23 | OTB Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "24 | OTB Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "25 | Parche Anticonceptivo Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "26 | Parche Anticonceptivo Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "27 | DIU Medicado Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "28 | DIU Medicado Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "29 | Entrega Pildora de Emergencia Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "31 | Inyectable Trimestral Acep. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "32 | Inyectable Trimestral Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "34 | Oral Subsecuente (Sin receta) Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "36 | Inyectable Subsecuente (Sin receta) Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "38 | DIU Subsecuente (Sin consumo) Subs. | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "39 | Implante hormonal subdérmico Aceptante | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "40 | Implante hormonal subdérmico Subsecuente | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "41 | Parche norelgestromina y etinilestradiol Aceptante | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "42 | Parche norelgestromina y etinilestradiol Subsecuente | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "43 | DIU liberador de levonorgestrel Aceptante | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "44 | DIU liberador de levonorgestrel Subsecuente | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "45 | Preservativo femenino (preservativo interno) Aceptante | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "46 | Preservativo femenino (preservativo interno) Subsecuente | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "47 | Levonorgestrel implante Aceptante | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "48 | Levonorgestrel implante Subsecuente | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "49 | DIU medicado para nulípara Aceptante | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "50 | DIU medicado para nulípara Subsecuente | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "102 | DIU, tratamiento de efectos secundarios | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "104 | Implante hormonal subdérmico, efectos secundarios | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "106 | Parche norelgestromina y etinilestradiol, efectos secundarios | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "108 | HO Desogestrel y etinilestradiol, efectos secundarios | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "110 | HO Levonorgestrel y etinilestradiol, efectos secundarios | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "112 | HI Medroxiprogesterona y cipionato de estradiol, efectos secundarios | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "114 | HI Noretisterona y estradiol, efectos secundarios | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "116 | HI Medroxiprogesterona 150 mg, efectos secundarios | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "118 | Vasectomía, efectos secundarios | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "120 | Oclusión tubaria bilateral, complicación | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "122 | Vasectomía, con complicación | S | Planificación Familiar"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "1 | BCG | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "2 | Sabin | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "3 | Pentavalente | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "4 | Sabin+Pentavalente | N | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "5 | SRP | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "6 | SR | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "7 | TD | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "8 | DPT | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "9 | Antineumococcica  23 Valente | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "10 | Influenza | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "11 | Antineumococcica+Influenza | N | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "12 | Antihepatitis B | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "13 | Pentavalente Acelular | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "14 | Antirotavirus | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "15 | Td pa | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "16 | Antineumococcica Conjugada | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "91 | BCG, Previa o fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "92 | Sabin, Previa o fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "93 | Pentavalente, Previa o fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "94 | Sabin+Pentavalente, Previa o F. Unidad | N | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "95 | SRP, Previa o fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "96 | SR, Previa o fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "97 | TD, Previa o fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "98 | DPT, Previa o fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "99 | Antineumococcica, Previa o fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "910 | Influenza, Previa o fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "911 | Antineumococcica+Influenza, Previa o fuera Unidad | N | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "912 | Antihepatitis B, Previa o fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "913 | Pentavalente Acelular, Previa o Fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "914 | Antirotavirus, Previa o Fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "915 | Td pa, Previa o Fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "916 | Antineumococcica Conjugada, Previa o Fuera Unidad | S | Vacunación"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "1 | Deteccion de CACU | S | Detección CaCU"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "2 | Deteccion de CACU Subsecuente | S | Detección CaCU"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "9 | Detecc. CACU, fuera de la Unidad | S | Detección CaCU"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "92 | Deteccion de CACU Subsecuente, Previa o Fuera Unidad | S | Detección CaCU"
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "1 | Deteccion de CA MAMA | S | Detección Ca Mama"
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "9 | Detecc. CA MAMA, fuera de la Unidad | S | Detección Ca Mama"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "1 | TB Pulmonar | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "2 | Sifilis | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "3 | Hipotiroidismo Congenito | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "4 | Discapacidad Visual | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "6 | Revision de Pies a Paciente Diabetico | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "7 | Deteccion Cancer Mama por Mastografia | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "8 | Deteccion Tamiz Neonatal Ampliado | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "9 | Detección de Colesterol | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "10 | Deteccion de Trigliceridos | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "91 | TB Pulmonar, fuera de la Unidad | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "92 | Sifilis, fuera de la Unidad | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "93 | Hipotiroidismo Congenito, fuera Unidad | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "94 | Discapacidad Visual, fuera de la Unidad | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "96 | Revision de Pies a Paciente Diabetico, fuera Unidad | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "97 | Deteccion Cancer Mama por Mastografia, Fuera Unidad | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "98 | Deteccion Tamiz Neonatal Ampliado, Fuera Unidad | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "99 | Detección de Colesterol, Previo o Fuera Unidad | S | Detecciones"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "910 | Deteccion de Trigliceridos, Previo o Fuera Unidad | S | Detecciones"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "1 | Vigilancia Prenatal de 1a. Vez | S | Vigilancia Prenatal"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "2 | Vigilancia Prenatal Subsecuente | S | Vigilancia Prenatal"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "3 | Vigilancia Puerperal  de 1a. Vez | S | Vigilancia Puerperal"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "4 | Vigilancia Puerperal  Subsecuente | S | Vigilancia Puerperal"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "5 | Foco Fetal | S | Vigilancia Prenatal"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "6 | Examen General de Orina | S | Vigilancia Prenatal"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "1 | Gestacion | S | Vigilancia Prenatal - Número de Gesta"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "1 | Semanas de Gestacion | S | Vigilancia Prenatal - Semanas de Gestación"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "2 | Cuidados Recien Nacido | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "3 | Crecimiento y Desarrollo del Nino | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "4 | Accidentes y Violencia Familiar | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "5 | Cuidados del Nino Enfermo | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "6 | Alimentacion Saludable | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "7 | Salud Bucal | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "8 | Ejercicio Fisico | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "9 | Salud Sexual | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "10 | Adicciones | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "11 | Climaterio y Menopausia | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "12 | Envejecimiento Activo | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "13 | Programas Integrados de Salud | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "92 | Cuidados Recien Nacido Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "93 | Crecimiento y Desarrollo del Nino Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "94 | Accidentes y Violencia Familiar Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "95 | Cuidados del Nino Enfermo Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "96 | Alimentacion Saludable Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "97 | Salud Bucal Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "98 | Ejercicio Fisico Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "99 | Salud Sexual Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "910 | Adicciones Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "911 | Climaterio y Menopausia Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "912 | Envejecimiento Activo Previa o Fuera Unidad | S | Temas Educativos"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "913 | Programas Integrados de Salud Previa o Fuera Unidad | S | Temas Educativos"
+        }
+      ]
+    },
+    {
+      "hoja": "Cat_Acciones_Actividades",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo complementario de Acciones y Actividades",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Por Servicio",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clave Servicio",
+          "contenido": "Descripción del Servicio | Clave Actividad | Descripcion | Descripcion_Mayuscula | Filtro | Vigente"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | G03 | Mujeres (20 a 59 anos) - desnutricion | MUJERES (20 A 59 ANOS) A DESNUTRICION | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | G06 | Mujeres (20 a 59 anos) - anemia | MUJERES (20 A 59 ANOS) - ANEMIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | TK44 | Incorporacion a grupos de auto-ayuda - problemas  genero y violencia | INCORPORACION A GRUPOS DE AUTOAAYUDA A PROBLEMAS GENERO Y VIOLENCIA | N"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | TK46 | Incorporacion a grupos de auto-ayuda - paciente con padecimientos de diabetes mellitus | INCORPORACION A GRUPOS DE AUTOAAYUDA A PACIENTE CON PADECIMIENTOS DE DIABETES MELLITUS | N"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | TK47 | Incorporacion a grupos de auto-ayuda - pacientes con padecimientos de  hipertersion arterial | INCORPORACION A GRUPOS DE AUTOAAYUDA A PACIENTES CON PADECIMIENTOS DE  HIPERTERSION ARTERIAL | N"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | TK48 | Incorporacion a grupos de auto-ayuda - pacientes con problemas de sobre peso u obesidad | INCORPORACION A GRUPOS DE AUTOAAYUDA A PACIENTES CON PROBLEMAS DE SOBRE PESO U OBESIDAD | N"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | TK49 | Incorporacion a grupos de auto-ayuda - menores de 5 anos con problemas de desnutricion | INCORPORACION A GRUPOS DE AUTOAAYUDA A MENORES DE 5 ANOS CON PROBLEMAS DE DESNUTRICION | N"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | TK63 | Incorporacion a grupos de auto-ayuda - problemas de tabaquismo | INCORPORACION A GRUPOS DE AUTOAAYUDA A PROBLEMAS DE TABAQUISMO | N"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | TK64 | Incorporacion a grupos de auto-ayuda - problemas de alcoholismo | INCORPORACION A GRUPOS DE AUTOAAYUDA A PROBLEMAS DE ALCOHOLISMO | N"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | TK65 | Incorporacion a grupos de auto-ayuda - problemas de drogadiccion | INCORPORACION A GRUPOS DE AUTOAAYUDA A PROBLEMAS DE DROGADICCION | N"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | TK74 | Incorporacion a grupos de auto-ayuda - depresion | INCORPORACION A GRUPOS DE AUTOAAYUDA A DEPRESION | N"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE001 | Analfabeta | ANALFABETA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE002 | Sabe leer y escribir | SABE LEER Y ESCRIBIR | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE003 | Preescolar | PREESCOLAR | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE004 | Primaria | PRIMARIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE005 | Secundaria | SECUNDARIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE006 | Bachillerato | BACHILLERATO | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE007 | Tecnico | TECNICO | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE008 | Licenciatura | LICENCIATURA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE009 | Maestria | MAESTRIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE010 | Doctorado | DOCTORADO | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE011 | No aplica | NO APLICA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE012 | Ninguna | NINGUNA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UE013 | Otra | OTRA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM01 | Medicamento prescrito – Metformina (5165) | MEDICAMENTO PRESCRITO – METFORMINA (5165) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM02 | Medicamento prescrito - Sitagliptina / Metformina (5703) | MEDICAMENTO PRESCRITO A SITAGLIPTINA / METFORMINA (5703) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM03 | Medicamento prescrito – Glibenclamida (1042) | MEDICAMENTO PRESCRITO – GLIBENCLAMIDA (1042) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM04 | Medicamento prescrito – Acarbosa (5166) | MEDICAMENTO PRESCRITO – ACARBOSA (5166) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM05 | Medicamento prescrito – Sitagliptina (4152) | MEDICAMENTO PRESCRITO – SITAGLIPTINA (4152) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM06 | Medicamento prescrito – Linagliptina (5621) | MEDICAMENTO PRESCRITO – LINAGLIPTINA (5621) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM07 | Medicamento prescrito - Insulina NPH (1050) | MEDICAMENTO PRESCRITO A INSULINA NPH (1050) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM08 | Medicamento prescrito - Insulina Rapida (1051) | MEDICAMENTO PRESCRITO A INSULINA RAPIDA (1051) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM09 | Medicamento prescrito - Insulina Lispro - Lispro protamina (4148) | MEDICAMENTO PRESCRITO A INSULINA LISPRO A LISPRO PROTAMINA (4148) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM10 | Medicamento prescrito - Insulina Intermedia Lenta (4157) | MEDICAMENTO PRESCRITO A INSULINA INTERMEDIA LENTA (4157) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM11 | Medicamento prescrito - Insulina Glargina (4158) | MEDICAMENTO PRESCRITO A INSULINA GLARGINA (4158) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM12 | Medicamento prescrito - Insulina Lispro (4162) | MEDICAMENTO PRESCRITO A INSULINA LISPRO (4162) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM13 | Medicamento prescrito – Pioglitazona (4149) | MEDICAMENTO PRESCRITO – PIOGLITAZONA (4149) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM14 | Medicamento prescrito – Liraglutide (5743) | MEDICAMENTO PRESCRITO – LIRAGLUTIDE (5743) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UM15 | Medicamento prescrito – Dapaglifozina (6007) | MEDICAMENTO PRESCRITO – DAPAGLIFOZINA (6007) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO001 | Altas autoridades gubernamentales y jurisdiccionales | ALTAS AUTORIDADES GUBERNAMENTALES Y JURISDICCIONALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO002 | Legisladores | LEGISLADORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO003 | Presidentes y autoridades municipales | PRESIDENTES Y AUTORIDADES MUNICIPALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO004 | Presidentes y directores generales en instituciones publicas | PRESIDENTES Y DIRECTORES GENERALES EN INSTITUCIONES PUBLICAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO005 | Presidentes y directores generales en instituciones y empresas privadas | PRESIDENTES Y DIRECTORES GENERALES EN INSTITUCIONES Y EMPRESAS PRIVADAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO006 | Otros presidentes y directores generales, no clasificados anteriormente | OTROS PRESIDENTES Y DIRECTORES GENERALES, NO CLASIFICADOS ANTERIORMENTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO007 | Directores de organizaciones politicas | DIRECTORES DE ORGANIZACIONES POLITICAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO008 | Directores de organizaciones sindicales | DIRECTORES DE ORGANIZACIONES SINDICALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO009 | Directores de organizaciones empresariales | DIRECTORES DE ORGANIZACIONES EMPRESARIALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO010 | Directores de organizaciones agrarias | DIRECTORES DE ORGANIZACIONES AGRARIAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO011 | Directores de organizaciones civiles y religiosas | DIRECTORES DE ORGANIZACIONES CIVILES Y RELIGIOSAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO012 | Directores y gerentes en administracion, recursos humanos y mercadotecnia | DIRECTORES Y GERENTES EN ADMINISTRACION, RECURSOS HUMANOS Y MERCADOTECNIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO013 | Directores y gerentes en servicios contables, financieros, banca y seguros | DIRECTORES Y GERENTES EN SERVICIOS CONTABLES, FINANCIEROS, BANCA Y SEGUROS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO014 | Directores y gerentes en servicios de salud, proteccion civil y medio ambiente | DIRECTORES Y GERENTES EN SERVICIOS DE SALUD, PROTECCION CIVIL Y MEDIO AMBIENTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO015 | Directores y gerentes en desarrollo social y economico | DIRECTORES Y GERENTES EN DESARROLLO SOCIAL Y ECONOMICO | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO016 | Directores y gerentes en centros de ense±anza y capacitacion | DIRECTORES Y GERENTES EN CENTROS DE ENSEÐANZA Y CAPACITACION | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO017 | Jueces de juzgado, directores y gerentes en servicios legales y procuracion de justicia | JUECES DE JUZGADO, DIRECTORES Y GERENTES EN SERVICIOS LEGALES Y PROCURACION DE JUSTICIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO018 | Comandantes de la armada, ejercito y fuerza aerea | COMANDANTES DE LA ARMADA, EJERCITO Y FUERZA AEREA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO019 | Directores en servicios de vigilancia y seguridad | DIRECTORES EN SERVICIOS DE VIGILANCIA Y SEGURIDAD | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO020 | Directores y gerentes en produccion agropecuaria, silvicola y pesquera | DIRECTORES Y GERENTES EN PRODUCCION AGROPECUARIA, SILVICOLA Y PESQUERA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO021 | Directores y gerentes en produccion minera, petrolera y gas | DIRECTORES Y GERENTES EN PRODUCCION MINERA, PETROLERA Y GAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO022 | Directores y gerentes en generacion y provision de energia electrica y agua | DIRECTORES Y GERENTES EN GENERACION Y PROVISION DE ENERGIA ELECTRICA Y AGUA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO023 | Directores y gerentes en produccion manufacturera | DIRECTORES Y GERENTES EN PRODUCCION MANUFACTURERA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO024 | Directores y gerentes en construccion, reparacion y mantenimiento de maquinaria y equipo industrial, telecomunicaciones, de transporte, etcetera | DIRECTORES Y GERENTES EN CONSTRUCCION, REPARACION Y MANTENIMIENTO DE MAQUINARIA Y EQUIPO INDUSTRIAL, TELECOMUNICACIONES, DE TRANSPORTE, ETCETERA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO025 | Otros directores y gerentes de area en produccion agropecuaria, industrial, construccion y mantenimiento, no clasificados anteriormente | OTROS DIRECTORES Y GERENTES DE AREA EN PRODUCCION AGROPECUARIA, INDUSTRIAL, CONSTRUCCION Y MANTENIMIENTO, NO CLASIFICADOS ANTERIORMENTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO026 | Directores y gerentes en comunicacion y telecomunicaciones | DIRECTORES Y GERENTES EN COMUNICACION Y TELECOMUNICACIONES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO027 | Directores y gerentes en servicios de transporte | DIRECTORES Y GERENTES EN SERVICIOS DE TRANSPORTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO028 | Directores y gerentes en centros de investigacion y desarrollo tecnologico | DIRECTORES Y GERENTES EN CENTROS DE INVESTIGACION Y DESARROLLO TECNOLOGICO | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO029 | Otros directores y gerentes en informatica, telecomunicaciones, transporte y en investigacion y desarrollo tecnologico, no clasificados anteriormente | OTROS DIRECTORES Y GERENTES EN INFORMATICA, TELECOMUNICACIONES, TRANSPORTE Y EN INVESTIGACION Y DESARROLLO TECNOLOGICO, NO CLASIFICADOS ANTERIORMENTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO030 | Directores y gerentes de ventas, comercializacion y alquiler | DIRECTORES Y GERENTES DE VENTAS, COMERCIALIZACION Y ALQUILER | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO031 | Directores y gerentes de restaurantes y hoteles | DIRECTORES Y GERENTES DE RESTAURANTES Y HOTELES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO032 | Directores y productores artisticos de cine, teatro y afines | DIRECTORES Y PRODUCTORES ARTISTICOS DE CINE, TEATRO Y AFINES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO033 | Directores y gerentes de museos, cines y otros establecimientos deportivos y culturales | DIRECTORES Y GERENTES DE MUSEOS, CINES Y OTROS ESTABLECIMIENTOS DEPORTIVOS Y CULTURALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO034 | Directores y gerentes en servicios funerarios y otros servicios | DIRECTORES Y GERENTES EN SERVICIOS FUNERARIOS Y OTROS SERVICIOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO035 | Coordinadores y jefes de area en administracion, recursos humanos y mercadotecnia | COORDINADORES Y JEFES DE AREA EN ADMINISTRACION, RECURSOS HUMANOS Y MERCADOTECNIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO036 | Coordinadores y jefes de area en servicios contables, financieros, banca y seguros | COORDINADORES Y JEFES DE AREA EN SERVICIOS CONTABLES, FINANCIEROS, BANCA Y SEGUROS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO037 | Coordinadores y jefes de area en servicios de salud, proteccion civil y medio ambiente | COORDINADORES Y JEFES DE AREA EN SERVICIOS DE SALUD, PROTECCION CIVIL Y MEDIO AMBIENTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO038 | Coordinadores y jefes de area en desarrollo social y economico | COORDINADORES Y JEFES DE AREA EN DESARROLLO SOCIAL Y ECONOMICO | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO039 | Coordinadores y jefes de area en centros de ense±anza y capacitacion | COORDINADORES Y JEFES DE AREA EN CENTROS DE ENSEÐANZA Y CAPACITACION | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO040 | Coordinadores y jefes de area en servicios legales, jueces calificadores y fiscales | COORDINADORES Y JEFES DE AREA EN SERVICIOS LEGALES, JUECES CALIFICADORES Y FISCALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO041 | Capitanes, tenientes coroneles y jefes de area de la armada, ejercito y fuerza aerea | CAPITANES, TENIENTES CORONELES Y JEFES DE AREA DE LA ARMADA, EJERCITO Y FUERZA AEREA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO042 | Coordinadores y jefes de area en servicios de vigilancia y seguridad | COORDINADORES Y JEFES DE AREA EN SERVICIOS DE VIGILANCIA Y SEGURIDAD | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO043 | Coordinadores y jefes de area en produccion agropecuaria, silvicola y pesquera | COORDINADORES Y JEFES DE AREA EN PRODUCCION AGROPECUARIA, SILVICOLA Y PESQUERA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO044 | Coordinadores y jefes de area en produccion minera, petrolera y gas | COORDINADORES Y JEFES DE AREA EN PRODUCCION MINERA, PETROLERA Y GAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO045 | Coordinadores y jefes de area en generacion y provision de energia electrica y agua | COORDINADORES Y JEFES DE AREA EN GENERACION Y PROVISION DE ENERGIA ELECTRICA Y AGUA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO046 | Coordinadores y jefes de area en produccion manufacturera | COORDINADORES Y JEFES DE AREA EN PRODUCCION MANUFACTURERA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO047 | Coordinadores y jefes de area en construccion, reparacion y mantenimiento de maquinaria y equipo industrial, telecomunicaciones, de transporte, etcetera | COORDINADORES Y JEFES DE AREA EN CONSTRUCCION, REPARACION Y MANTENIMIENTO DE MAQUINARIA Y EQUIPO INDUSTRIAL, TELECOMUNICACIONES, DE TRANSPORTE, ETCETERA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO048 | Otros coordinadores y jefes de area en produccion agropecuaria, industrial, construccion y mantenimiento, no clasificados anteriormente | OTROS COORDINADORES Y JEFES DE AREA EN PRODUCCION AGROPECUARIA, INDUSTRIAL, CONSTRUCCION Y MANTENIMIENTO, NO CLASIFICADOS ANTERIORMENTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO049 | Coordinadores y jefes de area en informatica | COORDINADORES Y JEFES DE AREA EN INFORMATICA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO050 | Coordinadores y jefes de area en comunicacion y telecomunicaciones | COORDINADORES Y JEFES DE AREA EN COMUNICACION Y TELECOMUNICACIONES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO051 | Coordinadores y jefes de area en servicios de transporte | COORDINADORES Y JEFES DE AREA EN SERVICIOS DE TRANSPORTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO052 | Coordinadores y jefes de area en centros de investigacion y desarrollo tecnologico | COORDINADORES Y JEFES DE AREA EN CENTROS DE INVESTIGACION Y DESARROLLO TECNOLOGICO | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO053 | Otros coordinadores y jefes de area en informatica, telecomunicaciones, transporte y en investigacion y desarrollo tecnologico, no clasificados anteriormente | OTROS COORDINADORES Y JEFES DE AREA EN INFORMATICA, TELECOMUNICACIONES, TRANSPORTE Y EN INVESTIGACION Y DESARROLLO TECNOLOGICO, NO CLASIFICADOS ANTERIORMENTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO054 | Coordinadores y jefes de area de ventas, comercializacion y alquiler | COORDINADORES Y JEFES DE AREA DE VENTAS, COMERCIALIZACION Y ALQUILER | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO055 | Coordinadores y jefes de area de restaurantes y hoteles | COORDINADORES Y JEFES DE AREA DE RESTAURANTES Y HOTELES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO056 | Coordinadores y jefes de area en actividades artisticas, de cine, teatro y afines | COORDINADORES Y JEFES DE AREA EN ACTIVIDADES ARTISTICAS, DE CINE, TEATRO Y AFINES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO057 | Coordinadores y jefes de area en museos, cines, deportivos y servicios culturales | COORDINADORES Y JEFES DE AREA EN MUSEOS, CINES, DEPORTIVOS Y SERVICIOS CULTURALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO058 | Coordinadores y jefes de area en servicios funerarios y otros servicios | COORDINADORES Y JEFES DE AREA EN SERVICIOS FUNERARIOS Y OTROS SERVICIOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO059 | Otros directores, funcionarios, gerentes, coordinadores y jefes de area, no clasificados anteriormente | OTROS DIRECTORES, FUNCIONARIOS, GERENTES, COORDINADORES Y JEFES DE AREA, NO CLASIFICADOS ANTERIORMENTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO060 | Administradores y profesionistas en recursos humanos y sistemas de gestion | ADMINISTRADORES Y PROFESIONISTAS EN RECURSOS HUMANOS Y SISTEMAS DE GESTION | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO061 | Profesionistas y consultores en mercadotecnia, publicidad, comunicacion y comercio exterior | PROFESIONISTAS Y CONSULTORES EN MERCADOTECNIA, PUBLICIDAD, COMUNICACION Y COMERCIO EXTERIOR | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO062 | Profesionistas en hoteleria y turismo | PROFESIONISTAS EN HOTELERIA Y TURISMO | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO063 | Contadores y auditores | CONTADORES Y AUDITORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO064 | Asesores y analistas en finanzas | ASESORES Y ANALISTAS EN FINANZAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO065 | Antropologos, arqueologos e historiadores | ANTROPOLOGOS, ARQUEOLOGOS E HISTORIADORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO066 | Investigadores y profesionistas en sociologia y desarrollo social | INVESTIGADORES Y PROFESIONISTAS EN SOCIOLOGIA Y DESARROLLO SOCIAL | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO067 | Investigadores y profesionistas en ciencias politicas y administracion publica | INVESTIGADORES Y PROFESIONISTAS EN CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO068 | Geografos | GEOGRAFOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO069 | Abogados | ABOGADOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO070 | Economistas, consultores e investigadores en politica economica | ECONOMISTAS, CONSULTORES E INVESTIGADORES EN POLITICA ECONOMICA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO071 | Investigadores y profesionistas en filosofia y letras (filologos) | INVESTIGADORES Y PROFESIONISTAS EN FILOSOFIA Y LETRAS (FILOLOGOS) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO072 | Psicologos | PSICOLOGOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO073 | Profesionistas en trabajo social | PROFESIONISTAS EN TRABAJO SOCIAL | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO074 | Profesionistas en archivonomia, biblioteconomia y museografia | PROFESIONISTAS EN ARCHIVONOMIA, BIBLIOTECONOMIA Y MUSEOGRAFIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO075 | Sacerdotes, pastores y otros teologos | SACERDOTES, PASTORES Y OTROS TEOLOGOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO076 | Escritores y criticos literarios | ESCRITORES Y CRITICOS LITERARIOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO077 | Periodistas y redactores | PERIODISTAS Y REDACTORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO078 | Traductores e interpretes | TRADUCTORES E INTERPRETES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO079 | Pintores | PINTORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO080 | Dibujantes y dise±adores artisticos, ilustradores y grabadores | DIBUJANTES Y DISEÐADORES ARTISTICOS, ILUSTRADORES Y GRABADORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO081 | Escultores | ESCULTORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO082 | Escenografos | ESCENOGRAFOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO083 | Compositores y arreglistas | COMPOSITORES Y ARREGLISTAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO084 | Musicos | MUSICOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO085 | Cantantes | CANTANTES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO086 | Bailarines y coreografos | BAILARINES Y COREOGRAFOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO087 | Actores | ACTORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO088 | Investigadores y profesionistas en fisica y astronomia | INVESTIGADORES Y PROFESIONISTAS EN FISICA Y ASTRONOMIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO089 | Investigadores y profesionistas en matematicas, estadistica y actuaria | INVESTIGADORES Y PROFESIONISTAS EN MATEMATICAS, ESTADISTICA Y ACTUARIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO090 | Biologos y profesionistas en ciencias del mar y oceanografos | BIOLOGOS Y PROFESIONISTAS EN CIENCIAS DEL MAR Y OCEANOGRAFOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO091 | Quimicos | QUIMICOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO092 | Ecologos y profesionistas en ciencias atmosfericas | ECOLOGOS Y PROFESIONISTAS EN CIENCIAS ATMOSFERICAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO093 | Agronomos | AGRONOMOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO094 | Veterinarios y zootecnistas | VETERINARIOS Y ZOOTECNISTAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO095 | Profesionistas en forestacion, silvicultura y similares | PROFESIONISTAS EN FORESTACION, SILVICULTURA Y SIMILARES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO096 | Profesionistas en pesca y en acuacultura | PROFESIONISTAS EN PESCA Y EN ACUACULTURA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO097 | Ingenieros electricos | INGENIEROS ELECTRICOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO098 | Ingenieros electronicos | INGENIEROS ELECTRONICOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO099 | Ingenieros quimicos | INGENIEROS QUIMICOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO100 | Ingenieros mecanicos | INGENIEROS MECANICOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO101 | Ingenieros industriales | INGENIEROS INDUSTRIALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO102 | Ingenieros en minas, metalurgia y petroleo | INGENIEROS EN MINAS, METALURGIA Y PETROLEO | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO103 | Ingenieros civiles y de la construccion | INGENIEROS CIVILES Y DE LA CONSTRUCCION | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO104 | Ingenieros en topografia, hidrologia, geologia y geodesia | INGENIEROS EN TOPOGRAFIA, HIDROLOGIA, GEOLOGIA Y GEODESIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO105 | Arquitectos, planificadores urbanos y del transporte | ARQUITECTOS, PLANIFICADORES URBANOS Y DEL TRANSPORTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO106 | Desarrolladores y analistas de software y multimedia | DESARROLLADORES Y ANALISTAS DE SOFTWARE Y MULTIMEDIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO107 | Administradores de bases de datos y redes de computadora | ADMINISTRADORES DE BASES DE DATOS Y REDES DE COMPUTADORA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO108 | Ingenieros en comunicaciones y telecomunicaciones | INGENIEROS EN COMUNICACIONES Y TELECOMUNICACIONES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO109 | Supervisores e inspectores educativos | SUPERVISORES E INSPECTORES EDUCATIVOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO110 | Pedagogos, orientadores educativos y otros especialistas en ciencias educativas | PEDAGOGOS, ORIENTADORES EDUCATIVOS Y OTROS ESPECIALISTAS EN CIENCIAS EDUCATIVAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO111 | Profesores universitarios y de ense±anza superior | PROFESORES UNIVERSITARIOS Y DE ENSEÐANZA SUPERIOR | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO112 | Profesores de preparatoria y equivalentes | PROFESORES DE PREPARATORIA Y EQUIVALENTES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO113 | Profesores de ense±anza secundaria | PROFESORES DE ENSEÐANZA SECUNDARIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO114 | Profesores de ense±anza primaria | PROFESORES DE ENSEÐANZA PRIMARIA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO115 | Alfabetizadores | ALFABETIZADORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO116 | Profesores de ense±anza biling³e (indigena) | PROFESORES DE ENSEÐANZA BILING_E (INDIGENA) | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO117 | Profesores de ense±anza preescolar | PROFESORES DE ENSEÐANZA PREESCOLAR | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO118 | Otros profesores de nivel basico, no clasificados anteriormente | OTROS PROFESORES DE NIVEL BASICO, NO CLASIFICADOS ANTERIORMENTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO119 | Profesores de personas con problemas de audicion y lenguaje | PROFESORES DE PERSONAS CON PROBLEMAS DE AUDICION Y LENGUAJE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO120 | Profesores de personas con problemas de aprendizaje | PROFESORES DE PERSONAS CON PROBLEMAS DE APRENDIZAJE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO121 | Otros profesores de ense±anza especial | OTROS PROFESORES DE ENSEÐANZA ESPECIAL | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO122 | Otros profesores y especialistas en docencia, no clasificados anteriormente | OTROS PROFESORES Y ESPECIALISTAS EN DOCENCIA, NO CLASIFICADOS ANTERIORMENTE | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO123 | Medicos generales y familiares | MEDICOS GENERALES Y FAMILIARES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO124 | Dentistas | DENTISTAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO125 | Anestesiologos | ANESTESIOLOGOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO126 | Cirujanos | CIRUJANOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO127 | Ginecologos y obstetras | GINECOLOGOS Y OBSTETRAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO128 | Medicos internos | MEDICOS INTERNOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO129 | Patologos | PATOLOGOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO130 | Pediatras | PEDIATRAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO131 | Psiquiatras | PSIQUIATRAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO132 | Radiologos | RADIOLOGOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO133 | Otros medicos especialistas | OTROS MEDICOS ESPECIALISTAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO134 | Ingenieros biomedicos | INGENIEROS BIOMEDICOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO135 | Optometristas | OPTOMETRISTAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO136 | Nutriologos | NUTRIOLOGOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO137 | Profesionistas en seguridad e higiene y salud publica | PROFESIONISTAS EN SEGURIDAD E HIGIENE Y SALUD PUBLICA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO138 | Profesionistas en medicina tradicional y alternativa | PROFESIONISTAS EN MEDICINA TRADICIONAL Y ALTERNATIVA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO139 | Enfermeras y paramedicos profesionales | ENFERMERAS Y PARAMEDICOS PROFESIONALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO140 | Fisioterapeutas y logopedas | FISIOTERAPEUTAS Y LOGOPEDAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO141 | Farmacologos | FARMACOLOGOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO142 | Auxiliares en administracion, mercadotecnia, comercializacion y comercio exterior | AUXILIARES EN ADMINISTRACION, MERCADOTECNIA, COMERCIALIZACION Y COMERCIO EXTERIOR | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO143 | Auxiliares en contabilidad, finanzas y agentes de bolsa | AUXILIARES EN CONTABILIDAD, FINANZAS Y AGENTES DE BOLSA | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO144 | Tramitadores aduanales | TRAMITADORES ADUANALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO145 | Valuadores, subastadores y rematadores | VALUADORES, SUBASTADORES Y REMATADORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO146 | Oficiales del ministerio publico y detectives | OFICIALES DEL MINISTERIO PUBLICO Y DETECTIVES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO147 | Agentes aduanales y fronterizos | AGENTES ADUANALES Y FRONTERIZOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO148 | Agentes de recaudacion tributaria y de expedicion de licencias | AGENTES DE RECAUDACION TRIBUTARIA Y DE EXPEDICION DE LICENCIAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO149 | Inspectores en seguridad social, de precios y otros inspectores publicos | INSPECTORES EN SEGURIDAD SOCIAL, DE PRECIOS Y OTROS INSPECTORES PUBLICOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO150 | Auxiliares en ciencias sociales y humanistas | AUXILIARES EN CIENCIAS SOCIALES Y HUMANISTAS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO151 | Auxiliares en servicios juridicos | AUXILIARES EN SERVICIOS JURIDICOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO152 | Monjas y predicadores | MONJAS Y PREDICADORES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO153 | Dise±adores de moda y vestuario | DISEÐADORES DE MODA Y VESTUARIO | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO154 | Dise±adores industriales | DISEÐADORES INDUSTRIALES | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO155 | Dise±adores graficos | DISEÐADORES GRAFICOS | S"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "MEDICINA FAMILIAR | UO156 | Decoradores de interiores, jardines y diversos materiales (tazas, llaveros, etcetera) | DECORADORES DE INTERIORES, JARDINES Y DIVERSOS MATERIALES (TAZAS, LLAVEROS, ETCETERA) | S"
+        }
+      ]
+    },
+    {
+      "hoja": "Cat_Dosis_Vacunas",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo de Dosis",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Vacunación Universal",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Dosis",
+          "contenido": "Descripcion de la Dosis | Vigente"
+        },
+        {
+          "etiqueta": "0",
+          "contenido": "Ninguna (sin dosis) | S"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "Dosis Unica | S"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "Primera Dosis | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "Segunda Dosis | S"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "Tercera Dosis | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "Dosis Refuerzo | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "Dosis Adicional | S"
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "Dosis Profilactica | S"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "Dosis No Especificada | S"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "Dosis Unica - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "Dosis Unica - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "Dosis Unica - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "Dosis Unica - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "15",
+          "contenido": "Dosis Unica - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "21",
+          "contenido": "Primera Dosis - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "22",
+          "contenido": "Primera Dosis - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "23",
+          "contenido": "Primera Dosis - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "24",
+          "contenido": "Primera Dosis - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "25",
+          "contenido": "Primera Dosis - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "31",
+          "contenido": "Segunda Dosis - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "32",
+          "contenido": "Segunda Dosis - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "33",
+          "contenido": "Segunda Dosis - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "34",
+          "contenido": "Segunda Dosis - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "35",
+          "contenido": "Segunda Dosis - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "41",
+          "contenido": "Tercera Dosis - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "42",
+          "contenido": "Tercera Dosis - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "43",
+          "contenido": "Tercera Dosis - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "44",
+          "contenido": "Tercera Dosis - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "45",
+          "contenido": "Tercera Dosis - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "51",
+          "contenido": "Dosis de Refuerzo - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "52",
+          "contenido": "Dosis de Refuerzo - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "53",
+          "contenido": "Dosis de Refuerzo - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "54",
+          "contenido": "Dosis de Refuerzo - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "55",
+          "contenido": "Dosis de Refuerzo - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "61",
+          "contenido": "Dosis Adicional - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "62",
+          "contenido": "Dosis Adicional - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "63",
+          "contenido": "Dosis Adicional - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "64",
+          "contenido": "Dosis Adicional - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "65",
+          "contenido": "Dosis Adicional - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "71",
+          "contenido": "Dosis Profilactica - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "72",
+          "contenido": "Dosis Profilactica - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "73",
+          "contenido": "Dosis Profilactica - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "74",
+          "contenido": "Dosis Profilactica - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "75",
+          "contenido": "Dosis Profilactica - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "93",
+          "contenido": "En Espera de Segunda Dosis | N"
+        }
+      ]
+    },
+    {
+      "hoja": "Cat_Marcas_Vacunas",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo Marcas de Vacunas",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Vacunación Universal",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clave Marca Vacuna",
+          "contenido": "Descripcion de la Marca | Laboratorio | Fecha de Alta | Fecha de Actualización | Vigente"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "AZTRA ZENECA/OXFORD (CHAD) | AZTRA ZENECA | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "BIONTECH/PFIZER | PFIZER | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "CANSINO BIOLOGICS | CANSINO | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "JOHNSON & JOHNSON (JANSSEN) | JANSSEN | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "MODERNA | MODERNA | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "SINOVAC | SINOVAC | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "SPUTNIK V | SPUTNIK V | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "ABDALA | ABDALA | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "PATRIA | AVIMEX | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "COVAXIN | COVAXIN | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "NOVAVAX | NOVAVAX | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "99",
+          "contenido": "OTRA MARCA | OTRA | 45253.419592939812 | S"
+        }
+      ]
+    }
+  ],
+  "huella_base": "0410d86ab664359bf086d331d3820f938c056def9d508cf458c90dc82c34165a",
+  "fecha": "2026-09-01"
+}

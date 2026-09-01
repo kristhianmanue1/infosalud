@@ -1,0 +1,1425 @@
+{
+  "id": "siais-catalogo-cie9mc",
+  "campos": [
+    {
+      "nombre": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+      "tipo": "clave"
+    }
+  ],
+  "metadatos": [
+    {
+      "hoja": "Cat_CIE9MC",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clasificación Estadística Internacional de Procedimientos de la Modificación Clínica (CIE-9MC)",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Catálogo CIE-9MC",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clave Procedimiento",
+          "contenido": "Filtro | Descripción del Procedimiento | DescripcionM | Limite_Sexo | Limite_Edad_Inferior | Limite_Edad_Superior | Año_Vigencia | Uso | Actualizacion | Vigente | Num_Precedencia | Imd_Nivel_1 | Ind_Nivel_2 | Inf_Nivel_3 | Cve_Capitulo | Cve_Grupo | Consec_Codigo"
+        },
+        {
+          "etiqueta": "0000",
+          "contenido": "1000000 | Procedimientos de rehabilitacion iv | PROCEDIMIENTOS DE REHABILITACION IV | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 1"
+        },
+        {
+          "etiqueta": "0001",
+          "contenido": "1000000 | Ultrasonido terapeutico de vasos de cabeza y cuello | ULTRASONIDO TERAPEUTICO DE VASOS DE CABEZA Y CUELLO | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 2"
+        },
+        {
+          "etiqueta": "0002",
+          "contenido": "1000000 | Ultrasonido terapeutico cardiaco | ULTRASONIDO TERAPEUTICO CARDIACO | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 3"
+        },
+        {
+          "etiqueta": "0003",
+          "contenido": "1000000 | Ultrasonido terapeutico de vasos perifericos | ULTRASONIDO TERAPEUTICO DE VASOS PERIFERICOS | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 4"
+        },
+        {
+          "etiqueta": "0009",
+          "contenido": "1000000 | Otro ultrasonido terapeutico | OTRO ULTRASONIDO TERAPEUTICO | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 5"
+        },
+        {
+          "etiqueta": "0010",
+          "contenido": "1000000 | Implantacion de agente quimioterapeutico | IMPLANTACION DE AGENTE QUIMIOTERAPEUTICO | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 6"
+        },
+        {
+          "etiqueta": "0011",
+          "contenido": "1000000 | Infusion de drotrecogin alfa (activada) | INFUSION DE DROTRECOGIN ALFA (ACTIVADA) | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 7"
+        },
+        {
+          "etiqueta": "0012",
+          "contenido": "1000000 | Administracion de oxido nitrico inhalado | ADMINISTRACION DE OXIDO NITRICO INHALADO | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 8"
+        },
+        {
+          "etiqueta": "0013",
+          "contenido": "1000000 | Inyeccion o infusion de nesiritide | INYECCION O INFUSION DE NESIRITIDE | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 9"
+        },
+        {
+          "etiqueta": "0014",
+          "contenido": "1000000 | Inyeccion o infusion de antibioticos del grupo de la oxazolidinona | INYECCION O INFUSION DE ANTIBIOTICOS DEL GRUPO DE LA OXAZOLIDINONA | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 10"
+        },
+        {
+          "etiqueta": "0015",
+          "contenido": "1000000 | Infusion de dosis alta de interleucina-2 [il-2] | INFUSION DE DOSIS ALTA DE INTERLEUCINA-2 [IL-2] | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 11"
+        },
+        {
+          "etiqueta": "0016",
+          "contenido": "1000000 | Tratamiento presurizado de injerto de derivacion venoso [conducto] con sustancia medicamentosa | TRATAMIENTO PRESURIZADO DE INJERTO DE DERIVACION VENOSO [CONDUCTO] CON SUSTANCIA MEDICAMENTOSA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 12"
+        },
+        {
+          "etiqueta": "0017",
+          "contenido": "1000000 | Infusion de agente vasopresor | INFUSION DE AGENTE VASOPRESOR | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 13"
+        },
+        {
+          "etiqueta": "0018",
+          "contenido": "1000000 | Terapia de infusion de anticuerpos inmunosupresores | TERAPIA DE INFUSION DE ANTICUERPOS INMUNOSUPRESORES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 14"
+        },
+        {
+          "etiqueta": "0019",
+          "contenido": "1000000 | Irrupcion de la barrera hematoencefalica via infusion [ibh] [bbbd] | IRRUPCION DE LA BARRERA HEMATOENCEFALICA VIA INFUSION [IBH] [BBBD] | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 15"
+        },
+        {
+          "etiqueta": "0021",
+          "contenido": "1000000 | Imagen intravascular de vasos cerebrales extracraneales | IMAGEN INTRAVASCULAR DE VASOS CEREBRALES EXTRACRANEALES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 16"
+        },
+        {
+          "etiqueta": "0022",
+          "contenido": "1000000 | Imagen intravascular de vasos intratoracicos | IMAGEN INTRAVASCULAR DE VASOS INTRATORACICOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 17"
+        },
+        {
+          "etiqueta": "0023",
+          "contenido": "1000000 | Imagen intravascular de vasos perifericos | IMAGEN INTRAVASCULAR DE VASOS PERIFERICOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 18"
+        },
+        {
+          "etiqueta": "0024",
+          "contenido": "1000000 | Imagen intravascular de vasos coronarios | IMAGEN INTRAVASCULAR DE VASOS CORONARIOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 19"
+        },
+        {
+          "etiqueta": "0025",
+          "contenido": "1000000 | Imagen intravascular de vasos renales | IMAGEN INTRAVASCULAR DE VASOS RENALES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 20"
+        },
+        {
+          "etiqueta": "0028",
+          "contenido": "1000000 | Imagen intravascular de otro(s) vaso(s) especificado(s) | IMAGEN INTRAVASCULAR DE OTRO(S) VASO(S) ESPECIFICADO(S) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 21"
+        },
+        {
+          "etiqueta": "0029",
+          "contenido": "1000000 | Imagen intravascular de vaso(s) no especificado(s) | IMAGEN INTRAVASCULAR DE VASO(S) NO ESPECIFICADO(S) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 22"
+        },
+        {
+          "etiqueta": "0031",
+          "contenido": "1000000 | Cirugia asistida por computadora (ordenador) con tac | CIRUGIA ASISTIDA POR COMPUTADORA (ORDENADOR) CON TAC | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 23"
+        },
+        {
+          "etiqueta": "0032",
+          "contenido": "1000000 | Cirugia asistida por computadora (ordenador) con rmn | CIRUGIA ASISTIDA POR COMPUTADORA (ORDENADOR) CON RMN | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 24"
+        },
+        {
+          "etiqueta": "0033",
+          "contenido": "1000000 | Cirugia asistida por computadora (ordenador) con fluoroscopia | CIRUGIA ASISTIDA POR COMPUTADORA (ORDENADOR) CON FLUOROSCOPIA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 25"
+        },
+        {
+          "etiqueta": "0034",
+          "contenido": "1000000 | Cirugia asistida por computadora (ordenador) sin imagen | CIRUGIA ASISTIDA POR COMPUTADORA (ORDENADOR) SIN IMAGEN | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 26"
+        },
+        {
+          "etiqueta": "0035",
+          "contenido": "1000000 | Cirugia asistida por computadora (ordenador) con multiples fuentes de  datos | CIRUGIA ASISTIDA POR COMPUTADORA (ORDENADOR) CON MULTIPLES FUENTES DE  DATOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 27"
+        },
+        {
+          "etiqueta": "0039",
+          "contenido": "1000000 | Otra cirugia asistida por computadora (ordenador) | OTRA CIRUGIA ASISTIDA POR COMPUTADORA (ORDENADOR) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 28"
+        },
+        {
+          "etiqueta": "0040",
+          "contenido": "1000000 | Procedimiento sobre un solo vaso | PROCEDIMIENTO SOBRE UN SOLO VASO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 29"
+        },
+        {
+          "etiqueta": "0041",
+          "contenido": "1000000 | Procedimiento sobre dos vasos | PROCEDIMIENTO SOBRE DOS VASOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 30"
+        },
+        {
+          "etiqueta": "0042",
+          "contenido": "1000000 | Procedimiento sobre  tres vasos | PROCEDIMIENTO SOBRE  TRES VASOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 31"
+        },
+        {
+          "etiqueta": "0043",
+          "contenido": "1000000 | Procedimiento sobre cuatro o mas vasos | PROCEDIMIENTO SOBRE CUATRO O MAS VASOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 32"
+        },
+        {
+          "etiqueta": "0044",
+          "contenido": "1000000 | Procedimiento sobre bifurcacion vascular | PROCEDIMIENTO SOBRE BIFURCACION VASCULAR | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 33"
+        },
+        {
+          "etiqueta": "0045",
+          "contenido": "1000000 | Insercion de un stent vascular | INSERCION DE UN STENT VASCULAR | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 34"
+        },
+        {
+          "etiqueta": "0046",
+          "contenido": "1000000 | Insercion de dos stents vasculares | INSERCION DE DOS STENTS VASCULARES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 35"
+        },
+        {
+          "etiqueta": "0047",
+          "contenido": "1000000 | Insercion de tres stents vasculares | INSERCION DE TRES STENTS VASCULARES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 36"
+        },
+        {
+          "etiqueta": "0048",
+          "contenido": "1000000 | Insercion de cuatro o mas stents vasculares | INSERCION DE CUATRO O MAS STENTS VASCULARES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 37"
+        },
+        {
+          "etiqueta": "0049",
+          "contenido": "1000000 | Terapia con oxigeno supersaturado | TERAPIA CON OXIGENO SUPERSATURADO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 38"
+        },
+        {
+          "etiqueta": "0050",
+          "contenido": "1000000 | Implantacion de marcapasos de resincronizacion cardiaca sin mencion de desfibrilacion, sistema total [drct] [crt-p] | IMPLANTACION DE MARCAPASOS DE RESINCRONIZACION CARDIACA SIN MENCION DE DESFIBRILACION, SISTEMA TOTAL [DRCT] [CRT-P] | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 39"
+        },
+        {
+          "etiqueta": "0051",
+          "contenido": "1000000 | Implantacion de desfibrilador de resincronizacion cardiaca, sistema total [drct] [crt-d] | IMPLANTACION DE DESFIBRILADOR DE RESINCRONIZACION CARDIACA, SISTEMA TOTAL [DRCT] [CRT-D] | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 40"
+        },
+        {
+          "etiqueta": "0052",
+          "contenido": "1000000 | Implantacion o sustitucion de electrodo dentro del sistema venoso coronario ventricular izquierdo | IMPLANTACION O SUSTITUCION DE ELECTRODO DENTRO DEL SISTEMA VENOSO CORONARIO VENTRICULAR IZQUIERDO | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 41"
+        },
+        {
+          "etiqueta": "0053",
+          "contenido": "1000000 | Implantacion de o sustitucion de marcapasos de resincronizacion cardiaca solo generador de pulso [imrc] [crt-p] | IMPLANTACION DE O SUSTITUCION DE MARCAPASOS DE RESINCRONIZACION CARDIACA SOLO GENERADOR DE PULSO [IMRC] [CRT-P] | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 42"
+        },
+        {
+          "etiqueta": "0054",
+          "contenido": "1000000 | Implantacion o sustitucion de desfibrilador de resincronizacion cardiaca,solo dispositivo generador de pulso [drc] [crt-d] | IMPLANTACION O SUSTITUCION DE DESFIBRILADOR DE RESINCRONIZACION CARDIACA,SOLO DISPOSITIVO GENERADOR DE PULSO [DRC] [CRT-D] | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 43"
+        },
+        {
+          "etiqueta": "0055",
+          "contenido": "1000000 | Insercion de stent(s) liberador de farmaco en vaso periferico | INSERCION DE STENT(S) LIBERADOR DE FARMACO EN VASO PERIFERICO | 0 | 0 | 0 | 2009 | CEMECE | EXISTENTE | S | 1 | 1 | 1 | 1 | 0 | 0 | 44"
+        },
+        {
+          "etiqueta": "0056",
+          "contenido": "1000000 | Insercion o sustitucion de sensor de presion implantable (electrodo) para monitorizacion hemodinamica intracardiaca | INSERCION O SUSTITUCION DE SENSOR DE PRESION IMPLANTABLE (ELECTRODO) PARA MONITORIZACION HEMODINAMICA INTRACARDIACA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 45"
+        },
+        {
+          "etiqueta": "0057",
+          "contenido": "1000000 | Implantacion o sustitucion de dispositivo subcutaneo para monitorizacion hemodinamica intracardiaca | IMPLANTACION O SUSTITUCION DE DISPOSITIVO SUBCUTANEO PARA MONITORIZACION HEMODINAMICA INTRACARDIACA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 46"
+        },
+        {
+          "etiqueta": "0058",
+          "contenido": "1000000 | Insercion de dispositivo para monitorizacion de presion en saco intra-aneurismatico (intraoperatorio) | INSERCION DE DISPOSITIVO PARA MONITORIZACION DE PRESION EN SACO INTRA-ANEURISMATICO (INTRAOPERATORIO) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 47"
+        },
+        {
+          "etiqueta": "0059",
+          "contenido": "1000000 | Medicion de presion intravascular de arterias coronarias | MEDICION DE PRESION INTRAVASCULAR DE ARTERIAS CORONARIAS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 48"
+        },
+        {
+          "etiqueta": "0061",
+          "contenido": "1000000 | Angioplastia o aterectomia percutanea de vaso(s) precerebral(es) (extracraneal(es)) | ANGIOPLASTIA O ATERECTOMIA PERCUTANEA DE VASO(S) PRECEREBRAL(ES) (EXTRACRANEAL(ES)) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 49"
+        },
+        {
+          "etiqueta": "0062",
+          "contenido": "1000000 | Angioplastia o aterectomia percutanea de vaso(s) intracraneal(es) | ANGIOPLASTIA O ATERECTOMIA PERCUTANEA DE VASO(S) INTRACRANEAL(ES) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 50"
+        },
+        {
+          "etiqueta": "0063",
+          "contenido": "1000000 | Insercion percutanea de stent(s) de arteria carotida | INSERCION PERCUTANEA DE STENT(S) DE ARTERIA CAROTIDA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 51"
+        },
+        {
+          "etiqueta": "0064",
+          "contenido": "1000000 | Insercion percutanea de stent(s) de otra arteria precerebral (extracraneal) | INSERCION PERCUTANEA DE STENT(S) DE OTRA ARTERIA PRECEREBRAL (EXTRACRANEAL) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 52"
+        },
+        {
+          "etiqueta": "0065",
+          "contenido": "1000000 | Insercion percutanea de stent(s) vascular(es) intracraneal(es) | INSERCION PERCUTANEA DE STENT(S) VASCULAR(ES) INTRACRANEAL(ES) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 53"
+        },
+        {
+          "etiqueta": "0066",
+          "contenido": "1000000 | Angioplastia coronaria percutanea transluminal (actp) [ptca] o aterectomia coronaria | ANGIOPLASTIA CORONARIA PERCUTANEA TRANSLUMINAL (ACTP) [PTCA] O ATERECTOMIA CORONARIA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 54"
+        },
+        {
+          "etiqueta": "0067",
+          "contenido": "1000000 | Medicion de presion intravascular de arterias intratoracicas | MEDICION DE PRESION INTRAVASCULAR DE ARTERIAS INTRATORACICAS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 55"
+        },
+        {
+          "etiqueta": "0068",
+          "contenido": "1000000 | Medicion de presion intravascular de arterias perifericas | MEDICION DE PRESION INTRAVASCULAR DE ARTERIAS PERIFERICAS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 56"
+        },
+        {
+          "etiqueta": "0069",
+          "contenido": "1000000 | Medicion de presion intravascular de otros vasos especificados y los no especificados | MEDICION DE PRESION INTRAVASCULAR DE OTROS VASOS ESPECIFICADOS Y LOS NO ESPECIFICADOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 57"
+        },
+        {
+          "etiqueta": "0070",
+          "contenido": "1000000 | Revision de sustitucion de cadera, componentes acetabular y femoral | REVISION DE SUSTITUCION DE CADERA, COMPONENTES ACETABULAR Y FEMORAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 58"
+        },
+        {
+          "etiqueta": "0071",
+          "contenido": "1000000 | Revision de sustitucion de cadera, componente acetabular | REVISION DE SUSTITUCION DE CADERA, COMPONENTE ACETABULAR | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 59"
+        },
+        {
+          "etiqueta": "0072",
+          "contenido": "1000000 | Revision de sustitucion de cadera, componente femoral | REVISION DE SUSTITUCION DE CADERA, COMPONENTE FEMORAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 60"
+        },
+        {
+          "etiqueta": "0073",
+          "contenido": "1000000 | Revision de sustitucion de cadera, solo alineador acetabular y/o cabeza femoral | REVISION DE SUSTITUCION DE CADERA, SOLO ALINEADOR ACETABULAR Y/O CABEZA FEMORAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 61"
+        },
+        {
+          "etiqueta": "0074",
+          "contenido": "1000000 | Superficie de apoyo en sustitucion de cadera, metal sobre polietileno | SUPERFICIE DE APOYO EN SUSTITUCION DE CADERA, METAL SOBRE POLIETILENO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 62"
+        },
+        {
+          "etiqueta": "0075",
+          "contenido": "1000000 | Superficie de apoyo en sustitucion de cadera, metal sobre metal | SUPERFICIE DE APOYO EN SUSTITUCION DE CADERA, METAL SOBRE METAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 63"
+        },
+        {
+          "etiqueta": "0076",
+          "contenido": "1000000 | Superficie de apoyo en sustitucion de cadera, ceramica sobre ceramica | SUPERFICIE DE APOYO EN SUSTITUCION DE CADERA, CERAMICA SOBRE CERAMICA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 64"
+        },
+        {
+          "etiqueta": "0077",
+          "contenido": "1000000 | Superficie de apoyo en sustitucion de cadera, ceramica sobe polietileno | SUPERFICIE DE APOYO EN SUSTITUCION DE CADERA, CERAMICA SOBE POLIETILENO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 65"
+        },
+        {
+          "etiqueta": "0080",
+          "contenido": "1000000 | Revision de sustitucion de rodilla, total (todos los componentes) | REVISION DE SUSTITUCION DE RODILLA, TOTAL (TODOS LOS COMPONENTES) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 66"
+        },
+        {
+          "etiqueta": "0081",
+          "contenido": "1000000 | Revision de sustitucion de rodilla, componente tibial | REVISION DE SUSTITUCION DE RODILLA, COMPONENTE TIBIAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 67"
+        },
+        {
+          "etiqueta": "0082",
+          "contenido": "1000000 | Revision de sustitucion de rodilla, componente femoral | REVISION DE SUSTITUCION DE RODILLA, COMPONENTE FEMORAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 68"
+        },
+        {
+          "etiqueta": "0083",
+          "contenido": "1000000 | Revision de sustitucion de rodilla, componente rotuliano | REVISION DE SUSTITUCION DE RODILLA, COMPONENTE ROTULIANO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 69"
+        },
+        {
+          "etiqueta": "0084",
+          "contenido": "1000000 | Revision de sustitucion total de rodilla, insercion (alineador) tibial | REVISION DE SUSTITUCION TOTAL DE RODILLA, INSERCION (ALINEADOR) TIBIAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 70"
+        },
+        {
+          "etiqueta": "0085",
+          "contenido": "1000000 | Recubrimiento total de cadera, acetabulo y cabeza femoral | RECUBRIMIENTO TOTAL DE CADERA, ACETABULO Y CABEZA FEMORAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 71"
+        },
+        {
+          "etiqueta": "0086",
+          "contenido": "1000000 | Recubrimiento parcial de cadera, cabeza femoral | RECUBRIMIENTO PARCIAL DE CADERA, CABEZA FEMORAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 72"
+        },
+        {
+          "etiqueta": "0087",
+          "contenido": "1000000 | Recubrimiento parcial de cadera, acetabulo | RECUBRIMIENTO PARCIAL DE CADERA, ACETABULO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 73"
+        },
+        {
+          "etiqueta": "0091",
+          "contenido": "1000000 | Trasplante procedente de donante vivo emparentado | TRASPLANTE PROCEDENTE DE DONANTE VIVO EMPARENTADO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 74"
+        },
+        {
+          "etiqueta": "0092",
+          "contenido": "1000000 | Trasplante procedente de donante vivo no emparentado | TRASPLANTE PROCEDENTE DE DONANTE VIVO NO EMPARENTADO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 75"
+        },
+        {
+          "etiqueta": "0093",
+          "contenido": "1000000 | Trasplante procedente de cadaver | TRASPLANTE PROCEDENTE DE CADAVER | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 76"
+        },
+        {
+          "etiqueta": "0094",
+          "contenido": "1000000 | Monitorizacion neurofisiologica intraoperatoria | MONITORIZACION NEUROFISIOLOGICA INTRAOPERATORIA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 77"
+        },
+        {
+          "etiqueta": "00A1",
+          "contenido": "1000000 | Procedimiento abierto asistido por robotica | PROCEDIMIENTO ABIERTO ASISTIDO POR ROBOTICA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 78"
+        },
+        {
+          "etiqueta": "00A2",
+          "contenido": "1000000 | Procedimiento laparoscopico asistido por robotica | PROCEDIMIENTO LAPAROSCOPICO ASISTIDO POR ROBOTICA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 79"
+        },
+        {
+          "etiqueta": "00A3",
+          "contenido": "1000000 | Procedimiento percutaneo asistido por robotica | PROCEDIMIENTO PERCUTANEO ASISTIDO POR ROBOTICA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 80"
+        },
+        {
+          "etiqueta": "00A4",
+          "contenido": "1000000 | Procedimiento endoscopico asistido por robotica | PROCEDIMIENTO ENDOSCOPICO ASISTIDO POR ROBOTICA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 81"
+        },
+        {
+          "etiqueta": "00A5",
+          "contenido": "1000000 | Procedimiento toracoscopico asistido por robotica | PROCEDIMIENTO TORACOSCOPICO ASISTIDO POR ROBOTICA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 82"
+        },
+        {
+          "etiqueta": "00A9",
+          "contenido": "1000000 | Otro procedimiento asistido por robotica y el no especificado | OTRO PROCEDIMIENTO ASISTIDO POR ROBOTICA Y EL NO ESPECIFICADO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 83"
+        },
+        {
+          "etiqueta": "00AC",
+          "contenido": "1000000 | Procedimiento asistido por CyberKnife | PROCEDIMIENTO ASISTIDO POR CYBERKNIFE | 0 | 0 | 0 | 2026 | IMSS | NUEVO | S | Q | 1 | 1 | 1 | 0 | 0 | 4100"
+        },
+        {
+          "etiqueta": "00AD",
+          "contenido": "1000000 | Procedimiento asistido por sistema DaVinci | PROCEDIMIENTO ASISTIDO POR SISTEMA DAVINCI | 0 | 0 | 0 | 2026 | IMSS | NUEVO | S | Q | 1 | 1 | 1 | 0 | 0 | 4099"
+        },
+        {
+          "etiqueta": "00B0",
+          "contenido": "1000000 | Potenciales evocados auditivos | POTENCIALES EVOCADOS AUDITIVOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 84"
+        },
+        {
+          "etiqueta": "00B1",
+          "contenido": "1000000 | Potenciales evocados somatosensoriales | POTENCIALES EVOCADOS SOMATOSENSORIALES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 85"
+        },
+        {
+          "etiqueta": "00B2",
+          "contenido": "1000000 | Potenciales evocados motores | POTENCIALES EVOCADOS MOTORES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 86"
+        },
+        {
+          "etiqueta": "00B3",
+          "contenido": "1000000 | Potenciales evocados cognitivos | POTENCIALES EVOCADOS COGNITIVOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 87"
+        },
+        {
+          "etiqueta": "00B4",
+          "contenido": "1000000 | Laboratorio de isocineticos | LABORATORIO DE ISOCINETICOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 88"
+        },
+        {
+          "etiqueta": "00B5",
+          "contenido": "1000000 | Entrenamiento en el paciente amputado de miembro inferior, preprotesica | ENTRENAMIENTO EN EL PACIENTE AMPUTADO DE MIEMBRO INFERIOR, PREPROTESICA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 89"
+        },
+        {
+          "etiqueta": "00B6",
+          "contenido": "1000000 | Entrenamiento en el paciente amputado de miembro inferior, protesica | ENTRENAMIENTO EN EL PACIENTE AMPUTADO DE MIEMBRO INFERIOR, PROTESICA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 90"
+        },
+        {
+          "etiqueta": "00B7",
+          "contenido": "1000000 | Tina de hubbard | TINA DE HUBBARD | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 91"
+        },
+        {
+          "etiqueta": "00B8",
+          "contenido": "1000000 | Neurofacilitacion | NEUROFACILITACION | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 92"
+        },
+        {
+          "etiqueta": "00B9",
+          "contenido": "1000000 | Tens | TENS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 93"
+        },
+        {
+          "etiqueta": "00C0",
+          "contenido": "1000000 | Ejercicio isocinetico | EJERCICIO ISOCINETICO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 94"
+        },
+        {
+          "etiqueta": "00C1",
+          "contenido": "1000000 | Terapia con laser | TERAPIA CON LASER | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 95"
+        },
+        {
+          "etiqueta": "00C2",
+          "contenido": "1000000 | Fluidoterapia | FLUIDOTERAPIA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 96"
+        },
+        {
+          "etiqueta": "00C3",
+          "contenido": "1000000 | Crioterapia | CRIOTERAPIA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 97"
+        },
+        {
+          "etiqueta": "00C4",
+          "contenido": "1000000 | Corrientes interferenciales | CORRIENTES INTERFERENCIALES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 98"
+        },
+        {
+          "etiqueta": "00C5",
+          "contenido": "1000000 | Terapia ocupacional en lesiones de mano y extremidad superior | TERAPIA OCUPACIONAL EN LESIONES DE MANO Y EXTREMIDAD SUPERIOR | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 99"
+        },
+        {
+          "etiqueta": "00C6",
+          "contenido": "1000000 | Terapia ocupacional en paciente pediatrico | TERAPIA OCUPACIONAL EN PACIENTE PEDIATRICO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 100"
+        },
+        {
+          "etiqueta": "00C7",
+          "contenido": "1000000 | Terapia ocupacional en paciente neurologico | TERAPIA OCUPACIONAL EN PACIENTE NEUROLOGICO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 101"
+        },
+        {
+          "etiqueta": "00C8",
+          "contenido": "1000000 | Terapia ocupacional: adiestramiento en cuidado y uso de ortesis en pacientes amputados | TERAPIA OCUPACIONAL: ADIESTRAMIENTO EN CUIDADO Y USO DE ORTESIS EN PACIENTES AMPUTADOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 102"
+        },
+        {
+          "etiqueta": "00C9",
+          "contenido": "1000000 | Terapia ocupacional: adiestramiento en cuidado y uso de protesis en pacientes amputados | TERAPIA OCUPACIONAL: ADIESTRAMIENTO EN CUIDADO Y USO DE PROTESIS EN PACIENTES AMPUTADOS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 103"
+        },
+        {
+          "etiqueta": "00D0",
+          "contenido": "1000000 | Gestoria ocupacional | GESTORIA OCUPACIONAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 104"
+        },
+        {
+          "etiqueta": "00D1",
+          "contenido": "1000000 | Taller de adiestramiento de actividades multiples | TALLER DE ADIESTRAMIENTO DE ACTIVIDADES MULTIPLES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 105"
+        },
+        {
+          "etiqueta": "00D2",
+          "contenido": "1000000 | Analisis de puesto | ANALISIS DE PUESTO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 106"
+        },
+        {
+          "etiqueta": "00D3",
+          "contenido": "1000000 | Reacomodo laboral | REACOMODO LABORAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 107"
+        },
+        {
+          "etiqueta": "00D4",
+          "contenido": "1000000 | Valoracion de capacidad residual para puesto especifico | VALORACION DE CAPACIDAD RESIDUAL PARA PUESTO ESPECIFICO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 108"
+        },
+        {
+          "etiqueta": "00D5",
+          "contenido": "1000000 | Valoracion de funcionalidad y capacidad potencial para el trabajo | VALORACION DE FUNCIONALIDAD Y CAPACIDAD POTENCIAL PARA EL TRABAJO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 109"
+        },
+        {
+          "etiqueta": "00D6",
+          "contenido": "1000000 | Rehabilitacion para el trabajo | REHABILITACION PARA EL TRABAJO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 110"
+        },
+        {
+          "etiqueta": "00D7",
+          "contenido": "1000000 | Proyecto magia | PROYECTO MAGIA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 111"
+        },
+        {
+          "etiqueta": "00D8",
+          "contenido": "1000000 | Ultrasonido terapeutico | ULTRASONIDO TERAPEUTICO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 112"
+        },
+        {
+          "etiqueta": "00D9",
+          "contenido": "1000000 | Baðo de parafina | BAðO DE PARAFINA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 113"
+        },
+        {
+          "etiqueta": "00E0",
+          "contenido": "1000000 | Irradiacion con infrarrojo | IRRADIACION CON INFRARROJO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 114"
+        },
+        {
+          "etiqueta": "00E1",
+          "contenido": "1000000 | Compresas humedo calientes | COMPRESAS HUMEDO CALIENTES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 115"
+        },
+        {
+          "etiqueta": "00E2",
+          "contenido": "1000000 | Estroboscopia de laringe | ESTROBOSCOPIA DE LARINGE | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 116"
+        },
+        {
+          "etiqueta": "00F0",
+          "contenido": "1000000 | Administracion de infusion de hierro | ADMINISTRACION DE INFUSION DE HIERRO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 117"
+        },
+        {
+          "etiqueta": "00F1",
+          "contenido": "1000000 | Ajuste de aparatos ortomaxilofaciales | AJUSTE DE APARATOS ORTOMAXILOFACIALES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 118"
+        },
+        {
+          "etiqueta": "00F2",
+          "contenido": "1000000 | Aplicacion de organil otico | APLICACION DE ORGANIL OTICO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 119"
+        },
+        {
+          "etiqueta": "00F3",
+          "contenido": "1000000 | Aplicacion topica de fluor | APLICACION TOPICA DE FLUOR | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 120"
+        },
+        {
+          "etiqueta": "00F4",
+          "contenido": "1000000 | Biopsia de perine | BIOPSIA DE PERINE | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 121"
+        },
+        {
+          "etiqueta": "00F5",
+          "contenido": "1000000 | Cardiotocografia (pss) | CARDIOTOCOGRAFIA (PSS) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 122"
+        },
+        {
+          "etiqueta": "00F6",
+          "contenido": "1000000 | Colocacion de aparatos ortomaxilofaciales | COLOCACION DE APARATOS ORTOMAXILOFACIALES | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 123"
+        },
+        {
+          "etiqueta": "00F7",
+          "contenido": "1000000 | Colocacion de parche de celulosa | COLOCACION DE PARCHE DE CELULOSA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 124"
+        },
+        {
+          "etiqueta": "00F8",
+          "contenido": "1000000 | Control de placa dentobacteriana | CONTROL DE PLACA DENTOBACTERIANA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 125"
+        },
+        {
+          "etiqueta": "00F9",
+          "contenido": "1000000 | Curacion de herida | CURACION DE HERIDA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 126"
+        },
+        {
+          "etiqueta": "00G0",
+          "contenido": "1000000 | Dialisis enteral | DIALISIS ENTERAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 127"
+        },
+        {
+          "etiqueta": "00G1",
+          "contenido": "1000000 | Drenaje de absceso dentario | DRENAJE DE ABSCESO DENTARIO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 128"
+        },
+        {
+          "etiqueta": "00G2",
+          "contenido": "1200000 | Ecocardiograma fetal | ECOCARDIOGRAMA FETAL | 2 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 129"
+        },
+        {
+          "etiqueta": "00G3",
+          "contenido": "1200000 | Ecocardiograma materno | ECOCARDIOGRAMA MATERNO | 2 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 130"
+        },
+        {
+          "etiqueta": "00G4",
+          "contenido": "1000000 | Electroneurografia | ELECTRONEUROGRAFIA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 131"
+        },
+        {
+          "etiqueta": "00G5",
+          "contenido": "1000000 | Extraccion de cuerpo extraðo en conducto auditivo interno | EXTRACCION DE CUERPO EXTRAðO EN CONDUCTO AUDITIVO INTERNO | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 132"
+        },
+        {
+          "etiqueta": "00G6",
+          "contenido": "1000000 | Infiltracion de bleomicina | INFILTRACION DE BLEOMICINA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 133"
+        },
+        {
+          "etiqueta": "00G7",
+          "contenido": "1000000 | Interpretacion de electrocadiograma | INTERPRETACION DE ELECTROCADIOGRAMA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 134"
+        },
+        {
+          "etiqueta": "00G8",
+          "contenido": "1000000 | Lavado mecanico de cavidad oral | LAVADO MECANICO DE CAVIDAD ORAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 135"
+        },
+        {
+          "etiqueta": "00G9",
+          "contenido": "1000000 | Prueba de dilatadores (hegar) | PRUEBA DE DILATADORES (HEGAR) | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 136"
+        },
+        {
+          "etiqueta": "00H0",
+          "contenido": "1000000 | Prueba de marshall | PRUEBA DE MARSHALL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 137"
+        },
+        {
+          "etiqueta": "00H1",
+          "contenido": "1000000 | Pruebas epicutaneas | PRUEBAS EPICUTANEAS | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 138"
+        },
+        {
+          "etiqueta": "00H2",
+          "contenido": "1000000 | Puvaterapia | PUVATERAPIA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 139"
+        },
+        {
+          "etiqueta": "00H3",
+          "contenido": "1000000 | Retiro de taponamiento nasal | RETIRO DE TAPONAMIENTO NASAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 140"
+        },
+        {
+          "etiqueta": "00H4",
+          "contenido": "1000000 | Timpanometria | TIMPANOMETRIA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 141"
+        },
+        {
+          "etiqueta": "00H5",
+          "contenido": "1000000 | Toma de cultivo de exudado de herida | TOMA DE CULTIVO DE EXUDADO DE HERIDA | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 142"
+        },
+        {
+          "etiqueta": "00H6",
+          "contenido": "1200000 | Toma de muestra de papanicolau cervical | TOMA DE MUESTRA DE PAPANICOLAU CERVICAL | 2 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 143"
+        },
+        {
+          "etiqueta": "00H7",
+          "contenido": "1200000 | Toma de muestra de tracto genital femenino | TOMA DE MUESTRA DE TRACTO GENITAL FEMENINO | 2 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 144"
+        },
+        {
+          "etiqueta": "00H8",
+          "contenido": "1000000 | Instalacion de sonda vesical | INSTALACION DE SONDA VESICAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 145"
+        },
+        {
+          "etiqueta": "00H9",
+          "contenido": "1000000 | Retiro de sonda vesical | RETIRO DE SONDA VESICAL | 0 | 0 | 0 | 2010 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 146"
+        },
+        {
+          "etiqueta": "00I0",
+          "contenido": "1000990 | Tamiz metabolico (neonatal) | TAMIZ METABOLICO (NEONATAL) | 0 | 0 | 120 | 2010 | IMSS | BAJA | N | 1 | 1 | 1 | 1 | 0 | 0 | 147"
+        },
+        {
+          "etiqueta": "00I1",
+          "contenido": "1000990 | Tamiz auditivo (neonatal) | TAMIZ AUDITIVO (NEONATAL) | 0 | 0 | 120 | 2010 | IMSS | BAJA | N | 1 | 1 | 1 | 1 | 0 | 0 | 148"
+        },
+        {
+          "etiqueta": "00J0",
+          "contenido": "1000990 | Aspirado traqueal, aspirado nasofaringeo o lavado nasal para COVID-19 | ASPIRADO TRAQUEAL, ASPIRADO NASOFARINGEO O LAVADO NASAL PARA COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 1 | 1 | 1 | 0 | 0 | 4040"
+        },
+        {
+          "etiqueta": "00J1",
+          "contenido": "1000990 | Biopsia de Pulmon para COVID-19 | BIOPSIA DE PULMON PARA COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 1 | 1 | 1 | 0 | 0 | 4041"
+        },
+        {
+          "etiqueta": "00J2",
+          "contenido": "1000990 | Test de diagnostico rapido (cromatografia) para COVID-19 | TEST DE DIAGNOSTICO RAPIDO (CROMATOGRAFIA) PARA COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 4042"
+        },
+        {
+          "etiqueta": "00J3",
+          "contenido": "1000990 | Examen microscopico faringeo y nasofaringeo (hisopado) para COVID-19 | EXAMEN MICROSCOPICO FARINGEO Y NASOFARINGEO (HISOPADO) PARA COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 4043"
+        },
+        {
+          "etiqueta": "00J4",
+          "contenido": "1000990 | Lavado Bronquio alveolar para COVID-19 | LAVADO BRONQUIO ALVEOLAR PARA COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4044"
+        },
+        {
+          "etiqueta": "00J5",
+          "contenido": "1000990 | PCR (Reaccion en Cadena de la Polimerasa) (tecnica) para COVID-19 | PCR (REACCION EN CADENA DE LA POLIMERASA) (TECNICA) PARA COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4045"
+        },
+        {
+          "etiqueta": "00J6",
+          "contenido": "1000990 | Tomografia Axial Computarizada (TAC) de torax para COVID-19 | TOMOGRAFIA AXIAL COMPUTARIZADA (TAC) DE TORAX PARA COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4046"
+        },
+        {
+          "etiqueta": "00J8",
+          "contenido": "1000990 | Otro examen especificado para COVID-19 | OTRO EXAMEN ESPECIFICADO PARA COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4047"
+        },
+        {
+          "etiqueta": "00J9",
+          "contenido": "1000990 | Examen (prueba) para (COVID-19), no especificado de otra manera | EXAMEN (PRUEBA) PARA (COVID-19), NO ESPECIFICADO DE OTRA MANERA | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 4048"
+        },
+        {
+          "etiqueta": "00K0",
+          "contenido": "1000000 | Ejercicios fisicos para rehabilitacion post COVID-19 | EJERCICIOS FISICOS PARA REHABILITACION POST COVID-19 | 0 | 0 | 0 | 2021 | IMSS | ALTA | N | 1 | 1 | 1 | 1 | 0 | 0 | 4001"
+        },
+        {
+          "etiqueta": "00K1",
+          "contenido": "1000000 | Entrenamiento de los musculos inspiratorios post COVID-19 | ENTRENAMIENTO DE LOS MUSCULOS INSPIRATORIOS POST COVID-19 | 0 | 0 | 0 | 2021 | IMSS | ALTA | N | 1 | 1 | 1 | 1 | 0 | 0 | 4002"
+        },
+        {
+          "etiqueta": "00K2",
+          "contenido": "1000000 | Estimulacion electrica neuromuscular post COVID-19 | ESTIMULACION ELECTRICA NEUROMUSCULAR POST COVID-19 | 0 | 0 | 0 | 2021 | IMSS | ALTA | N | 1 | 1 | 1 | 1 | 0 | 0 | 4003"
+        },
+        {
+          "etiqueta": "00K3",
+          "contenido": "1000000 | Asesoramiento psicosocial post COVID-19 | ASESORAMIENTO PSICOSOCIAL POST COVID-19 | 0 | 0 | 0 | 2021 | IMSS | ALTA | N | 1 | 1 | 1 | 1 | 0 | 0 | 4004"
+        },
+        {
+          "etiqueta": "00K4",
+          "contenido": "1000000 | Evaluacion nutricional y asesoramiento post COVID-19 | EVALUACION NUTRICIONAL Y ASESORAMIENTO POST COVID-19 | 0 | 0 | 0 | 2021 | IMSS | ALTA | N | 1 | 1 | 1 | 1 | 0 | 0 | 4005"
+        },
+        {
+          "etiqueta": "00K5",
+          "contenido": "1000000 | Educacion, incluyendo el uso adecuado de los farmacos prescritos post Covid-19 | EDUCACION, INCLUYENDO EL USO ADECUADO DE LOS FARMACOS PRESCRITOS POST COVID-19 | 0 | 0 | 0 | 2021 | IMSS | ALTA | N | 1 | 1 | 1 | 1 | 0 | 0 | 4006"
+        },
+        {
+          "etiqueta": "00K6",
+          "contenido": "1000000 | Actividades de terapia fisica en la rehabilitacion del paciente post COVID-19 | ACTIVIDADES DE TERAPIA FISICA EN LA REHABILITACION DEL PACIENTE POST COVID-19 | 0 | 0 | 0 | 2021 | IMSS | ALTA | N | 1 | 1 | 1 | 1 | 0 | 0 | 4009"
+        },
+        {
+          "etiqueta": "00K7",
+          "contenido": "1000000 | Rehabilitacion de las alteraciones de la Comunicacion Humana del paciente post COVID-19 | REHABILITACION DE LAS ALTERACIONES DE LA COMUNICACION HUMANA DEL PACIENTE POST COVID-19 | 0 | 0 | 0 | 2021 | IMSS | ALTA | N | 1 | 1 | 1 | 1 | 0 | 0 | 4019"
+        },
+        {
+          "etiqueta": "00K8",
+          "contenido": "1000000 | Otra terapia de rehabilitacion posterior a COVID-19 | OTRA TERAPIA DE REHABILITACION POSTERIOR A COVID-19 | 0 | 0 | 0 | 2021 | IMSS | ALTA | N | 1 | 1 | 1 | 1 | 0 | 0 | 4025"
+        },
+        {
+          "etiqueta": "00K9",
+          "contenido": "1000000 | Terapia de rehabilitacion pulmonar posterior a COVID-19 | TERAPIA DE REHABILITACION PULMONAR POSTERIOR A COVID-19 | 0 | 0 | 0 | 2021 | IMSS | ALTA | N | 1 | 1 | 1 | 1 | 0 | 0 | 4031"
+        },
+        {
+          "etiqueta": "00L0",
+          "contenido": "00000990 | Rehabilitacion con el uso de hidroterapia a personas con condicion de salud posterior a COVID-19 | REHABILITACION CON EL USO DE HIDROTERAPIA A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4049"
+        },
+        {
+          "etiqueta": "00L1",
+          "contenido": "00000990 | Rehabilitacion con el uso de mecanoterapia a personas con condicion de salud posterior a COVID-19 | REHABILITACION CON EL USO DE MECANOTERAPIA A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4050"
+        },
+        {
+          "etiqueta": "00L2",
+          "contenido": "00000990 | Rehabilitacion con el uso de ultrasonido a personas con condicion de salud posterior a COVID-19 | REHABILITACION CON EL USO DE ULTRASONIDO A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4051"
+        },
+        {
+          "etiqueta": "00L3",
+          "contenido": "00000990 | Rehabilitacion con el uso de laser a personas con condicion de salud posterior a COVID-19 | REHABILITACION CON EL USO DE LASER A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4052"
+        },
+        {
+          "etiqueta": "00L4",
+          "contenido": "00000990 | Rehabilitacion con el uso de luminoterapia a personas con condicion de salud posterior a COVID-19 | REHABILITACION CON EL USO DE LUMINOTERAPIA A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4053"
+        },
+        {
+          "etiqueta": "00L5",
+          "contenido": "00000990 | Rehabilitacion con el uso de parafina post COVID-19 a personas con condicion de salud posterior a COVID-19 | REHABILITACION CON EL USO DE PARAFINA POST COVID-19 A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4054"
+        },
+        {
+          "etiqueta": "00L6",
+          "contenido": "00000990 | Rehabilitacion con apoyo isocinetico o robotico a personas con condicion de salud posterior a COVID-19 | REHABILITACION CON APOYO ISOCINETICO O ROBOTICO A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4055"
+        },
+        {
+          "etiqueta": "00L7",
+          "contenido": "00000990 | Rehabilitacion de trastornos cognitivos a personas con condicion de salud posterior a COVID-19 | REHABILITACION DE TRASTORNOS COGNITIVOS A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4056"
+        },
+        {
+          "etiqueta": "00L8",
+          "contenido": "00000990 | Otra rehabilitacion a personas con condicion de salud posterior a COVID-19 | OTRA REHABILITACION A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4057"
+        },
+        {
+          "etiqueta": "00L9",
+          "contenido": "00000990 | Rehabilitacion a personas con condicion de salud posterior a COVID-19, no especificada | REHABILITACION A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19, NO ESPECIFICADA | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4058"
+        },
+        {
+          "etiqueta": "00M1",
+          "contenido": "00000990 | Terapia de lenguaje para personas con condicion de salud posterior a COVID-19 | TERAPIA DE LENGUAJE PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4059"
+        },
+        {
+          "etiqueta": "00M2",
+          "contenido": "00000990 | Terapia y reeducacion de la voz y deglucion para personas con condicion de salud posterior a COVID-19 | TERAPIA Y REEDUCACION DE LA VOZ Y DEGLUCION PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4060"
+        },
+        {
+          "etiqueta": "00M3",
+          "contenido": "00000990 | Terapia para personas con condicion de salud posterior a COVID-19, con sintomas auditivos | TERAPIA PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19, CON SINTOMAS AUDITIVOS | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4061"
+        },
+        {
+          "etiqueta": "00M4",
+          "contenido": "00000990 | Terapia para personas con condicion de salud posterior a COVID-19, con sintomas vestibulares | TERAPIA PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19, CON SINTOMAS VESTIBULARES | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4062"
+        },
+        {
+          "etiqueta": "00M5",
+          "contenido": "00000990 | Terapia del movimiento y patrones de coordinacion motora para personas con condicion de salud posterior a COVID-19 | TERAPIA DEL MOVIMIENTO Y PATRONES DE COORDINACION MOTORA PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4063"
+        },
+        {
+          "etiqueta": "00M6",
+          "contenido": "00000990 | Terapia y entrenamiento de las actividades de la vida diaria basicas  e instrumentales a personas con condicion de salud posterior a COVID-19 | TERAPIA Y ENTRENAMIENTO DE LAS ACTIVIDADES DE LA VIDA DIARIA BASICAS  E INSTRUMENTALES A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4064"
+        },
+        {
+          "etiqueta": "00M7",
+          "contenido": "00000990 | Terapia de ejercicios fisicos para rehabilitacion a personas con condicion de salud posterior a COVID-19 | TERAPIA DE EJERCICIOS FISICOS PARA REHABILITACION A PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 1 | 1 | 1 | 1 | 0 | 0 | 4065"
+        },
+        {
+          "etiqueta": "00M8",
+          "contenido": "00000990 | Otras terapias para personas con condicion de salud posterior a COVID-19 | OTRAS TERAPIAS PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4066"
+        },
+        {
+          "etiqueta": "00M9",
+          "contenido": "00000990 | Terapia para personas con condicion de salud posterior a COVID-19, no especificada | TERAPIA PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19, NO ESPECIFICADA | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4067"
+        },
+        {
+          "etiqueta": "00N1",
+          "contenido": "00000990 | Entrenamiento de los musculos inspiratorios para personas con condicion de salud posterior a COVID-19 | ENTRENAMIENTO DE LOS MUSCULOS INSPIRATORIOS PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4068"
+        },
+        {
+          "etiqueta": "00N2",
+          "contenido": "00000990 | Estimulacion electrica neuromuscular para personas con condicion de salud posterior a COVID-19 | ESTIMULACION ELECTRICA NEUROMUSCULAR PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4069"
+        },
+        {
+          "etiqueta": "00N3",
+          "contenido": "00000990 | Asesoramiento psicosocial para personas con condicion de salud posterior a COVID-19 | ASESORAMIENTO PSICOSOCIAL PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4070"
+        },
+        {
+          "etiqueta": "00N4",
+          "contenido": "00000990 | Evaluacion nutricional y asesoramiento para personas con condicion de salud posterior a COVID-19 | EVALUACION NUTRICIONAL Y ASESORAMIENTO PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4071"
+        },
+        {
+          "etiqueta": "00N5",
+          "contenido": "00000990 | Programa de enseñanza para realizar en casa terapia de rehabilitacion para personas con condicion de salud posterior a COVID-19 | PROGRAMA DE ENSEÑANZA PARA REALIZAR EN CASA TERAPIA DE REHABILITACION PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4072"
+        },
+        {
+          "etiqueta": "00N6",
+          "contenido": "00000990 | Entrenamiento y capacitacion a familiares o cuidador de personas con condicion de salud posterior a COVID-19 | ENTRENAMIENTO Y CAPACITACION A FAMILIARES O CUIDADOR DE PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4073"
+        },
+        {
+          "etiqueta": "00N7",
+          "contenido": "00000990 | Estimulacion de la senso-percepcion y la propiocepcion para personas con condicion de salud posterior a COVID-19 | ESTIMULACION DE LA SENSO-PERCEPCION Y LA PROPIOCEPCION PARA PERSONAS CON CONDICION DE SALUD POSTERIOR A COVID-19 | 0 | 0 | 120 | 2021 | CEMECE | NUEVO | S | 0 | 1 | 1 | 1 | 0 | 0 | 4074"
+        }
+      ]
+    },
+    {
+      "hoja": "Cat_CIE9MC_Capitulos",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clasificación Estadística Internacional de Procedimientos de la Modificación Clínica (CIE-9MC)",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Capitulos CIE-9MC",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Cve_Capitulo",
+          "contenido": "Descripcion | Rango_Inicial | Rango_Final"
+        },
+        {
+          "etiqueta": "00",
+          "contenido": "Procedimientos e Intervenciones No Clasificados en Otra Parte (00) | 00 | 00"
+        },
+        {
+          "etiqueta": "01",
+          "contenido": "Operaciones sobre el Sistema Nervioso (01-05) | 01 | 05"
+        },
+        {
+          "etiqueta": "02",
+          "contenido": "Operaciones sobre el Sistema Endocrino (06-07) | 06 | 07"
+        },
+        {
+          "etiqueta": "03",
+          "contenido": "Operaciones sobre el Ojo (08-16) | 08 | 16"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "Operaciones sobre el Oído (18-20) | 18 | 20"
+        },
+        {
+          "etiqueta": "05",
+          "contenido": "Operaciones sobre la Nariz, Boca y Faringe (21-29) | 21 | 29"
+        },
+        {
+          "etiqueta": "06",
+          "contenido": "Operaciones sobre el Aparato Respiratorio (30-34) | 30 | 34"
+        },
+        {
+          "etiqueta": "07",
+          "contenido": "Operaciones sobre el Aparato Cardio Vascular (35-39) | 35 | 39"
+        },
+        {
+          "etiqueta": "08",
+          "contenido": "Operaciones sobre el Sistema Hemático y Linfático (40-41) | 40 | 41"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "Operaciones sobre el Aparato Digestivo (42-54) | 42 | 54"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "Operaciones sobre el Aparato Urinario (55-59) | 55 | 59"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "Operaciones sobre Órganos Genitales Masculinos (60-64) | 60 | 64"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "Operaciones sobre Órganos Genitales Femeninos (65-71) | 65 | 71"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "Procedimientos Obstétricos (72-75) | 72 | 75"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "Operaciones sobre el Aparato Musculoesquelético (76-84) | 76 | 84"
+        },
+        {
+          "etiqueta": "15",
+          "contenido": "Operaciones sobre el Aparato Tegumentario (85-86) | 85 | 86"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "Procedimientos Diagnósticos y Terapéuticos Misceláneos (87-99) | 87 | 99"
+        }
+      ]
+    },
+    {
+      "hoja": "Cat_CIE9MC_Grupos",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clasificación Estadística Internacional de Procedimientos de la Modificación Clínica (CIE-9MC)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Grupos CIE-9MC",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Fecha de actualización:",
+          "contenido": "18/08/2026"
+        },
+        {
+          "etiqueta": "Cve_Capitulo",
+          "contenido": "Cve_Grupo | Descripcion"
+        },
+        {
+          "etiqueta": "00",
+          "contenido": "00 | Procedimientos e intervenciones, no clasificados en otra parte"
+        },
+        {
+          "etiqueta": "01",
+          "contenido": "01 | Incisión y excisión de cráneo, cerebro y meninges cerebrales"
+        },
+        {
+          "etiqueta": "01",
+          "contenido": "02 | Otras operaciones sobre cráneo, cerebro y meninges cerebrales"
+        },
+        {
+          "etiqueta": "01",
+          "contenido": "03 | Operaciones sobre médula espinal y estructuras del conducto espinal"
+        },
+        {
+          "etiqueta": "01",
+          "contenido": "04 | Operaciones sobre nervios craneales y periféricos"
+        },
+        {
+          "etiqueta": "01",
+          "contenido": "05 | Operaciones sobre nervios o ganglios simpáticos"
+        },
+        {
+          "etiqueta": "02",
+          "contenido": "06 | Operaciones sobre las glándulas tiroides y paratiroides"
+        },
+        {
+          "etiqueta": "02",
+          "contenido": "07 | Operaciones sobre otras glándulas endocrinas"
+        },
+        {
+          "etiqueta": "03",
+          "contenido": "08 | Operaciones sobre párpados"
+        },
+        {
+          "etiqueta": "03",
+          "contenido": "09 | Operaciones sobre aparato lagrimal"
+        },
+        {
+          "etiqueta": "03",
+          "contenido": "10 | Operaciones sobre la conjuntiva"
+        },
+        {
+          "etiqueta": "03",
+          "contenido": "11 | Operaciones de la córnea"
+        },
+        {
+          "etiqueta": "03",
+          "contenido": "12 | Operaciones sobre iris, cuerpo ciliar, esclerótica, y cámara anterior del ojo"
+        },
+        {
+          "etiqueta": "03",
+          "contenido": "13 | Operaciones sobre el cristalino"
+        },
+        {
+          "etiqueta": "03",
+          "contenido": "14 | Operaciones sobre retina, coroides, cuerpo vítreo y cámara posterior del ojo"
+        },
+        {
+          "etiqueta": "03",
+          "contenido": "15 | Operaciones sobre mésculos extraoculares"
+        },
+        {
+          "etiqueta": "03",
+          "contenido": "16 | Operaciones sobre órbita y globo ocular"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "18 | Operaciones sobre el oído externo"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "19 | Operaciones reconstructivas sobre oído medio"
+        },
+        {
+          "etiqueta": "04",
+          "contenido": "20 | Otras operaciones sobre el oído medio y el oído interno"
+        },
+        {
+          "etiqueta": "05",
+          "contenido": "21 | Operaciones sobre la nariz"
+        },
+        {
+          "etiqueta": "05",
+          "contenido": "22 | Operaciones sobre senos nasales (paranasales)"
+        },
+        {
+          "etiqueta": "05",
+          "contenido": "23 | Extracción y restauración de dientes"
+        },
+        {
+          "etiqueta": "05",
+          "contenido": "24 | Otras operaciones sobre dientes, encías y alvéolos"
+        },
+        {
+          "etiqueta": "05",
+          "contenido": "25 | Operaciones sobre la lengua"
+        },
+        {
+          "etiqueta": "05",
+          "contenido": "26 | Operaciones sobre glándulas y conductos salivales"
+        },
+        {
+          "etiqueta": "05",
+          "contenido": "27 | Otras operaciones sobre boca y cara"
+        },
+        {
+          "etiqueta": "05",
+          "contenido": "28 | Operaciones sobre amígdalas y adenoides"
+        },
+        {
+          "etiqueta": "05",
+          "contenido": "29 | Operaciones sobre faringe"
+        },
+        {
+          "etiqueta": "06",
+          "contenido": "30 | Excisión de laringe"
+        },
+        {
+          "etiqueta": "06",
+          "contenido": "31 | Otras operaciones sobre laringe y tráquea"
+        },
+        {
+          "etiqueta": "06",
+          "contenido": "32 | Excisión de pulmón y de bronquio"
+        },
+        {
+          "etiqueta": "06",
+          "contenido": "33 | Otras operaciones sobre pulmón y bronquio"
+        },
+        {
+          "etiqueta": "06",
+          "contenido": "34 | Operaciones sobre la pared torácica, pleura, mediastino y diafragma"
+        },
+        {
+          "etiqueta": "07",
+          "contenido": "35 | Operaciones sobre válvulas y tabiques del corazón"
+        },
+        {
+          "etiqueta": "07",
+          "contenido": "36 | Operaciones sobre vasos cardiacos"
+        },
+        {
+          "etiqueta": "07",
+          "contenido": "37 | Otras operaciones sobre corazón y pericardio"
+        },
+        {
+          "etiqueta": "07",
+          "contenido": "38 | Incisión, excisión y oclusión de vasos"
+        },
+        {
+          "etiqueta": "07",
+          "contenido": "39 | Otras operaciones sobre vasos"
+        },
+        {
+          "etiqueta": "08",
+          "contenido": "40 | Operaciones sobre el sistema linfático"
+        },
+        {
+          "etiqueta": "08",
+          "contenido": "41 | Operaciones sobre médula ósea y bazo"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "42 | Operaciones sobre esófago"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "43 | Incisión y extirpación del estómago"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "44 | Otras operaciones sobre el estómago"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "45 | Incisión, extirpación y anastomosis de intestino"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "46 | Otras operaciones sobre intestino"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "47 | Operaciones sobre apéndice"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "48 | Operaciones sobre recto, rectosigmoide y tejido perirrectal"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "49 | Operaciones sobre ano"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "50 | Operaciones sobre hígado"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "51 | Operaciones sobre vesícula biliar y tracto biliar"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "52 | Operaciones sobre páncreas"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "53 | Reparación de hernia"
+        },
+        {
+          "etiqueta": "09",
+          "contenido": "54 | Otras operaciones sobre la región abdominal"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "55 | Operaciones sobre el riñón"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "56 | Operaciones sobre uréter"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "57 | Operaciones sobre vejiga urinaria"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "58 | Operaciones sobre uretra"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "59 | Otras operaciones sobre el tracto urinario"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "60 | Operaciones sobre próstata y vesículas seminales"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "61 | Operaciones sobre escroto y ténica vaginal"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "62 | Operaciones sobre testículos"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "63 | Operaciones sobre cordón espermático, epidídimo y conducto deferente"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "64 | Operaciones sobre el pene"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "65 | Operaciones sobre los ovarios"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "66 | Operaciones sobre las trompas de Falopio"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "67 | Operaciones sobre el cuello uterino"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "68 | Otra incisión y excisión del étero"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "69 | Otras operaciones sobre el étero y sus estructuras de soporte"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "70 | Operaciones sobre la vagina y fondo de saco"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "71 | Operaciones sobre la vulva y el perineo"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "72 | Fórceps, ventosa y parto de nalgas"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "73 | Otros procedimientos para la inducción o asistencia al parto"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "74 | Cesárea y extracción de feto"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "75 | Otras operaciones obstétricas"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "76 | Operaciones sobre huesos y articulaciones faciales"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "77 | Incisión, excisión y división de otros huesos"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "78 | Otras operaciones de huesos, salvo huesos faciales"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "79 | Reducción de fractura y luxación"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "80 | Incisión y excisión de estructuras de la articulación"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "81 | Operaciones de reparación y plásticas sobre estructuras de la articulación"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "82 | Operaciones sobre mésculo, tendón y fascia de mano"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "83 | Operaciones sobre mésculo, tendón, fascia y bolsa sinovial salvo de la mano"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "84 | Otros procedimientos sobre aparato musculoesquelético"
+        },
+        {
+          "etiqueta": "15",
+          "contenido": "85 | Operaciones sobre la mama"
+        },
+        {
+          "etiqueta": "15",
+          "contenido": "86 | Operaciones sobre piel y tejido subcutáneo"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "87 | Radiología diagnóstica"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "88 | Otras radiografías diagnósticas y técnicas conexas"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "89 | Entrevista, consulta y evaluación diagnóstica"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "90 | Examen microscópico - I"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "91 | Examen microscópico - II"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "92 | Medicina nuclear"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "93 | Medicina Física y Rehabilitación y procedimientos relacionados"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "94 | Procedimientos relacionados con la psique"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "95 | Diagnóstico y tratamiento oftalmológicos y otológicos"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "96 | Intubación e irrigación no quirérgicas"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "97 | Sustitución y extracción de dispositivos terapéuticos"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "98 | Extracción de cuerpo extraño y cálculo no operatorio"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "99 | Otros procedimientos no quirérgicos"
+        }
+      ]
+    },
+    {
+      "hoja": "Descrip_Cat_CIE9MC",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clasificación Estadística Internacional de Procedimientos de la Modificación Clínica (CIE-9MC)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Descripción del Catálogo CIE-9MC",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "No. Campo",
+          "contenido": "Nombre del Campo | Descripción"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "Procedimiento | Clave del Procedimiento CIE-9MC"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "Filtro | Filtro (SIMO / SIAIS)"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "Descripcion | Descripción del Procedimiento"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "DescripcionM | Descripción del Procedimiento en Mayúsculas"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "Limite_Sexo | Identifica la restricción de códigos asociadas al sexo \n (1=Masculino, 2=Femenino, 0=Ambos)."
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "Limite_Edad_Inferior | Edad Minima Inicial (Años)"
+        },
+        {
+          "etiqueta": "Limite_Edad_Inferior  Semanas",
+          "contenido": "Edad Minima Inicial (Semanas)"
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "Limite_Edad_Superior | Edad Minima Final (Años)"
+        },
+        {
+          "etiqueta": "Limite_Edad_Superior Semanas",
+          "contenido": "Edad Minima Final (Semanas)"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "Anio_Vigencia | Año  inicio de operación"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "Uso | Uso (CEMECE, IMSS, HISTORICO)"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "Actualizacion | Actualizaciones / Control de Cambios\nValores(nuevo, existente, baja)"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "Vigente | Vigente (S / N) Procedimiento marcado con N, no puede ser registrado."
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "NUM_PRECEDENCIA | Precedencia"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "IND_NIVEL1 | Marca - Valida para Primer Nivel de Atención"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "IND_NIVEL2 | Marca - Valida para Segundo Nivel de Atención"
+        },
+        {
+          "etiqueta": "15",
+          "contenido": "IND_NIVEL3 | Marca - Valida para Tercer Nivel de Atención (UMAE)"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "Cve_Capitulo | Clave Capitulo en el catalogo CIE-9MC"
+        },
+        {
+          "etiqueta": "17",
+          "contenido": "Cve_Grupo | Clave Grupo en el catalogo CIE-9MC"
+        },
+        {
+          "etiqueta": "18",
+          "contenido": "Consec_Codigo | Numero  Consecutivo"
+        }
+      ]
+    }
+  ],
+  "huella_base": "30d3fb24f20e49d0c059408a75b6dc6f764fc11cfe83c39fdc35df0d3f89cc3e",
+  "fecha": "2026-09-01"
+}

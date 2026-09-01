@@ -7,7 +7,84 @@
       "titulo": "Catálogo CIE-10 a 3 dígitos (CEMECE, jul 2020)",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/Cat%C3%A1logo_CIE10_CEMECE_3_digitos_jul_2020.xlsx",
       "formato": "xlsx",
-      "verificaciones": []
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogo-cie10-cemece-3-digitos/Catálogo_CIE10_CEMECE_3_digitos_jul_2020.xlsx",
+          "resultado": "vigente",
+          "huella": "705a10f4d5f5628158febe11f0af9ee93319083b3539d53ed63e5ea67c912eff",
+          "estructura": [
+            {
+              "hoja": "2020_3Digitos",
+              "columnas": [
+                "CONSEC",
+                "letra",
+                "Clave",
+                "Nombre",
+                "CodX",
+                "LSex",
+                "LInf",
+                "LSup",
+                "Triv",
+                "errad",
+                "N_inter",
+                "Nin",
+                "Ninmtobs",
+                "CodSitLesion",
+                "No_CBD",
+                "CBD",
+                "No_Aph",
+                "AF_PRIN",
+                "SIS",
+                "COD_COMPLEMEN_MORBI",
+                "DEF_FETAL_M",
+                "DEF_FETAL_CBD",
+                "capitulo",
+                "Lista1",
+                "Grupo1",
+                "Lista5",
+                "ACTUALIZACIONES _ CIE _ 10",
+                "year_modifi",
+                "year_aplicacion",
+                "valid",
+                "prinmorta",
+                "prinmorbi",
+                "lm_morbi",
+                "lm_morta",
+                "lgbd165",
+                "lOMSBeck",
+                "lgbd190",
+                "NOTDiaria",
+                "NOTSemanal",
+                "Sistema_Especial",
+                "birmm",
+                "poco_util_Morta",
+                "epi_morta",
+                "Edas e Iras en < de 5a_os",
+                "CSVE_ MATERNAS-SEED-EPID",
+                "epi_morta_m5",
+                "epi_morbi",
+                "Def_Maternas",
+                "CAUSES",
+                "No_de_Intervencion ",
+                "SEED-EPI_Mortalidad",
+                "SUIVE_Morbilidad",
+                "SUIVE-EpiClave ",
+                "Descripcion_EpiClave",
+                "SUIVE-Notificacion_Inmediata",
+                "SUIVE-Estudio_Epidemiologico_de_caso",
+                "SUIVE-Estudio_de_Brote",
+                "SINAC",
+                "Prin_SINAC",
+                "Prin_SINAC_GRUPO",
+                "Prin_SINAC_SUBGRUPO",
+                "Codigos_daga",
+                "Codigos_asterisco"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "catalogo-cie10-simf-maestro",
@@ -97,6 +174,82 @@
               ]
             }
           ]
+        },
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogo-cie10-simf-maestro/Catálogo_CIE10_versión_09_02_2024_Maestro.xlsx",
+          "resultado": "vigente",
+          "huella": "3d75192abb07b011352336814c71537c72ff4e9fe9d796d1d9b8b7dcf94ffdce",
+          "estructura": [
+            {
+              "hoja": "Cat_CIE10_mtro_090224",
+              "columnas": [
+                "Codigo",
+                "A",
+                "Nombre",
+                "Limite_Sexo",
+                "Limite_Sexo_NECE",
+                "Limite_Edad_Inferior",
+                "Edad_Inferior_Semanas",
+                "Limite_Edad_Superior",
+                "Edad_Superior_Semanas",
+                "Triv",
+                "Errad",
+                "Notif_Internacional",
+                "Notif_Obligatoria",
+                "Notif_Inmediata",
+                "Notif_Inm_Morta_Obstetrica",
+                "No_Valida_Causa_Basica_Def",
+                "No_Valida_Afeccion_Princ_Hosp",
+                "Valida_Muerte_Fetal",
+                "Actualizaciones_CIE10",
+                "Anio_Modificacion",
+                "Anio_Vigencia",
+                "Vigente",
+                "Catalogo",
+                "IND_CRONICA",
+                "CVE_APARATO",
+                "Ind_Transmisible",
+                "Ind_Principal_Cons_Ext",
+                "IND_NIVEL1",
+                "IND_NIVEL2",
+                "IND_NIVEL3",
+                "Renglon",
+                "NombreM",
+                "Filtro",
+                "CveCapitulo",
+                "CveGrupo",
+                "CveSubGrupo",
+                "CveCategoria",
+                "Exclusion",
+                "Agrupamiento"
+              ]
+            },
+            {
+              "hoja": "090224",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Altas"
+              ]
+            },
+            {
+              "hoja": "Metadatos y equivalencia",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "notas": "Clasificación CIE-10 versión 09/02/2024; base para MOCE/SIMF"
@@ -107,7 +260,115 @@
       "titulo": "Catálogo CIF infancia y adolescencia (discapacidad y funcionamiento, 2017)",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/Disc_fun2017.xlsx",
       "formato": "xlsx",
-      "verificaciones": []
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogo-cif-infancia-adolescencia/Disc_fun2017.xlsx",
+          "resultado": "vigente",
+          "huella": "bfc3f45d587f7769e155a4cd9604a173fac239ff8c60c755797b66a755c202c4",
+          "estructura": [
+            {
+              "hoja": "Todas las categorías",
+              "columnas": [
+                "Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud, Versión para la Infancia y Adolescencia                                (CIF-IA)",
+                ""
+              ]
+            },
+            {
+              "hoja": "Primer nivel ",
+              "columnas": [
+                "Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud, Versión para la Infancia y Adolescencia  (CIF-IA)",
+                ""
+              ]
+            },
+            {
+              "hoja": "Segundo nivel ",
+              "columnas": [
+                "Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud, Versión para la Infancia y Adolescencia  (CIF-IA)",
+                ""
+              ]
+            },
+            {
+              "hoja": "Tercer nivel ",
+              "columnas": [
+                "Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud, Versión para la Infancia y Adolescencia  (CIF-IA)",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cuarto nivel ",
+              "columnas": [
+                "Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud, Versión para la Infancia y Adolescencia  (CIF-IA)",
+                ""
+              ]
+            },
+            {
+              "hoja": "CALIF_FUNC",
+              "columnas": [
+                "Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud, Versión para la Infancia y Adolescencia  (CIF-IA) CALIFICADORES",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "CALIF_ESTRUC",
+              "columnas": [
+                "Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud, Versión para la Infancia y Adolescencia  (CIF-IA) CALIFICADORES",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "CALIF_ACT-PART",
+              "columnas": [
+                "Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud, Versión para la Infancia y Adolescencia  (CIF-IA) CALIFICADORES",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "CALIF_FACT AMB",
+              "columnas": [
+                "Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud, Versión para la Infancia y Adolescencia  (CIF-IA) CALIFICADORES",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "catalogo-claves-epi-im",
@@ -115,7 +376,37 @@
       "titulo": "Catálogo de claves EPI-IM 2026",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/Catalogo_ClavesEpi_IM_2026_05022026.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogo-claves-epi-im/Catalogo_ClavesEpi_IM_2026_05022026.xlsx",
+          "resultado": "vigente",
+          "huella": "f5923d4e18163b5334b5620c71ed8e6bb09d974cdfb9cb10cc486ecde14c97de",
+          "estructura": [
+            {
+              "hoja": "ClavesEpi-IM_2026",
+              "columnas": [
+                "",
+                "Catalogo de Claves Epi y Claves IM"
+              ]
+            },
+            {
+              "hoja": "ClavesEpi-IM_2025",
+              "columnas": [
+                "",
+                "Catalogo de Claves Epi y Claves IM"
+              ]
+            },
+            {
+              "hoja": "ClavesEpi-IM_2024",
+              "columnas": [
+                "",
+                "Catalogo de Claves Epi y Claves IM"
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Actualizado 05/02/2026"
     },
     {
@@ -124,7 +415,51 @@
       "titulo": "Catálogo de códigos postales por UMF (nacional)",
       "url": "http://infosalud.imss.gob.mx/uploads/archivos/216/Catalogo_CPxUMF_Nacional_24082026151954.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogo-codigos-postales-umf/Catalogo_CPxUMF_Nacional_24082026151954.xlsx",
+          "resultado": "vigente",
+          "huella": "a799cd5b777f65114ed4f5a28cd9db98efe6643527e70997adb5130823151057",
+          "estructura": [
+            {
+              "hoja": "Resumen",
+              "columnas": [
+                "",
+                "CP",
+                "UMF en las que se encuentra asociado"
+              ]
+            },
+            {
+              "hoja": "Detalle",
+              "columnas": [
+                "FEC_REGISTRO_ALTA_CP",
+                "FEC_REGISTRO_BAJA_CP",
+                "FEC_REGISTRO_ACTUALIZADO_CP",
+                "CODIGO",
+                "CVE_ASEN",
+                "NOM_ASEN",
+                "CVE_MUN",
+                "CVE_ENT",
+                "FEC_HORA_REGISTRO_UMF",
+                "FEC_REGISTRO_ALTA_1_UMF",
+                "FEC_REGISTRO_ACTUALIZADO_1_UMF",
+                "FEC_REGISTRO_BAJA_1_UMF",
+                "NOM_UNIDAD",
+                "DOM_ESTADO"
+              ]
+            },
+            {
+              "hoja": "Tabla Dinámica",
+              "columnas": [
+                "Etiquetas de fila",
+                "Recuento distinto de NOM_UNIDAD",
+                "Recuento de CODIGO"
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Ruta /uploads/ con variante fechada; puede cambiar al actualizarse"
     },
     {
@@ -133,7 +468,72 @@
       "titulo": "Catálogo maestro de semanas estadísticas 2019-2025",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/CatalogoMaestroSemanasEstadisticas2025_2019_10012025.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogo-maestro-semanas-estadisticas/CatalogoMaestroSemanasEstadisticas2025_2019_10012025.xlsx",
+          "resultado": "vigente",
+          "huella": "d77e1260078798a75bbe03806c3ba53f56e2872a0b0427464f33da077f189864",
+          "estructura": [
+            {
+              "hoja": "2025",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2024",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2023",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2022",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2021",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2020",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2019",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Base de cierres semanales de los SIS"
     },
     {
@@ -142,7 +542,14 @@
       "titulo": "Catálogo de OOAD y subdelegaciones",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/Catalogo%20de%20OOAD%20y%20Subdelegaciones%20Febrero%202025_10022025.xls",
       "formato": "xls",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogo-ooad-subdelegaciones/Catalogo de OOAD y Subdelegaciones Febrero 2025_10022025.xls",
+          "resultado": "vigente",
+          "huella": "b0d9d26bc99d3811dc67350a52d36bbea478c19f014df4c73e6bd9db138ce76e"
+        }
+      ],
       "notas": "Actualizado febrero 2025"
     },
     {
@@ -151,7 +558,39 @@
       "titulo": "Catálogo maestro de servicios y especialidades",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/Catalogo_servicios_especialidades_12_05_2026.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogo-servicios-especialidades-maestro/Catalogo_servicios_especialidades_12_05_2026.xlsx",
+          "resultado": "vigente",
+          "huella": "ff7adb1ee78ae87d7fff065d1b883644b27e31aee4ed5b1e5e197a860491b9e3",
+          "estructura": [
+            {
+              "hoja": "Catálogo_Maestro_de_Servicios",
+              "columnas": [
+                "",
+                "",
+                "DIRECCIÓN DE PRESTACIONES MÉDICAS"
+              ]
+            },
+            {
+              "hoja": "Solo_Cambios",
+              "columnas": [
+                "",
+                "",
+                "DIRECCIÓN DE PRESTACIONES MÉDICAS"
+              ]
+            },
+            {
+              "hoja": "Variables",
+              "columnas": [
+                "DESCRIPCIÓN DE VARIABLES",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Actualizado 12/05/2026; insumo directo de MOCE y SIMO"
     },
     {
@@ -160,7 +599,14 @@
       "titulo": "Catálogos por unidad médica (Hospitalización - SIMO Central, tableros)",
       "url": "http://tableros.imss.gob.mx/t/PrestacionesMedicas/views/CatalogosSIMOC_0/Cat_Unidades?:embed=y&:display_count=no&:showVizHome=no",
       "formato": "html",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogos-simoc-por-unidad-medica/Cat_Unidades",
+          "resultado": "vigente",
+          "huella": "6c33f794972b557e5ad755817e843bacd3559719ab8dc9a49e9271666fe75597"
+        }
+      ],
       "notas": "Tablero Tableau; no descargable como archivo"
     },
     {
@@ -169,7 +615,22 @@
       "titulo": "Conversor de servicios y especialidades (SIMO-MOCE-ICITAS-SIOC)",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/CAT_CONVERTIDOR_%20SERVICIOS_ESPECIALIDADES_MTRO_SIMO_MOCE_ICITAS_SIOC_JUN_2020.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/conversor-servicios-especialidades-simo-moce/CAT_CONVERTIDOR_ SERVICIOS_ESPECIALIDADES_MTRO_SIMO_MOCE_ICITAS_SIOC_JUN_2020.xlsx",
+          "resultado": "vigente",
+          "huella": "f494a76d487cf00e0b827396a3043d36fcb7d321f82a20cd2d6ada93de80e3d0",
+          "estructura": [
+            {
+              "hoja": "SIMO-MOCE-iCITAS-SIOC",
+              "columnas": [
+                "CATÁLOGO CONVERTIDOR"
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Equivalencias entre catálogos de distintos sistemas; clave para la propuesta de interoperabilidad (no se implementa en v1)"
     },
     {
@@ -178,7 +639,22 @@
       "titulo": "Catálogo de equivalencia CIE-9 a CIE-10",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/Cat_Equi_CIE9_CIE10.xlsx",
       "formato": "xlsx",
-      "verificaciones": []
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/equivalencia-cie9-cie10/Cat_Equi_CIE9_CIE10.xlsx",
+          "resultado": "vigente",
+          "huella": "b2634e9a59950f7aa18b5c1c04c5e199996dea686c26aee8cf39458d991b7203",
+          "estructura": [
+            {
+              "hoja": "CORCI910",
+              "columnas": [
+                "Coordinación de Vigilancia Epidemiológica"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "lista-mexicana",
@@ -186,7 +662,64 @@
       "titulo": "Lista Mexicana de términos (Lmx 2021)",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/Lmx_2021_21102021.xlsx",
       "formato": "xlsx",
-      "verificaciones": []
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/lista-mexicana/Lmx_2021_21102021.xlsx",
+          "resultado": "vigente",
+          "huella": "fbcdf55e934086c77246c4b599bb4d4004bb7b7d27b148d2970a16554aedb7e5",
+          "estructura": [
+            {
+              "hoja": "ListaMexCausas",
+              "columnas": [
+                "Num",
+                "GPO_LIST_MEX",
+                "Causas_LM",
+                "Mortalidad",
+                "Morbilidad",
+                "PrincipalesMorta",
+                "PrincipalesMorbi"
+              ]
+            },
+            {
+              "hoja": "LisMexPrinCau_20",
+              "columnas": [
+                "Num",
+                "Cap",
+                "GPO_LIST_MEX",
+                "Causas_LM",
+                "Mortalidad",
+                "Morbilidad",
+                "PrinMorta",
+                "PrinMorbi"
+              ]
+            },
+            {
+              "hoja": "LisMexPrinCau21",
+              "columnas": [
+                "Num",
+                "Cap",
+                "GPO_LIST_MEX",
+                "Causas_LM",
+                "Mortalidad",
+                "Morbilidad",
+                "PrinMorta",
+                "PrinMorbi"
+              ]
+            },
+            {
+              "hoja": "MM",
+              "columnas": [
+                "Gpo",
+                "Agrupación corta",
+                "Subgpo",
+                "Agrupación intermedia",
+                "CIE-10"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "servicios-profesionales-ex-paramedicas",
@@ -194,7 +727,14 @@
       "titulo": "Servicios profesionales antes paramédicas (fe de erratas)",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/4-30-6p-21%20fe%20de%20erratas.pdf",
       "formato": "pdf",
-      "verificaciones": []
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/servicios-profesionales-ex-paramedicas/4-30-6p-21 fe de erratas.pdf",
+          "resultado": "vigente",
+          "huella": "b7069f876e6eb9a40e7e3f757ed635a6015a707ce958b50d290d885b8bd11c1b"
+        }
+      ]
     },
     {
       "id": "siais-actividades-ptdam",
@@ -202,7 +742,14 @@
       "titulo": "SIAIS: actividades PTDAM (archivo ZIP)",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/ActividadesPTDAM.zip",
       "formato": "otro",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/siais-actividades-ptdam/ActividadesPTDAM.zip",
+          "resultado": "vigente",
+          "huella": "f7aad906b1b69179263c852db4056ad34529be749719003e4e65ad7370b2b278"
+        }
+      ],
       "notas": "Formato ZIP fuera del enum; registrado como 'otro'"
     },
     {
@@ -211,7 +758,148 @@
       "titulo": "SIAIS: catálogo de acciones y actividades por servicio",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/2022-09_13_SIAIS_Catalogo_Acciones_Actividades.xlsx",
       "formato": "xlsx",
-      "verificaciones": []
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/siais-catalogo-acciones-por-servicio/2022-09_13_SIAIS_Catalogo_Acciones_Actividades.xlsx",
+          "resultado": "vigente",
+          "huella": "cceaafde9ad6207935dc461f2d6d6db58db5091c41661066d88bb8cfd8704c61",
+          "estructura": [
+            {
+              "hoja": "Promocion_Prevencion",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Medicina_Familiar",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Medicamentos",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Enfermeria",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Estomatologia",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Estom_Prev",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Trab_Soc",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Nut_Diet",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Psicolog",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Optomet",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "EMI",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "ECD",
+              "columnas": [
+                "SISTEMA DE INFORMACIÓN DE ATENCIÓN INTEGRAL DE LA SALUD (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "siais-catalogo-acciones-promocion-prevencion",
@@ -219,7 +907,62 @@
       "titulo": "SIAIS: catálogo de acciones de promoción, prevención y actividades",
       "url": "http://infosalud.imss.gob.mx/uploads/archivos/232/SIAIS_Catalogo_Acciones_Actividades_2026-08-18_20082026150754.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/siais-catalogo-acciones-promocion-prevencion/SIAIS_Catalogo_Acciones_Actividades_2026-08-18_20082026150754.xlsx",
+          "resultado": "vigente",
+          "huella": "0410d86ab664359bf086d331d3820f938c056def9d508cf458c90dc82c34165a",
+          "estructura": [
+            {
+              "hoja": "Promocion_Prevencion",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_Acciones_Actividades",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_Dosis_Vacunas",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_Marcas_Vacunas",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Versión 18/08/2026; ruta /uploads/ con variante fechada"
     },
     {
@@ -228,7 +971,59 @@
       "titulo": "SIAIS: CIE-10 para el Informe Semanal de Vigilancia Epidemiológica",
       "url": "http://infosalud.imss.gob.mx/uploads/archivos/230/SIAIS_Catalogo_CIE10_EPI_IM_2026-08-18_20082026150848.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/siais-catalogo-cie10-epi-im/SIAIS_Catalogo_CIE10_EPI_IM_2026-08-18_20082026150848.xlsx",
+          "resultado": "vigente",
+          "huella": "e752e4b1be1110b0fa43e0d5706435a9f6517ae1bdd74e856d6999a149e9c915",
+          "estructura": [
+            {
+              "hoja": "Epidemiologia_Titulos",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Agrupamiento",
+              "columnas": [
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Epidemiologia",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_CIE10_Vig_EPI",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Versión 18/08/2026; ruta /uploads/ con variante fechada"
     },
     {
@@ -237,7 +1032,80 @@
       "titulo": "SIAIS: Clasificación Internacional de Enfermedades (CIE-10)",
       "url": "http://infosalud.imss.gob.mx/uploads/archivos/229/SIAIS_Catalogo_CIE10_2026-08-18_20082026150517.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/siais-catalogo-cie10/SIAIS_Catalogo_CIE10_2026-08-18_20082026150517.xlsx",
+          "resultado": "vigente",
+          "huella": "50f4ec3365b3546d2705fea425ebdb1000e3a934dbac61f560d265a155cb7068",
+          "estructura": [
+            {
+              "hoja": "Cat_CIE10",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "CIE10_Simplif_SIMF",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)"
+              ]
+            },
+            {
+              "hoja": "Descrip_CatCIE10",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Versión 18/08/2026; ruta /uploads/ con variante fechada"
     },
     {
@@ -246,7 +1114,74 @@
       "titulo": "SIAIS: Clasificación Internacional de Procedimientos (CIE-9MC)",
       "url": "http://infosalud.imss.gob.mx/uploads/archivos/231/Catalogo_CIE9MC_2026-08-18_SIAIS_20082026150613.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/siais-catalogo-cie9mc/Catalogo_CIE9MC_2026-08-18_SIAIS_20082026150613.xlsx",
+          "resultado": "vigente",
+          "huella": "30d3fb24f20e49d0c059408a75b6dc6f764fc11cfe83c39fdc35df0d3f89cc3e",
+          "estructura": [
+            {
+              "hoja": "Cat_CIE9MC",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_CIE9MC_Capitulos",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_CIE9MC_Grupos",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Descrip_Cat_CIE9MC",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Versión 18/08/2026; ruta /uploads/ con variante fechada"
     },
     {
@@ -255,7 +1190,14 @@
       "titulo": "SIAIS: catálogo de personal por tiempo determinado (PTDAM)",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/2021-03-12_SIAIS_Catalogo_PTDAM.xls",
       "formato": "xls",
-      "verificaciones": []
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/siais-catalogo-ptdam/2021-03-12_SIAIS_Catalogo_PTDAM.xls",
+          "resultado": "vigente",
+          "huella": "72a61fe37e067aadfc05f7943648a7ceb12f0ed99d5c539dbf91dc08fa5304d1"
+        }
+      ]
     },
     {
       "id": "siais-catalogo-servicios-especialidades-primer-nivel",
@@ -263,7 +1205,57 @@
       "titulo": "SIAIS: catálogo de servicios y especialidades de primer nivel",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/SIAIS/SIAIS_Catalogos_Servicios_Especialidades_2026-05-27.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/siais-catalogo-servicios-especialidades-primer-nivel/SIAIS_Catalogos_Servicios_Especialidades_2026-05-27.xlsx",
+          "resultado": "vigente",
+          "huella": "4cd7d899f5b432a63618b8858ab5984472dda288fe666a94ec3fd9c77a149c32",
+          "estructura": [
+            {
+              "hoja": "Cat_Servicios_Especialidades",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Tabla",
+              "columnas": [
+                "Division",
+                "Clave Servicio",
+                "Descripcion Servicio",
+                "Ubicación",
+                "Marca Pediatria",
+                "Primer Nivel",
+                "Buscar"
+              ]
+            },
+            {
+              "hoja": "Cat_SIAIS",
+              "columnas": [
+                "División",
+                "Clave Servicio",
+                "Descripción",
+                "Ubicación",
+                "Marca Ped.",
+                "Existe",
+                "SIMO",
+                "SIAIS"
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Versión 27/05/2026"
     },
     {
@@ -272,7 +1264,102 @@
       "titulo": "SIAIS: catálogo de vacunas y dosis",
       "url": "http://infosalud.imss.gob.mx/uploads/archivos/233/SIAIS_Catalogo_Vacunas_Dosis_2026-08-18_20082026150659.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/siais-catalogo-vacunas-dosis/SIAIS_Catalogo_Vacunas_Dosis_2026-08-18_20082026150659.xlsx",
+          "resultado": "vigente",
+          "huella": "74facf0c34acb5572e6b6a7f2fddd0436815fc3f9332d2b706da3f210d7d70bb",
+          "estructura": [
+            {
+              "hoja": "Cat_Vacunas_Aplicadas",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_Vacunas_Rescate",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_Otras_Vacunas",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_Otras_Vacunas_Rescate",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_Dosis_Vacunas",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_Marcas_Vacunas",
+              "columnas": [
+                "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "notas": "Versión 18/08/2026; ruta /uploads/ con variante fechada"
     },
     {
@@ -281,7 +1368,20 @@
       "titulo": "SIAIS-SIMF: nomenclatura de consultorios",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/SIAIS/Nomenclatura_Consultorios_SIMF_SIAIS_2025-08-11.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/siais-nomenclatura-consultorios-simf/Nomenclatura_Consultorios_SIMF_SIAIS_2025-08-11.xlsx",
+          "resultado": "vigente",
+          "huella": "0201ae4c1677f2cd16b514e0e67d6e612a2e20851132f186b313f40355a46d77",
+          "estructura": [
+            {
+              "hoja": "Nomenclatura_Consultorios",
+              "columnas": []
+            }
+          ]
+        }
+      ],
       "notas": "Versión 11/08/2025"
     }
   ]
