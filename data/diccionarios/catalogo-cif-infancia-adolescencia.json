@@ -1,0 +1,25 @@
+{
+  "id": "catalogo-cif-infancia-adolescencia",
+  "campos": [
+    {
+      "nombre": "Primer Calificador",
+      "tipo": "clave",
+      "ejemplo": "Calificador genérico con escala negativa, utilizado para indicar la extensión o magnitud de una deficiencia",
+      "valores": "Calificador genérico con escala negativa, utilizado para indicar la extensión o magnitud de una deficiencia | Calificador | xxx.0 NO hay deficiencia | xxx.1 Deficiencia LIGERA | xxx.2 Deficiencia MODE"
+    },
+    {
+      "nombre": "Segundo Calificador",
+      "tipo": "otro",
+      "ejemplo": "Usado para indicar la naturaleza del cambio en la respectiva estructura corporal:",
+      "valores": "Usado para indicar la naturaleza del cambio en la respectiva estructura corporal: | 0 | 1 | 2 | 3 | ..."
+    },
+    {
+      "nombre": "Tercer Calificador",
+      "tipo": "otro",
+      "ejemplo": "Sugerido",
+      "valores": "Sugerido | 0 | 1 | 2 | 3 | ..."
+    }
+  ],
+  "huella_base": "bfc3f45d587f7769e155a4cd9604a173fac239ff8c60c755797b66a755c202c4",
+  "fecha": "2026-09-01"
+}

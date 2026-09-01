@@ -1,0 +1,17 @@
+{
+  "id": "siais-nomenclatura-consultorios-simf",
+  "campos": [
+    {
+      "nombre": "Nomenclatura de Consultorios SIAIS - SIMF según  Servicio - Especialidad",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Actualización:  11/08/2025",
+      "tipo": "otro",
+      "ejemplo": "Consultorios SIMF",
+      "valores": "Consultorios SIMF | 01 a 100 | CoVirS-1 a CoVirS-30 | 01 a 50 | UAMF1 A UAMF10\n*No existe servicio 40.-UAMF en SIMF | ..."
+    }
+  ],
+  "huella_base": "0201ae4c1677f2cd16b514e0e67d6e612a2e20851132f186b313f40355a46d77",
+  "fecha": "2026-09-01"
+}

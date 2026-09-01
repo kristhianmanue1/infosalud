@@ -1,0 +1,19 @@
+{
+  "id": "siais-catalogo-cie10-epi-im",
+  "campos": [
+    {
+      "nombre": "Fecha de actualización:",
+      "tipo": "clave",
+      "ejemplo": "Renglon",
+      "valores": "Renglon | 34 | 32 | 31 | 33 | ..."
+    },
+    {
+      "nombre": "18/08/2026",
+      "tipo": "otro",
+      "ejemplo": "Agrupamiento",
+      "valores": "Agrupamiento | 2 | 1 | 6 | 8 | ..."
+    }
+  ],
+  "huella_base": "e752e4b1be1110b0fa43e0d5706435a9f6517ae1bdd74e856d6999a149e9c915",
+  "fecha": "2026-09-01"
+}

@@ -388,17 +388,19 @@ def _borrador(args, fuente, ruta):
     except ErrorDiccionario as exc:
         return _salir(args, str(exc), 1)
     creado = diccionario is None
-    if creado:
-        diccionario = _esqueleto(args.id, verificacion)
-        if diccionario is None:
-            return _salir(args, "sin estructura observada para crear "
-                          "el esqueleto: ejecute vigencia-verificar "
-                          "con un xlsx primero", 1)
     try:
         hojas = leer_filas(ruta_local)
     except ErrorEstructura as exc:
         return _salir(args, f"lectura del archivo local falló: {exc}", 1)
     principal, metas = analizar(hojas)
+    if creado:
+        diccionario = _esqueleto_de_principal(args.id, principal) \
+            or _esqueleto(args.id, verificacion)
+        if diccionario is None:
+            return _salir(args, "no se detectaron encabezados "
+                          "tabulares en el archivo: el diccionario "
+                          "de esta fuente requiere levantamiento "
+                          "manual", 1)
     enriquecidos = enriquecer(diccionario["campos"], principal)
     if metas:
         diccionario["metadatos"] = metas
@@ -419,6 +421,22 @@ def _borrador(args, fuente, ruta):
     return 0
 
 
+def _esqueleto_de_principal(id_fuente, principal):
+    """Esqueleto desde la hoja principal detectada por borrador
+    (encabezados pueden estar en cualquier fila inicial)."""
+    if not principal or "indice" not in principal:
+        return None
+    columnas = [str(c).strip() for c
+                in principal["filas"][principal["indice"]]
+                if str(c).strip()]
+    if len(columnas) < 2:
+        return None
+    return {"id": id_fuente,
+            "campos": [{"nombre": c,
+                        "tipo": "clave" if i == 0 else "otro"}
+                       for i, c in enumerate(columnas)]}
+
+
 def _ultima_verificacion_util(fuente):
     for verificacion in reversed(fuente.get("verificaciones", [])):
         if verificacion.get("huella") and verificacion.get("ruta_local"):
@@ -427,17 +445,20 @@ def _ultima_verificacion_util(fuente):
 
 
 def _esqueleto(id_fuente, verificacion):
-    """Esqueleto de diccionario desde la estructura observada."""
+    """Esqueleto de diccionario desde la estructura observada:
+    primera hoja CON encabezados (algunos libros abren con hojas
+    de portada vacías)."""
     estructura = verificacion.get("estructura")
     if not estructura:
         return None
-    columnas = [c for c in estructura[0].get("columnas", []) if c]
-    if not columnas:
-        return None
-    return {"id": id_fuente,
-            "campos": [{"nombre": c,
-                        "tipo": "clave" if i == 0 else "otro"}
-                       for i, c in enumerate(columnas)]}
+    for hoja in estructura:
+        columnas = [c for c in hoja.get("columnas", []) if c]
+        if columnas:
+            return {"id": id_fuente,
+                    "campos": [{"nombre": c,
+                                "tipo": "clave" if i == 0 else "otro"}
+                               for i, c in enumerate(columnas)]}
+    return None
 
 
 def _agregar_verificacion(catalogo_ruta, catalogo, fuente, ruta,

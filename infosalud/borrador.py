@@ -5,6 +5,11 @@ proponer evidencia observada: dominio muestreado y ejemplo por campo,
 y el contenido de las hojas descriptivas (p. ej. "Metadatos y
 equivalencia" del CIE-10). El sistema propone, el humano valida:
 ninguna descripción se genera ni se sobrescribe (ADR-009).
+
+Muchos catálogos no empiezan en la fila 1: traen título del
+documento, portada o filas vacías antes de los encabezados. La
+detección de encabezados escanea las primeras filas buscando una
+fila tabular plausible (≥2 celdas, ninguna excesivamente larga).
 """
 
 import re
@@ -12,39 +17,59 @@ import re
 UMBRAL_HOJA_DESCRIPTIVA = 0.7   # ≥70% de encabezados vacíos
 MAX_VALORES = 5
 MAX_META_LINEAS = 200
+MAX_FILA_ENCABEZADOS = 20       # filas a escanear buscando encabezado
+MAX_LARGO_ENCABEZADO = 100      # un encabezado no es un párrafo
 
 _PATRON_DESCRIPTIVA = re.compile(
     r"meta|descrip|nota|equival|instruc|ayuda|glosario|definic",
     re.IGNORECASE)
 
 
-def analizar(hojas):
+def analizar(hojas, max_fila=MAX_FILA_ENCABEZADOS):
     """Clasifica hojas y extrae metadatos de las descriptivas.
 
     Devuelve (principal, descriptivas): la hoja tabular con más
-    columnas y la lista de {hoja, metadatos: [{etiqueta, contenido}]}
-    de las hojas descriptivas con contenido.
+    columnas —con su índice de fila de encabezados— y la lista de
+    {hoja, metadatos: [{etiqueta, contenido}]} de las hojas
+    descriptivas con contenido.
     """
-    normales = [h for h in hojas if not _es_descriptiva(h)]
-    descriptivas = [h for h in hojas if _es_descriptiva(h)]
-    principal = max(
-        normales,
-        key=lambda h: len(h["filas"][0]) if h["filas"] else 0,
-        default=None)
+    principales = []
     metas = []
-    for hoja in descriptivas:
-        lineas = []
-        for fila in hoja["filas"]:
-            celdas = [str(c).strip() for c in fila if str(c).strip()]
-            if not celdas:
-                continue
-            lineas.append({"etiqueta": celdas[0][:100],
-                           "contenido": " | ".join(celdas[1:])[:500]})
-            if len(lineas) >= MAX_META_LINEAS:
-                break
-        if lineas:
-            metas.append({"hoja": hoja["hoja"], "metadatos": lineas})
+    for hoja in hojas:
+        if _PATRON_DESCRIPTIVA.search(hoja.get("hoja", "")):
+            lineas = _lineas_metadatos(hoja)
+            if lineas:
+                metas.append({"hoja": hoja["hoja"],
+                              "metadatos": lineas})
+            continue
+        deteccion = fila_encabezados(hoja, max_fila)
+        if deteccion is None:
+            lineas = _lineas_metadatos(hoja)
+            if lineas:
+                metas.append({"hoja": hoja["hoja"],
+                              "metadatos": lineas})
+            continue
+        indice, _columnas = deteccion
+        principales.append({"hoja": hoja["hoja"],
+                            "filas": hoja["filas"],
+                            "indice": indice})
+    principal = max(
+        principales,
+        key=lambda h: len(h["filas"][h["indice"]]),
+        default=None)
     return principal, metas
+
+
+def fila_encabezados(hoja, max_fila=MAX_FILA_ENCABEZADOS):
+    """(índice, columnas) de la primera fila con aspecto de
+    encabezado tabular, o None si no la hay."""
+    for indice, fila in enumerate((hoja.get("filas") or [])[:max_fila]):
+        celdas = [str(c).strip() for c in fila]
+        utiles = [c for c in celdas if c]
+        if len(utiles) >= 2 and max(len(c) for c in utiles) \
+                <= MAX_LARGO_ENCABEZADO:
+            return indice, utiles
+    return None
 
 
 def enriquecer(campos, hoja_principal):
@@ -53,16 +78,18 @@ def enriquecer(campos, hoja_principal):
     Nunca sobrescribe lo declarado ni las descripciones."""
     if not hoja_principal or not hoja_principal["filas"]:
         return []
-    encabezados = [str(c).strip() for c in hoja_principal["filas"][0]]
-    datos = hoja_principal["filas"][1:]
+    indice_fila = hoja_principal.get("indice", 0)
+    encabezados = {str(c).strip().lower(): i
+                   for i, c in enumerate(
+                       hoja_principal["filas"][indice_fila])}
+    datos = hoja_principal["filas"][indice_fila + 1:]
     enriquecidos = []
     for campo in campos:
         if campo.get("valores") or campo.get("ejemplo"):
             continue
-        nombre = campo.get("nombre")
-        if nombre not in encabezados:
+        indice = encabezados.get(str(campo.get("nombre", "")).lower())
+        if indice is None:
             continue
-        indice = encabezados.index(nombre)
         columna = [str(fila[indice]).strip() for fila in datos
                    if indice < len(fila) and str(fila[indice]).strip()]
         if not columna:
@@ -77,8 +104,21 @@ def enriquecer(campos, hoja_principal):
         campo["valores"] = (
             " | ".join(distintos)
             + (" | ..." if len(distintos) >= MAX_VALORES else ""))[:200]
-        enriquecidos.append(nombre)
+        enriquecidos.append(campo["nombre"])
     return enriquecidos
+
+
+def _lineas_metadatos(hoja):
+    lineas = []
+    for fila in hoja["filas"]:
+        celdas = [str(c).strip() for c in fila if str(c).strip()]
+        if not celdas:
+            continue
+        lineas.append({"etiqueta": celdas[0][:100],
+                       "contenido": " | ".join(celdas[1:])[:500]})
+        if len(lineas) >= MAX_META_LINEAS:
+            break
+    return lineas
 
 
 def _es_descriptiva(hoja):
