@@ -20,7 +20,8 @@ CAMPOS_FUENTE = {
     "id", "seccion", "titulo", "url", "formato",
     "periodicidad", "notas", "verificaciones",
 }
-CAMPOS_VERIFICACION = {"fecha", "resultado", "huella", "ruta_local", "causa"}
+CAMPOS_VERIFICACION = {"fecha", "resultado", "huella", "ruta_local",
+                       "causa", "estructura", "estructura_causa"}
 
 
 class ErrorCatalogo(Exception):
@@ -145,6 +146,21 @@ def _validar_verificaciones(verificaciones):
                 not isinstance(huella, str) or not re.fullmatch(
                     r"[0-9a-f]{64}", huella)):
             errores.append("verificaciones: 'huella' no es sha256 hex")
+        estructura = entrada.get("estructura")
+        if estructura is not None and (
+                not isinstance(estructura, list)
+                or not all(isinstance(h, dict) and isinstance(
+                    h.get("hoja"), str) and isinstance(
+                    h.get("columnas"), list) for h in estructura)):
+            errores.append(
+                "verificaciones: 'estructura' no es lista de "
+                "{hoja, columnas}")
+        estructura_causa = entrada.get("estructura_causa")
+        if estructura_causa is not None and (
+                not isinstance(estructura_causa, str)
+                or len(estructura_causa) > 200):
+            errores.append(
+                "verificaciones: 'estructura_causa' excede 200 caracteres")
     return errores
 
 
