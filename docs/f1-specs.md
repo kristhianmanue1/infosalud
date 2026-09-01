@@ -194,3 +194,34 @@ Invariantes:
   observación.
 - Lo observado reemplaza lo muestreado con fecha y huella_base
   actualizados (procedencia); nada altera la máquina de vigencia.
+
+## SPEC-7 [cubre: REQ-1, REQ-6; ADR-011 — etapa 2]
+
+Comportamiento: `fuente-exportar <id>` convierte el archivo local ya
+verificado de una fuente en productos derivados consumibles —CSV o
+base SQLite— conservando la evidencia de origen (id, fecha, huella)
+en cada producto.
+Entradas: `fuente-exportar <id> [--formato csv|sqlite]
+[--destino <dir>]`; origen = archivo de la última verificación con
+huella.
+Salidas: CSV: `<id>__<hoja>.csv` por hoja + `<id>__evidencia.json`;
+SQLite: `<id>.sqlite` con tabla por hoja y tabla `evidencia`. Resumen
+en texto o `--json`.
+Errores:
+- E-NOEXISTE: id inexistente → salida 2.
+- E-VALID: sin archivo local verificado, destino ya existe, formato
+  de origen no tabular, o fallo de lectura → salida 1 con causa;
+  sin productos parciales.
+Casos:
+- DADO una fuente con archivo xlsx verificado CUANDO se exporta a
+  csv ENTONCES cada hoja produce un CSV con encabezados y datos, más
+  evidencia.json con fecha y huella.
+- DADO la misma fuente CUANDO se exporta a sqlite ENTONCES la base
+  tiene una tabla por hoja y una tabla `evidencia` con la huella.
+- DADO un destino que ya existe ENTONCES se rechaza (salida 1) sin
+  alterar los productos previos.
+Invariantes:
+- El origen nunca se modifica; los productos son derivados y
+  reproducibles; no participan en la máquina de vigencia.
+- Topes declarados: 30 hojas, 200 columnas, 200 000 filas por hoja.
+- Sólo stdlib (csv, sqlite3); sin red (ADR-004 en este comando).
