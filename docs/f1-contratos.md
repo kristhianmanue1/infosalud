@@ -27,6 +27,13 @@ Entrada (campos cerrados):
     causa: string [opcional] [máx 200 chars] — motivo del fallo;
       presente cuando resultado = inaccesible (enmienda 2026-09-01,
       ronda adversarial F3)
+    estructura: lista [opcional, ADR-009] de {hoja: string,
+      columnas: lista de string} — hojas y encabezados observados en
+      el archivo verificado (sólo xlsx, extracción de mejor esfuerzo:
+      primera fila, topes 30 hojas / 200 columnas)
+    estructura_causa: string [opcional] [máx 200 chars] — motivo por
+      el que no se extrajo estructura; un fallo de extracción nunca
+      altera `resultado` (ADR-009)
 
 Salida: el registro almacenado, idéntico al validado.
 Errores:
@@ -40,6 +47,48 @@ Invariantes:
 Compatibilidad: añadir valores a enums o campos opcionales es
   compatible; quitar campos, cambiar tipos o estrechar rangos exige
   v2 y migración registrada.
+
+## CONTRATO: diccionario-de-fuente v1 (ADR-009)
+
+Archivo por fuente: `data/diccionarios/<id>.json` (junto al
+catálogo). Describe el contenido declarado de una fuente: qué
+campos tiene, qué significan y cómo se usa. Es documentación
+esquematizada, no evidencia; la estructura observada por
+verificación vive en `registro-de-fuente` (campo `estructura`).
+
+Entrada (campos cerrados):
+  id: string [obligatorio] [patrón ^[a-z0-9-]+$] — debe existir en
+       el catálogo y coincidir con el nombre del archivo
+  descripcion: string [opcional] [1..1000 chars] — qué contiene la
+       fuente y para qué sirve
+  uso: string [opcional] [máx 500 chars] — mecanismo de uso: cómo
+       se interpreta, con qué se cruza, qué campo es la clave
+  huella_base: string [opcional] [sha256 hex] — huella del archivo
+       contra el que se levantó el diccionario (procedencia)
+  fecha: ISO-8601 [opcional] — fecha del levantamiento
+  campos: lista [obligatorio, ≥1] de:
+    nombre: string [obligatorio] [1..100 chars]
+    tipo: enum [obligatorio]: texto | numero | fecha | clave |
+          booleano | otro
+    descripcion: string [opcional] [máx 300 chars]
+    obligatorio: booleano [opcional] (ausente = falso)
+    valores: string [opcional] [máx 200 chars] — dominio o valores
+          observados
+    ejemplo: string [opcional] [máx 200 chars]
+
+Salida: el archivo almacenado, idéntico al validado (escritura
+  atómica temporal + rename).
+Errores:
+  E-VALID: campo faltante, fuera de rango, tipo fuera del enum o
+    campo no declarado → rechazo; archivo sin cambios.
+  E-NOEXISTE: id inexistente en el catálogo, o consulta de
+    diccionario inexistente.
+Invariantes:
+  - Ningún campo fuera del esquema; id del archivo = id solicitado
+    = id de la fuente en el catálogo.
+  - El diccionario no altera la máquina de estados de vigencia.
+Compatibilidad: añadir campos opcionales o valores de enum es
+  compatible; lo demás exige v2.
 
 ## CONTRATO: cli-infosalud v1.1
 
@@ -64,6 +113,9 @@ Entrada:
   fuente-buscar <termino>: búsqueda por término en id/titulo/notas
   fuente-detalle <id>: muestra el registro completo, incluida la
     URL original y la ruta local si existe
+  fuente-campos <id> [--archivo <ruta>]: muestra (texto o --json) o
+    crea/actualiza (con --archivo validado, ADR-009) el diccionario
+    de datos de la fuente; consulta sin diccionario → salida 2
   vigencia-registrar <id> --archivo <ruta>: registra verificación
     comparando la huella sha256 del archivo presentado con la previa
   vigencia-verificar <id> [--destino <ruta>]: descarga la fuente de

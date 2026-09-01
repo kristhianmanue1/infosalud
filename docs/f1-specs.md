@@ -124,3 +124,39 @@ Invariantes:
   calcula sobre un archivo a medias.
 - El historial es append-only; todo intento (exitoso o fallido)
   queda registrado con fecha.
+
+## SPEC-5 [cubre: REQ-1, REQ-6; ADR-009]
+
+Comportamiento: el sistema mantiene, por fuente, un diccionario de
+datos declarado (qué campos tiene, qué significan, cómo se usa) y
+registra, de mejor esfuerzo, la estructura observada (hojas y
+encabezados) en cada verificación de vigencia.
+Entradas: `fuente-campos <id>` (consulta); `fuente-campos <id>
+--archivo <json>` (alta/actualización conforme a
+`CONTRATO: diccionario-de-fuente v1`); `vigencia-verificar` registra
+`estructura`/`estructura_causa` en la verificación.
+Salidas: diccionario completo en texto plano o `--json`; estructura
+observada dentro de la verificación.
+Errores:
+- E-VALID: diccionario que viola el contrato → mensaje con campo y
+  motivo, salida 1, archivo sin cambios.
+- E-NOEXISTE: id inexistente, o consulta de fuente sin diccionario
+  → salida 2.
+Casos:
+- DADO un diccionario válido CUANDO se consulta `fuente-campos <id>`
+  ENTONCES la salida lista los campos con tipo y descripción (y
+  `uso` si existe) en un paso.
+- DADO un diccionario con campo no declarado o tipo fuera del enum
+  ENTONCES se rechaza con salida 1 y el archivo queda sin cambios.
+- DADO un `--archivo` cuyo `id` difiere del solicitado ENTONCES se
+  rechaza (anti-huérfanos), salida 1.
+- DADO una verificación exitosa de un xlsx CUANDO se registra la
+  vigencia ENTONCES la verificación incluye `estructura` con hojas y
+  columnas observadas; si la extracción falla, incluye
+  `estructura_causa` y el `resultado` de vigencia no se altera.
+Invariantes:
+- El diccionario es documentación declarada; la estructura observada
+  es evidencia por verificación; ninguna de las dos cambia la
+  máquina de estados de vigencia.
+- Extracción de mejor esfuerzo con topes declarados (30 hojas,
+  200 columnas); nunca bloquea ni derriba el comando.
