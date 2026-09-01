@@ -34,10 +34,12 @@ from infosalud.estructura import (
     extraer_estructura,
     leer_filas,
 )
+from infosalud.exportar import exportar as exportar_insumo
 from infosalud.red import ErrorRed, descargar, nombre_desde_url
 from infosalud.vigencia import calcular_huella, determinar_resultado, fecha_hoy
 
 DESCARGAS_POR_DEFECTO = "data/descargas"
+EXPORTACIONES_POR_DEFECTO = "data/exportaciones"
 
 CATALOGO_POR_DEFECTO = "data/fuentes.json"
 
@@ -123,6 +125,19 @@ def _construir_parser():
         help="ruta local destino; por defecto "
              f"{DESCARGAS_POR_DEFECTO}/<id>/<archivo>")
 
+    p_exp = con_catalogo(sub.add_parser(
+        "fuente-exportar",
+        help="exporta el archivo verificado a CSV o SQLite con "
+             "evidencia (ADR-011)"))
+    p_exp.add_argument("id")
+    p_exp.add_argument(
+        "--formato", choices=("csv", "sqlite"), default="csv",
+        help="formato del producto derivado (por defecto csv)")
+    p_exp.add_argument(
+        "--destino",
+        help=f"directorio destino; por defecto "
+             f"{EXPORTACIONES_POR_DEFECTO}/<id>")
+
     return parser
 
 
@@ -134,6 +149,7 @@ def main(argv=None):
         "fuente-buscar": _fuente_buscar,
         "fuente-detalle": _fuente_detalle,
         "fuente-campos": _fuente_campos,
+        "fuente-exportar": _fuente_exportar,
         "vigencia-registrar": _vigencia_registrar,
         "vigencia-verificar": _vigencia_verificar,
         "vigencia-historia": _vigencia_historia,
@@ -315,6 +331,45 @@ def _texto_diccionario(diccionario):
         for linea in bloque["metadatos"]:
             lineas.append(f"{linea['etiqueta']}: {linea['contenido']}")
     return "\n".join(lineas)
+
+
+def _fuente_exportar(args):
+    """Exporta el archivo verificado a CSV/SQLite con evidencia
+    (CONTRATO cli-infosalud v1.1, ADR-011)."""
+    try:
+        catalogo = cargar_catalogo(args.catalogo)
+    except ErrorCatalogo as exc:
+        return _salir(args, str(exc), 1)
+    fuente = _buscar_fuente(catalogo, args.id)
+    if fuente is None:
+        return _salir(args, f"id inexistente: '{args.id}'", 2)
+    verificacion = _ultima_verificacion_util(fuente)
+    if verificacion is None:
+        return _salir(args, "sin archivo verificado: ejecute "
+                      "vigencia-verificar primero", 1)
+    ruta_local = verificacion["ruta_local"]
+    if not os.path.isfile(ruta_local):
+        return _salir(args,
+                      f"archivo local no encontrado: {ruta_local}", 1)
+    formato_origen = fuente.get("formato", "otro")
+    if formato_origen not in ("xlsx", "csv"):
+        return _salir(args, f"formato no exportable: {formato_origen} "
+                      "(sólo xlsx/csv; ADR-011)", 1)
+    destino = args.destino or os.path.join(
+        EXPORTACIONES_POR_DEFECTO, args.id, args.formato)
+    evidencia = {"id": args.id,
+                 "huella": verificacion["huella"],
+                 "fecha": verificacion["fecha"]}
+    try:
+        productos = exportar_insumo(ruta_local, destino, evidencia,
+                                    formato_origen, args.formato)
+    except (ValueError, OSError, ErrorEstructura) as exc:
+        return _salir(args, f"exportación fallida: {exc}", 1)
+    _emitir(args, {"id": args.id, "formato": args.formato,
+                   "destino": destino, "productos": productos},
+            f"exportados {len(productos)} producto(s) a {destino}:\n"
+            + "\n".join(f"  {p}" for p in productos))
+    return 0
 
 
 def _borrador(args, fuente, ruta):
