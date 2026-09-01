@@ -1,6 +1,6 @@
 # ADR-007: Adopción de AN-KLA Memory como memoria del agente
 
-Estado: aceptado (implementación: commit de esta misma tarea)
+Estado: aceptado (implementado: commit 5aaf774)
 Fecha: 2026-09-01
 
 Contexto: el humano requiere memoria persistente del agente de IA
