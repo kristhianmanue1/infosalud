@@ -9,8 +9,13 @@ Esquema del registro de catálogo (archivo `data/fuentes.json`).
 
 Entrada (campos cerrados):
   id: string [obligatorio] [patrón ^[a-z0-9-]+$] — identificador único
-  seccion: string [obligatorio] [enum: "catalogos"] — sección
-           Infosalud; la lista crece por versión del contrato
+  seccion: string [obligatorio] [enum: catálogos, estadísticas-
+       nacionales, censos, consulta-externa, hospital, defunciones,
+       recursos, población, documentos-normativos, sitios-interés,
+       seguimiento, capacitación, oficios-circulares, validación-
+       información (enmienda 2026-09-01, ADR-012: mapa completo del
+       portal)] — sección Infosalud; la lista crece por versión del
+       contrato
   titulo: string [obligatorio] [1..200 chars] — nombre de la fuente
   url: string [obligatorio] [host *.imss.gob.mx con o sin puerto
        (enmienda 2026-09-01: el portal usa :8080), esquema http o

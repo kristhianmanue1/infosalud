@@ -10,7 +10,22 @@ import re
 from datetime import date
 from pathlib import Path
 
-SECCIONES = {"catalogos"}
+SECCIONES = {
+    "catalogos",
+    "estadisticas-nacionales",
+    "censos",
+    "consulta-externa",
+    "hospital",
+    "defunciones",
+    "recursos",
+    "poblacion",
+    "documentos-normativos",
+    "sitios-interes",
+    "seguimiento",
+    "capacitacion",
+    "oficios-circulares",
+    "validacion-informacion",
+}
 FORMATOS = {"xlsx", "xls", "csv", "pdf", "html", "otro"}
 PERIODICIDADES = {
     "diaria", "semanal", "mensual", "anual", "eventual", "desconocida",
