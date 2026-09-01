@@ -153,5 +153,7 @@ def _url_valida(url):
         return False
     if not url.startswith(("http://", "https://")):
         return False
-    host = url.split("://", 1)[1].split("/", 1)[0]
+    # El host se valida sin puerto: el portal sirve archivos en
+    # infosalud.imss.gob.mx:8080 (URL reales observadas 2026-09-01).
+    host = url.split("://", 1)[1].split("/", 1)[0].split(":", 1)[0]
     return host == "imss.gob.mx" or host.endswith(".imss.gob.mx")

@@ -12,7 +12,8 @@ Entrada (campos cerrados):
   seccion: string [obligatorio] [enum: "catalogos"] — sección
            Infosalud; la lista crece por versión del contrato
   titulo: string [obligatorio] [1..200 chars] — nombre de la fuente
-  url: string [obligatorio] [host *.imss.gob.mx, esquema http o
+  url: string [obligatorio] [host *.imss.gob.mx con o sin puerto
+       (enmienda 2026-09-01: el portal usa :8080), esquema http o
        https] — ubicación original
   formato: enum [obligatorio]: xlsx | xls | csv | pdf | html | otro
   periodicidad: enum [opcional]: diaria | semanal | mensual |

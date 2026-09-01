@@ -100,6 +100,17 @@ class TestFuenteAlta(unittest.TestCase):
         self.assertIn("url", r.stderr)
 
 
+    def test_alta_url_con_puerto_aceptada(self):
+        # El portal sirve archivos en infosalud.imss.gob.mx:8080;
+        # el contrato valida el host, el puerto se ignora.
+        fuente = dict(FUENTE_CIE10,
+                      url="http://infosalud.imss.gob.mx:8080/ARCHIVOS/x.xlsx")
+        ruta = _archivo_tmp(self.dir_tmp, "con-puerto.json", fuente)
+        r = _ejecutar("fuente-alta", "--catalogo", self.catalogo,
+                      "--archivo", ruta)
+        self.assertEqual(r.returncode, 0, r.stderr)
+
+
 class TestFuenteBuscar(unittest.TestCase):
     """SPEC-1: localizar por término en menos de 2 segundos."""
 
