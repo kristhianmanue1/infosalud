@@ -75,6 +75,11 @@ Entrada (campos cerrados):
     valores: string [opcional] [máx 200 chars] — dominio o valores
           observados
     ejemplo: string [opcional] [máx 200 chars]
+  metadatos: lista [opcional, ADR-010] de:
+    hoja: string [obligatorio] — nombre de la hoja descriptiva
+    metadatos: lista [obligatorio] de {etiqueta: string [≤100],
+      contenido: string [≤500]} — líneas etiqueta→contenido leídas
+      de esa hoja (fuente publicada; no inferida)
 
 Salida: el archivo almacenado, idéntico al validado (escritura
   atómica temporal + rename).
@@ -113,9 +118,14 @@ Entrada:
   fuente-buscar <termino>: búsqueda por término en id/titulo/notas
   fuente-detalle <id>: muestra el registro completo, incluida la
     URL original y la ruta local si existe
-  fuente-campos <id> [--archivo <ruta>]: muestra (texto o --json) o
-    crea/actualiza (con --archivo validado, ADR-009) el diccionario
-    de datos de la fuente; consulta sin diccionario → salida 2
+  fuente-campos <id> [--archivo <ruta>] [--borrador]: muestra
+    (texto o --json) o crea/actualiza (con --archivo validado,
+    ADR-009) el diccionario de datos de la fuente; consulta sin
+    diccionario → salida 2. Con --borrador (ADR-010): enriquece el
+    diccionario con evidencia observada del archivo local verificado
+    (valores, ejemplos y metadatos de hojas descriptivas); nunca
+    genera ni sobrescribe descripciones; --archivo y --borrador son
+    mutuamente excluyentes
   vigencia-registrar <id> --archivo <ruta>: registra verificación
     comparando la huella sha256 del archivo presentado con la previa
   vigencia-verificar <id> [--destino <ruta>]: descarga la fuente de

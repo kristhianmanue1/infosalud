@@ -21,6 +21,7 @@ from infosalud.catalogo import (
     guardar_catalogo,
     validar_fuente,
 )
+from infosalud.borrador import analizar, enriquecer
 from infosalud.diccionario import (
     ErrorDiccionario,
     cargar as cargar_diccionario,
@@ -28,7 +29,11 @@ from infosalud.diccionario import (
     ruta_diccionario,
     validar as validar_diccionario,
 )
-from infosalud.estructura import ErrorEstructura, extraer_estructura
+from infosalud.estructura import (
+    ErrorEstructura,
+    extraer_estructura,
+    leer_filas,
+)
 from infosalud.red import ErrorRed, descargar, nombre_desde_url
 from infosalud.vigencia import calcular_huella, determinar_resultado, fecha_hoy
 
@@ -90,6 +95,11 @@ def _construir_parser():
         "--archivo",
         help="JSON conforme a diccionario-de-fuente v1 para "
              "crear/actualizar")
+    p_campos.add_argument(
+        "--borrador", action="store_true",
+        help="enriquece el diccionario con evidencia observada del "
+             "archivo local verificado (ADR-010); excluyente con "
+             "--archivo")
 
     p_vreg = con_catalogo(sub.add_parser(
         "vigencia-registrar",
@@ -233,9 +243,15 @@ def _fuente_campos(args):
         catalogo = cargar_catalogo(args.catalogo)
     except ErrorCatalogo as exc:
         return _salir(args, str(exc), 1)
-    if _buscar_fuente(catalogo, args.id) is None:
+    fuente = _buscar_fuente(catalogo, args.id)
+    if fuente is None:
         return _salir(args, f"id inexistente: '{args.id}'", 2)
     ruta = ruta_diccionario(args.catalogo, args.id)
+    if args.borrador and args.archivo is not None:
+        return _salir(args,
+                      "--archivo y --borrador son excluyentes", 1)
+    if args.borrador:
+        return _borrador(args, fuente, ruta)
     if args.archivo is None:
         try:
             diccionario = cargar_diccionario(ruta)
@@ -286,7 +302,87 @@ def _texto_diccionario(diccionario):
             campo.get("tipo", ""),
             "sí" if campo.get("obligatorio") else "no",
             campo.get("descripcion", ""))))
+    muestreados = [c for c in diccionario["campos"]
+                   if c.get("valores") or c.get("ejemplo")]
+    if muestreados:
+        lineas.append("valores / ejemplo (muestreado)")
+        for campo in muestreados:
+            lineas.append(f"  {campo.get('nombre', '')}: "
+                          f"{campo.get('valores', '')} "
+                          f"[ej: {campo.get('ejemplo', '')}]")
+    for bloque in diccionario.get("metadatos", []):
+        lineas.append(f"— hoja descriptiva: {bloque['hoja']} —")
+        for linea in bloque["metadatos"]:
+            lineas.append(f"{linea['etiqueta']}: {linea['contenido']}")
     return "\n".join(lineas)
+
+
+def _borrador(args, fuente, ruta):
+    """Enriquece el diccionario con evidencia observada del archivo
+    local verificado (ADR-010). Nunca genera descripciones."""
+    verificacion = _ultima_verificacion_util(fuente)
+    if verificacion is None:
+        return _salir(args, "sin archivo verificado: ejecute "
+                      "vigencia-verificar primero", 1)
+    ruta_local = verificacion.get("ruta_local")
+    if not ruta_local or not os.path.isfile(ruta_local):
+        return _salir(args,
+                      f"archivo local no encontrado: {ruta_local}", 1)
+    try:
+        diccionario = cargar_diccionario(ruta)
+    except ErrorDiccionario as exc:
+        return _salir(args, str(exc), 1)
+    creado = diccionario is None
+    if creado:
+        diccionario = _esqueleto(args.id, verificacion)
+        if diccionario is None:
+            return _salir(args, "sin estructura observada para crear "
+                          "el esqueleto: ejecute vigencia-verificar "
+                          "con un xlsx primero", 1)
+    try:
+        hojas = leer_filas(ruta_local)
+    except ErrorEstructura as exc:
+        return _salir(args, f"lectura del archivo local falló: {exc}", 1)
+    principal, metas = analizar(hojas)
+    enriquecidos = enriquecer(diccionario["campos"], principal)
+    if metas:
+        diccionario["metadatos"] = metas
+    diccionario["huella_base"] = verificacion["huella"]
+    diccionario["fecha"] = fecha_hoy()
+    errores = validar_diccionario(diccionario)
+    if errores:
+        return _salir(args, "; ".join(errores), 1)
+    guardar_diccionario(ruta, diccionario)
+    total_meta = sum(len(m["metadatos"]) for m in metas)
+    _emitir(args, {"guardado": str(ruta), "creado": creado,
+                   "campos_enriquecidos": enriquecidos,
+                   "hojas_descriptivas": [m["hoja"] for m in metas],
+                   "lineas_metadatos": total_meta},
+            f"borrador: {len(enriquecidos)} campo(s) enriquecido(s), "
+            f"{total_meta} línea(s) de metadatos en "
+            f"{len(metas)} hoja(s) descriptiva(s) → {ruta}")
+    return 0
+
+
+def _ultima_verificacion_util(fuente):
+    for verificacion in reversed(fuente.get("verificaciones", [])):
+        if verificacion.get("huella") and verificacion.get("ruta_local"):
+            return verificacion
+    return None
+
+
+def _esqueleto(id_fuente, verificacion):
+    """Esqueleto de diccionario desde la estructura observada."""
+    estructura = verificacion.get("estructura")
+    if not estructura:
+        return None
+    columnas = [c for c in estructura[0].get("columnas", []) if c]
+    if not columnas:
+        return None
+    return {"id": id_fuente,
+            "campos": [{"nombre": c,
+                        "tipo": "clave" if i == 0 else "otro"}
+                       for i, c in enumerate(columnas)]}
 
 
 def _agregar_verificacion(catalogo_ruta, catalogo, fuente, ruta,

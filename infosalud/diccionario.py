@@ -9,12 +9,13 @@ estados de vigencia.
 import json
 import os
 import re
+import re
 from datetime import date
 from pathlib import Path
 
 TIPOS_CAMPO = {"texto", "numero", "fecha", "clave", "booleano", "otro"}
 CAMPOS_DICCIONARIO = {"id", "descripcion", "uso", "huella_base",
-                      "fecha", "campos"}
+                      "fecha", "campos", "metadatos"}
 CAMPOS_CAMPO = {"nombre", "tipo", "descripcion", "obligatorio",
                 "valores", "ejemplo"}
 
@@ -98,6 +99,47 @@ def validar(diccionario):
         errores.append("campos: falta (lista con al menos un campo)")
     else:
         errores.extend(_validar_campos(campos))
+    metadatos = diccionario.get("metadatos")
+    if metadatos is not None:
+        errores.extend(_validar_metadatos(metadatos))
+    return errores
+
+
+def _validar_metadatos(metadatos):
+    """Valida los bloques {hoja, metadatos} de hojas descriptivas."""
+    if not isinstance(metadatos, list):
+        return ["metadatos: se esperaba una lista"]
+    errores = []
+    for posicion, bloque in enumerate(metadatos):
+        if not isinstance(bloque, dict) or not isinstance(
+                bloque.get("hoja"), str):
+            errores.append(
+                f"metadatos[{posicion}]: se esperaba "
+                "{hoja, metadatos}")
+            continue
+        lineas = bloque.get("metadatos")
+        if not isinstance(lineas, list):
+            errores.append(
+                f"metadatos[{posicion}].metadatos: se esperaba "
+                "una lista")
+            continue
+        for linea in lineas:
+            if not isinstance(linea, dict):
+                errores.append(
+                    f"metadatos[{posicion}]: línea no objetual")
+                continue
+            etiqueta = linea.get("etiqueta")
+            if not isinstance(etiqueta, str) or not etiqueta:
+                errores.append(
+                    f"metadatos[{posicion}]: etiqueta falta")
+            elif len(etiqueta) > 100:
+                errores.append(
+                    f"metadatos[{posicion}]: etiqueta excede 100")
+            contenido = linea.get("contenido")
+            if not isinstance(contenido, str) or len(contenido) > 500:
+                errores.append(
+                    f"metadatos[{posicion}]: contenido falta o "
+                    "excede 500")
     return errores
 
 

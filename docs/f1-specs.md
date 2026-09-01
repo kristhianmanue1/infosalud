@@ -160,3 +160,37 @@ Invariantes:
   máquina de estados de vigencia.
 - Extracción de mejor esfuerzo con topes declarados (30 hojas,
   200 columnas); nunca bloquea ni derriba el comando.
+
+## SPEC-6 [cubre: REQ-1; ADR-010]
+
+Comportamiento: `fuente-campos <id> --borrador` analiza el archivo
+local ya verificado de la fuente y enriquece el diccionario sólo con
+evidencia observada: valores y ejemplos muestreados por campo, y el
+contenido íntegro de las hojas descriptivas (p. ej. "Metadatos y
+equivalencia" del CIE-10).
+Entradas: el archivo de la última verificación con huella de la
+fuente; el diccionario existente o, en su ausencia, la estructura
+observada para crear el esqueleto.
+Salidas: diccionario actualizado con `valores`/`ejemplo` nuevos y
+`metadatos` por hoja descriptiva; resumen en texto o `--json`.
+Errores:
+- E-VALID: sin archivo local verificado, o --archivo junto con
+  --borrador → salida 1.
+- E-NOEXISTE: id inexistente, o sin estructura observada para crear
+  el esqueleto → salida 2/1 según causa.
+Casos:
+- DADO un diccionario con campos sin `valores`/`ejemplo` y un
+  archivo local verificado CUANDO se ejecuta --borrador ENTONCES
+  esos campos quedan con el dominio muestreado (máx 5 valores) y un
+  ejemplo real; los campos ya declarados no se tocan.
+- DADO una hoja descriptiva (primera fila ≥70% vacía) ENTONCES sus
+  filas se registran como `metadatos` {etiqueta, contenido} con el
+  nombre de la hoja.
+- DADO una fuente sin diccionario pero con estructura observada
+  ENTONCES --borrador crea el esqueleto y lo enriquece en un paso.
+Invariantes:
+- Nunca se genera ni sobrescribe una `descripcion`: el significado
+  es declaración humana (ADR-009); --borrador sólo aporta
+  observación.
+- Lo observado reemplaza lo muestreado con fecha y huella_base
+  actualizados (procedencia); nada altera la máquina de vigencia.

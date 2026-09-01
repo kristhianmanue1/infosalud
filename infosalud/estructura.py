@@ -80,6 +80,32 @@ def _encabezados(zip_archivo, objetivo, compartidas):
                 None)
     if fila is None:
         return []
+    return _celdas_fila(fila, compartidas)
+
+
+def leer_filas(ruta, max_filas=200):
+    """[{hoja, filas: [[str,...]]}] con hasta max_filas filas por
+    hoja (mejor esfuerzo, topes declarados). Para el borrador
+    asistido (ADR-010): muestreo y hojas descriptivas."""
+    try:
+        with zipfile.ZipFile(ruta) as zip_archivo:
+            compartidas = _cadenas_compartidas(zip_archivo)
+            resultado = []
+            for nombre, objetivo in _hojas(zip_archivo)[:TOP_HOJAS]:
+                raiz = ET.fromstring(zip_archivo.read(objetivo))
+                filas = [_celdas_fila(fila, compartidas)
+                         for fila in raiz.iter()
+                         if _local(fila.tag) == "row"][:max_filas]
+                resultado.append({"hoja": nombre, "filas": filas})
+    except (KeyError, OSError, ET.ParseError, ValueError,
+            zipfile.BadZipFile) as exc:
+        raise ErrorEstructura(f"xlsx ilegible: {exc}") from exc
+    return resultado
+
+
+def _celdas_fila(fila, compartidas):
+    """Valores de una fila <row> como lista (índice por letra de
+    columna; huecos rellenados con "")."""
     celdas = {}
     orden = 0
     for celda in (n for n in fila.iter() if _local(n.tag) == "c"):
