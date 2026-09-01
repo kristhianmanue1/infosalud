@@ -35,7 +35,13 @@ from infosalud.estructura import (
     leer_filas,
 )
 from infosalud.exportar import exportar as exportar_insumo
-from infosalud.red import ErrorRed, descargar, nombre_desde_url
+from infosalud.red import (
+    ErrorRed,
+    descargar,
+    listar_archivos,
+    mas_reciente,
+    nombre_desde_url,
+)
 from infosalud.vigencia import calcular_huella, determinar_resultado, fecha_hoy
 
 DESCARGAS_POR_DEFECTO = "data/descargas"
@@ -463,7 +469,7 @@ def _esqueleto(id_fuente, verificacion):
 
 def _agregar_verificacion(catalogo_ruta, catalogo, fuente, ruta,
                           causa=None, estructura=None,
-                          estructura_causa=None):
+                          estructura_causa=None, url_previa=None):
     """Calcula la huella de ruta (o registra causa de fallo), agrega
     la verificación al historial y guarda el catálogo atómicamente.
     Devuelve la verificación agregada (inaccesible incluida)."""
@@ -487,6 +493,8 @@ def _agregar_verificacion(catalogo_ruta, catalogo, fuente, ruta,
         verificacion["estructura"] = estructura
     if estructura_causa is not None:
         verificacion["estructura_causa"] = estructura_causa[:200]
+    if url_previa is not None:
+        verificacion["url_previa"] = url_previa[:300]
     fuente["verificaciones"].append(verificacion)
     guardar_catalogo(catalogo_ruta, catalogo)
     return verificacion
@@ -536,23 +544,45 @@ def _vigencia_verificar(args):
             1)
     if not fuente.get("url"):
         return _salir(args, f"fuente '{args.id}' sin url registrada", 1)
-    destino = args.destino or _destino_por_defecto(fuente)
+    url = fuente["url"]
+    url_previa = None
+    if fuente.get("url_listado"):
+        try:
+            enlaces = listar_archivos(fuente["url_listado"])
+        except ErrorRed as exc:
+            return _salir(args, f"listado histórico ilegible: {exc}", 1)
+        if not enlaces:
+            return _salir(args, "listado histórico sin enlaces a "
+                          "archivos: no se descarga nada "
+                          "(fail-closed, ADR-012)", 1)
+        _texto, url_ultima = mas_reciente(enlaces)
+        if url_ultima != url:
+            url_previa, url = url, url_ultima
+    destino = args.destino or _destino_por_defecto(url, args.id)
     try:
-        descargar(fuente["url"], destino, fuente.get("formato", "otro"))
+        descargar(url, destino, fuente.get("formato", "otro"))
     except (ErrorRed, OSError) as exc:
         verificacion = _agregar_verificacion(
             args.catalogo, catalogo, fuente, destino, causa=str(exc))
         return _salir(args, f"descarga fallida: "
                       f"{verificacion['causa']}", 1)
+    if url_previa:
+        # Giro de versión (ADR-012): el registro vigila la última
+        # ingresada; la anterior queda documentada en url_previa.
+        fuente["url"] = url
     verificacion = _agregar_verificacion(
         args.catalogo, catalogo, fuente, destino,
+        url_previa=url_previa,
         **_estructura_observada(fuente, destino))
     _emitir(args, {"id": args.id, "resultado": verificacion["resultado"],
                    "fecha": verificacion["fecha"],
                    "huella": verificacion["huella"],
-                   "ruta_local": destino},
+                   "ruta_local": destino,
+                   "url_previa": url_previa},
             f"{args.id}: {verificacion['resultado']} "
-            f"({verificacion['fecha']}) {destino}")
+            f"({verificacion['fecha']}) {destino}"
+            + (f" [nueva versión; antes: {url_previa}]"
+               if url_previa else ""))
     return 0
 
 
@@ -567,9 +597,9 @@ def _estructura_observada(fuente, destino):
         return {"estructura_causa": str(exc)}
 
 
-def _destino_por_defecto(fuente):
-    nombre = nombre_desde_url(fuente["url"])
-    return os.path.join(DESCARGAS_POR_DEFECTO, fuente["id"], nombre)
+def _destino_por_defecto(url, id_fuente):
+    return os.path.join(DESCARGAS_POR_DEFECTO, id_fuente,
+                        nombre_desde_url(url))
 
 
 def _vigencia_historia(args):
