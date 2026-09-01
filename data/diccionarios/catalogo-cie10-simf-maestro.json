@@ -8,7 +8,9 @@
     {
       "nombre": "Codigo",
       "tipo": "clave",
-      "obligatorio": true
+      "obligatorio": true,
+      "ejemplo": "A000",
+      "valores": "A000 | A001 | A009 | A00X | A010 | ..."
     },
     {
       "nombre": "A",
@@ -18,62 +20,86 @@
     {
       "nombre": "Nombre",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "Colera debido a vibrio cholerae 01, biotipo cholerae",
+      "valores": "Colera debido a vibrio cholerae 01, biotipo cholerae | Colera debido a vibrio cholerae 01, biotipo el tor | Colera, no especificado | Colera | Fiebre tifoidea | ..."
     },
     {
       "nombre": "Limite_Sexo",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "0",
+      "valores": "0 | 2"
     },
     {
       "nombre": "Limite_Sexo_NECE",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "A",
+      "valores": "A | F"
     },
     {
       "nombre": "Limite_Edad_Inferior",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "028D",
+      "valores": "028D | 010A | 000H"
     },
     {
       "nombre": "Edad_Inferior_Semanas",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "0",
+      "valores": "0 | 4 | 521"
     },
     {
       "nombre": "Limite_Edad_Superior",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "120A",
+      "valores": "120A | 027D | 054A"
     },
     {
       "nombre": "Edad_Superior_Semanas",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "7800",
+      "valores": "7800 | 6261 | 3 | 2817"
     },
     {
       "nombre": "Triv",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "X",
+      "valores": "X"
     },
     {
       "nombre": "Errad",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "X",
+      "valores": "X"
     },
     {
       "nombre": "Notif_Internacional",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "X",
+      "valores": "X"
     },
     {
       "nombre": "Notif_Obligatoria",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "X",
+      "valores": "X"
     },
     {
       "nombre": "Notif_Inmediata",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "X",
+      "valores": "X"
     },
     {
       "nombre": "Notif_Inm_Morta_Obstetrica",
@@ -88,7 +114,9 @@
     {
       "nombre": "No_Valida_Afeccion_Princ_Hosp",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "X",
+      "valores": "X"
     },
     {
       "nombre": "Valida_Muerte_Fetal",
@@ -98,27 +126,37 @@
     {
       "nombre": "Actualizaciones_CIE10",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "C",
+      "valores": "C | B | A"
     },
     {
       "nombre": "Anio_Modificacion",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "2010 (Corrección de título)",
+      "valores": "2010 (Corrección de título) | 2003 (SE ELIMINO DAGA) | 2018 | 2006 (SE AGREGO NCOP) | 2010 (Nueva categoría) | ..."
     },
     {
       "nombre": "Anio_Vigencia",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "2014",
+      "valores": "2014 | 2003 | 2018 JULIO | 2006 | 2010 | ..."
     },
     {
       "nombre": "Vigente",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "S",
+      "valores": "S | N"
     },
     {
       "nombre": "Catalogo",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "VOLUMEN I",
+      "valores": "VOLUMEN I | USO IMSS"
     },
     {
       "nombre": "IND_CRONICA",
@@ -128,57 +166,79 @@
     {
       "nombre": "CVE_APARATO",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "9",
+      "valores": "9"
     },
     {
       "nombre": "Ind_Transmisible",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "1",
+      "valores": "1"
     },
     {
       "nombre": "Ind_Principal_Cons_Ext",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "1",
+      "valores": "1"
     },
     {
       "nombre": "IND_NIVEL1",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "1",
+      "valores": "1"
     },
     {
       "nombre": "IND_NIVEL2",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "1",
+      "valores": "1 | 0"
     },
     {
       "nombre": "IND_NIVEL3",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "1",
+      "valores": "1 | 0"
     },
     {
       "nombre": "Renglon",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "34",
+      "valores": "34 | 0 | 36 | 46 | 48 | ..."
     },
     {
       "nombre": "NombreM",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "COLERA DEBIDO A VIBRIO CHOLERAE 01, BIOTIPO CHOLERAE",
+      "valores": "COLERA DEBIDO A VIBRIO CHOLERAE 01, BIOTIPO CHOLERAE | COLERA DEBIDO A VIBRIO CHOLERAE 01, BIOTIPO EL TOR | COLERA, NO ESPECIFICADO | COLERA | FIEBRE TIFOIDEA | ..."
     },
     {
       "nombre": "Filtro",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "1000000",
+      "valores": "1000000 | 3000000 | 3000990 | 1000990 | 1000003 | ..."
     },
     {
       "nombre": "CveCapitulo",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "01",
+      "valores": "01"
     },
     {
       "nombre": "CveGrupo",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "01",
+      "valores": "01 | 02 | 03 | 04"
     },
     {
       "nombre": "CveSubGrupo",
@@ -188,17 +248,687 @@
     {
       "nombre": "CveCategoria",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "A00",
+      "valores": "A00 | A01 | A02 | A03 | A04 | ..."
     },
     {
       "nombre": "Exclusion",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "0",
+      "valores": "0 | 1"
     },
     {
       "nombre": "Agrupamiento",
       "tipo": "otro",
-      "obligatorio": false
+      "obligatorio": false,
+      "ejemplo": "2",
+      "valores": "2 | 0 | 8 | 1 | 3 | ..."
+    }
+  ],
+  "metadatos": [
+    {
+      "hoja": "090224",
+      "metadatos": [
+        {
+          "etiqueta": "Altas",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Cambios",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Bajas",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Codigo",
+          "contenido": "A | Nombre | Limite_Sexo | Limite_Sexo_NECE | Limite_Edad_Inferior | Edad_Inferior_Semanas | Limite_Edad_Superior | Edad_Superior_Semanas | Triv | Errad | Notif_Internacional | Notif_Obligatoria | Notif_Inmediata | Notif_Inm_Morta_Obstetrica | No_Valida_Causa_Basica_Def | No_Valida_Afeccion_Princ_Hosp | Valida_Muerte_Fetal | Actualizaciones_CIE10 | Anio_Modificacion | Anio_Vigencia | Vigente | Catalogo | IND_CRONICA | CVE_APARATO | Ind_Transmisible | Ind_Principal_Cons_Ext | IND_NIVEL1 | IND_NIV"
+        },
+        {
+          "etiqueta": "B485",
+          "contenido": "NEUMOCISTOSIS (J17.2*) | 0 | A | 028D | 04 | 120A | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | A | 2022 NUEVA SUBCATEGORIA | 2022 | S | VOLUMEN I | 1 | 1 | 1 | 1 | 1 | 1 | NEUMOCISTOSIS (J17.2*) | 01 | 15 | B48 | 0 | 0"
+        },
+        {
+          "etiqueta": "U600",
+          "contenido": "MORDEDURA DE SERPIENTE DE CASCABEL | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | X | 0 | 0 | X | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 19 | 0 | 1 | 1 | 1 | 1 | MORDEDURA DE SERPIENTE DE CASCABEL | 19 | U60 | 0 | 0"
+        },
+        {
+          "etiqueta": "U601",
+          "contenido": "MORDEDURA DE SERPIENTE CORAL, CORALILLO | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | X | 0 | 0 | X | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 19 | 0 | 1 | 1 | 1 | 1 | MORDEDURA DE SERPIENTE CORAL, CORALILLO | 19 | U60 | 0 | 0"
+        },
+        {
+          "etiqueta": "U602",
+          "contenido": "PICADURA DE ARAÑA, VIUDA NEGRA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | X | 0 | 0 | X | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 19 | 0 | 1 | 1 | 1 | 1 | PICADURA DE ARAÑA, VIUDA NEGRA | 19 | U60 | 0 | 0"
+        },
+        {
+          "etiqueta": "U603",
+          "contenido": "PICADURA DE ARAÑA, VIOLINISTA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | X | 0 | 0 | X | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 19 | 0 | 1 | 1 | 1 | 1 | PICADURA DE ARAÑA, VIOLINISTA | 19 | U60 | 0 | 0"
+        },
+        {
+          "etiqueta": "U604",
+          "contenido": "PICADURA DE ABEJA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | X | 0 | 0 | X | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 19 | 0 | 1 | 1 | 1 | 1 | PICADURA DE ABEJA | 19 | U60 | 0 | 0"
+        },
+        {
+          "etiqueta": "U605",
+          "contenido": "PICADURA DE AVISPA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | X | 0 | 0 | X | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 19 | 0 | 1 | 1 | 1 | 1 | PICADURA DE AVISPA | 19 | U60 | 0 | 0"
+        },
+        {
+          "etiqueta": "U608",
+          "contenido": "OTRA PICADURA, MORDEDURA DE ANIMAL PONZOÑOSO ESPECIFICADA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | X | 0 | 0 | X | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 19 | 0 | 1 | 1 | 1 | 1 | OTRA PICADURA, MORDEDURA DE ANIMAL PONZOÑOSO ESPECIFICADA | 19 | U60 | 0 | 0"
+        },
+        {
+          "etiqueta": "U940",
+          "contenido": "INTOXICACIÓN ACCIDENTAL (NO INTENCIONAL) POR CONSUMO DE FENTANILO | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 22 | 0 | 0 | 1 | 1 | 1 | INTOXICACIÓN ACCIDENTAL (NO INTENCIONAL) POR CONSUMO DE FENTANILO | 22 | U94 | 0 | 0"
+        },
+        {
+          "etiqueta": "U941",
+          "contenido": "INTOXICACIÓN INTENCIONAL AUTOINFLIGIDA, POR CONSUMO DE FENTANILO | 0 | A | 008A | 417 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 22 | 0 | 0 | 1 | 1 | 1 | INTOXICACIÓN INTENCIONAL AUTOINFLIGIDA, POR CONSUMO DE FENTANILO | 22 | U94 | 0 | 0"
+        },
+        {
+          "etiqueta": "U942",
+          "contenido": "INTOXICACIÓN POR FENTANILO COMO AGRESIÓN GENERADA POR UN TERCERO | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 22 | 0 | 0 | 1 | 1 | 1 | INTOXICACIÓN POR FENTANILO COMO AGRESIÓN GENERADA POR UN TERCERO | 22 | U94 | 0 | 0"
+        },
+        {
+          "etiqueta": "U943",
+          "contenido": "INTOXICACIÓN POR FENTANILO COMO REACCIÓN ADVERSA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 22 | 0 | 0 | 1 | 1 | 1 | INTOXICACIÓN POR FENTANILO COMO REACCIÓN ADVERSA | 22 | U94 | 0 | 0"
+        },
+        {
+          "etiqueta": "U949",
+          "contenido": "INTOXICACIÓN POR FENTANILO INTENCIONALIDAD POR DETERMINAR (BAJO INVESTIGACIÓN) O NO DETERMINADA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | A | 2023 NUEVA SUBCATEGORIA (ACUERDO CEMECE) | 2023 | S | VOLUMEN I | 22 | 0 | 0 | 1 | 1 | 1 | INTOXICACIÓN POR FENTANILO INTENCIONALIDAD POR DETERMINAR (BAJO INVESTIGACIÓN) O NO DETERMINADA | 22 | U94 | 0 | 0"
+        },
+        {
+          "etiqueta": "D58A",
+          "contenido": "ENFERMEDAD POR HEMOGLOBINA S/C | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 7 | 0 | 0 | 1 | 1 | 1 | ENFERMEDAD POR HEMOGLOBINA S/C | 03 | 02 | D58 | 0 | 0"
+        },
+        {
+          "etiqueta": "E53A",
+          "contenido": "DEFICIENCIA MÚLTIPLE DE CARBOXILASAS | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | DEFICIENCIA MÚLTIPLE DE CARBOXILASAS | 04 | 06 | E53 | 0 | 0"
+        },
+        {
+          "etiqueta": "P74A",
+          "contenido": "TIROSINEMIA TIPO I | 0 | A | 000H | 0 | 011M | 47 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 14 | 0 | 0 | 1 | 1 | 1 | TIROSINEMIA TIPO I | 16 | 07 | P74 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71A",
+          "contenido": "ACIDEMIA PROPIÓNICA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | ACIDEMIA PROPIÓNICA | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71B",
+          "contenido": "ACIDEMIA ISOVALÉRICA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | ACIDEMIA ISOVALÉRICA | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71C",
+          "contenido": "ACIDEMIA METILMALÓNICA (MUTASA) | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | ACIDEMIA METILMALÓNICA (MUTASA) | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71D",
+          "contenido": "ACIDEMIA METILMALÓNICA (CBL A,B) | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | ACIDEMIA METILMALÓNICA (CBL A,B) | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71E",
+          "contenido": "DEFICIENCIA DE 3-HIDROXI 3-METIL GLUTARIL COA LIASA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | DEFICIENCIA DE 3-HIDROXI 3-METIL GLUTARIL COA LIASA | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71F",
+          "contenido": "DEFICIENCIA DE 3- METILCROTONIL-COA CARBOXILASA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | DEFICIENCIA DE 3- METILCROTONIL-COA CARBOXILASA | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71G",
+          "contenido": "DEFICIENCIA DE B-CETOTIOLASA: DEFICIENCIA DE TIOLASA  ACETOACETIL COA MITOCONDRIAL | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | DEFICIENCIA DE B-CETOTIOLASA: DEFICIENCIA DE TIOLASA  ACETOACETIL COA MITOCONDRIAL | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71H",
+          "contenido": "OTRAS ACIDEMIAS ORGÁNICAS | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | OTRAS ACIDEMIAS ORGÁNICAS | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71I",
+          "contenido": "DEFICIENCIA DE ACIL-COA DESHIDROGENASA DE CADENA MEDIA (MCAD) | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | DEFICIENCIA DE ACIL-COA DESHIDROGENASA DE CADENA MEDIA (MCAD) | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71J",
+          "contenido": "DEFICIENCIA DE ACIL-COA DESHIDROGENASA DE CADENA MUY LARGA (VLCAD) | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | DEFICIENCIA DE ACIL-COA DESHIDROGENASA DE CADENA MUY LARGA (VLCAD) | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71K",
+          "contenido": "DEFICIENCIA DE ACIL-COA DESHIDROGENASA DE CADENA LARGA (LCHAD) | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | DEFICIENCIA DE ACIL-COA DESHIDROGENASA DE CADENA LARGA (LCHAD) | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71L",
+          "contenido": "DEFICIENCIA DE PROTEÍNA TRIFUNCIONAL: 3-HIDROXIACIL COA DESHIDROGENASA DE CADENA LARGA (LCHAD), ENOIL COA HIDRATASA DE CADENA LARGA  Y TIOLASA DE CADENA LARGA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | DEFICIENCIA DE PROTEÍNA TRIFUNCIONAL: 3-HIDROXIACIL COA DESHIDROGENASA DE CADENA LARGA (LCHAD), ENOIL COA HIDRATASA DE CADENA LARGA  Y TIOLASA DE CADENA LARGA | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E71M",
+          "contenido": "DEFECTOS DE TRANSPORTADOR DE CARNITINA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | DEFECTOS DE TRANSPORTADOR DE CARNITINA | 04 | 08 | E71 | 0 | 0"
+        },
+        {
+          "etiqueta": "E72A",
+          "contenido": "HOMOCISTINURIA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | HOMOCISTINURIA | 04 | 08 | E72 | 0 | 0"
+        },
+        {
+          "etiqueta": "E72B",
+          "contenido": "ARGININEMIA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | ARGININEMIA | 04 | 08 | E72 | 0 | 0"
+        },
+        {
+          "etiqueta": "E72C",
+          "contenido": "CITRULINEMIA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | CITRULINEMIA | 04 | 08 | E72 | 0 | 0"
+        },
+        {
+          "etiqueta": "E72D",
+          "contenido": "ACIDEMIA ARGINOSUCCÍNICA | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | ACIDEMIA ARGINOSUCCÍNICA | 04 | 08 | E72 | 0 | 0"
+        },
+        {
+          "etiqueta": "E72E",
+          "contenido": "ACIDEMIA GLUTÁRICA TIPO I | 0 | A | 0 | 0 | 0 | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 6 | 0 | 0 | 1 | 1 | 1 | ACIDEMIA GLUTÁRICA TIPO I | 04 | 08 | E72 | 0 | 0"
+        },
+        {
+          "etiqueta": "N40A",
+          "contenido": "SOSPECHA DE HIPERPLASIA PROSTÁTICA BENIGNA | 1 | M | 20a | 1043 | 120a | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 8 | 0 | 0 | 1 | 1 | 1 | SOSPECHA DE HIPERPLASIA PROSTÁTICA BENIGNA | 14 | 07 | N40 | 0 | 0"
+        },
+        {
+          "etiqueta": "N40B",
+          "contenido": "SOSPECHA DE CÁNCER DE PRÓSTATA POR DETECCIÓN INTEGRAL | 1 | M | 20a | 1043 | 120a | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 8 | 0 | 0 | 1 | 1 | 1 | SOSPECHA DE CÁNCER DE PRÓSTATA POR DETECCIÓN INTEGRAL | 14 | 07 | N40 | 0 | 0"
+        },
+        {
+          "etiqueta": "Z12C",
+          "contenido": "EXAMEN DE PESQUISA ESPECIAL PARA TUMOR DE COLON Y RECTO | 1 | M | 20a | 1043 | 120a | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 13 | 0 | 0 | 1 | 1 | 1 | EXAMEN DE PESQUISA ESPECIAL PARA TUMOR DE COLON Y RECTO | 21 | 01 | Z12 | 0 | 0"
+        },
+        {
+          "etiqueta": "Z12D",
+          "contenido": "SOSPECHA DE CÁNCER DE COLON Y RECTO POR DETECCIÓN | 1 | M | 20a | 1043 | 120a | 7800 | 0 | 0 | 0 | 0 | 0 | 0 | X | X | 0 | A | 2023 USO IMSS | 2023 | S | USO IMSS | 13 | 0 | 0 | 1 | 1 | 1 | SOSPECHA DE CÁNCER DE COLON Y RECTO POR DETECCIÓN | 21 | 01 | Z12 | 0 | 0"
+        }
+      ]
+    },
+    {
+      "hoja": "Metadatos y equivalencia",
+      "metadatos": [
+        {
+          "etiqueta": "SIGNIFICADO DE LOS COLORES  DEL Cat_CIE10_022019",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Las celdas de amarillo son las actualizaciones (Altas, bajas y cambios)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Se señala de rojo los términos, numeración o descripción que cambió",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "SISTEMA DE INFORMACIÓN MÉDICO OPERATIVO (SIMO CENTRAL)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "DESCRIPCIÓN DEL  CATALOGO CIE-10",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "DIS",
+          "contenido": "CEMECE | SIMF"
+        },
+        {
+          "etiqueta": "No. Campo",
+          "contenido": "Nombre del Campo | Descripción | Nombre del Campo | Descripción | MOCE | Nombre del campo | Descripción"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "A | Codigo | Código CIE-10 | Clave | Código de la CIE-10 incluye actualizaciones a la CIE-10. | CVE_CIE10 | cc_CIE_ext | Clave internacional del diagnóstico (Clave CIE10)"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "B | A | Código de asterisco, son válidos como códigos adicionales, no se aceptan como causa básica"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "C | Nombre | Títulos (descripciones) de las rúbricas (categorías de tres caracteres y subcategorías de 4 caracteres). | Nombre | Corresponde a los títulos de las rúbricas (categorias de tres caracteres y subcategorias de 4 caracteres). | DES_CIE10 | cd_CIE | Descripción del diagnóstico"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "D | Limite_Sexo | Identifica la restricción de códigos asociadas al sexo  (Masculino, Femenino, Ambos). | LSex | Identifica la restricción de códigos asociadas al sexo  (1 = masculino, 2 = femenino, f=ambos). | CVE_SEXO (3= Ambos, 1= Masculino, 2= Femenino) | cs_sexo | Sexo en el que aplica el diagnóstico Columna E de DIS\n (F=Femenino, M=Masculino o A=Ambos)"
+        },
+        {
+          "etiqueta": "0= Ambos",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "1= Masculino",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "2= Femenino",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "E | Limite_Sexo_NECE | Filtro de Sexo (MOCE- IMSS) | Se obtiene de fórmula en DIS"
+        },
+        {
+          "etiqueta": "A=Ambos",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "F=Femenino",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "M=Masculino",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "F | Limite_Edad_Inferior | Filtro para Edad Inicial (3 dgitos ) | Linf | Límite de edad inferior aceptado | NUM_EDAD_INICIAL | in_edad_inicial | Edad inicial en la que se presenta el diagnóstico"
+        },
+        {
+          "etiqueta": "(Horas, Días, Semanas, Meses, Años)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "A=Años",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "M=Meses",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "S= Semanas",
+          "contenido": "Semanas | cc_unidad_edad | Unidad de tiempo (únicamente en  semanas)que hace referencia a la edad inicial y final  que se registró en los campos correspondientes (in_edad_inicial e in_edad_final)"
+        },
+        {
+          "etiqueta": "H=Horas",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "D=Dias",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "G | Edad_Inferior_Semanas | Filtro de Edad Inicial en Semanas (MOCE- IMSS)"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "H | Limite_Edad_Superior | Filtro para Edad Final  (3 dgitos ) | LSup | NUM_EDAD_FINAL"
+        },
+        {
+          "etiqueta": "(Horas, Días, Semanas, Meses, Años)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "A=Años",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "M=Meses",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "S= Semanas",
+          "contenido": "Semanas | cc_unidad_edad | Unidad de tiempo (únicamente en  semanas)que hace referencia a la edad inicial y final  que se registró en los campos correspondientes (in_edad_inicial e in_edad_final)"
+        },
+        {
+          "etiqueta": "D= Dias",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "H=Horas",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "Edad_Superior_Semanas | Filtro de Edad Final en Semanas (MOCE- IMSS) | in_edad_final | Edad final en la que se presenta el diagnóstico"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "J | Triv | Afecciones poco probables de provocar la muerte | Triv"
+        },
+        {
+          "etiqueta": "X= SI",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "K | Errad | Causas erradicadas o no existentes en el país | errad"
+        },
+        {
+          "etiqueta": "X= SI",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "L | Notif_Internacional | Notificación internacional Vigilancia epidemiológica (morbilidad) | N_inter"
+        },
+        {
+          "etiqueta": "X= SI",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "M | Notif_Obligatoria | Notificación obligatoria vigilancia epidemiológica"
+        },
+        {
+          "etiqueta": "X= SI",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "N | Notif_Inmediata | Notificación inmediata vigilancia epidemiológica Diagnósticos marcados con X obligatorios de notificar a vigilancia epidemiologica (enviar mensaje \"Diagnostico de Vigilancia epidemiologica confime su inclusión: Si o No) | Nin"
+        },
+        {
+          "etiqueta": "X= SI",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "15",
+          "contenido": "O | Notif_Inm_Morta_Obstetrica | Notificación inmediata mortalidad Obstétrica | Ninmtobs"
+        },
+        {
+          "etiqueta": "X= SI",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "P | No_Valida_Causa_Basica_Def | No es válida como Causa Básica de defunción Los diagnósticos marcados con X no se permiten registrar como causa básica cuando el motivo del egreso es defunción (enviar mensaje y corregir o cancelar) | CBD"
+        },
+        {
+          "etiqueta": "X= SI",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "17",
+          "contenido": "Q | No_Valida_Afeccion_Princ_Hosp | No es válida como Afección principal hospitalaria | No_Aph"
+        },
+        {
+          "etiqueta": "Diagnósticos marcados con X no se permiten registrar como diagnósticos principales de Egreso Hospita",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "X= NO",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "18",
+          "contenido": "R | Valida_Muerte_Fetal | Válida para muertes fetales diagnósticos marcados con X no se permiten registrar como Causa Básica en defunciones fetales | DEF_FETAL_CBD"
+        },
+        {
+          "etiqueta": "X= NO",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "19",
+          "contenido": "S | Actualizaciones_CIE10 | Actualizaciones después de la liberación de la CIE-10 hasta el 2016 valores | ACTUALIZACIONES_CIE_10"
+        },
+        {
+          "etiqueta": "A= Alta",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "B= Baja",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "C= Cambio",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "20",
+          "contenido": "T | Anio_Modificacion | Año de modificación / actualización | year_modifi"
+        },
+        {
+          "etiqueta": "21",
+          "contenido": "U | Anio_Vigencia | Año inicio de operación | year_aplicacion | FEC_BAJA"
+        },
+        {
+          "etiqueta": "22",
+          "contenido": "V | Vigente | Vigente (S / N) | valid | cs_estatus | Estatus del diagnóstico que permite que sea visible al hacer la búsqueda en el aplicativo (A=Activo, D=Desactivo)"
+        },
+        {
+          "etiqueta": "Diagnósticos con \"N\" no se deben de registrar",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "23",
+          "contenido": "W | Catalogo | Tipo de Catálogo (VOLUMEN I, Catálogo Simplificado SIMF)"
+        },
+        {
+          "etiqueta": "USO IMSS",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "VOLUMEN I",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "24",
+          "contenido": "IND_CRONICA | Marca - Enfermedad Crónica - Degenerativa | IND_CRONICA | cs_cronica | Indica si la enfermedad es un padecimiento crónico (S= Si es crónica , N= No es crónica) 1 =S\n0 o vacio = N"
+        },
+        {
+          "etiqueta": "X",
+          "contenido": "0= No es una afección crónica | 0= No es una afección crónica"
+        },
+        {
+          "etiqueta": "1= Es una afección crónica",
+          "contenido": "1= Es una afección crónica | SIMF"
+        },
+        {
+          "etiqueta": "25",
+          "contenido": "Y | CVE_APARATO | Clave Aparato / Sistema | CVE_APARATO | ic_sistema | Clave del aparato o sistema al que afecta la enfermedad de acuerdo al catálogo de aparato o sistema | ic_sistema | Descripción Sistema"
+        },
+        {
+          "etiqueta": "1 al 21",
+          "contenido": "julio 13 2021 | 1 | Causas externas"
+        },
+        {
+          "etiqueta": "26",
+          "contenido": "Ind_Transmisible | Marca - Transmisible | IND_TRANSMISIBLE | cx_condiciones | Información adicional del diagnóstico  como puede ser si es una enfermedad transmisible, no transmisible, epidemiológica, etc., de lo contrario el valor puede ser  NULL | 2 | Circulatorio"
+        },
+        {
+          "etiqueta": "Z",
+          "contenido": "Diagnósticos marcados con \"1\"se deben de reportar en el Informe Semanal de Vigilancia Epidemiologica | 1= se deben de reportar en el Informe Semanal de Vigilancia Epidemiologica | 0= NO TRANSMISIBLE\n\n1= VIGILANCIA EPIDEMIOLOGICA (REQUIERE ESTUDIO EPIDEMIO)(NOTI. INMEDIATA) | 3 | Congenitas"
+        },
+        {
+          "etiqueta": "0= No son afecciones para el informe transmisible",
+          "contenido": "0= No son afecciones para el informe transmisible | 4 | Digestivo"
+        },
+        {
+          "etiqueta": "27",
+          "contenido": "Ind_Principal_Cons_Ext | Valido como Diagnóstico Principal en Consulta Externa | SIS | IND_PRINCIPAL | in_identificador_CIE | Identifica aquellos diagnósticos que no pueden ser otorgados como Afección principal en SIMF( 0= No es un dx de afección principal 1=Se pueden otorgar como  un dx de afección principal) | 5 | Embarazo, parto y puerperio"
+        },
+        {
+          "etiqueta": "AA",
+          "contenido": "Diagnosticos marcados con X no se permiten registrar como Diagnostico Principal en consulta externa | 6 | Endocrinas y metabolicas"
+        },
+        {
+          "etiqueta": "0= No es una afección principal",
+          "contenido": "7 | Enfermedades de la sangre"
+        },
+        {
+          "etiqueta": "1= Es una afección principal",
+          "contenido": "8 | Genitourinario"
+        },
+        {
+          "etiqueta": "28",
+          "contenido": "AB | IND_NIVEL1 | Marca 1= Valida para Primer Nivel de Atención | IND_NIVEL1 | 9 | Enfermedades infecciosas"
+        },
+        {
+          "etiqueta": "Marca 0= No Valida",
+          "contenido": "10 | Oido y apofisis mastoides"
+        },
+        {
+          "etiqueta": "29",
+          "contenido": "AC | IND_NIVEL2 | Marca 1= - Valida para Segundo Nivel de Atención | IND_NIVEL2 | 11 | Ojo"
+        },
+        {
+          "etiqueta": "Marca 0= No valida",
+          "contenido": "12 | Osteomuscular"
+        },
+        {
+          "etiqueta": "30",
+          "contenido": "AD | IND_NIVEL3 | Marca 1= - Valida para Tercer Nivel de Atención (UMAE) | IND_NIVEL3 | 13 | Otros motivos de demanda"
+        },
+        {
+          "etiqueta": "Marca 0= No valida",
+          "contenido": "14 | Perinatales"
+        },
+        {
+          "etiqueta": "31",
+          "contenido": "AE | Renglon | Renglón - Informe Semanal de Vigilancia Epidemiológica | 15 | Piel y tejido subcutaneo"
+        },
+        {
+          "etiqueta": "Rango 0-264",
+          "contenido": "16 | Respiratorio"
+        },
+        {
+          "etiqueta": "32",
+          "contenido": "AF | NombreM | Descripción de la Enfermedad en Mayúsculas | 17 | Signos y sintomas"
+        },
+        {
+          "etiqueta": "33",
+          "contenido": "Filtro | Filtro (SIMO / SIAIS) | 18 | Sistema nervioso"
+        },
+        {
+          "etiqueta": "AG",
+          "contenido": "(7 digitos) | 19 | Trastornos mentales"
+        },
+        {
+          "etiqueta": "34",
+          "contenido": "AH | CveCapitulo | Clave Capitulo CIE-10 (0-22) | capitulo | 20 | Traumatismos y envenenamientos"
+        },
+        {
+          "etiqueta": "35",
+          "contenido": "AI | CveGrupo | Clave Grupo CIE-10 (0-22) | Grupo1 | 21 | Tumores"
+        },
+        {
+          "etiqueta": "36",
+          "contenido": "AJ | CveSubGrupo | Clave SubGrupo CIE-10 (0-13)"
+        },
+        {
+          "etiqueta": "37",
+          "contenido": "AK | CveCategoria | Clave Categoria CIE-10 (3 digitos) | CodX | CVE_GRUPO_CIE10"
+        },
+        {
+          "etiqueta": "38",
+          "contenido": "Exclusion | Marca Exclusión - Servicio de Urgencias - Informe Semanal de Vigilancia Epidemiológica"
+        },
+        {
+          "etiqueta": "AL",
+          "contenido": "Diagnosticos marcados con \"1\" cuando se registran en el servicio de urgencias"
+        },
+        {
+          "etiqueta": "se deben de reportar en el Informe Semanal de Vigilancia Epidemiologica",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "39",
+          "contenido": "AM | Agrupamiento | Clave Agrupamiento - Informe Semanal de Vigilancia Epidemiológica (1-16)"
+        },
+        {
+          "etiqueta": "40",
+          "contenido": "AN | Consec_Codigo | Consecutivo (fila excel) | ic_CIE | Es un consecutivo que se aplica al diagnóstico (esto lo asigna SIMF)"
+        },
+        {
+          "etiqueta": "in_tipo",
+          "contenido": "Tipo de diagnóstico (NULL= Sin asignar a algún servicio 17= Asigna el dx al servicio de Estomatología)"
+        },
+        {
+          "etiqueta": "cs_modulo",
+          "contenido": "Clave del módulo al cual corresponde el diagnóstico  ( 0= visible en todos los módulos  4= visible solo para Medicina Familiar )"
+        },
+        {
+          "etiqueta": "Catálogo Aparato o Sistema",
+          "contenido": "IND_RESURTIBLE | ic_resurtible | Clave interna que indica  que al otorgar este diagnóstico se permitirá la expedición de receta resurtible (0=No permite la expedición de RR, 1=Si permite la expedición de RR)"
+        },
+        {
+          "etiqueta": "Clave",
+          "contenido": "Descripción"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "Causas externas"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "Circulatorio"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "Congenitas"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "Digestivo"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "Embarazo, parto y puerperio"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "Endocrinas y metabolicas"
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "Enfermedades de la sangre"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "Genitourinario"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "Enfermedades infecciosas"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "Oido y apofisis mastoides"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "Ojo"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "Osteomuscular"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "Otros motivos de demanda"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "Perinatales"
+        },
+        {
+          "etiqueta": "15",
+          "contenido": "Piel y tejido subcutaneo"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "Respiratorio"
+        },
+        {
+          "etiqueta": "17",
+          "contenido": "Signos y sintomas"
+        },
+        {
+          "etiqueta": "18",
+          "contenido": "Sistema nervioso"
+        },
+        {
+          "etiqueta": "19",
+          "contenido": "Trastornos mentales"
+        },
+        {
+          "etiqueta": "20",
+          "contenido": "Traumatismos y envenenamientos"
+        },
+        {
+          "etiqueta": "21",
+          "contenido": "Tumores"
+        }
+      ]
     }
   ]
 }
