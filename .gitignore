@@ -3,6 +3,9 @@ __pycache__/
 *.pyc
 .venv/
 
+# Memoria local del agente (an-kla): estado vivo, no versionado
+.an-kla/
+
 # Sistema / editor
 .DS_Store
 *.swp
