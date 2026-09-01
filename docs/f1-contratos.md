@@ -15,6 +15,11 @@ Entrada (campos cerrados):
   url: string [obligatorio] [host *.imss.gob.mx con o sin puerto
        (enmienda 2026-09-01: el portal usa :8080), esquema http o
        https] — ubicación original
+  url_listado: string [opcional, ADR-012] [mismo host/esquema que
+       url] — página del listado histórico del catálogo; cuando
+       existe, vigencia-verificar verifica la última ingresada del
+       listado y actualiza `url` si cambió (queda `url_previa` en la
+       verificación)
   formato: enum [obligatorio]: xlsx | xls | csv | pdf | html | otro
   periodicidad: enum [opcional]: diaria | semanal | mensual |
        anual | eventual | desconocida (ausente = desconocida)
@@ -34,6 +39,10 @@ Entrada (campos cerrados):
     estructura_causa: string [opcional] [máx 200 chars] — motivo por
       el que no se extrajo estructura; un fallo de extracción nunca
       altera `resultado` (ADR-009)
+    url_previa: string [opcional] [máx 300 chars] — URL registrada
+      antes de la verificación, cuando el listado histórico reveló
+      una versión más nueva y `url` del registro se actualizó
+      (ADR-012; trazabilidad append-only)
 
 Salida: el registro almacenado, idéntico al validado.
 Errores:
@@ -142,6 +151,10 @@ Entrada:
     fail-closed: timeout explícito, tamaño máximo, verificación
     mínima de contenido (rechaza p. ej. HTML 200 para un xlsx), sin
     redirects fuera del host original, descarga temporal + rename.
+    Si la fuente tiene `url_listado` (ADR-012), verifica la última
+    ingresada del listado; si difiere de la URL registrada, actualiza
+    `url` y registra `url_previa` (históricos sólo bajo pedido
+    expreso)
   vigencia-historia <id>: lista el historial cronológico
 
 Salida: texto plano; código 0 en éxito.

@@ -195,6 +195,33 @@ Invariantes:
 - Lo observado reemplaza lo muestreado con fecha y huella_base
   actualizados (procedencia); nada altera la máquina de vigencia.
 
+## SPEC-8 [cubre: REQ-3, REQ-6; ADR-012]
+
+Comportamiento: para fuentes con `url_listado`, `vigencia-verificar`
+determina la última ingresada del listado histórico (heurística de
+fecha embebida; fallback: primer enlace), la descarga y verifica; si
+difiere de la URL registrada, actualiza `url` y deja `url_previa`.
+Entradas: `vigencia-verificar <id>` sobre fuente con `url_listado`.
+Salidas: las de vigencia-verificar (estado, fecha, huella, ruta
+local), más `url_previa` cuando hubo rotación de versión.
+Errores:
+- Listado ilegible o sin enlaces a archivos → salida 1 con causa;
+  NO se descarga nada ni se actualiza `url` (fail-closed).
+Casos:
+- DADO un listado con versiones 2024, 2025 y 2026 ENTONCES se
+  descarga y verifica la de 2026; `url` del registro queda apuntando
+  a ella y la verificación registra `url_previa`.
+- DADO el mismo listado CUANDO no hay versión más nueva que la
+  registrada ENTONCES el comportamiento es el de siempre (vigente/
+  cambiada por huella) y `url` no cambia.
+- DADO un listado sin enlaces legibles ENTONCES salida 1, `url`
+  intacta, sin descarga.
+Invariantes:
+- El histórico no se descarga: sólo la última ingresada; versiones
+  anteriores sólo bajo pedido expreso (D6).
+- Todo giro de versión queda documentado en el historial
+  (append-only: url_previa + huella nueva).
+
 ## SPEC-7 [cubre: REQ-1, REQ-6; ADR-011 — etapa 2]
 
 Comportamiento: `fuente-exportar <id>` convierte el archivo local ya
