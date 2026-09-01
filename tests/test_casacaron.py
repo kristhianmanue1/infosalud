@@ -26,10 +26,18 @@ class TestVersion(unittest.TestCase):
 
 class TestFuenteLista(unittest.TestCase):
     def test_catalogo_vacio_lista_cero_fuentes(self):
-        resultado = _ejecutar("fuente-lista", "--json")
+        # El test usa un catálogo temporal: no debe depender del
+        # contenido del catálogo del repositorio (data/fuentes.json).
+        with tempfile.NamedTemporaryFile(
+                "w", suffix=".json", delete=False) as archivo:
+            json.dump({"version": 1, "fuentes": []}, archivo)
+            ruta = archivo.name
+        resultado = _ejecutar(
+            "fuente-lista", "--catalogo", ruta, "--json")
         self.assertEqual(resultado.returncode, 0)
         salida = json.loads(resultado.stdout)
         self.assertEqual(salida, {"fuentes": []})
+        Path(ruta).unlink()
 
     def test_filtro_por_formato_devuelve_coincidencias(self):
         with tempfile.NamedTemporaryFile(
