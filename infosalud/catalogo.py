@@ -10,18 +10,34 @@ import re
 from datetime import date
 from pathlib import Path
 
-SECCIONES = {"catalogos"}
+SECCIONES = {
+    "catalogos",
+    "estadisticas-nacionales",
+    "censos",
+    "consulta-externa",
+    "hospital",
+    "defunciones",
+    "recursos",
+    "poblacion",
+    "documentos-normativos",
+    "sitios-interes",
+    "seguimiento",
+    "capacitacion",
+    "oficios-circulares",
+    "validacion-informacion",
+}
 FORMATOS = {"xlsx", "xls", "csv", "pdf", "html", "otro"}
 PERIODICIDADES = {
     "diaria", "semanal", "mensual", "anual", "eventual", "desconocida",
 }
 RESULTADOS = {"vigente", "cambiada", "inaccesible"}
 CAMPOS_FUENTE = {
-    "id", "seccion", "titulo", "url", "formato",
+    "id", "seccion", "titulo", "url", "url_listado", "formato",
     "periodicidad", "notas", "verificaciones",
 }
 CAMPOS_VERIFICACION = {"fecha", "resultado", "huella", "ruta_local",
-                       "causa", "estructura", "estructura_causa"}
+                       "causa", "estructura", "estructura_causa",
+                       "url_previa"}
 
 
 class ErrorCatalogo(Exception):
@@ -101,6 +117,9 @@ def validar_fuente(fuente):
     url = fuente.get("url")
     if not _url_valida(url):
         errores.append("url: falta o su host no está en *.imss.gob.mx")
+    url_listado = fuente.get("url_listado")
+    if url_listado is not None and not _url_valida(url_listado):
+        errores.append("url_listado: su host no está en *.imss.gob.mx")
     if fuente.get("formato") not in FORMATOS:
         errores.append(
             "formato: debe ser uno de: " + ", ".join(sorted(FORMATOS)))
@@ -161,6 +180,12 @@ def _validar_verificaciones(verificaciones):
                 or len(estructura_causa) > 200):
             errores.append(
                 "verificaciones: 'estructura_causa' excede 200 caracteres")
+        url_previa = entrada.get("url_previa")
+        if url_previa is not None and (
+                not isinstance(url_previa, str)
+                or len(url_previa) > 300):
+            errores.append(
+                "verificaciones: 'url_previa' excede 300 caracteres")
     return errores
 
 
