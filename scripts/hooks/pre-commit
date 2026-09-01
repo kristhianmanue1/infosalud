@@ -1,0 +1,43 @@
+#!/bin/bash
+# pre-commit — guardia disciplinario de memoria AN-KLA (ADR-007).
+# No es atestación: eleva el piso y hace visible la omisión.
+# Escapes documentados: --no-verify (degradación declarada).
+
+export AN_KLA_NO_UPDATE_CHECK=1
+
+# 1) Exención: la reparación de AGENTS.md/AN-KLA.md vive en un commit;
+#    bloquear ese commit sería un deadlock (ronda adversarial F3-04).
+if git diff --cached --name-only 2>/dev/null | grep -qE '^(AGENTS\.md|AN-KLA\.md)$'; then
+  echo "mem-guard: commit exento (toca AGENTS.md/AN-KLA.md)"
+  exit 0
+fi
+
+# 2) Sin .venv (clone fresco): degradación declarada, no bloqueo.
+if [ ! -x .venv/bin/python ]; then
+  echo "mem-guard: aviso — .venv ausente, guardia omitido (corre scripts/hooks/instalar.sh)" >&2
+  exit 0
+fi
+
+# 3) Diagnósticos del contexto: warning por defecto; fatales sólo
+#    con INFOSALUD_STRICT=1 (opt-in explícito).
+salida=$(.venv/bin/python -m an_kla --no-update-check --project-root . context status 2>/dev/null)
+diagnosticos=$(echo "$salida" | python3 -c 'import json,sys
+try:
+    print(",".join(json.load(sys.stdin).get("diagnostics", [])))
+except Exception:
+    print("status_ilegible")')
+if [ -n "$diagnosticos" ]; then
+  if [ "$INFOSALUD_STRICT" = "1" ]; then
+    echo "mem-guard: BLOQ — diagnósticos an-kla: $diagnosticos" >&2
+    echo "mem-guard: reporta el diagnóstico; no repares automáticamente" >&2
+    exit 1
+  fi
+  echo "mem-guard: aviso — diagnósticos an-kla ($diagnosticos); commit continúa" >&2
+fi
+
+# 4) Continuidad: recuerda sembrar checkpoint si el store está vacío.
+if .venv/bin/python -m an_kla --no-update-check --project-root . checkpoint show 2>/dev/null | grep -q '"goal": null'; then
+  echo "mem-guard: recordatorio — sin checkpoint de sesión (usa ./scripts/mem checkpoint)" >&2
+fi
+
+exit 0

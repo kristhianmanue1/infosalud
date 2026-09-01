@@ -1,0 +1,285 @@
+#!/usr/bin/env python3
+"""mem — escritura gobernada de memoria AN-KLA para Infosalud Nexus.
+
+Codifica el protocolo de AN-KLA.md (plan-write -> commit-write-plan)
+para que un agente no tenga que reconstruirlo: authority model_derived
+(techo sin adapter de host), representación summary, campo de texto
+"text", ids uuid4, flujo bifásico con rebinding del proposal_sha256.
+
+Subcomandos:
+  mem nota <texto>        -> facts
+  mem hito <texto>        -> events
+  mem leccion <texto>     -> episodes
+  mem checkpoint --objetivo T --siguiente T [--decision id:T]...
+                          -> checkpoint working-state-v2 (continuidad
+                             de sesión; valor de verdad nulo, no es
+                             atestación del estado real del repo)
+  mem status              -> context status + checkpoint show
+"""
+
+import argparse
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import uuid
+from datetime import datetime, timezone
+
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+VENV = os.path.join(RAIZ, ".venv", "bin", "python")
+EMISOR = {
+    "kind": "model",
+    "id": "cline-agente-infosalud",
+    "configuration_fingerprint": "sha256:" + hashlib.sha256(
+        b"cline+an-kla-beta.19+python3.13.5+mem-v2").hexdigest(),
+}
+
+
+def an_kla(*args):
+    entorno = dict(os.environ, AN_KLA_NO_UPDATE_CHECK="1")
+    resultado = subprocess.run(
+        [VENV, "-m", "an_kla", "--no-update-check",
+         "--project-root", RAIZ, *args],
+        capture_output=True, text=True, env=entorno, cwd=RAIZ,
+    )
+    if resultado.returncode != 0:
+        raise RuntimeError(
+            f"an_kla {args[0]} exit {resultado.returncode}: "
+            f"{resultado.stderr.strip() or resultado.stdout.strip()}")
+    return resultado.stdout
+
+
+def json_an_kla(*args):
+    return json.loads(an_kla(*args))
+
+
+def sha256_canonico(objeto):
+    canonico = json.dumps(
+        objeto, sort_keys=True, separators=(",", ":"),
+        ensure_ascii=False).encode("utf-8")
+    return "sha256:" + hashlib.sha256(canonico).hexdigest()
+
+
+def revision_actual():
+    estado = json_an_kla("status")
+    for clave in ("current_revision", "revision", "current"):
+        if isinstance(estado.get(clave), str):
+            return estado[clave]
+    raise SystemExit("status no expone la revisión actual; "
+                     "relee y reevalúa (no reintentes a ciegas)")
+
+
+def _authority_base(operaciones):
+    return {
+        "schema": "an-kla/write-authority-v1",
+        "authority_class": "model_derived",
+        "issuer": dict(EMISOR),
+        "evidence": [],
+        "scope": {
+            "streams": ["facts", "events", "episodes"],
+            "representations": ["summary"],
+            "operations": operaciones,
+        },
+    }
+
+
+def escribir(stream, texto):
+    """plan-write -> rebinding de proposal_sha256 -> re-plan -> commit."""
+    base = revision_actual()
+    propuesta = {
+        "schema": "an-kla/write-proposal-v1",
+        "base_revision": base,
+        "stream": stream,
+        "operation": "add",
+        "requested_representation": "summary",
+        "record": {
+            "id": f"{stream}-{uuid.uuid4().hex[:12]}",
+            "verified_at": datetime.now(timezone.utc)
+                .strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "text": texto,
+        },
+        "lineage": {"derived_from_retrieval": False, "refs": []},
+    }
+    autoridad = _authority_base(["add"])
+
+    plan = None
+    for intento in (1, 2):
+        ruta_p = os.path.join("/tmp", f"mem-{uuid.uuid4().hex}-p.json")
+        with open(ruta_p, "w", encoding="utf-8") as archivo:
+            json.dump(propuesta, archivo, ensure_ascii=False)
+        autoridad["proposal_sha256"] = sha256_canonico(propuesta)
+        autoridad["base_revision"] = base
+        ruta_a = os.path.join("/tmp", f"mem-{uuid.uuid4().hex}-a.json")
+        with open(ruta_a, "w", encoding="utf-8") as archivo:
+            json.dump(autoridad, archivo, ensure_ascii=False)
+
+        planificado = an_kla("plan-write", "--proposal", ruta_p,
+                             "--authority", ruta_a)
+        plan = json.loads(planificado)
+        sha_del_motor = plan.get("proposal_sha256")
+        decision = plan.get("decision", {}).get("decision")
+        if intento == 1 and sha_del_motor:
+            # Fase 2: rebind con el sha del motor y re-plan.
+            propuesta = json.load(open(ruta_p, encoding="utf-8"))
+            continue
+        break
+
+    decision = plan.get("decision", {}).get("decision")
+    if decision == "skip":
+        print(f"mem: plan skip — sin revisión ({plan.get('decision')})")
+        return
+    if decision != "write-summary":
+        raise SystemExit(f"mem: decisión inesperada '{decision}'; "
+                         "relee status y reevalúa")
+
+    ruta_plan = os.path.join("/tmp", f"mem-{uuid.uuid4().hex}-plan.json")
+    with open(ruta_plan, "w", encoding="utf-8") as archivo:
+        archivo.write(json.dumps(plan, ensure_ascii=False))
+    resultado = json.loads(an_kla(
+        "commit-write-plan",
+        "--expected-current", base,
+        "--proposal", ruta_p,
+        "--authority", ruta_a,
+        "--planning-result", ruta_plan,
+    ))
+    outcome = resultado.get("outcome", {})
+    if outcome.get("state") != "committed":
+        raise SystemExit(
+            f"mem: commit no exitoso ({outcome.get('state')}); "
+            "relee `mem status` y re-planifica — no reintentes a ciegas")
+    transaccion = outcome.get("transaction_id", "?")
+    print(f"mem: {stream} commitado "
+          f"(id={propuesta['record']['id']}, tx={transaccion})")
+def _field(valor):
+    return {"value": valor, "provenance": "caller_asserted"}
+
+
+def cmd_checkpoint(args):
+    # Continuidad de sesión: valor de verdad nulo (todo caller_asserted),
+    # nunca atestación del estado real del repositorio (ADR-007).
+    base = revision_actual()
+    show = json_an_kla("checkpoint", "show")
+    padre = show.get("checkpoint_digest") or "sha256:" + "0" * 64
+    decisiones = [
+        {"id": f"d-{i + 1}", "value": texto, "provenance": "caller_asserted"}
+        for i, texto in enumerate(args.decision or [])
+    ]
+    bloqueos = [
+        {"id": f"b-{i + 1}", "value": texto, "provenance": "caller_asserted"}
+        for i, texto in enumerate(args.bloqueo or [])
+    ]
+    estado = {
+        "schema": "an-kla/working-state-v2",
+        "objective": _field(args.objetivo),
+        "phase": _field(args.fase),
+        "next_step": _field(args.siguiente),
+        "decisions": decisiones,
+        "blockers": bloqueos,
+        "evidence": [],
+        "source_state": {
+            "profile": "git/v1",
+            "head": _field(subprocess.run(
+                ["git", "rev-parse", "HEAD"], capture_output=True,
+                text=True).stdout.strip()),
+            "branch": _field(subprocess.run(
+                ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+                capture_output=True, text=True).stdout.strip()),
+            "dirty_digest": _field(None),
+        },
+        "captured_at": {
+            "value": datetime.now(timezone.utc)
+                .strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "provenance": "caller_asserted",
+        },
+        "supersedes_checkpoint": padre,
+    }
+    ruta_e = os.path.join("/tmp", f"mem-{uuid.uuid4().hex}-ws.json")
+    with open(ruta_e, "w", encoding="utf-8") as archivo:
+        json.dump(estado, archivo, ensure_ascii=False)
+    # --input es el working_state pelado; el motor construye el sobre
+    # checkpoint-proposal-v1 con base/parent observados. El
+    # proposal_sha256 de la autoridad se calcula sobre ese sobre
+    # determinístico (mismo canonical-json que el policy core).
+    propuesta = {
+        "schema": "an-kla/checkpoint-proposal-v1",
+        "base_revision": base,
+        "parent_checkpoint": padre,
+        "working_state": estado,
+    }
+    autoridad = {
+        "schema": "an-kla/checkpoint-authority-v1",
+        "proposal_sha256": sha256_canonico(propuesta),
+        "base_revision": base,
+        "authority_class": "model_derived",
+        "issuer": dict(EMISOR),
+        "evidence": [],
+        "scope": {
+            "operation": "checkpoint",
+            "fields": ["blockers", "captured_at", "decisions", "evidence",
+                       "next_step", "objective", "phase", "source_state"],
+        },
+    }
+    ruta_a = os.path.join("/tmp", f"mem-{uuid.uuid4().hex}-ca.json")
+    with open(ruta_a, "w", encoding="utf-8") as archivo:
+        json.dump(autoridad, archivo, ensure_ascii=False)
+    plan = json.loads(an_kla(
+        "checkpoint", "plan", "--input", ruta_e, "--authority", ruta_a))
+    ruta_plan = os.path.join("/tmp", f"mem-{uuid.uuid4().hex}-cp.json")
+    with open(ruta_plan, "w", encoding="utf-8") as archivo:
+        archivo.write(json.dumps(plan, ensure_ascii=False))
+    transaccion = str(uuid.uuid4())
+    json.loads(an_kla(
+        "checkpoint", "commit",
+        "--plan", ruta_plan,
+        "--expected-current", base,
+        "--transaction-id", transaccion,
+    ))
+    print(f"mem: checkpoint commitado (tx={transaccion})")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        prog="mem",
+        description="Escritura gobernada de memoria AN-KLA (sin red).")
+    sub = parser.add_subparsers(dest="comando", required=True)
+
+    for nombre, stream, ayuda in (
+            ("nota", "facts", "conocimiento versionado"),
+            ("hito", "events", "cronología de hitos"),
+            ("leccion", "episodes", "lección/experiencia")):
+        p = sub.add_parser(nombre, help=ayuda)
+        p.add_argument("texto")
+
+    p_cp = sub.add_parser("checkpoint", help="continuidad de sesión")
+    p_cp.add_argument("--objetivo", required=True)
+    p_cp.add_argument("--siguiente", required=True)
+    p_cp.add_argument("--fase", default="trabajo")
+    p_cp.add_argument("--decision", action="append", default=[])
+    p_cp.add_argument("--bloqueo", action="append", default=[])
+
+    sub.add_parser("status", help="context status + checkpoint show")
+    args = parser.parse_args()
+
+    try:
+        if args.comando == "status":
+            print(an_kla("context", "status"))
+            print(json_an_kla("checkpoint", "show").get("checkpoint"))
+        elif args.comando == "nota":
+            escribir("facts", args.texto)
+        elif args.comando == "hito":
+            escribir("events", args.texto)
+        elif args.comando == "leccion":
+            escribir("episodes", args.texto)
+        elif args.comando == "checkpoint":
+            cmd_checkpoint(args)
+    except RuntimeError as exc:
+        print(f"mem: FALLO — {exc}", file=sys.stderr)
+        print("mem: relee `mem status` y re-planifica; no reintentes a "
+              "ciegas", file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
