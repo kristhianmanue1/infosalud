@@ -15,7 +15,14 @@
       "titulo": "Catálogo CIE-10 maestro (códigos SIMF)",
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/Cat%C3%A1logo_CIE10_versi%C3%B3n_09_02_2024_Maestro.xlsx",
       "formato": "xlsx",
-      "verificaciones": [],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-01",
+          "ruta_local": "data/descargas/catalogo-cie10-simf-maestro/Catálogo_CIE10_versión_09_02_2024_Maestro.xlsx",
+          "resultado": "vigente",
+          "huella": "3d75192abb07b011352336814c71537c72ff4e9fe9d796d1d9b8b7dcf94ffdce"
+        }
+      ],
       "notas": "Clasificación CIE-10 versión 09/02/2024; base para MOCE/SIMF"
     },
     {

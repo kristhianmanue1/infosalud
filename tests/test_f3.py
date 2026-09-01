@@ -232,11 +232,17 @@ class TestVigenciaHistoria(unittest.TestCase):
 
 
 class TestSinRed(unittest.TestCase):
-    """SPEC-3 / ADR-004: cero comunicación de red en la v1."""
+    """SPEC-3 / ADR-004 / ADR-008: la red vive sólo en infosalud.red.
 
-    def test_modulos_no_importan_librerias_de_red(self):
+    ADR-008 (REQ-6) autorizó un único camino de red de sólo lectura
+    (vigencia-verificar). La guarda exige que cargar los módulos sin
+    ese comando no toque librerías de red, y que si se cargan, sea
+    porque infosalud.red (el único módulo autorizado) fue importado.
+    """
+
+    def test_catalogo_y_vigencia_no_importan_librerias_de_red(self):
         codigo = (
-            "import sys; import infosalud.cli, infosalud.catalogo; "
+            "import sys; import infosalud.catalogo, infosalud.vigencia; "
             "prohibidos = {'socket', 'urllib', 'http', 'ftplib', "
             "'smtplib', 'ssl'}; "
             "cargados = prohibidos & set(sys.modules); "
@@ -245,6 +251,32 @@ class TestSinRed(unittest.TestCase):
         r = subprocess.run([sys.executable, "-c", codigo],
                            capture_output=True, text=True, cwd=RAIZ)
         self.assertEqual(r.returncode, 0, r.stderr)
+
+    def test_red_de_cli_esta_concentrada_en_infosalud_red(self):
+        codigo = (
+            "import sys; import infosalud.cli; "
+            "prohibidos = {'socket', 'urllib', 'http', 'ftplib', "
+            "'smtplib', 'ssl'}; "
+            "cargados = prohibidos & set(sys.modules); "
+            "assert not cargados or 'infosalud.red' in sys.modules, "
+            "cargados"
+        )
+        r = subprocess.run([sys.executable, "-c", codigo],
+                           capture_output=True, text=True, cwd=RAIZ)
+        self.assertEqual(r.returncode, 0, r.stderr)
+
+    def test_solo_infosalud_red_importa_librerias_de_red(self):
+        """Ningún módulo de infosalud salvo red.py importa urllib/http/
+        socket directamente (barrido estático)."""
+        paquete = Path("infosalud")
+        for ruta in paquete.glob("*.py"):
+            texto = ruta.read_text(encoding="utf-8")
+            if ruta.name == "red.py":
+                continue
+            for prohibido in ("urllib", "import socket", "import http",
+                              "import ssl"):
+                self.assertNotIn(prohibido, texto,
+                                 f"{ruta.name} importa {prohibido}")
 
 
 class TestEscrituraAtomica(unittest.TestCase):

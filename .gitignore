@@ -13,3 +13,7 @@ __pycache__/
 # Referencia externa: clon de la guía Skevi (no es código del
 # proyecto; ver README §"Sobre skevi/")
 skevi/
+
+# Descargas locales de fuentes (la evidencia versionada es fecha+huella
+# en data/fuentes.json; el binario es copia local, REQ-7 Mac mini)
+data/descargas/

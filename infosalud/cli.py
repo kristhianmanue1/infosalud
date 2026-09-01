@@ -2,14 +2,16 @@
 
 Contrato: docs/f1-contratos.md (CONTRATO cli-infosalud v1.1).
 Comandos: fuente-alta, fuente-lista, fuente-buscar, fuente-detalle,
-vigencia-registrar, vigencia-historia. Sin --json la salida es texto
-plano para el humano; con --json, un objeto JSON por ejecución en
-stdout (ADR-006). Códigos: 0 éxito, 1 E-VALID/E-DUPLICADO, 2
-E-NOEXISTE. Sin comunicación de red (ADR-004).
+vigencia-registrar, vigencia-verificar, vigencia-historia. Sin --json
+la salida es texto plano para el humano; con --json, un objeto JSON
+por ejecución en stdout (ADR-006). Códigos: 0 éxito, 1
+E-VALID/E-DUPLICADO, 2 E-NOEXISTE. Sin red, salvo vigencia-verificar
+(GET de sólo lectura; ADR-008).
 """
 
 import argparse
 import json
+import os
 import sys
 
 from infosalud import __version__
@@ -19,7 +21,10 @@ from infosalud.catalogo import (
     guardar_catalogo,
     validar_fuente,
 )
+from infosalud.red import ErrorRed, descargar, nombre_desde_url
 from infosalud.vigencia import calcular_huella, determinar_resultado, fecha_hoy
+
+DESCARGAS_POR_DEFECTO = "data/descargas"
 
 CATALOGO_POR_DEFECTO = "data/fuentes.json"
 
@@ -79,6 +84,16 @@ def _construir_parser():
         help="lista el historial cronológico de verificaciones"))
     p_vhis.add_argument("id")
 
+    p_vver = con_catalogo(sub.add_parser(
+        "vigencia-verificar",
+        help="descarga la fuente (GET sólo lectura, ADR-008) y "
+             "registra la verificación con su evidencia"))
+    p_vver.add_argument("id")
+    p_vver.add_argument(
+        "--destino",
+        help="ruta local destino; por defecto "
+             f"{DESCARGAS_POR_DEFECTO}/<id>/<archivo>")
+
     return parser
 
 
@@ -90,6 +105,7 @@ def main(argv=None):
         "fuente-buscar": _fuente_buscar,
         "fuente-detalle": _fuente_detalle,
         "vigencia-registrar": _vigencia_registrar,
+        "vigencia-verificar": _vigencia_verificar,
         "vigencia-historia": _vigencia_historia,
     }
     return comandos[args.comando](args)
@@ -190,6 +206,32 @@ def _fuente_detalle(args):
     return 0
 
 
+def _agregar_verificacion(catalogo_ruta, catalogo, fuente, ruta,
+                          causa=None):
+    """Calcula la huella de ruta (o registra causa de fallo), agrega
+    la verificación al historial y guarda el catálogo atómicamente.
+    Devuelve la verificación agregada (inaccesible incluida)."""
+    verificacion = {"fecha": fecha_hoy(), "ruta_local": ruta}
+    if causa is None:
+        try:
+            huella = calcular_huella(ruta)
+        except OSError as exc:
+            # Fallo explícito: se registra inaccesible con su causa,
+            # nunca éxito inferido.
+            verificacion["resultado"] = "inaccesible"
+            verificacion["causa"] = str(exc)[:200]
+        else:
+            verificacion["resultado"] = determinar_resultado(
+                huella, fuente["verificaciones"])
+            verificacion["huella"] = huella
+    else:
+        verificacion["resultado"] = "inaccesible"
+        verificacion["causa"] = causa[:200]
+    fuente["verificaciones"].append(verificacion)
+    guardar_catalogo(catalogo_ruta, catalogo)
+    return verificacion
+
+
 def _vigencia_registrar(args):
     try:
         catalogo = cargar_catalogo(args.catalogo)
@@ -203,27 +245,59 @@ def _vigencia_registrar(args):
             args,
             f"fuente '{args.id}' sin 'verificaciones' (catálogo inválido)",
             1)
-    verificacion = {"fecha": fecha_hoy(), "ruta_local": args.archivo}
-    try:
-        huella = calcular_huella(args.archivo)
-    except OSError as exc:
-        # Fallo explícito: se registra inaccesible con su causa,
-        # nunca éxito inferido.
-        verificacion["resultado"] = "inaccesible"
-        verificacion["causa"] = str(exc)[:200]
-        fuente["verificaciones"].append(verificacion)
-        guardar_catalogo(args.catalogo, catalogo)
-        return _salir(args, f"archivo ilegible: {exc}", 1)
-    verificacion["resultado"] = determinar_resultado(
-        huella, fuente["verificaciones"])
-    verificacion["huella"] = huella
-    fuente["verificaciones"].append(verificacion)
-    guardar_catalogo(args.catalogo, catalogo)
+    verificacion = _agregar_verificacion(
+        args.catalogo, catalogo, fuente, args.archivo)
+    if verificacion["resultado"] == "inaccesible":
+        return _salir(
+            args, f"archivo ilegible: {verificacion['causa']}", 1)
     _emitir(args, {"id": args.id, "resultado": verificacion["resultado"],
-                   "fecha": verificacion["fecha"], "huella": huella},
+                   "fecha": verificacion["fecha"],
+                   "huella": verificacion["huella"]},
             f"{args.id}: {verificacion['resultado']} "
             f"({verificacion['fecha']})")
     return 0
+
+
+def _vigencia_verificar(args):
+    """Descarga la fuente (GET sólo lectura, ADR-008) y registra la
+    verificación con evidencia. Fail-closed: todo fallo queda como
+    `inaccesible` con causa; nunca éxito inferido."""
+    try:
+        catalogo = cargar_catalogo(args.catalogo)
+    except ErrorCatalogo as exc:
+        return _salir(args, str(exc), 1)
+    fuente = _buscar_fuente(catalogo, args.id)
+    if fuente is None:
+        return _salir(args, f"id inexistente: '{args.id}'", 2)
+    if not isinstance(fuente.get("verificaciones"), list):
+        return _salir(
+            args,
+            f"fuente '{args.id}' sin 'verificaciones' (catálogo inválido)",
+            1)
+    if not fuente.get("url"):
+        return _salir(args, f"fuente '{args.id}' sin url registrada", 1)
+    destino = args.destino or _destino_por_defecto(fuente)
+    try:
+        descargar(fuente["url"], destino, fuente.get("formato", "otro"))
+    except (ErrorRed, OSError) as exc:
+        verificacion = _agregar_verificacion(
+            args.catalogo, catalogo, fuente, destino, causa=str(exc))
+        return _salir(args, f"descarga fallida: "
+                      f"{verificacion['causa']}", 1)
+    verificacion = _agregar_verificacion(
+        args.catalogo, catalogo, fuente, destino)
+    _emitir(args, {"id": args.id, "resultado": verificacion["resultado"],
+                   "fecha": verificacion["fecha"],
+                   "huella": verificacion["huella"],
+                   "ruta_local": destino},
+            f"{args.id}: {verificacion['resultado']} "
+            f"({verificacion['fecha']}) {destino}")
+    return 0
+
+
+def _destino_por_defecto(fuente):
+    nombre = nombre_desde_url(fuente["url"])
+    return os.path.join(DESCARGAS_POR_DEFECTO, fuente["id"], nombre)
 
 
 def _vigencia_historia(args):
