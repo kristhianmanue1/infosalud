@@ -60,6 +60,33 @@ Heredados del estándar (sin desviaciones): 800 líneas por archivo
 de texto; 200 para este archivo; 300 para `README.md`. Comprobar
 con conteo, nunca a ojo.
 
+## Tipos de memoria y arranque de sesión (AN-KLA, ADR-007)
+
+Tabla de streams — úsala para elegir al escribir con `scripts/mem`:
+
+| Stream | Qué guarda | Comando |
+|---|---|---|
+| `facts` | Conocimiento versionado del proyecto | `scripts/mem nota "..."` |
+| `events` | Cronología de hitos | `scripts/mem hito "..."` |
+| `episodes` | Lecciones y experiencias | `scripts/mem leccion "..."` |
+
+Operaciones: `add` (nuevo) y `supersede` (sustituye, oculta el
+vigente sin borrar evidencia). Representación escrita por `mem`:
+`summary` con authority `model_derived` (techo sin adapter).
+
+Checklist de sesión:
+
+```bash
+# arranque (una vez por clone):
+scripts/hooks/instalar.sh
+# arranque (cada sesión):
+scripts/mem status
+.venv/bin/python -m an_kla --no-update-check --project-root . resume --query "<necesidad>" --budget 4096
+# cierre de tarea material:
+scripts/mem checkpoint --objetivo "..." --siguiente "..."
+scripts/mem hito "..."   # si hubo hito o lección durable
+```
+
 ## Memoria del agente (AN-KLA, ADR-007)
 
 - Intérprete: `.venv/bin/python` (3.13.5); exporta
