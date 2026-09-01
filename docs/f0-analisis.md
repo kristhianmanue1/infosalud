@@ -234,6 +234,10 @@ Opciones: (a) Catálogos + IFU + Estadísticas Nacionales;
 
 ### 6.4 Decisiones adoptadas (2026-09-01, decisión del humano)
 
+> **Actualización 2026-09-01 (segunda ronda):** PREGUNTA-1 quedó
+> RESUELTA — ver D6. REQ-6 (automatización) queda desbloqueado para
+> futuras fases, sujeto a prudencia operativa.
+
 - D1 [= PREGUNTA-1, opción (b)]: v1 opera en modo manual + registro:
   la herramienta no contacta la red; el humano descarga/copía por su
   medio y la herramienta registra evidencia (hash, fecha). La
@@ -253,6 +257,15 @@ Opciones: (a) Catálogos + IFU + Estadísticas Nacionales;
   IA** que consumen los recursos de Infosalud; los usuarios humanos
   pasan a segunda línea. Ajusta la orientación de D3; la CLI se
   mantiene como frontera y añade salida `--json` (contrato v1.1).
+- D6 (2026-09-01, segunda ronda, decisión del humano): PREGUNTA-1
+  RESUELTA. Los trabajadores del nivel central de la DPM tienen
+  autorización para el consumo y uso de los catálogos oficiales de
+  Infosalud como fuente oficial, incluido su uso por otros sistemas
+  de información. REQ-6 (automatización de actualización y
+  monitoreo) queda DESBLOQUEADO. Prudencia operativa vigente al
+  implementar automatización: sólo lectura, frecuencia contenida,
+  identificación del cliente, sin re-publicación del contenido
+  (Infosalud conserva la autoridad).
 
 ## 7. Registro de evidencia
 
