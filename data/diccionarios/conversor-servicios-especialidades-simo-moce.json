@@ -1,0 +1,13 @@
+{
+  "id": "conversor-servicios-especialidades-simo-moce",
+  "campos": [
+    {
+      "nombre": "CATÁLOGO CONVERTIDOR",
+      "tipo": "clave",
+      "ejemplo": "CLAVE",
+      "valores": "CLAVE | 0001 | 0100 | 0400 | 0401 | ..."
+    }
+  ],
+  "huella_base": "f494a76d487cf00e0b827396a3043d36fcb7d321f82a20cd2d6ada93de80e3d0",
+  "fecha": "2026-09-01"
+}

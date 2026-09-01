@@ -1,0 +1,13 @@
+{
+  "id": "catalogo-servicios-especialidades-maestro",
+  "campos": [
+    {
+      "nombre": "DIRECCIÓN DE PRESTACIONES MÉDICAS",
+      "tipo": "clave",
+      "ejemplo": "UNIDAD DE PLANEACIÓN E INNOVACIÓN EN SALUD",
+      "valores": "UNIDAD DE PLANEACIÓN E INNOVACIÓN EN SALUD | COORDINACIÓN DE INFORMACIÓN E INTELIGENCIA EN SALUD | DIVISIÓN DE INFORMACIÓN EN SALUD | RAMA DE LA MEDICINA O TRONCAL | 3 | ..."
+    }
+  ],
+  "huella_base": "ff7adb1ee78ae87d7fff065d1b883644b27e31aee4ed5b1e5e197a860491b9e3",
+  "fecha": "2026-09-01"
+}

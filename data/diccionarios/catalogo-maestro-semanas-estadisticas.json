@@ -1,0 +1,13 @@
+{
+  "id": "catalogo-maestro-semanas-estadisticas",
+  "campos": [
+    {
+      "nombre": "Catálogo maestro de semanas",
+      "tipo": "clave",
+      "ejemplo": "Continuidad de Servicios",
+      "valores": "Continuidad de Servicios | Año | 2025"
+    }
+  ],
+  "huella_base": "d77e1260078798a75bbe03806c3ba53f56e2872a0b0427464f33da077f189864",
+  "fecha": "2026-09-01"
+}

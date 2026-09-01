@@ -1,0 +1,635 @@
+{
+  "id": "siais-catalogo-vacunas-dosis",
+  "campos": [
+    {
+      "nombre": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+      "tipo": "clave"
+    }
+  ],
+  "metadatos": [
+    {
+      "hoja": "Cat_Vacunas_Aplicadas",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo de Vacunas Aplicadas",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Vacunación Universal",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clave Vacuna",
+          "contenido": "Descripcion de la Vacuna | Vigente"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "BCG | S"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "Sabin | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "Pentavalente | S"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "Sabin + Pentavalente | N"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "SRP | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "SR | S"
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "TD | S"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "DPT | S"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "Antineumococcica 23 Valente | S"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "Influenza | S"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "Antineumococcica + Influenza | N"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "Antihepatitis B | S"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "Pentavalente Acelular | S"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "Antirotavirus | S"
+        },
+        {
+          "etiqueta": "15",
+          "contenido": "Td pa | S"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "Antineumococcica Conjugada | S"
+        }
+      ]
+    },
+    {
+      "hoja": "Cat_Vacunas_Rescate",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo de Vacunas - Rescate",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Vacunación Universal",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clave Vacuna",
+          "contenido": "Descripcion de la Vacuna | Vigente"
+        },
+        {
+          "etiqueta": "91",
+          "contenido": "BCG Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "92",
+          "contenido": "Sabin Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "93",
+          "contenido": "Pentavalente Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "94",
+          "contenido": "Sabin + Pentavalente Previa o Fuera Unidad (Rescate) | N"
+        },
+        {
+          "etiqueta": "95",
+          "contenido": "SRP Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "96",
+          "contenido": "SR Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "97",
+          "contenido": "TD Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "98",
+          "contenido": "DPT Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "99",
+          "contenido": "Antineumococcica Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "910",
+          "contenido": "Influenza Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "911",
+          "contenido": "Antineumococcica + Influenza Previa o Fuera Unidad (Rescate) | N"
+        },
+        {
+          "etiqueta": "912",
+          "contenido": "Antihepatitis B Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "913",
+          "contenido": "Pentavalente Acelular Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "914",
+          "contenido": "Antirotavirus Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "915",
+          "contenido": "Td pa Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "916",
+          "contenido": "Antineumococcica Conjugada, Previa o Fuera Unidad (Rescate) | S"
+        }
+      ]
+    },
+    {
+      "hoja": "Cat_Otras_Vacunas",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo Otras Vacunas Aplicadas",
+          "contenido": "Fecha de actualización: | 18/08/2026 | Catálogo Otras Vacunas"
+        },
+        {
+          "etiqueta": "Vacunación Universal",
+          "contenido": "Vacuna COVID-19 (código CIE-10)"
+        },
+        {
+          "etiqueta": "Clave Vacuna",
+          "contenido": "Descripcion de la Vacuna | Vigente | Código CIE-10 | Descripcion del Diagnóstico | Vigente"
+        },
+        {
+          "etiqueta": "UP03",
+          "contenido": "Antirrábica Humana | S | U930 | AZTRA ZENECA/OXFORD (CHAD) | S"
+        },
+        {
+          "etiqueta": "UP04",
+          "contenido": "Inmunoglobulina Antirrábica | S | U931 | BIONTECH/PFIZER | S"
+        },
+        {
+          "etiqueta": "UP05",
+          "contenido": "Inmunoglobulina Antitetánica | S | U932 | CANSINO BIOLOGICS | S"
+        },
+        {
+          "etiqueta": "UP06",
+          "contenido": "Inmunoglobulina Simple | S | U933 | JOHNSON & JOHNSON (JANSSEN) | S"
+        },
+        {
+          "etiqueta": "UP07",
+          "contenido": "Faboterápico antialacrán | S | U934 | MODERNA | S"
+        },
+        {
+          "etiqueta": "UP08",
+          "contenido": "Faboterápico antiviperino | S | U935 | SINOVAC | S"
+        },
+        {
+          "etiqueta": "UP09",
+          "contenido": "Faboterápico antiarácnido | S | U936 | SPUTNIK V | S"
+        },
+        {
+          "etiqueta": "UP10",
+          "contenido": "Coccidioidina | S | U938 | OTRA VACUNA ESPECIFICADA | S"
+        },
+        {
+          "etiqueta": "UP11",
+          "contenido": "Histoplasmina | S | U939 | VACUNA NO ESPECIFICADA | S"
+        },
+        {
+          "etiqueta": "UP12",
+          "contenido": "PPD | S"
+        },
+        {
+          "etiqueta": "UP41",
+          "contenido": "Antivaricela | S"
+        },
+        {
+          "etiqueta": "UP63",
+          "contenido": "VPH (contra el Virus del Papiloma Humano) | S"
+        },
+        {
+          "etiqueta": "UP81",
+          "contenido": "Antihepatitis A | S"
+        },
+        {
+          "etiqueta": "UP88",
+          "contenido": "Vacuna aplicada contra el COVID-19 | S"
+        },
+        {
+          "etiqueta": "UV91",
+          "contenido": "Vacunacion contra virus sincitial respiratorio en personas gestantes | S"
+        },
+        {
+          "etiqueta": "UV92",
+          "contenido": "Vacunacion contra virus sincitial respiratorio en personas no gestantes con factores de riesgo | S"
+        },
+        {
+          "etiqueta": "UV93",
+          "contenido": "Aplicacion de Faboterapico Anticoral | S"
+        },
+        {
+          "etiqueta": "UV94",
+          "contenido": "Aplicacion de Faboterapico antiloxoceles | S"
+        }
+      ]
+    },
+    {
+      "hoja": "Cat_Otras_Vacunas_Rescate",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo Otras Vacunas - Rescate",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Vacunación Universal",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clave Vacuna",
+          "contenido": "Descripcion de la Vacuna | Vigente"
+        },
+        {
+          "etiqueta": "UP903",
+          "contenido": "Antirrábica Humana Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP904",
+          "contenido": "Inmunoglobulina Antirrábica Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP905",
+          "contenido": "Inmunoglobulina Antitetánica Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP906",
+          "contenido": "Inmunoglobulina Simple Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP907",
+          "contenido": "Faboterápico antialacrán Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP908",
+          "contenido": "Faboterápico antiviperino Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP909",
+          "contenido": "Faboterápico antiarácnido Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP910",
+          "contenido": "Coccidioidina Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP911",
+          "contenido": "Histoplasmina Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP912",
+          "contenido": "PPD Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP941",
+          "contenido": "Antivaricela Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP963",
+          "contenido": "VPH (contra el Virus del Papiloma Humano) Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UP981",
+          "contenido": "Antihepatitis A Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UV991",
+          "contenido": "Vacunacion contra virus sincitial respiratorio en personas gestantes - Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UV992",
+          "contenido": "Vacunacion contra virus sincitial respiratorio en personas no gestantes con factores de riesgo - Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UV993",
+          "contenido": "Aplicacion de Faboterapico Anticoral - Previa o Fuera Unidad (Rescate) | S"
+        },
+        {
+          "etiqueta": "UV994",
+          "contenido": "Aplicacion de Faboterapico antiloxoceles - Previa o Fuera Unidad (Rescate) | S"
+        }
+      ]
+    },
+    {
+      "hoja": "Cat_Dosis_Vacunas",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo de Dosis",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Vacunación Universal",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clave Dosis",
+          "contenido": "Descripcion de la Dosis | Vigente"
+        },
+        {
+          "etiqueta": "0",
+          "contenido": "Ninguna (sin dosis) | S"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "Dosis Unica | S"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "Primera Dosis | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "Segunda Dosis | S"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "Tercera Dosis | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "Dosis Refuerzo | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "Dosis Adicional | S"
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "Dosis Profilactica | S"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "Dosis No Especificada | S"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "Dosis Unica - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "Dosis Unica - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "Dosis Unica - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "Dosis Unica - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "15",
+          "contenido": "Dosis Unica - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "21",
+          "contenido": "Primera Dosis - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "22",
+          "contenido": "Primera Dosis - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "23",
+          "contenido": "Primera Dosis - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "24",
+          "contenido": "Primera Dosis - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "25",
+          "contenido": "Primera Dosis - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "31",
+          "contenido": "Segunda Dosis - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "32",
+          "contenido": "Segunda Dosis - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "33",
+          "contenido": "Segunda Dosis - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "34",
+          "contenido": "Segunda Dosis - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "35",
+          "contenido": "Segunda Dosis - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "41",
+          "contenido": "Tercera Dosis - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "42",
+          "contenido": "Tercera Dosis - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "43",
+          "contenido": "Tercera Dosis - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "44",
+          "contenido": "Tercera Dosis - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "45",
+          "contenido": "Tercera Dosis - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "51",
+          "contenido": "Dosis de Refuerzo - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "52",
+          "contenido": "Dosis de Refuerzo - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "53",
+          "contenido": "Dosis de Refuerzo - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "54",
+          "contenido": "Dosis de Refuerzo - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "55",
+          "contenido": "Dosis de Refuerzo - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "61",
+          "contenido": "Dosis Adicional - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "62",
+          "contenido": "Dosis Adicional - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "63",
+          "contenido": "Dosis Adicional - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "64",
+          "contenido": "Dosis Adicional - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "65",
+          "contenido": "Dosis Adicional - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "71",
+          "contenido": "Dosis Profilactica - Primer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "72",
+          "contenido": "Dosis Profilactica - Segundo Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "73",
+          "contenido": "Dosis Profilactica - Tercer Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "74",
+          "contenido": "Dosis Profilactica - Cuarto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "75",
+          "contenido": "Dosis Profilactica - Quinto Complemento o Refuerzo o Rescate | S"
+        },
+        {
+          "etiqueta": "93",
+          "contenido": "En Espera de Segunda Dosis | N"
+        }
+      ]
+    },
+    {
+      "hoja": "Cat_Marcas_Vacunas",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo Marcas de Vacunas",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Vacunación Universal",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clave Marca Vacuna",
+          "contenido": "Descripcion de la Marca | Laboratorio | Fecha de Alta | Fecha de Actualización | Vigente"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "AZTRA ZENECA/OXFORD (CHAD) | AZTRA ZENECA | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "BIONTECH/PFIZER | PFIZER | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "CANSINO BIOLOGICS | CANSINO | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "JOHNSON & JOHNSON (JANSSEN) | JANSSEN | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "MODERNA | MODERNA | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "SINOVAC | SINOVAC | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "SPUTNIK V | SPUTNIK V | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "ABDALA | ABDALA | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "PATRIA | AVIMEX | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "COVAXIN | COVAXIN | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "NOVAVAX | NOVAVAX | 45253.419592939812 | S"
+        },
+        {
+          "etiqueta": "99",
+          "contenido": "OTRA MARCA | OTRA | 45253.419592939812 | S"
+        }
+      ]
+    }
+  ],
+  "huella_base": "74facf0c34acb5572e6b6a7f2fddd0436815fc3f9332d2b706da3f210d7d70bb",
+  "fecha": "2026-09-01"
+}

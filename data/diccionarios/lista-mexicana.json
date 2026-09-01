@@ -1,0 +1,45 @@
+{
+  "id": "lista-mexicana",
+  "campos": [
+    {
+      "nombre": "Num",
+      "tipo": "clave",
+      "ejemplo": "2",
+      "valores": "2 | 12 | 14 | 15 | 16 | ..."
+    },
+    {
+      "nombre": "GPO_LIST_MEX",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 02A | 02C | 02D | 02E | ..."
+    },
+    {
+      "nombre": "Causas_LM",
+      "tipo": "otro",
+      "ejemplo": "Enfermedades infecciosas intestinales",
+      "valores": "Enfermedades infecciosas intestinales | Tuberculosis pulmonar | Tuberculosis del sistema nervioso | Tuberculosis de los intestinos,  el peritoneo y los ganglios mesentéricos | Tuberculosis de huesos y"
+    },
+    {
+      "nombre": "Mortalidad",
+      "tipo": "otro",
+      "ejemplo": "A00-A09",
+      "valores": "A00-A09 | A15.0-A15.3, A15.7, A15.9,A16.0-A16.2, A16.7, A16.9 | A17 | A18.3 | A18.0 | ..."
+    },
+    {
+      "nombre": "Morbilidad",
+      "tipo": "otro",
+      "ejemplo": "A00-A09",
+      "valores": "A00-A09 | A15.0-A15.3, A15.7, A15.9,A16.0-A16.2, A16.7, A16.9 | A17 | A18.3 | A18.0 | ..."
+    },
+    {
+      "nombre": "PrincipalesMorta",
+      "tipo": "otro"
+    },
+    {
+      "nombre": "PrincipalesMorbi",
+      "tipo": "otro"
+    }
+  ],
+  "huella_base": "fbcdf55e934086c77246c4b599bb4d4004bb7b7d27b148d2970a16554aedb7e5",
+  "fecha": "2026-09-01"
+}

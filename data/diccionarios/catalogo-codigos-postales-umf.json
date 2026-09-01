@@ -1,0 +1,15 @@
+{
+  "id": "catalogo-codigos-postales-umf",
+  "campos": [
+    {
+      "nombre": "CP",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "UMF en las que se encuentra asociado",
+      "tipo": "otro"
+    }
+  ],
+  "huella_base": "a799cd5b777f65114ed4f5a28cd9db98efe6643527e70997adb5130823151057",
+  "fecha": "2026-09-01"
+}

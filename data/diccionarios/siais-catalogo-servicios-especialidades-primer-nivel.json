@@ -1,0 +1,290 @@
+{
+  "id": "siais-catalogo-servicios-especialidades-primer-nivel",
+  "campos": [
+    {
+      "nombre": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+      "tipo": "clave"
+    }
+  ],
+  "metadatos": [
+    {
+      "hoja": "Cat_Servicios_Especialidades",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo de Servicios - Especialidades",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Primer Nivel de Atención",
+          "contenido": "Fecha Actualización: | 27/05/2026"
+        },
+        {
+          "etiqueta": "Clave División\n(1 = Cirugía, 2 = Ginecología, 3 = Consulta Externa, 4 = Pediatría, 5 = Servicios de ",
+          "contenido": "Clave Servicio - Especialidad | Descripción del Servicio - Especialidad | Ubicación\n(1 = Consulta Externa, 2 = Hospital, 3 = Consulta Externa / Hospital) | Marca Pediatria | Servicio Médico | Servicio Paramédico | Apoyo | SIMF | SIAIS | Vigente"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "04 | MEDICINA FAMILIAR | 3 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "08 | ORTOPEDIA | 3 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "09 | TRAUMATOLOGIA | 3 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "17 | ESTOMATOLOGIA | 1 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "21 | GINECOLOGIA | 3 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "24 | OBSTETRICIA | 3 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "25 | MEDICINA INTERNA | 3 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "32 | PEDIATRIA MEDICA | 3 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "35 | PSIQUIATRIA CLINICA | 3 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "38 | ORTOPEDIA Y TRAUMATOLOGIA | 3 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "39 | GERIATRIA | 3 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "40 | UNIDAD  AUXILIAR DE MEDICINA FAMILIAR (UAMF) | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "50 | URGENCIAS | 3 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "56 | SALUD EN EL TRABAJO | 1 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "57 | EPIDEMIOLOGIA | 3 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "62 | ENFERMERA  MATERNO - INFANTIL | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "63 | PSICOLOGIA | 1 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "66 | NUTRICION Y DIETETICA | 1 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "68 | MEDICINA FISICA / REHABILITACION | 3 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "69 | TRABAJO SOCIAL | 1 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "70 | ENFERMERA  CRONICO - DEGENERATIVO | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "80 | MEDICINA PREVENTIVA | 1 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "81 | ESCUELAS | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "82 | EMPRESAS | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "83 | COMUNIDAD | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "84 | IMSS BIENESTAR | 1 | 0 | S | N | N | N"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "85 | ESTOMATOLOGIA PREVENTIVA | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "86 | SPPSTIMSS - MEDICINA FAMILIAR | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "87 | ENFERMERA ESPECIALISTA EN MEDICINA FAMILIAR | 1 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "89 | PREVENIMSS EN HOSPITALES | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "98 | OPTOMETRIA | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "5A | ATENCION MEDICA CONTINUA - URGENCIAS | 3 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "6T | MEDICINA FISICA / REHABILITACION - TERAPIAS | 3 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "8B | PREVENCION Y CURACION DE HERIDAS | 1 | 0 | S | N | S | N"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "8D | SPPSTIMSS - ESTOMATOLOGIA | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "8P | SPPSTIMSS - MEDICINA PREVENTIVA | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "8U | ENFERMERIA ATENCION MEDICA CONTINUA - URGENCIAS | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "9M | UCMA MEDICINA FAMILIAR | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "9N | UCMA NUTRICION Y DIETETICA | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "9P | UCMA PSICOLOGIA | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "A1 | APOYO TECNICO - ADMINISTRATIVO | 3 | 0 | S | N | S | N"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "A2 | APOYO TECNICO - PREVENTIVO | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "A3 | CHKT EN LINEA | 1 | 0 | S | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "AC | ATENCION MEDICA CONTINUA | 1 | 0 | S | S | S | N"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "D1 | PERSONAL DIRECTIVO PRIMER NIVEL | 1 | 0 | S | N | N | N"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "D4 | JEFE DE SERVICIO DE MEDICINA FAMILIAR | 1 | 0 | S | N | N | N"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "DE | ENFERMERA - CENTRO ATENCION A LA DIABETES EN EL IMSS | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "DM | CENTRO DE ATENCION A LA DIABETES EN EL IMSS (CADIMSS) | 3 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "E2 | APOYO TECNICO PREVENTIVO EN ESCUELAS | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "E3 | APOYO TECNICO PREVENTIVO EN EMPRESAS | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "E4 | APOYO TECNICO PREVENTIVO EN TRABAJO SOCIAL INTRAMUROS | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "E5 | APOYO TECNICO PREVENTIVO EN TRABAJO SOCIAL EXTRAMUROS | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "E6 | ESTOMATOLOGIA PASANTES DE SERVICIO SOCIAL - INTRAMUROS | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "E7 | ESTOMATOLOGIA PASANTES DE SERVICIO SOCIAL - EXTRAMUROS | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "E8 | APOYO TECNICO PREVENTIVO NUTRICION - EXTRAMUROS | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "E9 | APOYO TECNICO PREVENTIVO NUTRICION - INTRAMUROS | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "EC | ENFERMERA GENERAL CLINICA | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "EG | ENFERMERA ESPECIALISTA EN GERIATRIA | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "JR | JORNADAS (PROGRAMA PPF) | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "MA | MAPS - CE - PPF | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "P1 | PROMOTORES DE SALUD - PREVENIMSS | 1 | 1 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "PF | PLANIFICACION FAMILIAR | 3 | 0 | S | S | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "PR | PARTERAS RURALES | 1 | 0 | S | N | S | S"
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "UM | AREAS URBANO MARGINADAS (PROGRAMA PPF) | 1 | 0 | S | N | S | S"
+        }
+      ]
+    }
+  ],
+  "huella_base": "4cd7d899f5b432a63618b8858ab5984472dda288fe666a94ec3fd9c77a149c32",
+  "fecha": "2026-09-01"
+}

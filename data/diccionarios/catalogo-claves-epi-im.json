@@ -1,0 +1,13 @@
+{
+  "id": "catalogo-claves-epi-im",
+  "campos": [
+    {
+      "nombre": "Catalogo de Claves Epi y Claves IM",
+      "tipo": "clave",
+      "ejemplo": "Año 2026",
+      "valores": "Año 2026 | Grupo | Enfermedades prevenibles por vacunación | Enfermedades infecciosas y parasitarias del aparato digestivo | Enfermedades infecciosas del aparato respiratorio | ..."
+    }
+  ],
+  "huella_base": "f5923d4e18163b5334b5620c71ed8e6bb09d974cdfb9cb10cc486ecde14c97de",
+  "fecha": "2026-09-01"
+}

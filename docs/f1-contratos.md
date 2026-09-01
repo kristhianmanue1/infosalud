@@ -126,6 +126,13 @@ Entrada:
     (valores, ejemplos y metadatos de hojas descriptivas); nunca
     genera ni sobrescribe descripciones; --archivo y --borrador son
     mutuamente excluyentes
+  fuente-exportar <id> [--formato csv|sqlite] [--destino <dir>]:
+    exporta el archivo local verificado a productos derivados con
+    evidencia de origen (ADR-011): CSV un archivo por hoja más
+    `<id>__evidencia.json`, o base SQLite `<id>.sqlite` con una
+    tabla por hoja y tabla `evidencia`; destino por defecto
+    `data/exportaciones/<id>/<formato>`; destino existente →
+    salida 1
   vigencia-registrar <id> --archivo <ruta>: registra verificación
     comparando la huella sha256 del archivo presentado con la previa
   vigencia-verificar <id> [--destino <ruta>]: descarga la fuente de

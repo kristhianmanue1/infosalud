@@ -1,0 +1,13 @@
+{
+  "id": "equivalencia-cie9-cie10",
+  "campos": [
+    {
+      "nombre": "Coordinación de Vigilancia Epidemiológica",
+      "tipo": "clave",
+      "ejemplo": "División de Información en Salud",
+      "valores": "División de Información en Salud | Catálogo de Equivalencias CIE 9 (1987) CIE 10 | CIE9 | 0010 | 0011 | ..."
+    }
+  ],
+  "huella_base": "b2634e9a59950f7aa18b5c1c04c5e199996dea686c26aee8cf39458d991b7203",
+  "fecha": "2026-09-01"
+}

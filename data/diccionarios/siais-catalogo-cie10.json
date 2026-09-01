@@ -1,0 +1,1001 @@
+{
+  "id": "siais-catalogo-cie10",
+  "campos": [
+    {
+      "nombre": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+      "tipo": "clave",
+      "ejemplo": "Clasificación Estadística Internacional de Enfermedades y Problemas Relacionados con la Salud, Décima Revisión (CIE-10)",
+      "valores": "Clasificación Estadística Internacional de Enfermedades y Problemas Relacionados con la Salud, Décima Revisión (CIE-10) | Catálogo Simplicado CIE-10 SIMF | Codigo | A000 | A001 | ..."
+    }
+  ],
+  "metadatos": [
+    {
+      "hoja": "Cat_CIE10",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clasificación Estadística Internacional de Enfermedades y Problemas Relacionados con la Salud, Décim",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo CIE-10",
+          "contenido": "Fecha de actualización: | 18/08/2026"
+        },
+        {
+          "etiqueta": "Codigo CIE-10",
+          "contenido": "A | Descripción | Limite_Sexo | Limite_Sexo_ECE | Limite_Edad_Inferior | Edad_Inferior_Semanas | Limite_Edad_Superior | Edad_Superior_Semanas | Triv. | Erradicada | Notif. Internacional | Notif. Obligatoria | Notif. Inmediata | Notif. Inm. Mortalidad -Obstetrica | No Valida - Causa Basica Defunción | No Valida Afección Princ. Hosp. | Valida Muerte Fetal | Actualizaciones Cat- CIE-10 | Año Modificación | Año Vigencia | Vigente | Catalogo | Ind. Crónica | Cve. Aparato | Ind. Transmisible | Ind. Dx"
+        },
+        {
+          "etiqueta": "A000",
+          "contenido": "Colera debido a vibrio cholerae 01, biotipo cholerae | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 34 | COLERA DEBIDO A VIBRIO CHOLERAE 01, BIOTIPO CHOLERAE | 1000000 | 1 | 1 | A00 | 0 | 2 | 2"
+        },
+        {
+          "etiqueta": "A001",
+          "contenido": "Colera debido a vibrio cholerae 01, biotipo el tor | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 34 | COLERA DEBIDO A VIBRIO CHOLERAE 01, BIOTIPO EL TOR | 1000000 | 1 | 1 | A00 | 0 | 2 | 3"
+        },
+        {
+          "etiqueta": "A009",
+          "contenido": "Colera, no especificado | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 34 | COLERA, NO ESPECIFICADO | 1000000 | 1 | 1 | A00 | 0 | 2 | 4"
+        },
+        {
+          "etiqueta": "A00X",
+          "contenido": "Colera | 0 | A | 0 | 7800 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | COLERA | 3000000 | 1 | 1 | A00 | 0 | 0 | 5"
+        },
+        {
+          "etiqueta": "A010",
+          "contenido": "Fiebre tifoidea | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 36 | FIEBRE TIFOIDEA | 1000000 | 1 | 1 | A01 | 0 | 2 | 6"
+        },
+        {
+          "etiqueta": "A011",
+          "contenido": "Fiebre paratifoidea a | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 46 | FIEBRE PARATIFOIDEA A | 1000000 | 1 | 1 | A01 | 0 | 2 | 7"
+        },
+        {
+          "etiqueta": "A012",
+          "contenido": "Fiebre paratifoidea b | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 48 | FIEBRE PARATIFOIDEA B | 1000000 | 1 | 1 | A01 | 0 | 2 | 8"
+        },
+        {
+          "etiqueta": "A013",
+          "contenido": "Fiebre paratifoidea c | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 48 | FIEBRE PARATIFOIDEA C | 1000000 | 1 | 1 | A01 | 0 | 2 | 9"
+        },
+        {
+          "etiqueta": "A014",
+          "contenido": "Fiebre paratifoidea, no especificada | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 48 | FIEBRE PARATIFOIDEA, NO ESPECIFICADA | 1000000 | 1 | 1 | A01 | 0 | 2 | 10"
+        },
+        {
+          "etiqueta": "A01X",
+          "contenido": "Fiebres tifoidea y paratifoidea | 0 | A | 0 | 7800 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 0 | FIEBRES TIFOIDEA Y PARATIFOIDEA | 3000000 | 1 | 1 | A01 | 0 | 0 | 11"
+        },
+        {
+          "etiqueta": "A020",
+          "contenido": "Enteritis debida a salmonella | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 47 | ENTERITIS DEBIDA A SALMONELLA | 1000000 | 1 | 1 | A02 | 0 | 2 | 12"
+        },
+        {
+          "etiqueta": "A021",
+          "contenido": "Septicemia debida a salmonella | 0 | A | 0 | 7800 | C | 2010 (Correccion de titulo) | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 47 | SEPSIS DEBIDA A SALMONELLA | 1000000 | 1 | 1 | A02 | 0 | 2 | 13"
+        },
+        {
+          "etiqueta": "A022",
+          "contenido": "Infecciones localizadas debidas a salmonella | 0 | A | 0 | 7800 | C | 2003 (SE ELIMINO DAGA) | 2003 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 47 | INFECCIONES LOCALIZADAS DEBIDAS A SALMONELLA | 1000000 | 1 | 1 | A02 | 0 | 2 | 14"
+        },
+        {
+          "etiqueta": "A028",
+          "contenido": "Otras infecciones especificadas como debidas a salmonella | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 47 | OTRAS INFECCIONES ESPECIFICADAS COMO DEBIDAS A SALMONELLA | 1000000 | 1 | 1 | A02 | 0 | 2 | 15"
+        },
+        {
+          "etiqueta": "A029",
+          "contenido": "Infeccion debida a salmonella, no especificada | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 47 | INFECCION DEBIDA A SALMONELLA, NO ESPECIFICADA | 1000000 | 1 | 1 | A02 | 0 | 2 | 16"
+        },
+        {
+          "etiqueta": "A02X",
+          "contenido": "Otras infecciones debidas a salmonella | 0 | A | 0 | 7800 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | OTRAS INFECCIONES DEBIDAS A SALMONELLA | 3000000 | 1 | 1 | A02 | 0 | 0 | 17"
+        },
+        {
+          "etiqueta": "A030",
+          "contenido": "Shigelosis debida a shigella dysenteriae | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 49 | SHIGELOSIS DEBIDA A SHIGELLA DYSENTERIAE | 1000000 | 1 | 1 | A03 | 0 | 2 | 18"
+        },
+        {
+          "etiqueta": "A031",
+          "contenido": "Shigelosis debida a shigella flexneri | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 49 | SHIGELOSIS DEBIDA A SHIGELLA FLEXNERI | 1000000 | 1 | 1 | A03 | 0 | 2 | 19"
+        },
+        {
+          "etiqueta": "A032",
+          "contenido": "Shigelosis debida a shigella boydii | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 49 | SHIGELOSIS DEBIDA A SHIGELLA BOYDII | 1000000 | 1 | 1 | A03 | 0 | 2 | 20"
+        },
+        {
+          "etiqueta": "A033",
+          "contenido": "Shigelosis debida a shigella sonnei | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 49 | SHIGELOSIS DEBIDA A SHIGELLA SONNEI | 1000000 | 1 | 1 | A03 | 0 | 2 | 21"
+        },
+        {
+          "etiqueta": "A038",
+          "contenido": "Otras shigelosis | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 49 | OTRAS SHIGELOSIS | 1000000 | 1 | 1 | A03 | 0 | 2 | 22"
+        },
+        {
+          "etiqueta": "A039",
+          "contenido": "Shigelosis de tipo no especificado | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 49 | SHIGELOSIS DE TIPO NO ESPECIFICADO | 1000000 | 1 | 1 | A03 | 0 | 2 | 23"
+        },
+        {
+          "etiqueta": "A03X",
+          "contenido": "Shigelosis | 0 | A | 0 | 7800 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | SHIGELOSIS | 3000000 | 1 | 1 | A03 | 0 | 0 | 24"
+        },
+        {
+          "etiqueta": "A040",
+          "contenido": "Infeccion debida a escherichia coli enteropatogena | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | INFECCION DEBIDA A ESCHERICHIA COLI ENTEROPATOGENA | 1000000 | 1 | 1 | A04 | 0 | 2 | 25"
+        },
+        {
+          "etiqueta": "A041",
+          "contenido": "Infeccion debida a escherichia coli enterotoxigena | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | INFECCION DEBIDA A ESCHERICHIA COLI ENTEROTOXIGENA | 1000000 | 1 | 1 | A04 | 0 | 2 | 26"
+        },
+        {
+          "etiqueta": "A042",
+          "contenido": "Infeccion debida a escherichia coli enteroinvasiva | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | INFECCION DEBIDA A ESCHERICHIA COLI ENTEROINVASIVA | 1000000 | 1 | 1 | A04 | 0 | 2 | 27"
+        },
+        {
+          "etiqueta": "A043",
+          "contenido": "Infeccion debida a escherichia coli enterohemorragica | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | INFECCION DEBIDA A ESCHERICHIA COLI ENTEROHEMORRAGICA | 1000000 | 1 | 1 | A04 | 0 | 2 | 28"
+        },
+        {
+          "etiqueta": "A044",
+          "contenido": "Otras infecciones intestinales debidas a escherichia coli | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | OTRAS INFECCIONES INTESTINALES DEBIDAS A ESCHERICHIA COLI | 1000000 | 1 | 1 | A04 | 0 | 2 | 29"
+        },
+        {
+          "etiqueta": "A045",
+          "contenido": "Enteritis debida a campylobacter | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | ENTERITIS DEBIDA A CAMPYLOBACTER | 1000000 | 1 | 1 | A04 | 0 | 2 | 30"
+        },
+        {
+          "etiqueta": "A046",
+          "contenido": "Enteritis debida a yersinia enterocolitica | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | ENTERITIS DEBIDA A YERSINIA ENTEROCOLITICA | 1000000 | 1 | 1 | A04 | 0 | 2 | 31"
+        },
+        {
+          "etiqueta": "A047",
+          "contenido": "Enterocolitis debida a clostridium difficile | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | ENTEROCOLITIS DEBIDA A CLOSTRIDIUM DIFFICILE | 1000000 | 1 | 1 | A04 | 0 | 2 | 32"
+        },
+        {
+          "etiqueta": "A048",
+          "contenido": "Otras infecciones intestinales bacterianas especificadas | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | OTRAS INFECCIONES INTESTINALES BACTERIANAS ESPECIFICADAS | 1000000 | 1 | 1 | A04 | 0 | 2 | 33"
+        },
+        {
+          "etiqueta": "A049",
+          "contenido": "Infeccion intestinal bacteriana, no especificada | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | INFECCION INTESTINAL BACTERIANA, NO ESPECIFICADA | 1000000 | 1 | 1 | A04 | 0 | 2 | 34"
+        },
+        {
+          "etiqueta": "A04A",
+          "contenido": "Infeccion intestinal bacteriana sin deshidratacion | 0 | A | 0 | 7800 | 2012 | N | USO IMSS | 9 | 1 | 1 | 1 | 0 | 0 | 0 | INFECCION INTESTINAL BACTERIANA SIN DESHIDRATACION | 1000000 | 1 | 1 | A04 | 0 | 0 | 35"
+        },
+        {
+          "etiqueta": "A04B",
+          "contenido": "Infeccion intestinal bacteriana con deshidratacion | 0 | A | 0 | 7800 | 2012 | N | USO IMSS | 9 | 1 | 1 | 1 | 0 | 0 | 0 | INFECCION INTESTINAL BACTERIANA CON DESHIDRATACION | 1000000 | 1 | 1 | A04 | 0 | 0 | 36"
+        },
+        {
+          "etiqueta": "A04C",
+          "contenido": "Infeccion intestinal bacteriana con choque | 0 | A | 0 | 7800 | 2012 | N | USO IMSS | 9 | 1 | 1 | 1 | 0 | 0 | 0 | INFECCION INTESTINAL BACTERIANA CON CHOQUE | 1000000 | 1 | 1 | A04 | 0 | 0 | 37"
+        },
+        {
+          "etiqueta": "A04X",
+          "contenido": "Otras infecciones intestinales bacterianas | 0 | A | 0 | 7800 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | OTRAS INFECCIONES INTESTINALES BACTERIANAS | 3000000 | 1 | 1 | A04 | 0 | 0 | 38"
+        },
+        {
+          "etiqueta": "A050",
+          "contenido": "Intoxicacion alimentaria estafilococica | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 38 | INTOXICACION ALIMENTARIA ESTAFILOCOCICA | 1000000 | 1 | 1 | A05 | 0 | 2 | 39"
+        },
+        {
+          "etiqueta": "A051",
+          "contenido": "Botulismo | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 38 | BOTULISMO | 1000000 | 1 | 1 | A05 | 0 | 2 | 40"
+        },
+        {
+          "etiqueta": "A052",
+          "contenido": "Intoxicacion alimentaria debida a clostridium perfringens [clostridium welchii] | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 38 | INTOXICACION ALIMENTARIA DEBIDA A CLOSTRIDIUM PERFRINGENS [CLOSTRIDIUM WELCHII] | 1000000 | 1 | 1 | A05 | 0 | 2 | 41"
+        },
+        {
+          "etiqueta": "A053",
+          "contenido": "Intoxicacion alimentaria debida a vibrio parahaemolyticus | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 38 | INTOXICACION ALIMENTARIA DEBIDA A VIBRIO PARAHAEMOLYTICUS | 1000000 | 1 | 1 | A05 | 0 | 2 | 42"
+        },
+        {
+          "etiqueta": "A054",
+          "contenido": "Intoxicacion alimentaria debida a bacillus cereus | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 38 | INTOXICACION ALIMENTARIA DEBIDA A BACILLUS CEREUS | 1000000 | 1 | 1 | A05 | 0 | 2 | 43"
+        },
+        {
+          "etiqueta": "A058",
+          "contenido": "Otras intoxicaciones alimentarias debidas a bacterias especificadas | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 38 | OTRAS INTOXICACIONES ALIMENTARIAS DEBIDAS A BACTERIAS ESPECIFICADAS | 1000000 | 1 | 1 | A05 | 0 | 2 | 44"
+        },
+        {
+          "etiqueta": "A059",
+          "contenido": "Intoxicacion alimentaria bacteriana, no especificada | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 38 | INTOXICACION ALIMENTARIA BACTERIANA, NO ESPECIFICADA | 1000000 | 1 | 1 | A05 | 0 | 2 | 45"
+        },
+        {
+          "etiqueta": "A05X",
+          "contenido": "Otras intoxicaciones alimentarias bacterianas, no clasificadas en otra parte | 0 | A | 0 | 7800 | C | 2006 (SE AGREGO NCOP) | 2006 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | OTRAS INTOXICACIONES ALIMENTARIAS BACTERIANAS, NO CLASIFICADAS EN OTRA PARTE | 3000000 | 1 | 1 | A05 | 0 | 0 | 46"
+        },
+        {
+          "etiqueta": "A060",
+          "contenido": "Disenteria amebiana aguda | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 32 | DISENTERIA AMEBIANA AGUDA | 1000000 | 1 | 1 | A06 | 0 | 2 | 47"
+        },
+        {
+          "etiqueta": "A061",
+          "contenido": "Amebiasis intestinal cronica | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 32 | AMEBIASIS INTESTINAL CRONICA | 1000000 | 1 | 1 | A06 | 0 | 2 | 48"
+        },
+        {
+          "etiqueta": "A062",
+          "contenido": "Colitis amebiana no disenterica | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 32 | COLITIS AMEBIANA NO DISENTERICA | 1000000 | 1 | 1 | A06 | 0 | 2 | 49"
+        },
+        {
+          "etiqueta": "A063",
+          "contenido": "Ameboma intestinal | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 32 | AMEBOMA INTESTINAL | 1000000 | 1 | 1 | A06 | 0 | 2 | 50"
+        },
+        {
+          "etiqueta": "A064",
+          "contenido": "Absceso amebiano del higado | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 31 | ABSCESO AMEBIANO DEL HIGADO | 1000000 | 1 | 1 | A06 | 0 | 2 | 51"
+        },
+        {
+          "etiqueta": "A065",
+          "contenido": "Absceso amebiano del pulmon | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | ABSCESO AMEBIANO DEL PULMON | 1000000 | 1 | 1 | A06 | 0 | 8 | 52"
+        },
+        {
+          "etiqueta": "A066",
+          "contenido": "Absceso amebiano del cerebro | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | ABSCESO AMEBIANO DEL CEREBRO | 1000000 | 1 | 1 | A06 | 0 | 8 | 53"
+        },
+        {
+          "etiqueta": "A067",
+          "contenido": "Amebiasis cutanea | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | AMEBIASIS CUTANEA | 1000000 | 1 | 1 | A06 | 0 | 8 | 54"
+        },
+        {
+          "etiqueta": "A068",
+          "contenido": "Infeccion amebiana de otras localizaciones | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | INFECCION AMEBIANA DE OTRAS LOCALIZACIONES | 1000000 | 1 | 1 | A06 | 0 | 8 | 55"
+        },
+        {
+          "etiqueta": "A069",
+          "contenido": "Amebiasis, no especificada | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 32 | AMEBIASIS, NO ESPECIFICADA | 1000000 | 1 | 1 | A06 | 0 | 2 | 56"
+        },
+        {
+          "etiqueta": "A06X",
+          "contenido": "Amebiasis | 0 | A | 0 | 7800 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 0 | AMEBIASIS | 3000000 | 1 | 1 | A06 | 0 | 0 | 57"
+        },
+        {
+          "etiqueta": "A070",
+          "contenido": "Balantidiasis | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 40 | BALANTIDIASIS | 1000000 | 1 | 1 | A07 | 0 | 2 | 58"
+        },
+        {
+          "etiqueta": "A071",
+          "contenido": "Giardiasis [lambliasis] | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 37 | GIARDIASIS [LAMBLIASIS] | 1000000 | 1 | 1 | A07 | 0 | 2 | 59"
+        },
+        {
+          "etiqueta": "A072",
+          "contenido": "Criptosporidiosis | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 40 | CRIPTOSPORIDIOSIS | 1000000 | 1 | 1 | A07 | 0 | 2 | 60"
+        },
+        {
+          "etiqueta": "A073",
+          "contenido": "Isosporiasis | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | ISOSPORIASIS | 1000000 | 1 | 1 | A07 | 0 | 8 | 61"
+        },
+        {
+          "etiqueta": "A078",
+          "contenido": "Otras enfermedades intestinales especificadas debidas a protozoarios | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | OTRAS ENFERMEDADES INTESTINALES ESPECIFICADAS DEBIDAS A PROTOZOARIOS | 1000000 | 1 | 1 | A07 | 0 | 8 | 62"
+        },
+        {
+          "etiqueta": "A079",
+          "contenido": "Enfermedad intestinal debida a protozoarios, no especificada | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 40 | ENFERMEDAD INTESTINAL DEBIDA A PROTOZOARIOS, NO ESPECIFICADA | 1000000 | 1 | 1 | A07 | 0 | 2 | 63"
+        },
+        {
+          "etiqueta": "A07X",
+          "contenido": "Otras enfermedades intestinales debidas a protozoarios | 0 | A | 0 | 7800 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 0 | OTRAS ENFERMEDADES INTESTINALES DEBIDAS A PROTOZOARIOS | 3000000 | 1 | 1 | A07 | 0 | 0 | 64"
+        },
+        {
+          "etiqueta": "A080",
+          "contenido": "Enteritis debida a rotavirus | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 6 | ENTERITIS DEBIDA A ROTAVIRUS | 1000000 | 1 | 1 | A08 | 0 | 1 | 65"
+        },
+        {
+          "etiqueta": "A081",
+          "contenido": "Gastroenteropatia aguda debida al agente de norwalk | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | GASTROENTEROPATIA AGUDA DEBIDA AL AGENTE DE NORWALK | 1000000 | 1 | 1 | A08 | 0 | 2 | 66"
+        },
+        {
+          "etiqueta": "A082",
+          "contenido": "Enteritis debida a adenovirus | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | ENTERITIS DEBIDA A ADENOVIRUS | 1000000 | 1 | 1 | A08 | 0 | 2 | 67"
+        },
+        {
+          "etiqueta": "A083",
+          "contenido": "Otras enteritis virales | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | OTRAS ENTERITIS VIRALES | 1000000 | 1 | 1 | A08 | 0 | 2 | 68"
+        },
+        {
+          "etiqueta": "A084",
+          "contenido": "Infeccion intestinal viral, sin otra especificacion | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | INFECCION INTESTINAL VIRAL, SIN OTRA ESPECIFICACION | 1000000 | 1 | 1 | A08 | 0 | 2 | 69"
+        },
+        {
+          "etiqueta": "A085",
+          "contenido": "Otras infecciones intestinales especificadas | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | OTRAS INFECCIONES INTESTINALES ESPECIFICADAS | 1000000 | 1 | 1 | A08 | 0 | 2 | 70"
+        },
+        {
+          "etiqueta": "A08A",
+          "contenido": "Infecciones intestinales debidas a virus y otros organismos especificados sin deshidratacion | 0 | A | 0 | 7800 | 2012 | N | USO IMSS | 9 | 1 | 1 | 1 | 1 | 1 | 0 | INFECCIONES INTESTINALES DEBIDAS A VIRUS Y OTROS ORGANISMOS ESPECIFICADOS SIN DESHIDRATACION | 1000000 | 1 | 1 | A08 | 0 | 0 | 71"
+        },
+        {
+          "etiqueta": "A08B",
+          "contenido": "Infecciones intestinales debidas a virus y otros organismos especificados con deshidratacion | 0 | A | 0 | 7800 | 2012 | N | USO IMSS | 9 | 1 | 1 | 1 | 1 | 1 | 0 | INFECCIONES INTESTINALES DEBIDAS A VIRUS Y OTROS ORGANISMOS ESPECIFICADOS CON DESHIDRATACION | 1000000 | 1 | 1 | A08 | 0 | 0 | 72"
+        },
+        {
+          "etiqueta": "A08C",
+          "contenido": "Infecciones intestinales debidas a virus y otros organismos especificados con choque | 0 | A | 0 | 7800 | 2012 | N | USO IMSS | 9 | 1 | 1 | 1 | 1 | 1 | 0 | INFECCIONES INTESTINALES DEBIDAS A VIRUS Y OTROS ORGANISMOS ESPECIFICADOS CON CHOQUE | 1000000 | 1 | 1 | A08 | 0 | 0 | 73"
+        },
+        {
+          "etiqueta": "A08X",
+          "contenido": "Infecciones intestinales debidas a virus y otros organismos especificados | 0 | A | 0 | 7800 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | INFECCIONES INTESTINALES DEBIDAS A VIRUS Y OTROS ORGANISMOS ESPECIFICADOS | 3000000 | 1 | 1 | A08 | 0 | 0 | 74"
+        },
+        {
+          "etiqueta": "A090",
+          "contenido": "Otras gastroenteritis y colitis de origen infeccioso y las no especificadas | 0 | A | 0 | 7800 | A | 2010 (Nueva categoria) | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | OTRAS GASTROENTERITIS Y COLITIS DE ORIGEN INFECCIOSO Y LAS NO ESPECIFICADAS | 1000990 | 1 | 1 | A09 | 0 | 0 | 75"
+        },
+        {
+          "etiqueta": "A099",
+          "contenido": "Gastroenteritis y colitis de origen no especificado | 0 | A | 0 | 7800 | A | 2010 (Nueva categoria) | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | GASTROENTERITIS Y COLITIS DE ORIGEN NO ESPECIFICADO | 1000990 | 1 | 1 | A09 | 0 | 0 | 76"
+        },
+        {
+          "etiqueta": "A09X",
+          "contenido": "Otras gastroenteritis y colitis de origen infeccioso y no especificado | 0 | A | 0 | 7800 | A | 2010 (Cambio por subcategorias y de titulo) | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 41 | OTRAS GASTROENTERITIS Y COLITIS DE ORIGEN INFECCIOSO Y NO ESPECIFICADO | 1000990 | 1 | 1 | A09 | 0 | 2 | 77"
+        },
+        {
+          "etiqueta": "A150",
+          "contenido": "Tuberculosis del pulmon, confirmada por hallazgo microscopico del bacilo tuberculoso en esputo, con o sin cultivo | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DEL PULMON, CONFIRMADA POR HALLAZGO MICROSCOPICO DEL BACILO TUBERCULOSO EN ESPUTO, CON O SIN CULTIVO | 1000990 | 1 | 2 | A15 | 0 | 3 | 78"
+        },
+        {
+          "etiqueta": "A151",
+          "contenido": "Tuberculosis del pulmon, confirmada unicamente por cultivo | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DEL PULMON, CONFIRMADA UNICAMENTE POR CULTIVO | 1000990 | 1 | 2 | A15 | 0 | 3 | 79"
+        },
+        {
+          "etiqueta": "A152",
+          "contenido": "Tuberculosis del pulmon, confirmada histologicamente | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DEL PULMON, CONFIRMADA HISTOLOGICAMENTE | 1000990 | 1 | 2 | A15 | 0 | 3 | 80"
+        },
+        {
+          "etiqueta": "A153",
+          "contenido": "Tuberculosis del pulmon, confirmada por medios no especificados | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DEL PULMON, CONFIRMADA POR MEDIOS NO ESPECIFICADOS | 1000990 | 1 | 2 | A15 | 0 | 3 | 81"
+        },
+        {
+          "etiqueta": "A154",
+          "contenido": "Tuberculosis de ganglios linfaticos intratoracicos, confirmada bacteriologica e histologicamente | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DE GANGLIOS LINFATICOS INTRATORACICOS, CONFIRMADA BACTERIOLOGICA E HISTOLOGICAMENTE | 1000990 | 1 | 2 | A15 | 0 | 3 | 82"
+        },
+        {
+          "etiqueta": "A155",
+          "contenido": "Tuberculosis de laringe, traquea y bronquios, confirmada bacteriologica e histologicamente | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DE LARINGE, TRAQUEA Y BRONQUIOS, CONFIRMADA BACTERIOLOGICA E HISTOLOGICAMENTE | 1000990 | 1 | 2 | A15 | 0 | 3 | 83"
+        },
+        {
+          "etiqueta": "A156",
+          "contenido": "Pleuresia tuberculosa, confirmada bacteriologica e histologicamente | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | PLEURESIA TUBERCULOSA, CONFIRMADA BACTERIOLOGICA E HISTOLOGICAMENTE | 1000990 | 1 | 2 | A15 | 0 | 3 | 84"
+        },
+        {
+          "etiqueta": "A157",
+          "contenido": "Tuberculosis respiratoria primaria, confirmada bacteriologica e histologicamente | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS RESPIRATORIA PRIMARIA, CONFIRMADA BACTERIOLOGICA E HISTOLOGICAMENTE | 1000990 | 1 | 2 | A15 | 0 | 3 | 85"
+        },
+        {
+          "etiqueta": "A158",
+          "contenido": "Otras tuberculosis respiratorias, confirmadas bacteriologica e histologicamente | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | OTRAS TUBERCULOSIS RESPIRATORIAS, CONFIRMADAS BACTERIOLOGICA E HISTOLOGICAMENTE | 1000990 | 1 | 2 | A15 | 0 | 3 | 86"
+        },
+        {
+          "etiqueta": "A159",
+          "contenido": "Tuberculosis respiratoria no especificada, confirmada bacteriologica e histologicamente | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS RESPIRATORIA NO ESPECIFICADA, CONFIRMADA BACTERIOLOGICA E HISTOLOGICAMENTE | 1000990 | 1 | 2 | A15 | 0 | 3 | 87"
+        },
+        {
+          "etiqueta": "A15X",
+          "contenido": "Tuberculosis respiratoria, confirmada bacteriologica e histologicamente | 0 | A | 028D | 4 | 120A | 6261 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | TUBERCULOSIS RESPIRATORIA, CONFIRMADA BACTERIOLOGICA E HISTOLOGICAMENTE | 3000990 | 1 | 2 | A15 | 0 | 0 | 88"
+        },
+        {
+          "etiqueta": "A160",
+          "contenido": "Tuberculosis del pulmon, con examen bacteriologico e histologico negativos | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DEL PULMON, CON EXAMEN BACTERIOLOGICO E HISTOLOGICO NEGATIVOS | 1000990 | 1 | 2 | A16 | 0 | 3 | 89"
+        },
+        {
+          "etiqueta": "A161",
+          "contenido": "Tuberculosis de pulmon, sin examen bacteriologico e histologico | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DE PULMON, SIN EXAMEN BACTERIOLOGICO E HISTOLOGICO | 1000990 | 1 | 2 | A16 | 0 | 3 | 90"
+        },
+        {
+          "etiqueta": "A162",
+          "contenido": "Tuberculosis de pulmon, sin mencion de confirmacion bacteriologica o histologica | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DE PULMON, SIN MENCION DE CONFIRMACION BACTERIOLOGICA O HISTOLOGICA | 1000990 | 1 | 2 | A16 | 0 | 3 | 91"
+        },
+        {
+          "etiqueta": "A163",
+          "contenido": "Tuberculosis de ganglios linfaticos intratoracicos, sin mencion de confirmacion bacteriologica o histologica | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DE GANGLIOS LINFATICOS INTRATORACICOS, SIN MENCION DE CONFIRMACION BACTERIOLOGICA O HISTOLOGICA | 1000990 | 1 | 2 | A16 | 0 | 3 | 92"
+        },
+        {
+          "etiqueta": "A164",
+          "contenido": "Tuberculosis de laringe, traquea y bronquios, sin mencion de confirmacion bacteriologica o histologica | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS DE LARINGE, TRAQUEA Y BRONQUIOS, SIN MENCION DE CONFIRMACION BACTERIOLOGICA O HISTOLOGICA | 1000990 | 1 | 2 | A16 | 0 | 3 | 93"
+        },
+        {
+          "etiqueta": "A165",
+          "contenido": "Pleuresia tuberculosa, sin mencion de confirmacion bacteriologica o histologica | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | PLEURESIA TUBERCULOSA, SIN MENCION DE CONFIRMACION BACTERIOLOGICA O HISTOLOGICA | 1000990 | 1 | 2 | A16 | 0 | 3 | 94"
+        },
+        {
+          "etiqueta": "A167",
+          "contenido": "Tuberculosis respiratoria primaria, sin mencion de confirmacion bacteriologica o histologica | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS RESPIRATORIA PRIMARIA, SIN MENCION DE CONFIRMACION BACTERIOLOGICA O HISTOLOGICA | 1000990 | 1 | 2 | A16 | 0 | 3 | 95"
+        },
+        {
+          "etiqueta": "A168",
+          "contenido": "Otras tuberculosis respiratorias, sin mencion de confirmacion | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | OTRAS TUBERCULOSIS RESPIRATORIAS, SIN MENCION DE CONFIRMACION | 1000990 | 1 | 2 | A16 | 0 | 3 | 96"
+        },
+        {
+          "etiqueta": "A169",
+          "contenido": "Tuberculosis respiratoria no especificada, sin mencion de confirmacion bacteriologica o histologica | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 68 | TUBERCULOSIS RESPIRATORIA NO ESPECIFICADA, SIN MENCION DE CONFIRMACION BACTERIOLOGICA O HISTOLOGICA | 1000990 | 1 | 2 | A16 | 0 | 3 | 97"
+        },
+        {
+          "etiqueta": "A16X",
+          "contenido": "Tuberculosis respiratoria, no confirmada bacteriologica o histologicamente | 0 | A | 028D | 4 | 120A | 6261 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | TUBERCULOSIS RESPIRATORIA, NO CONFIRMADA BACTERIOLOGICA O HISTOLOGICAMENTE | 3000990 | 1 | 2 | A16 | 0 | 0 | 98"
+        },
+        {
+          "etiqueta": "A170",
+          "contenido": "Meningitis tuberculosa | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 29 | MENINGITIS TUBERCULOSA | 1000990 | 1 | 2 | A17 | 0 | 1 | 99"
+        },
+        {
+          "etiqueta": "A171",
+          "contenido": "Tuberculoma meningeo | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOMA MENINGEO | 1000990 | 1 | 2 | A17 | 0 | 8 | 100"
+        },
+        {
+          "etiqueta": "A178",
+          "contenido": "Otras tuberculosis del sistema nervioso | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | OTRAS TUBERCULOSIS DEL SISTEMA NERVIOSO | 1000990 | 1 | 2 | A17 | 0 | 8 | 101"
+        },
+        {
+          "etiqueta": "A179",
+          "contenido": "Tuberculosis del sistema nervioso, no especificada | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS DEL SISTEMA NERVIOSO, NO ESPECIFICADA | 1000990 | 1 | 2 | A17 | 0 | 8 | 102"
+        },
+        {
+          "etiqueta": "A17X",
+          "contenido": "Tuberculosis del sistema nervioso | 0 | A | 028D | 4 | 120A | 6261 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 0 | TUBERCULOSIS DEL SISTEMA NERVIOSO | 3000990 | 1 | 2 | A17 | 0 | 0 | 103"
+        },
+        {
+          "etiqueta": "A180",
+          "contenido": "Tuberculosis de huesos y articulaciones | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS DE HUESOS Y ARTICULACIONES | 1000990 | 1 | 2 | A18 | 0 | 8 | 104"
+        },
+        {
+          "etiqueta": "A181",
+          "contenido": "Tuberculosis del aparato genitourinario | 0 | A | 028D | 4 | 120A | 6261 | C | 2003 (SE ELIMINO DAGA) | 2003 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS DEL APARATO GENITOURINARIO | 1000990 | 1 | 2 | A18 | 0 | 8 | 105"
+        },
+        {
+          "etiqueta": "A182",
+          "contenido": "Linfadenopatia periferica tuberculosa | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | LINFADENOPATIA PERIFERICA TUBERCULOSA | 1000990 | 1 | 2 | A18 | 0 | 8 | 106"
+        },
+        {
+          "etiqueta": "A183",
+          "contenido": "Tuberculosis de los intestinos, el peritoneo y los ganglios mesentericos | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS DE LOS INTESTINOS, EL PERITONEO Y LOS GANGLIOS MESENTERICOS | 1000990 | 1 | 2 | A18 | 0 | 8 | 107"
+        },
+        {
+          "etiqueta": "A184",
+          "contenido": "Tuberculosis de la piel y el tejido subcutaneo | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS DE LA PIEL Y EL TEJIDO SUBCUTANEO | 1000990 | 1 | 2 | A18 | 0 | 8 | 108"
+        },
+        {
+          "etiqueta": "A185",
+          "contenido": "Tuberculosis del ojo | 0 | A | 028D | 4 | 120A | 6261 | C | 2003 (SE ELIMINO DAGA) | 2003 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS DEL OJO | 1000990 | 1 | 2 | A18 | 0 | 8 | 109"
+        },
+        {
+          "etiqueta": "A186",
+          "contenido": "Tuberculosis del oido | 0 | A | 028D | 4 | 120A | 6261 | C | 2003 (SE ELIMINO DAGA) | 2003 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS DEL OIDO | 1000990 | 1 | 2 | A18 | 0 | 8 | 110"
+        },
+        {
+          "etiqueta": "A187",
+          "contenido": "Tuberculosis de glandulas suprarrenales | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS DE GLANDULAS SUPRARRENALES | 1000990 | 1 | 2 | A18 | 0 | 8 | 111"
+        },
+        {
+          "etiqueta": "A188",
+          "contenido": "Tuberculosis de otros organos especificados | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS DE OTROS ORGANOS ESPECIFICADOS | 1000990 | 1 | 2 | A18 | 0 | 8 | 112"
+        },
+        {
+          "etiqueta": "A18E",
+          "contenido": "Tuberculosis de otros organos en el embarazo | 2 | F | 010A | 521 | 054A | 2817 | A | 2019 | 2019 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS DE OTROS ORGANOS EN EL EMBARAZO | 1200541 | 1 | 2 | A18 | 0 | 8 | 16101"
+        },
+        {
+          "etiqueta": "A18X",
+          "contenido": "Tuberculosis de otros organos | 0 | A | 028D | 4 | 120A | 6261 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | TUBERCULOSIS DE OTROS ORGANOS | 3000990 | 1 | 2 | A18 | 0 | 0 | 113"
+        },
+        {
+          "etiqueta": "A190",
+          "contenido": "Tuberculosis miliar aguda de un solo sitio especificado | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS MILIAR AGUDA DE UN SOLO SITIO ESPECIFICADO | 1000990 | 1 | 2 | A19 | 0 | 8 | 114"
+        },
+        {
+          "etiqueta": "A191",
+          "contenido": "Tuberculosis miliar aguda de sitios multiples | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS MILIAR AGUDA DE SITIOS MULTIPLES | 1000990 | 1 | 2 | A19 | 0 | 8 | 115"
+        },
+        {
+          "etiqueta": "A192",
+          "contenido": "Tuberculosis miliar aguda, no especificada | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS MILIAR AGUDA, NO ESPECIFICADA | 1000990 | 1 | 2 | A19 | 0 | 8 | 116"
+        },
+        {
+          "etiqueta": "A198",
+          "contenido": "Otras tuberculosis miliares | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | OTRAS TUBERCULOSIS MILIARES | 1000990 | 1 | 2 | A19 | 0 | 8 | 117"
+        },
+        {
+          "etiqueta": "A199",
+          "contenido": "Tuberculosis miliar, sin otra especificacion | 0 | A | 028D | 4 | 120A | 6261 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 135 | TUBERCULOSIS MILIAR, SIN OTRA ESPECIFICACION | 1000990 | 1 | 2 | A19 | 0 | 8 | 118"
+        },
+        {
+          "etiqueta": "A19X",
+          "contenido": "Tuberculosis miliar | 0 | A | 028D | 4 | 120A | 6261 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | TUBERCULOSIS MILIAR | 3000990 | 1 | 2 | A19 | 0 | 0 | 119"
+        },
+        {
+          "etiqueta": "A200",
+          "contenido": "Peste bubonica | 0 | A | 0 | 7800 | X | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 103 | PESTE BUBONICA | 1000003 | 1 | 3 | A20 | 0 | 5 | 120"
+        },
+        {
+          "etiqueta": "A201",
+          "contenido": "Peste celulocutanea | 0 | A | 0 | 7800 | X | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 103 | PESTE CELULOCUTANEA | 1000003 | 1 | 3 | A20 | 0 | 5 | 121"
+        },
+        {
+          "etiqueta": "A202",
+          "contenido": "Peste neumonica | 0 | A | 0 | 7800 | X | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 103 | PESTE NEUMONICA | 1000003 | 1 | 3 | A20 | 0 | 5 | 122"
+        },
+        {
+          "etiqueta": "A203",
+          "contenido": "Meningitis por peste | 0 | A | 0 | 7800 | X | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 103 | MENINGITIS POR PESTE | 1000003 | 1 | 3 | A20 | 0 | 5 | 123"
+        },
+        {
+          "etiqueta": "A207",
+          "contenido": "Peste septicemica | 0 | A | 0 | 7800 | X | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 103 | PESTE SEPTICEMICA | 1000003 | 1 | 3 | A20 | 0 | 5 | 124"
+        },
+        {
+          "etiqueta": "A208",
+          "contenido": "Otras formas de peste | 0 | A | 0 | 7800 | X | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 103 | OTRAS FORMAS DE PESTE | 1000003 | 1 | 3 | A20 | 0 | 5 | 125"
+        },
+        {
+          "etiqueta": "A209",
+          "contenido": "Peste, no especificada | 0 | A | 0 | 7800 | X | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 103 | PESTE, NO ESPECIFICADA | 1000003 | 1 | 3 | A20 | 0 | 5 | 126"
+        },
+        {
+          "etiqueta": "A20X",
+          "contenido": "Peste | 0 | A | 0 | 7800 | X | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | PESTE | 3000003 | 1 | 3 | A20 | 0 | 0 | 127"
+        },
+        {
+          "etiqueta": "A210",
+          "contenido": "Tularemia ulceroglandular | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | TULAREMIA ULCEROGLANDULAR | 1000000 | 1 | 3 | A21 | 0 | 8 | 128"
+        },
+        {
+          "etiqueta": "A211",
+          "contenido": "Tularemia oculoglandular | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | TULAREMIA OCULOGLANDULAR | 1000000 | 1 | 3 | A21 | 0 | 8 | 129"
+        },
+        {
+          "etiqueta": "A212",
+          "contenido": "Tularemia pulmonar | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | TULAREMIA PULMONAR | 1000000 | 1 | 3 | A21 | 0 | 8 | 130"
+        },
+        {
+          "etiqueta": "A213",
+          "contenido": "Tularemia gastrointestinal | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | TULAREMIA GASTROINTESTINAL | 1000000 | 1 | 3 | A21 | 0 | 8 | 131"
+        },
+        {
+          "etiqueta": "A217",
+          "contenido": "Tularemia generalizada | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | TULAREMIA GENERALIZADA | 1000000 | 1 | 3 | A21 | 0 | 8 | 132"
+        },
+        {
+          "etiqueta": "A218",
+          "contenido": "Otras formas de tularemia | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | OTRAS FORMAS DE TULAREMIA | 1000000 | 1 | 3 | A21 | 0 | 8 | 133"
+        },
+        {
+          "etiqueta": "A219",
+          "contenido": "Tularemia, no especificada | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | TULAREMIA, NO ESPECIFICADA | 1000000 | 1 | 3 | A21 | 0 | 8 | 134"
+        },
+        {
+          "etiqueta": "A21X",
+          "contenido": "Tularemia | 0 | A | 0 | 7800 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | TULAREMIA | 3000000 | 1 | 3 | A21 | 0 | 0 | 135"
+        },
+        {
+          "etiqueta": "A220",
+          "contenido": "Carbunco cutaneo | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 110 | CARBUNCO CUTANEO | 1000000 | 1 | 3 | A22 | 0 | 6 | 136"
+        },
+        {
+          "etiqueta": "A221",
+          "contenido": "Carbunco pulmonar | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 110 | CARBUNCO PULMONAR | 1000000 | 1 | 3 | A22 | 0 | 6 | 137"
+        },
+        {
+          "etiqueta": "A222",
+          "contenido": "Carbunco gastrointestinal | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 110 | CARBUNCO GASTROINTESTINAL | 1000000 | 1 | 3 | A22 | 0 | 6 | 138"
+        },
+        {
+          "etiqueta": "A227",
+          "contenido": "Carbunco septico | 0 | A | 0 | 7800 | X | C | 2010 (Correccion de titulo) | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 110 | CARBUNCO SEPTICO | 1000000 | 1 | 3 | A22 | 0 | 6 | 139"
+        },
+        {
+          "etiqueta": "A228",
+          "contenido": "Otras formas de carbunco | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 110 | OTRAS FORMAS DE CARBUNCO | 1000000 | 1 | 3 | A22 | 0 | 6 | 140"
+        },
+        {
+          "etiqueta": "A229",
+          "contenido": "Carbunco, no especificado | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 110 | CARBUNCO, NO ESPECIFICADO | 1000000 | 1 | 3 | A22 | 0 | 6 | 141"
+        },
+        {
+          "etiqueta": "A22X",
+          "contenido": "Carbunco [antrax] | 0 | A | 0 | 7800 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | CARBUNCO [ANTRAX] | 3000000 | 1 | 3 | A22 | 0 | 0 | 142"
+        },
+        {
+          "etiqueta": "A230",
+          "contenido": "Brucelosis debida a brucella melitensis | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 108 | BRUCELOSIS DEBIDA A BRUCELLA MELITENSIS | 1000000 | 1 | 3 | A23 | 0 | 6 | 143"
+        },
+        {
+          "etiqueta": "A231",
+          "contenido": "Brucelosis debida a brucella abortus | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 108 | BRUCELOSIS DEBIDA A BRUCELLA ABORTUS | 1000000 | 1 | 3 | A23 | 0 | 6 | 144"
+        },
+        {
+          "etiqueta": "A232",
+          "contenido": "Brucelosis debida a brucella suis | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 108 | BRUCELOSIS DEBIDA A BRUCELLA SUIS | 1000000 | 1 | 3 | A23 | 0 | 6 | 145"
+        },
+        {
+          "etiqueta": "A233",
+          "contenido": "Brucelosis debida a brucella canis | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 108 | BRUCELOSIS DEBIDA A BRUCELLA CANIS | 1000000 | 1 | 3 | A23 | 0 | 6 | 146"
+        },
+        {
+          "etiqueta": "A238",
+          "contenido": "Otras brucelosis | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 108 | OTRAS BRUCELOSIS | 1000000 | 1 | 3 | A23 | 0 | 6 | 147"
+        },
+        {
+          "etiqueta": "A239",
+          "contenido": "Brucelosis, no especificada | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 108 | BRUCELOSIS, NO ESPECIFICADA | 1000000 | 1 | 3 | A23 | 0 | 6 | 148"
+        },
+        {
+          "etiqueta": "A23X",
+          "contenido": "Brucelosis | 0 | A | 0 | 7800 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | BRUCELOSIS | 3000000 | 1 | 3 | A23 | 0 | 0 | 149"
+        },
+        {
+          "etiqueta": "A240",
+          "contenido": "Muermo | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | MUERMO | 1000000 | 1 | 3 | A24 | 0 | 8 | 150"
+        },
+        {
+          "etiqueta": "A241",
+          "contenido": "Melioidosis aguda y fulminante | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | MELIOIDOSIS AGUDA Y FULMINANTE | 1000000 | 1 | 3 | A24 | 0 | 8 | 151"
+        },
+        {
+          "etiqueta": "A242",
+          "contenido": "Melioidosis subaguda y cronica | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | MELIOIDOSIS SUBAGUDA Y CRONICA | 1000000 | 1 | 3 | A24 | 0 | 8 | 152"
+        },
+        {
+          "etiqueta": "A243",
+          "contenido": "Otras melioidosis | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | OTRAS MELIOIDOSIS | 1000000 | 1 | 3 | A24 | 0 | 8 | 153"
+        },
+        {
+          "etiqueta": "A244",
+          "contenido": "Melioidosis, no especificada | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | MELIOIDOSIS, NO ESPECIFICADA | 1000000 | 1 | 3 | A24 | 0 | 8 | 154"
+        },
+        {
+          "etiqueta": "A24X",
+          "contenido": "Muermo y melioidosis | 0 | A | 0 | 7800 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | MUERMO Y MELIOIDOSIS | 3000000 | 1 | 3 | A24 | 0 | 0 | 155"
+        },
+        {
+          "etiqueta": "A250",
+          "contenido": "Espirilosis | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | ESPIRILOSIS | 1000000 | 1 | 3 | A25 | 0 | 8 | 156"
+        },
+        {
+          "etiqueta": "A251",
+          "contenido": "Estreptobacilosis | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | ESTREPTOBACILOSIS | 1000000 | 1 | 3 | A25 | 0 | 8 | 157"
+        },
+        {
+          "etiqueta": "A259",
+          "contenido": "Fiebre por mordedura de rata, no especificada | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | FIEBRE POR MORDEDURA DE RATA, NO ESPECIFICADA | 1000000 | 1 | 3 | A25 | 0 | 8 | 158"
+        },
+        {
+          "etiqueta": "A25X",
+          "contenido": "Fiebre por mordedura de rata | 0 | A | 0 | 7800 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | FIEBRE POR MORDEDURA DE RATA | 3000000 | 1 | 3 | A25 | 0 | 0 | 159"
+        },
+        {
+          "etiqueta": "A260",
+          "contenido": "Erisipeloide cutaneo | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | ERISIPELOIDE CUTANEO | 1000000 | 1 | 3 | A26 | 0 | 8 | 160"
+        },
+        {
+          "etiqueta": "A267",
+          "contenido": "Sepsis por Erysipelothrix | 0 | A | 0 | 7800 | C | 2010 (Correccion de titulo) | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | SEPSIS POR ERYSIPELOTHRIX | 1000000 | 1 | 3 | A26 | 0 | 8 | 161"
+        },
+        {
+          "etiqueta": "A268",
+          "contenido": "Otras formas de erisipeloide | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | OTRAS FORMAS DE ERISIPELOIDE | 1000000 | 1 | 3 | A26 | 0 | 8 | 162"
+        },
+        {
+          "etiqueta": "A269",
+          "contenido": "Erisipeloide, no especificada | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | ERISIPELOIDE, NO ESPECIFICADA | 1000000 | 1 | 3 | A26 | 0 | 8 | 163"
+        },
+        {
+          "etiqueta": "A26X",
+          "contenido": "Erisipeloide | 0 | A | 0 | 7800 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | ERISIPELOIDE | 3000000 | 1 | 3 | A26 | 0 | 0 | 164"
+        },
+        {
+          "etiqueta": "A270",
+          "contenido": "Leptospirosis icterohemorragica | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 111 | LEPTOSPIROSIS ICTEROHEMORRAGICA | 1000000 | 1 | 3 | A27 | 0 | 6 | 165"
+        },
+        {
+          "etiqueta": "A278",
+          "contenido": "Otras formas de leptospirosis | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 111 | OTRAS FORMAS DE LEPTOSPIROSIS | 1000000 | 1 | 3 | A27 | 0 | 6 | 166"
+        },
+        {
+          "etiqueta": "A279",
+          "contenido": "Leptospirosis, no especificada | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 111 | LEPTOSPIROSIS, NO ESPECIFICADA | 1000000 | 1 | 3 | A27 | 0 | 6 | 167"
+        },
+        {
+          "etiqueta": "A27X",
+          "contenido": "Leptospirosis | 0 | A | 0 | 7800 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | LEPTOSPIROSIS | 3000000 | 1 | 3 | A27 | 0 | 0 | 168"
+        },
+        {
+          "etiqueta": "A280",
+          "contenido": "Pasteurelosis | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | PASTEURELOSIS | 1000000 | 1 | 3 | A28 | 0 | 8 | 169"
+        },
+        {
+          "etiqueta": "A281",
+          "contenido": "Enfermedad por rasguno de gato | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | ENFERMEDAD POR RASGUNO DE GATO | 1000000 | 1 | 3 | A28 | 0 | 8 | 170"
+        },
+        {
+          "etiqueta": "A282",
+          "contenido": "Yersiniosis extraintestinal | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | YERSINIOSIS EXTRAINTESTINAL | 1000000 | 1 | 3 | A28 | 0 | 8 | 171"
+        },
+        {
+          "etiqueta": "A288",
+          "contenido": "Otras enfermedades zoonoticas bacterianas especificadas, no clasificadas en otra parte | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | OTRAS ENFERMEDADES ZOONOTICAS BACTERIANAS ESPECIFICADAS, NO CLASIFICADAS EN OTRA PARTE | 1000000 | 1 | 3 | A28 | 0 | 8 | 172"
+        },
+        {
+          "etiqueta": "A289",
+          "contenido": "Enfermedad zoonotica bacteriana, sin otra especificacion | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | ENFERMEDAD ZOONOTICA BACTERIANA, SIN OTRA ESPECIFICACION | 1000000 | 1 | 3 | A28 | 0 | 8 | 173"
+        },
+        {
+          "etiqueta": "A28X",
+          "contenido": "Otras enfermedades zoonoticas bacterianas, no clasificadas en otra parte | 0 | A | 0 | 7800 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | OTRAS ENFERMEDADES ZOONOTICAS BACTERIANAS, NO CLASIFICADAS EN OTRA PARTE | 3000000 | 1 | 3 | A28 | 0 | 0 | 174"
+        },
+        {
+          "etiqueta": "A300",
+          "contenido": "Lepra indeterminada | 0 | A | 010A | 521 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 127 | LEPRA INDETERMINADA | 1010990 | 1 | 4 | A30 | 0 | 8 | 175"
+        },
+        {
+          "etiqueta": "A301",
+          "contenido": "Lepra tuberculoide | 0 | A | 010A | 521 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 127 | LEPRA TUBERCULOIDE | 1010990 | 1 | 4 | A30 | 0 | 8 | 176"
+        },
+        {
+          "etiqueta": "A302",
+          "contenido": "Lepra tuberculoide limitrofe | 0 | A | 010A | 521 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 127 | LEPRA TUBERCULOIDE LIMITROFE | 1010990 | 1 | 4 | A30 | 0 | 8 | 177"
+        },
+        {
+          "etiqueta": "A303",
+          "contenido": "Lepra limitrofe | 0 | A | 010A | 521 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 127 | LEPRA LIMITROFE | 1010990 | 1 | 4 | A30 | 0 | 8 | 178"
+        },
+        {
+          "etiqueta": "A304",
+          "contenido": "Lepra lepromatosa limitrofe | 0 | A | 010A | 521 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 127 | LEPRA LEPROMATOSA LIMITROFE | 1010990 | 1 | 4 | A30 | 0 | 8 | 179"
+        },
+        {
+          "etiqueta": "A305",
+          "contenido": "Lepra lepromatosa | 0 | A | 010A | 521 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 127 | LEPRA LEPROMATOSA | 1010990 | 1 | 4 | A30 | 0 | 8 | 180"
+        },
+        {
+          "etiqueta": "A308",
+          "contenido": "Otras formas de lepra | 0 | A | 010A | 521 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 127 | OTRAS FORMAS DE LEPRA | 1010990 | 1 | 4 | A30 | 0 | 8 | 181"
+        },
+        {
+          "etiqueta": "A309",
+          "contenido": "Lepra, no especificada | 0 | A | 010A | 521 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 127 | LEPRA, NO ESPECIFICADA | 1010990 | 1 | 4 | A30 | 0 | 8 | 182"
+        },
+        {
+          "etiqueta": "A30X",
+          "contenido": "Lepra [enfermedad de hansen] | 0 | A | 010A | 521 | 120A | 6261 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | LEPRA [ENFERMEDAD DE HANSEN] | 3010990 | 1 | 4 | A30 | 0 | 0 | 183"
+        },
+        {
+          "etiqueta": "A310",
+          "contenido": "Infecciones por micobacterias pulmonares | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | INFECCIONES POR MICOBACTERIAS PULMONARES | 1000000 | 1 | 4 | A31 | 0 | 8 | 184"
+        },
+        {
+          "etiqueta": "A311",
+          "contenido": "Infeccion cutanea por micobacterias | 0 | A | 0 | 7800 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | INFECCION CUTANEA POR MICOBACTERIAS | 1000000 | 1 | 4 | A31 | 0 | 8 | 185"
+        },
+        {
+          "etiqueta": "A318",
+          "contenido": "Otras infecciones por micobacterias | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | OTRAS INFECCIONES POR MICOBACTERIAS | 1000000 | 1 | 4 | A31 | 0 | 8 | 186"
+        },
+        {
+          "etiqueta": "A319",
+          "contenido": "Infeccion por micobacteria, no especificada | 0 | A | 0 | 7800 | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | INFECCION POR MICOBACTERIA, NO ESPECIFICADA | 1000000 | 1 | 4 | A31 | 0 | 8 | 187"
+        },
+        {
+          "etiqueta": "A31X",
+          "contenido": "Infecciones debidas a otras micobacterias | 0 | A | 0 | 7800 | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | INFECCIONES DEBIDAS A OTRAS MICOBACTERIAS | 3000000 | 1 | 4 | A31 | 0 | 0 | 188"
+        },
+        {
+          "etiqueta": "A320",
+          "contenido": "Listeriosis cutanea | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | LISTERIOSIS CUTANEA | 1000990 | 1 | 4 | A32 | 0 | 8 | 189"
+        },
+        {
+          "etiqueta": "A321",
+          "contenido": "Meningitis y meningoencefalitis listeriana | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | MENINGITIS Y MENINGOENCEFALITIS LISTERIANA | 1000990 | 1 | 4 | A32 | 0 | 8 | 190"
+        },
+        {
+          "etiqueta": "A327",
+          "contenido": "Sepsis listeriana | 0 | A | 028D | 4 | 120A | 6261 | X | C | 2010 (Correccion de titulo) | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | SEPSIS LISTERIANA | 1000990 | 1 | 4 | A32 | 0 | 8 | 191"
+        },
+        {
+          "etiqueta": "A328",
+          "contenido": "Otras formas de listeriosis | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | OTRAS FORMAS DE LISTERIOSIS | 1000990 | 1 | 4 | A32 | 0 | 8 | 192"
+        },
+        {
+          "etiqueta": "A329",
+          "contenido": "Listeriosis, no especificada | 0 | A | 028D | 4 | 120A | 6261 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 148 | LISTERIOSIS, NO ESPECIFICADA | 1000990 | 1 | 4 | A32 | 0 | 8 | 193"
+        },
+        {
+          "etiqueta": "A32X",
+          "contenido": "Listeriosis | 0 | A | 028D | 4 | 120A | 6261 | X | N | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 0 | LISTERIOSIS | 3000990 | 1 | 4 | A32 | 0 | 0 | 194"
+        },
+        {
+          "etiqueta": "A33X",
+          "contenido": "Tetanos neonatal | 0 | A | 000H | 0 | 027D | 3 | X | S | VOLUMEN I | 9 | 1 | 1 | 1 | 1 | 1 | 17 | TETANOS NEONATAL | 4000001 | 1 | 4 | A33 | 0 | 1 | 195"
+        }
+      ]
+    },
+    {
+      "hoja": "Descrip_CatCIE10",
+      "metadatos": [
+        {
+          "etiqueta": "Sistema de Información de Atención Integral de la Salud (SIAIS)",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Clasificación Estadística Internacional de Enfermedades y Problemas Relacionados con la Salud, Décim",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Catálogo CIE-10",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "Descripción del Catálogo CIE-10",
+          "contenido": ""
+        },
+        {
+          "etiqueta": "No. Campo",
+          "contenido": "Nombre del Campo | Descripción"
+        },
+        {
+          "etiqueta": "1",
+          "contenido": "Codigo | Código CIE-10"
+        },
+        {
+          "etiqueta": "2",
+          "contenido": "A | Código de asterisco, son validos como códigos adicionales, no se aceptan como causa básica"
+        },
+        {
+          "etiqueta": "3",
+          "contenido": "Nombre | títulos (descripciones) de las rúbricas (categorías de tres caracteres y subcategorías de 4 caracteres)."
+        },
+        {
+          "etiqueta": "4",
+          "contenido": "Limite_Sexo | Identifica la restricción de códigos asociadas al sexo \n (1=Masculino, 2=Femenino, 0=Ambos)."
+        },
+        {
+          "etiqueta": "5",
+          "contenido": "Limite_Sexo_NECE | Filtro de Sexo (ECE IMSS)\nA=AMBOS\nF=FEMENINO\nM=MASCULINO"
+        },
+        {
+          "etiqueta": "6",
+          "contenido": "Limite_Edad_Inferior | Filtro para Edad Inicial ( Años)"
+        },
+        {
+          "etiqueta": "7",
+          "contenido": "Edad_Inferior_Semanas | Filtro de Edad Inicial en Semanas (ECE IMSS)"
+        },
+        {
+          "etiqueta": "8",
+          "contenido": "Limite_Edad_Superior | Filtro para Edad Final ( Años)"
+        },
+        {
+          "etiqueta": "9",
+          "contenido": "Edad_Superior_Semanas | Filtro de Edad Final en Semanas (ECE IMSS)"
+        },
+        {
+          "etiqueta": "10",
+          "contenido": "Triv | Afecciones poco probables de provocar la muerte"
+        },
+        {
+          "etiqueta": "11",
+          "contenido": "Errad | Causas erradicadas o no existentes en el país\nLOS DIAGNOSTICOS MARCADOS X NO SE DEBEN DE REGISTRAR (enviar mensaje y corregir o cancelar)"
+        },
+        {
+          "etiqueta": "12",
+          "contenido": "Notif_Internacional | Notificación internacional Vigilancia epidemiológica (morbilidad)"
+        },
+        {
+          "etiqueta": "13",
+          "contenido": "Notif_Obligatoria | Notificación obligatoria Vigilancia epidemiológica\nDiagnsoticos marcados con X obligatorios de notificar a vigilancia epidemiologica (enviar mensaje \"Diagnostico de Vigilancia epidemiologica confime su inclusión: Si o No)"
+        },
+        {
+          "etiqueta": "14",
+          "contenido": "Notif_Inmediata | Notificación inmediata Vigilancia epidemiológica"
+        },
+        {
+          "etiqueta": "15",
+          "contenido": "Notif_Inm_Morta_Obstetrica | Notificación inmediata mortalidad Obstétrica"
+        },
+        {
+          "etiqueta": "16",
+          "contenido": "No_Valida_Causa_Basica_Def | No es válida como Causa Básica de Defunción\nLos diagnosticos marcados con X no se permiten registrar como causa basica cuando el motivo del egreso es defuncion (enviar mensaje y corregir o cancelar)"
+        },
+        {
+          "etiqueta": "17",
+          "contenido": "No_Valida_Afeccion_Princ_Hosp | No es válida como Afección principal hospitalaria\nDiagnosticos marcados con X no se permiten registrar como Diagnosticos Princpales de Egreso Hospitalario"
+        },
+        {
+          "etiqueta": "18",
+          "contenido": "Valida_Muerte_Fetal | Válida para muertes fetales\nDiagnosticos marcados con X no se permiten registrar como Causa basica en defunciones fetales"
+        },
+        {
+          "etiqueta": "19",
+          "contenido": "Actualizaciones_CIE10 | Actualizaciones después de la liberación de la CIE-10 hasta el 2013\nvalores\nA= Alta\nB= Baja\nC= Cambio"
+        },
+        {
+          "etiqueta": "20",
+          "contenido": "Anio_Modificacion | Año de modificación / actualización"
+        },
+        {
+          "etiqueta": "21",
+          "contenido": "Anio_Vigencia | Año  inicio de operación"
+        },
+        {
+          "etiqueta": "22",
+          "contenido": "Vigente | Vigente (S / N)\nDiangnosticos con \"N\" no se deben de registrar"
+        },
+        {
+          "etiqueta": "23",
+          "contenido": "Catalogo | Tipo de Catálogo (VOLUMEN I, Catálogo Simplificado SIMF)"
+        },
+        {
+          "etiqueta": "24",
+          "contenido": "IND_CRONICA | Marca - Enfermedad Crónica - Degenerativa"
+        },
+        {
+          "etiqueta": "25",
+          "contenido": "CVE_APARATO | Clave Aparato / Sistema"
+        },
+        {
+          "etiqueta": "26",
+          "contenido": "Ind_Transmisible | Marca - Transmisible\nDiagnosticos marcados con \"1\"se deben de reportar en el Informe Semanal de Vigilancia Epidemiologica"
+        },
+        {
+          "etiqueta": "27",
+          "contenido": "Ind_Principal_Cons_Ext | Valido como Diagnóstico Principal en Consulta Externa\nDiagnosticos marcados con X no se permiten registrar como Diagnostico Principal en consulta externa"
+        },
+        {
+          "etiqueta": "28",
+          "contenido": "IND_NIVEL1 | Marca - Valida para Primer Nivel de Atención"
+        },
+        {
+          "etiqueta": "29",
+          "contenido": "IND_NIVEL2 | Marca - Valida para Segundo Nivel de Atención"
+        },
+        {
+          "etiqueta": "30",
+          "contenido": "IND_NIVEL3 | Marca - Valida para Tercer Nivel de Atención (UMAE)"
+        },
+        {
+          "etiqueta": "31",
+          "contenido": "Renglon | Renglon - Informe Semanal de Vigilancia Epidemiológica"
+        },
+        {
+          "etiqueta": "32",
+          "contenido": "NombreM | Descripción de la Enfermedad en Mayúsculas"
+        },
+        {
+          "etiqueta": "33",
+          "contenido": "Filtro | Filtro (SIMO / SIAIS)"
+        },
+        {
+          "etiqueta": "34",
+          "contenido": "CveCapitulo | Clave Capitulo CIE-10"
+        },
+        {
+          "etiqueta": "35",
+          "contenido": "CveGrupo | Clave Grupo CIE-10"
+        },
+        {
+          "etiqueta": "36",
+          "contenido": "CveSubGrupo | Clave SubGrupo CIE-10"
+        },
+        {
+          "etiqueta": "37",
+          "contenido": "CveCategoria | Clave Categoria CIE-10"
+        },
+        {
+          "etiqueta": "38",
+          "contenido": "Exclusion | Marca Exclusión - Servicio de Urgencias - Informe Semanal de Vigilancia Epidemiológica\nDiagnosticos marcados con \"1\" cuando se registran en el servicio de urgencias NO se deben de reportar en el Informe Semanal de Vigilancia Epidemiologica"
+        },
+        {
+          "etiqueta": "39",
+          "contenido": "Agrupamiento | Clave Agrupamiento - Informe Semanal de Vigilancia Epidemiológica"
+        },
+        {
+          "etiqueta": "40",
+          "contenido": "Consec_Codigo | Consecutivo"
+        }
+      ]
+    }
+  ],
+  "huella_base": "50f4ec3365b3546d2705fea425ebdb1000e3a934dbac61f560d265a155cb7068",
+  "fecha": "2026-09-01"
+}

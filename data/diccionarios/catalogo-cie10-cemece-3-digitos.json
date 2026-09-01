@@ -1,0 +1,381 @@
+{
+  "id": "catalogo-cie10-cemece-3-digitos",
+  "campos": [
+    {
+      "nombre": "CONSEC",
+      "tipo": "clave",
+      "ejemplo": "1",
+      "valores": "1 | 5 | 11 | 17 | 24 | ..."
+    },
+    {
+      "nombre": "letra",
+      "tipo": "otro",
+      "ejemplo": "A",
+      "valores": "A | B | C"
+    },
+    {
+      "nombre": "Clave",
+      "tipo": "otro",
+      "ejemplo": "A00",
+      "valores": "A00 | A01 | A02 | A03 | A04 | ..."
+    },
+    {
+      "nombre": "Nombre",
+      "tipo": "otro",
+      "ejemplo": "CÓLERA",
+      "valores": "CÓLERA | FIEBRES TIFOIDEA Y PARATIFOIDEA | OTRAS INFECCIONES DEBIDAS A SALMONELLA | SHIGELOSIS | OTRAS INFECCIONES INTESTINALES BACTERIANAS | ..."
+    },
+    {
+      "nombre": "CodX",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "LSex",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | 2 | 1"
+    },
+    {
+      "nombre": "LInf",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | 028D | 010A | 002A | 000H | ..."
+    },
+    {
+      "nombre": "LSup",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | 120A | 015A"
+    },
+    {
+      "nombre": "Triv",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | T"
+    },
+    {
+      "nombre": "errad",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | T"
+    },
+    {
+      "nombre": "N_inter",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | T"
+    },
+    {
+      "nombre": "Nin",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T | F"
+    },
+    {
+      "nombre": "Ninmtobs",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "CodSitLesion",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "No_CBD",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | T"
+    },
+    {
+      "nombre": "CBD",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T | F"
+    },
+    {
+      "nombre": "No_Aph",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T"
+    },
+    {
+      "nombre": "AF_PRIN",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "SIS",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "COD_COMPLEMEN_MORBI",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "DEF_FETAL_M",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "DEF_FETAL_CBD",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "capitulo",
+      "tipo": "otro",
+      "ejemplo": "01",
+      "valores": "01 | 02"
+    },
+    {
+      "nombre": "Lista1",
+      "tipo": "otro",
+      "ejemplo": "002",
+      "valores": "002 | 004 | 003 | 005 | 006 | ..."
+    },
+    {
+      "nombre": "Grupo1",
+      "tipo": "otro",
+      "ejemplo": "001",
+      "valores": "001 | F | 026"
+    },
+    {
+      "nombre": "Lista5",
+      "tipo": "otro",
+      "ejemplo": "001",
+      "valores": "001 | 002 | 006 | 003 | 004 | ..."
+    },
+    {
+      "nombre": "ACTUALIZACIONES _ CIE _ 10",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | C | A"
+    },
+    {
+      "nombre": "year_modifi",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | 2006 (SE AGREGO NCOP) | 2010 CAMBIO X SUBCATEGORIAS Y CAMBIO DE TITULO | 2006 (CAMBIA TITULO) | 2010 CORRECCION TITULOS | ..."
+    },
+    {
+      "nombre": "year_aplicacion",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | 2006 | 2014 | 2003 | 2018 | ..."
+    },
+    {
+      "nombre": "valid",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T"
+    },
+    {
+      "nombre": "prinmorta",
+      "tipo": "otro",
+      "ejemplo": "001",
+      "valores": "001 | 999 | 003 | 007 | 008 | ..."
+    },
+    {
+      "nombre": "prinmorbi",
+      "tipo": "otro",
+      "ejemplo": "001",
+      "valores": "001 | 999 | 003 | 007 | 008 | ..."
+    },
+    {
+      "nombre": "lm_morbi",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | 01H | 05Z | 13Z | 14B | ..."
+    },
+    {
+      "nombre": "lm_morta",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | 01H | 13Z | 14B"
+    },
+    {
+      "nombre": "lgbd165",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "lOMSBeck",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 2 | 3 | 88 | 4 | ..."
+    },
+    {
+      "nombre": "lgbd190",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "NOTDiaria",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T | F"
+    },
+    {
+      "nombre": "NOTSemanal",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T | F"
+    },
+    {
+      "nombre": "Sistema_Especial",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T | F"
+    },
+    {
+      "nombre": "birmm",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "poco_util_Morta",
+      "tipo": "otro",
+      "ejemplo": "5",
+      "valores": "5 | 1 | 4"
+    },
+    {
+      "nombre": "epi_morta",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | T"
+    },
+    {
+      "nombre": "Edas e Iras en < de 5a_os",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | T"
+    },
+    {
+      "nombre": "CSVE_ MATERNAS-SEED-EPID",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "epi_morta_m5",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | T"
+    },
+    {
+      "nombre": "epi_morbi",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T | F"
+    },
+    {
+      "nombre": "Def_Maternas",
+      "tipo": "otro",
+      "ejemplo": "0",
+      "valores": "0"
+    },
+    {
+      "nombre": "CAUSES",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | T"
+    },
+    {
+      "nombre": "No_de_Intervencion ",
+      "tipo": "otro"
+    },
+    {
+      "nombre": "SEED-EPI_Mortalidad",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | T"
+    },
+    {
+      "nombre": "SUIVE_Morbilidad",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T | F"
+    },
+    {
+      "nombre": "SUIVE-EpiClave ",
+      "tipo": "otro"
+    },
+    {
+      "nombre": "Descripcion_EpiClave",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "SUIVE-Notificacion_Inmediata",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T | F"
+    },
+    {
+      "nombre": "SUIVE-Estudio_Epidemiologico_de_caso",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T | F"
+    },
+    {
+      "nombre": "SUIVE-Estudio_de_Brote",
+      "tipo": "otro",
+      "ejemplo": "T",
+      "valores": "T | F"
+    },
+    {
+      "nombre": "SINAC",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "Prin_SINAC",
+      "tipo": "otro",
+      "ejemplo": "000",
+      "valores": "000"
+    },
+    {
+      "nombre": "Prin_SINAC_GRUPO",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "Prin_SINAC_SUBGRUPO",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    },
+    {
+      "nombre": "Codigos_daga",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F | T"
+    },
+    {
+      "nombre": "Codigos_asterisco",
+      "tipo": "otro",
+      "ejemplo": "F",
+      "valores": "F"
+    }
+  ],
+  "huella_base": "705a10f4d5f5628158febe11f0af9ee93319083b3539d53ed63e5ea67c912eff",
+  "fecha": "2026-09-01"
+}
