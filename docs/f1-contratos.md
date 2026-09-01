@@ -23,6 +23,9 @@ Entrada (campos cerrados):
     resultado: enum [obligatorio]: vigente | cambiada | inaccesible
     huella: string [opcional] [sha256 hex] — del archivo presentado
     ruta_local: string [opcional] — copia local referenciada
+    causa: string [opcional] [máx 200 chars] — motivo del fallo;
+      presente cuando resultado = inaccesible (enmienda 2026-09-01,
+      ronda adversarial F3)
 
 Salida: el registro almacenado, idéntico al validado.
 Errores:
@@ -46,8 +49,14 @@ registra aquí antes de la primera implementación.
 
 Entrada:
   Todos los comandos aceptan `--json` [opcional]: salida JSON
-  parseable en stdout (un objeto por ejecución); diagnóstico en
-  stderr. Sin `--json`, salida en texto plano para el humano.
+  parseable en stdout (un objeto por ejecución, incluidos los
+  fallos — objeto con clave "error"—); diagnóstico en stderr.
+  Sin `--json`, salida en texto plano para el humano.
+  Uso inválido de argumentos sale con código 1, no 2 (el código 2
+  queda reservado para E-NOEXISTE). En fuente-buscar, el término
+  vacío se rechaza como E-VALID (salida 1).
+  [Enmiendas 2026-09-01, ronda adversarial F3; sin consumidores
+  externos aún.]
   fuente-alta --archivo <ruta>: da de alta un registro JSON válido
     [obligatorio: ruta a archivo conforme a registro-de-fuente v1]
   fuente-lista [--seccion <s>] [--formato <f>]: lista registros
