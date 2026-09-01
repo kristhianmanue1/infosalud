@@ -66,15 +66,27 @@ Entrada:
     URL original y la ruta local si existe
   vigencia-registrar <id> --archivo <ruta>: registra verificación
     comparando la huella sha256 del archivo presentado con la previa
+  vigencia-verificar <id> [--destino <ruta>]: descarga la fuente de
+    su URL registrada (GET de sólo lectura, ADR-008) a destino —por
+    defecto data/descargas/<id>/<archivo>— y registra la verificación
+    con su evidencia (fecha, huella sha256, ruta local). Salvaguardas
+    fail-closed: timeout explícito, tamaño máximo, verificación
+    mínima de contenido (rechaza p. ej. HTML 200 para un xlsx), sin
+    redirects fuera del host original, descarga temporal + rename.
   vigencia-historia <id>: lista el historial cronológico
 
 Salida: texto plano; código 0 en éxito.
 Errores:
   1: E-VALID o E-DUPLICADO, o fallo de entorno (catálogo ausente o
-     corrupto) — mensaje con campo/motivo; estado íntegro anterior.
+     corrupto; fallo de red o de contenido en vigencia-verificar,
+     que registra `inaccesible` con su causa) — mensaje con
+     campo/motivo; estado íntegro anterior.
   2: E-NOEXISTE — id inexistente o búsqueda sin resultados.
 Invariantes:
-  - Ningún comando inicia comunicación de red (SPEC-3).
+  - Ningún comando inicia comunicación de red SALVO
+    `vigencia-verificar` (ADR-008 supera parcialmente SPEC-3/ADR-004:
+    GET de sólo lectura, esquema http/https, sin redirects a otro
+    host, timeout y tamaño máximo obligatorios, nunca envía datos).
   - Validación en la frontera, una sola vez, contra el contrato.
   - Escrituras atómicas: temporal + rename.
 Compatibilidad: añadir comandos es compatible; cambiar semántica o
@@ -85,10 +97,15 @@ Compatibilidad: añadir comandos es compatible; cambiar semántica o
 ESTADOS: desconocida --alta--> vigente | cambiada | inaccesible
 TRANSICIONES:
   desconocida --vigencia-registrar(huella H, sin previa)--> vigente
+  desconocida --vigencia-verificar(descarga exitosa, sin previa)-->
+    vigente
   vigente --verificación(huella igual)--> vigente
   vigente --verificación(huella distinta)--> cambiada
   cambiada --verificación(huella igual a la nueva previa)--> vigente
   cualquier --archivo ilegible/inexistente--> inaccesible
+  cualquier --verificación por red fallida (sin conexión, timeout,
+    tamaño excedido, contenido no reconocido, redirect externo)-->
+    inaccesible
 INVARIANTES:
   - No existe transición hacia éxito sin archivo verificado: un
     fallo de lectura nunca produce `vigente` ni `cambiada`.

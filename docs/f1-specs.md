@@ -83,5 +83,44 @@ Casos:
 - DADO una escritura de catálogo interrumpida ENTONCES el archivo
   queda en la versión anterior completa, nunca a medias.
 Invariantes:
-- Ningún comando de la v1 inicia comunicación de red.
+- Ningún comando de la v1 inicia comunicación de red (salvo
+  `vigencia-verificar`, acotado por ADR-008 y SPEC-4).
 - Ningún comando registra datos personales en salidas ni bitácoras.
+
+## SPEC-4 [cubre: REQ-6]
+
+Comportamiento: bajo demanda (humano o agente) o sondeo mensual
+(ADR-008), el sistema descarga la fuente de su URL registrada —GET
+de sólo lectura— y registra la verificación con evidencia
+verificable: fecha ISO, huella sha256, ruta local y estado.
+Entradas: `vigencia-verificar <id> [--destino <ruta>]`.
+Salidas: estado resultante (`vigente` | `cambiada` | `inaccesible`)
+con fecha, huella y ruta local, en texto plano o `--json`; el
+archivo queda disponible en destino para consumo del agente.
+Errores:
+- E-NOEXISTE: id inexistente → salida 2, sin descarga ni cambios.
+- Fallo de red (sin conexión, timeout, tamaño excedido, redirect
+  externo) o contenido no reconocido → estado `inaccesible`
+  registrado con su causa, salida 1; nunca éxito inferido.
+Casos:
+- DADO una fuente registrada con el portal disponible CUANDO se
+  ejecuta `vigencia-verificar <id>` ENTONCES el archivo queda en
+  destino y la verificación registra `vigente` o `cambiada` con
+  fecha y huella.
+- DADO la misma fuente con huella previa H CUANDO el portal sirve
+  contenido de huella H ENTONCES el resultado es `vigente`; con
+  contenido distinto, `cambiada`.
+- DADO el host sin conexión o sin responder dentro del timeout
+  ENTONCES el estado resultante es `inaccesible` con la causa
+  declarada y la salida lo presenta como fallo.
+- DADO una respuesta HTTP 200 con contenido que no corresponde al
+  formato declarado (p. ej. HTML para un xlsx) ENTONCES se rechaza
+  y se registra `inaccesible` con esa causa.
+Invariantes:
+- Sólo GET, sólo al host de la URL registrada, sin redirects a otro
+  host; nada se envía al portal.
+- Timeout y tamaño máximo obligatorios en toda descarga.
+- Descarga a archivo temporal + rename atómico: la huella nunca se
+  calcula sobre un archivo a medias.
+- El historial es append-only; todo intento (exitoso o fallido)
+  queda registrado con fecha.
