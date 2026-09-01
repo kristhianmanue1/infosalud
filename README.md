@@ -62,6 +62,14 @@ Hereda los valores por defecto del estándar Skevi (ninguna
 desviación declarada): 800 líneas por archivo de texto, 200 para
 instrucciones de agentes (`AGENTS.md`), 300 para `README.md`.
 
+## Política de CI (obligatoria para agentes)
+
+**Sin CI de GitHub sin autorización del usuario.** Los gates corren
+localmente (hooks de Git + `unittest`); este repositorio no define
+workflows de GitHub Actions y ningún agente debe añadirlos ni
+depender de ellos. El push se realiza con `gh` del administrador
+**sin disparar CI**. Ver `AGENTS.md` §Prohibido.
+
 ## Sobre `skevi/`
 
 El directorio `skevi/` es un clon de referencia del método

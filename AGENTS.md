@@ -44,6 +44,10 @@ Sólo biblioteca estándar: `dependencies = []` en `pyproject.toml`.
 
 ## Prohibido
 
+- **CI de GitHub sin autorización**: no crear, modificar ni depender
+  de workflows de GitHub Actions sin autorización explícita del
+  usuario. Los gates corren **localmente** (hooks + tests); el push
+  se hace con `gh` del administrador **sin CI de GitHub**.
 - Cualquier comunicación de red desde el código (ADR-004): la v1
   no abre sockets ni descarga nada.
 - Dependencias fuera de la stdlib sin ADR nuevo que lo justifique.
