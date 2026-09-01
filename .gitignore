@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Sistema / editor
+.DS_Store
+*.swp
+
+# Referencia externa: clon de la guía Skevi (no es código del
+# proyecto; ver README §"Sobre skevi/")
+skevi/
