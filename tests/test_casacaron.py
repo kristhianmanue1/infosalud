@@ -42,6 +42,7 @@ class TestFuenteLista(unittest.TestCase):
                     "titulo": "Catálogo CIE-10",
                     "url": "http://infosalud.imss.gob.mx/cie10",
                     "formato": "xlsx",
+                    "verificaciones": [],
                 }],
             }, archivo)
             ruta = archivo.name

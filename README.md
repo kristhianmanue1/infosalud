@@ -29,13 +29,20 @@ Desde la raíz del repositorio:
 
 ```bash
 python3 -m infosalud --version
-python3 -m infosalud fuente-lista            # texto plano (humano)
-python3 -m infosalud fuente-lista --json     # JSON (agente, ADR-006)
-python3 -m infosalud fuente-lista --seccion catalogos --formato xlsx
+python3 -m infosalud fuente-alta --archivo fuente.json
+python3 -m infosalud fuente-lista                     # texto (humano)
+python3 -m infosalud fuente-lista --json              # JSON (agente)
+python3 -m infosalud fuente-buscar cie10
+python3 -m infosalud fuente-detalle catalogo-cie10
+python3 -m infosalud vigencia-registrar catalogo-cie10 --archivo cie10.xlsx
+python3 -m infosalud vigencia-historia catalogo-cie10
 ```
 
-El catálogo vive en `data/fuentes.json` (contrato
-`registro-de-fuente v1` en `docs/f1-contratos.md`).
+Todos los comandos aceptan `--catalogo <ruta>` (por defecto
+`data/fuentes.json`) y `--json` (contrato `cli-infosalud v1.1`,
+ADR-006). Códigos de salida: 0 éxito, 1 error de validación, 2 no
+encontrado. El esquema del registro está en `docs/f1-contratos.md`
+(`registro-de-fuente v1`).
 
 ## Cómo probar
 

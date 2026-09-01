@@ -2,14 +2,24 @@
 
 Punto de entrada para agentes de IA que trabajen en este proyecto.
 El consumidor primario del sistema es un agente de IA (ADR-006);
-las reglas de operación lo reflectan.
+las reglas de operación lo reflejan.
 
-## Comandos reales (verificados en F2)
+## Comandos reales (verificados en F3)
 
 ```bash
 # correr
 python3 -m infosalud --version
-python3 -m infosalud fuente-lista --json
+python3 -m infosalud fuente-alta --archivo <fuente.json>
+python3 -m infosalud fuente-lista [--seccion <s>] [--formato <f>]
+python3 -m infosalud fuente-buscar <termino>
+python3 -m infosalud fuente-detalle <id>
+python3 -m infosalud vigencia-registrar <id> --archivo <archivo-local>
+python3 -m infosalud vigencia-historia <id>
+```
+
+Todos aceptan `--catalogo <ruta>` (por defecto `data/fuentes.json`)
+y `--json` para salida parseable (ADR-006). Códigos de salida:
+0 éxito, 1 error de validación, 2 no encontrado.
 
 # probar
 python3 -m unittest discover -s tests -v
