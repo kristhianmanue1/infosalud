@@ -186,6 +186,44 @@ class PruebaServicio(unittest.TestCase):
         self.assertEqual(codigo, 404)
         self.assertIn("error", cuerpo)
 
+    def test_archivo_fuera_de_perimetro_da_403(self):
+        """Ronda adversarial 2026-09-02: DADO catálogo manipulado con
+        ruta_local fuera del directorio del catálogo (huella
+        correcta) CUANDO GET archivo/meta y archivo ENTONCES 403 y
+        el contenido jamás se sirve."""
+        import hashlib
+        base = tempfile.mkdtemp(dir=self.dir_tmp.name)
+        os.makedirs(os.path.join(base, "data", "diccionarios"))
+        secreto = os.path.join(base, "SECRETO-FUERA.txt")
+        contenido = b"confidencial"
+        with open(secreto, "wb") as archivo:
+            archivo.write(contenido)
+        huella = hashlib.sha256(contenido).hexdigest()
+        fuente = dict(FUENTE, verificaciones=[{
+            "fecha": "2026-09-02", "resultado": "vigente",
+            "huella": huella, "ruta_local": secreto}])
+        catalogo = os.path.join(base, "data", "fuentes.json")
+        with open(catalogo, "w", encoding="utf-8") as archivo:
+            json.dump({"version": 1, "fuentes": [fuente]}, archivo)
+        servidor = crear_servidor(catalogo, "127.0.0.1", 0)
+        hilo = threading.Thread(target=servidor.serve_forever,
+                                daemon=True)
+        hilo.start()
+        base_url_anterior = self.base
+        self.servidor, self.base = servidor, \
+            f"http://127.0.0.1:{servidor.server_address[1]}"
+        try:
+            for ruta in (f"/fuentes/{ID}/archivo/meta",
+                         f"/fuentes/{ID}/archivo"):
+                codigo, cuerpo = self._peticion(ruta)
+                self.assertEqual(codigo, 403, ruta)
+                self.assertIn(b"per", cuerpo)
+        finally:
+            self.base = base_url_anterior
+            servidor.shutdown()
+            servidor.server_close()
+            hilo.join(timeout=5)
+
     def test_mcp_ciclo_completo(self):
         """DADO MCP CUANDO initialize → tools/list → tools/call
         ENTONCES protocolo y herramientas correctas; id inexistente
