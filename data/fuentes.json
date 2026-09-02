@@ -3627,6 +3627,385 @@
           "huella": "becd955fd30ce4c10123994c327f7ca396ea1d968f017709345a0b8776aba164"
         }
       ]
+    },
+    {
+      "id": "cifras-nacionales-2026-preliminar",
+      "seccion": "estadisticas-nacionales",
+      "titulo": "Cifras Nacionales 2026, julio preliminar",
+      "url": "http://infosalud.imss.gob.mx/uploads/archivos/2/Cifras_Nacionales_2026_Julio_Preliminar_24082026113927.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Preliminar; la definitiva anual llega tras el cierre de diciembre",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/cifras-nacionales-2026-preliminar/Cifras_Nacionales_2026_Julio_Preliminar_24082026113927.xlsx",
+          "resultado": "vigente",
+          "huella": "9a82aa7a9f5e8d39a17998ddf4619468bcc8f8354c519cca746076297af50aca",
+          "estructura": [
+            {
+              "hoja": "Consultas",
+              "columnas": [
+                "Consulta Externa otorgada, Preliminar Julio 2026"
+              ]
+            },
+            {
+              "hoja": "Egresos",
+              "columnas": [
+                ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+              ]
+            },
+            {
+              "hoja": " Aux Dx",
+              "columnas": [
+                "Auxiliares de Diagnóstico,  Preliminar Julio 2026"
+              ]
+            },
+            {
+              "hoja": "Aux Tx",
+              "columnas": [
+                "Auxiliares de Tratamiento,  Preliminar Julio 2026"
+              ]
+            },
+            {
+              "hoja": "33 Procedimientos",
+              "columnas": [
+                "33 Procedimientos fuera de Quirófano,  Preliminar Julio 2026"
+              ]
+            },
+            {
+              "hoja": "Atenciones Prof. de Salud",
+              "columnas": [
+                "Atenciones Profesionales de Salud, Preliminar Julio 2026"
+              ]
+            },
+            {
+              "hoja": "Mortalidad",
+              "columnas": [
+                "Mortalidad General por Grupos de Edad, Preliminar Julio 2026"
+              ]
+            },
+            {
+              "hoja": "PAMF Mes",
+              "columnas": [
+                "Población Adscrita a Médico Familiar, Julio 2026"
+              ]
+            },
+            {
+              "hoja": "Control",
+              "columnas": [
+                "Actualizar periodo",
+                "Preliminar 2026"
+              ]
+            },
+            {
+              "hoja": "Banco de Sangre",
+              "columnas": [
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consulta-externa-horas-trabajadas-2025",
+      "seccion": "consulta-externa",
+      "titulo": "Horas trabajadas por especialidad 2N/3N, enero-diciembre 2025",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/Horas_Trabajadas_por_Especialidad_Ene_Dic_2025.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Fragmento 2 del portal",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-horas-trabajadas-2025/Horas_Trabajadas_por_Especialidad_Ene_Dic_2025.xlsx",
+          "resultado": "vigente",
+          "huella": "3e31be7f9072bf8900b4eb4abcdf4f3328a4a87ba8ccdcf8760394fbc42eb1e3",
+          "estructura": [
+            {
+              "hoja": "2025",
+              "columnas": [
+                "",
+                "Horas trabajadas  por OOAD - UMAE, unidad médica y mes, según especialidades Diciembre 2025"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consulta-externa-horas-trabajadas-2026",
+      "seccion": "consulta-externa",
+      "titulo": "Horas trabajadas por especialidad 2N/3N, enero-julio 2026",
+      "url": "http://infosalud.imss.gob.mx/uploads/archivos/26/Horas_Trabajadas_por_Especialidad_Ene_Jul_2026_17082026_24082026113748.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Fragmento 2 del portal",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-horas-trabajadas-2026/Horas_Trabajadas_por_Especialidad_Ene_Jul_2026_17082026_24082026113748.xlsx",
+          "resultado": "vigente",
+          "huella": "ce98b39104faab415b73f6d17f53006175a2422776b03ae2fc4ec8f0f6427e9c",
+          "estructura": [
+            {
+              "hoja": "2026",
+              "columnas": [
+                "",
+                "Horas trabajadas  por OOAD - UMAE, unidad médica y mes, según especialidades Junio 2026"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hospital-nacidos-vivos-grupos-2026-06",
+      "seccion": "hospital",
+      "titulo": "Nacidos vivos por grupos de edad de la madre, junio 2026",
+      "url": "http://infosalud.imss.gob.mx/uploads/archivos/52/NacidosVivos_Grupos_2026_06_11082026104256.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "notas": "Fragmento 3 del portal",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/hospital-nacidos-vivos-grupos-2026-06/NacidosVivos_Grupos_2026_06_11082026104256.xlsx",
+          "resultado": "vigente",
+          "huella": "ddac5a59411df43ec6394601a39d17b456802f4fd930aaf2dd5b45eff425c21a",
+          "estructura": [
+            {
+              "hoja": "2026",
+              "columnas": [
+                "Total de hijos (as) Nacidos Vivos, Nacional, por OOAD/UMAE y Unidad Médica de atención en grupos de edad materna "
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hospital-nacidos-vivos-resumen-2026-06",
+      "seccion": "hospital",
+      "titulo": "Nacidos vivos por unidad, resumen junio 2026",
+      "url": "http://infosalud.imss.gob.mx/uploads/archivos/51/NacidosVivos_EGRNAC_2026_06_Resumen_11082026104330.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "notas": "Fragmento 3 del portal",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/hospital-nacidos-vivos-resumen-2026-06/NacidosVivos_EGRNAC_2026_06_Resumen_11082026104330.xlsx",
+          "resultado": "vigente",
+          "huella": "46fcedc4ac3e67d1c0b458cd410a494c577faa24c97fdb7c710bc823b4f81bc8",
+          "estructura": [
+            {
+              "hoja": "Resumen 2026",
+              "columnas": []
+            },
+            {
+              "hoja": "Resumen 2025",
+              "columnas": []
+            },
+            {
+              "hoja": "Derechohabientes 2026",
+              "columnas": []
+            },
+            {
+              "hoja": "Periodos",
+              "columnas": [
+                "",
+                "2024"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hospital-partos-cesareas-2026-06-analitica",
+      "seccion": "hospital",
+      "titulo": "Nacimientos, partos, cesáreas y abortos, analítica junio 2026",
+      "url": "http://infosalud.imss.gob.mx/uploads/archivos/55/Nacimientos_Partos_Cesareas_Abortos_2026_Analitica_06_11082026104216.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "notas": "Tococirugía; fragmento 3 del portal",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/hospital-partos-cesareas-2026-06-analitica/Nacimientos_Partos_Cesareas_Abortos_2026_Analitica_06_11082026104216.xlsx",
+          "resultado": "vigente",
+          "huella": "f80aafdcb16e854e7782449472363c220345c3aac7b7fe8518882e54f062bcc6",
+          "estructura": [
+            {
+              "hoja": "Partos 2026",
+              "columnas": [
+                "Partos y Cesáreas por OOAD/UMAE, Unidad Médica y Mes",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hospital-uci-2026-enero-abril",
+      "seccion": "hospital",
+      "titulo": "Base de datos UCI, enero-abril 2026",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/DBUCI_Ene-Abr26_20260622.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "eventual",
+      "notas": "Serie con la histórica 2016-2024 ya registrada",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/hospital-uci-2026-enero-abril/DBUCI_Ene-Abr26_20260622.xlsx",
+          "resultado": "vigente",
+          "huella": "e5c58f37be952960371b80cb512190addcc334a2503bfcf4d64a50b95eb8500d",
+          "estructura": [
+            {
+              "hoja": "Resumen",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por OOAD y unidad médica, según mes, Enero-Abril, 2026 (preliminar)"
+              ]
+            },
+            {
+              "hoja": "Acum",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por OOAD y unidad médica, según grupo de edad, Enero-Abril, 2026 (preliminar)"
+              ]
+            },
+            {
+              "hoja": "Ene",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por OOAD y unidad médica, según grupo de edad, Enero, 2026 (preliminar)"
+              ]
+            },
+            {
+              "hoja": "Feb",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por OOAD y unidad médica, según grupo de edad, Febrero, 2026 (preliminar)"
+              ]
+            },
+            {
+              "hoja": "Mar",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por OOAD y unidad médica, según grupo de edad, Marzo, 2026 (preliminar)"
+              ]
+            },
+            {
+              "hoja": "Abr",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por OOAD y unidad médica, según grupo de edad, Abril, 2026 (preliminar)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recursos-cuumsp-2026",
+      "seccion": "recursos",
+      "titulo": "CUUMSP 2026 (página índice anual)",
+      "url": "http://infosalud.imss.gob.mx:8080/paginas/cuumsp2026.html",
+      "formato": "html",
+      "periodicidad": "anual",
+      "notas": "Índice anual del Catálogo de Unidades, Similar a IFU 2026",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/recursos-cuumsp-2026/cuumsp2026.html",
+          "resultado": "vigente",
+          "huella": "86216fb01cec0506b51aae17e3bc2e5be101b0becb57bd3a95ba6b94fb14621c"
+        }
+      ]
+    },
+    {
+      "id": "consulta-externa-fin-de-semana-2025",
+      "seccion": "consulta-externa",
+      "titulo": "SIAIS Parte Uno nacional fin de semana 1N 2025",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/SIAIS_Parte_Uno_Nacional_Fin_De_Semana_2025_25052026.zip",
+      "formato": "otro",
+      "periodicidad": "anual",
+      "notas": "ZIP con productos internos; ZIP fuera del enum, registrado como otro",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-fin-de-semana-2025/SIAIS_Parte_Uno_Nacional_Fin_De_Semana_2025_25052026.zip",
+          "resultado": "vigente",
+          "huella": "649d06954417f9df401f791bc46ed5b181d58c01dc09cc2376659b2bc63d298b"
+        }
+      ]
+    },
+    {
+      "id": "consulta-externa-paramedicas-1n-2025",
+      "seccion": "consulta-externa",
+      "titulo": "SIAIS Parte Uno nacional paramédicas 1N 2025",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/SIAIS_Parte_Uno_Nacional_Paramedicos_2025_25052026.zip",
+      "formato": "otro",
+      "periodicidad": "anual",
+      "notas": "ZIP con productos internos; ZIP fuera del enum, registrado como otro",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-paramedicas-1n-2025/SIAIS_Parte_Uno_Nacional_Paramedicos_2025_25052026.zip",
+          "resultado": "vigente",
+          "huella": "421f8e3d1ad23bfe9927965a6ad8fa36819423509a37a7961b5451ea43484e59"
+        }
+      ]
+    },
+    {
+      "id": "consulta-externa-fin-de-semana-2026",
+      "seccion": "consulta-externa",
+      "titulo": "SIAIS Parte Uno nacional fin de semana 1N 2026",
+      "url": "http://infosalud.imss.gob.mx/uploads/archivos/27/SIAIS_Parte_Uno_Nacional_Fin_De_Semana_2026_27082026_27082026130746.zip",
+      "formato": "otro",
+      "periodicidad": "anual",
+      "notas": "ZIP con productos internos; ZIP fuera del enum, registrado como otro",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-fin-de-semana-2026/SIAIS_Parte_Uno_Nacional_Fin_De_Semana_2026_27082026_27082026130746.zip",
+          "resultado": "vigente",
+          "huella": "e24ab68210be4f6bc305f46dcb36ac1a9f54f15dc4ef491a3e1fe13779a372fd"
+        },
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-fin-de-semana-2026/SIAIS_Parte_Uno_Nacional_Fin_De_Semana_2026_27082026_27082026130746.zip",
+          "resultado": "vigente",
+          "huella": "e24ab68210be4f6bc305f46dcb36ac1a9f54f15dc4ef491a3e1fe13779a372fd"
+        }
+      ]
+    },
+    {
+      "id": "consulta-externa-paramedicas-1n-2026",
+      "seccion": "consulta-externa",
+      "titulo": "SIAIS Parte Uno nacional paramédicas 1N 2026",
+      "url": "http://infosalud.imss.gob.mx/uploads/archivos/29/SIAIS_Parte_Uno_Nacional_Paramedicos_2026_27082026_27082026130809.zip",
+      "formato": "otro",
+      "periodicidad": "anual",
+      "notas": "ZIP con productos internos; ZIP fuera del enum, registrado como otro",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-paramedicas-1n-2026/SIAIS_Parte_Uno_Nacional_Paramedicos_2026_27082026_27082026130809.zip",
+          "resultado": "vigente",
+          "huella": "a8f3adf63ad1d384a027978b918e9b790814b56e7b7843ca74b41c028065fc02"
+        },
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-paramedicas-1n-2026/SIAIS_Parte_Uno_Nacional_Paramedicos_2026_27082026_27082026130809.zip",
+          "resultado": "vigente",
+          "huella": "a8f3adf63ad1d384a027978b918e9b790814b56e7b7843ca74b41c028065fc02"
+        }
+      ]
     }
   ]
 }

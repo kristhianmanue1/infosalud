@@ -98,8 +98,11 @@ def _mapa(catalogo):
         "version": __version__,
         "adr": "ADR-013",
         "resumen": _resumen(catalogo),
-        "endpoints": ["/", "/healthz", "/fuentes", "/fuentes/{id}",
+        "endpoints": ["/", "/healthz", "/cobertura", "/fuentes",
+                      "/fuentes/{id}",
                       "/fuentes/{id}/campos", "/fuentes/{id}/historia",
+                      "/fuentes/{id}/archivo",
+                      "/fuentes/{id}/archivo/meta",
                       "/fuentes/{id}/exportar?formato=csv|sqlite",
                       "POST /mcp (JSON-RPC 2.0)"],
     }
@@ -129,6 +132,36 @@ def _historia(catalogo, id_fuente):
     fuente = _fuente(catalogo, id_fuente)
     return {"id": id_fuente,
             "verificaciones": fuente.get("verificaciones") or []}
+
+
+import re as _re
+
+_ANIO = _re.compile(r"(?:19|20)\d{2}")
+
+
+def _cobertura(catalogo):
+    """Índice de cobertura: años detectados por fuente (título/URL/
+    notas) y si el archivo ya está descargado y presente en disco."""
+    filas = []
+    for f in catalogo["fuentes"]:
+        texto = " ".join([f.get("titulo", ""), f.get("url", ""),
+                          f.get("notas", "")])
+        anios = sorted({m.group(0) for m in _ANIO.finditer(texto)})
+        vers = f.get("verificaciones") or []
+        ultima = vers[-1] if vers else None
+        ruta_local = (ultima or {}).get("ruta_local")
+        descargado = bool(ruta_local and os.path.isfile(ruta_local))
+        filas.append({
+            "id": f.get("id"),
+            "seccion": f.get("seccion"),
+            "anios": anios,
+            "vigencia": (ultima or {}).get("resultado", "desconocida"),
+            "ultima_verificacion": (ultima or {}).get("fecha"),
+            "descargado": descargado,
+            "archivo": (os.path.basename(ruta_local)
+                        if descargado else None),
+        })
+    return {"total": len(filas), "cobertura": filas}
 
 
 CONTENT_TYPES = {
@@ -265,6 +298,13 @@ HERRAMIENTAS = [
                     "vigencia de una fuente.",
      "inputSchema": {"type": "object", "properties": {
          "id": {"type": "string"}}, "required": ["id"]}},
+    {"name": "cobertura_fuentes",
+     "description": "Índice de cobertura: para cada fuente, años "
+                    "detectados (título/URL/notas), vigencia, fecha "
+                    "de última verificación y si el archivo ya está "
+                    "descargado en el servidor.",
+     "inputSchema": {"type": "object", "properties": {
+         "seccion": {"type": "string"}}}},
     {"name": "archivo_fuente",
      "description": "Metadatos del archivo original verificado "
                     "(nombre, tamaño, sha256 recomputado en vivo, "
@@ -334,6 +374,16 @@ def _llamada_tool(ruta_catalogo, nombre, argumentos):
     if nombre == "archivo_fuente":
         return _archivo_meta(ruta_catalogo,
                              _obligatorio(argumentos, "id"))
+    if nombre == "cobertura_fuentes":
+        catalogo = _cargar_catalogo(ruta_catalogo)
+        cobertura = _cobertura(catalogo)
+        seccion = argumentos.get("seccion")
+        if seccion:
+            cobertura["cobertura"] = [
+                fila for fila in cobertura["cobertura"]
+                if fila["seccion"] == seccion]
+            cobertura["total"] = len(cobertura["cobertura"])
+        return cobertura
     if nombre == "exportar_fuente":
         return _exportar_resumen(
             ruta_catalogo, _obligatorio(argumentos, "id"),
@@ -446,6 +496,9 @@ class Manejador(BaseHTTPRequestHandler):
                 return self._enviar_json(200, _mapa(catalogo))
             if ruta == "/healthz":
                 return self._enviar_json(200, _healthz(catalogo))
+            if ruta == "/cobertura":
+                return self._enviar_json(
+                    200, _cobertura(catalogo))
             piezas = [p for p in ruta.split("/") if p]
             if piezas and piezas[0] == "fuentes":
                 if len(piezas) == 1:

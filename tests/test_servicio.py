@@ -131,6 +131,17 @@ class PruebaServicio(unittest.TestCase):
         self.assertEqual(codigo, 404)
         self.assertIn("error", cuerpo)
 
+    def test_cobertura(self):
+        """DADO el catálogo de prueba CUANDO GET /cobertura ENTONCES
+        cada fuente reporta años detectados y estado de descarga."""
+        codigo, cuerpo = self._json("/cobertura")
+        self.assertEqual(codigo, 200)
+        self.assertEqual(cuerpo["total"], 1)
+        fila = cuerpo["cobertura"][0]
+        self.assertEqual(fila["id"], ID)
+        self.assertIn("anios", fila)
+        self.assertFalse(fila["descargado"])  # ruta_local no existe
+
     def test_exportar_sin_archivo_da_400(self):
         """DADO fuente cuya verificación apunta a ruta inexistente
         CUANDO GET exportar ENTONCES 400 con causa (nunca 500)."""
@@ -188,9 +199,10 @@ class PruebaServicio(unittest.TestCase):
             "jsonrpc": "2.0", "id": 2, "method": "tools/list"})
         self.assertEqual(codigo, 200)
         nombres = {t["name"] for t in r["result"]["tools"]}
-        self.assertEqual(len(nombres), 7)
+        self.assertEqual(len(nombres), 8)
         self.assertIn("detalle_fuente", nombres)
         self.assertIn("archivo_fuente", nombres)
+        self.assertIn("cobertura_fuentes", nombres)
         codigo, r = self._json("/mcp", cuerpo={
             "jsonrpc": "2.0", "id": 3, "method": "tools/call",
             "params": {"name": "detalle_fuente",

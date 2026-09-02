@@ -214,6 +214,9 @@ API JSON (Content-Type application/json en todos los casos):
   GET /                  → mapa: servicio, contrato, versión, corte,
                            resúmenes por sección y vigencia, endpoints
   GET /healthz           → {ok, fuentes, ultima_verificacion}
+  GET /cobertura         → índice por fuente: años detectados,
+                           vigencia, última verificación y si el
+                           archivo ya está descargado en disco
   GET /fuentes           → {fuentes: [registro…], total}
       parámetros: seccion, formato, q (búsqueda en id/título/notas)
   GET /fuentes/{id}      → registro completo (verificaciones incluidas)

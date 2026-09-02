@@ -46,3 +46,19 @@ resistió.
   `docs/mapa-portal.md`; decisión ADR pendiente).
 - Lector xlsb (egresos por unidad médica): requiere ADR de lectores.
 - Conciliación semántica FN-19/20: pertenece al área, no al código.
+
+## Adenda 2026-09-02 (misma ronda, operación en vivo)
+
+- **Carrera de escritores (hallazgo real)**: lanzar `fuente-alta`
+  mientras un lote de `vigencia-verificar` corría en segundo plano
+  produjo **pérdida de altas** — ambos procesos reescriben el
+  catálogo completo; la escritura es atómica (sin archivos a medias)
+  pero no hay lock, así que el último guardado pisa al anterior.
+  Mitigación inmediata: disciplina de escritor único (nunca alta
+  manual + lote en paralelo); se recuperaron las altas y quedaron
+  50/50 fuentes con verificación. Candidato a ADR: lock de catálogo
+  (flock) en `guardar_catalogo` antes del sondeo automatizado.
+- **Descargas interrumpidas**: un ZIP de 27.5 MB quedó como `.tmp`
+  al morir el proceso; se completó con `curl -C -` (el portal
+  acepta rangos) y se registró con `vigencia-registrar`. El diseño
+  temporal+rename evitó registrar un archivo parcial.
