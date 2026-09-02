@@ -98,8 +98,11 @@ def _mapa(catalogo):
         "version": __version__,
         "adr": "ADR-013",
         "resumen": _resumen(catalogo),
-        "endpoints": ["/", "/healthz", "/fuentes", "/fuentes/{id}",
+        "endpoints": ["/", "/healthz", "/cobertura", "/fuentes",
+                      "/fuentes/{id}",
                       "/fuentes/{id}/campos", "/fuentes/{id}/historia",
+                      "/fuentes/{id}/archivo",
+                      "/fuentes/{id}/archivo/meta",
                       "/fuentes/{id}/exportar?formato=csv|sqlite",
                       "POST /mcp (JSON-RPC 2.0)"],
     }
@@ -129,6 +132,114 @@ def _historia(catalogo, id_fuente):
     fuente = _fuente(catalogo, id_fuente)
     return {"id": id_fuente,
             "verificaciones": fuente.get("verificaciones") or []}
+
+
+import re as _re
+
+_ANIO = _re.compile(r"(?:19|20)\d{2}")
+
+
+def _cobertura(catalogo):
+    """Índice de cobertura: años detectados por fuente (título/URL/
+    notas) y si el archivo ya está descargado y presente en disco."""
+    filas = []
+    for f in catalogo["fuentes"]:
+        texto = " ".join([f.get("titulo", ""), f.get("url", ""),
+                          f.get("notas", "")])
+        anios = sorted({m.group(0) for m in _ANIO.finditer(texto)})
+        vers = f.get("verificaciones") or []
+        ultima = vers[-1] if vers else None
+        ruta_local = (ultima or {}).get("ruta_local")
+        descargado = bool(ruta_local and os.path.isfile(ruta_local))
+        filas.append({
+            "id": f.get("id"),
+            "seccion": f.get("seccion"),
+            "anios": anios,
+            "vigencia": (ultima or {}).get("resultado", "desconocida"),
+            "ultima_verificacion": (ultima or {}).get("fecha"),
+            "descargado": descargado,
+            "archivo": (os.path.basename(ruta_local)
+                        if descargado else None),
+        })
+    return {"total": len(filas), "cobertura": filas}
+
+
+CONTENT_TYPES = {
+    ".xlsx": "application/vnd.openxmlformats-officedocument"
+             ".spreadsheetml.sheet",
+    ".xls": "application/vnd.ms-excel",
+    ".pdf": "application/pdf",
+    ".html": "text/html; charset=utf-8",
+    ".csv": "text/csv; charset=utf-8",
+    ".zip": "application/zip",
+}
+
+
+def _verificacion_con_archivo(fuente):
+    """Última verificación con huella y ruta local existente."""
+    for v in reversed(fuente.get("verificaciones") or []):
+        if v.get("huella") and v.get("ruta_local"):
+            if os.path.isfile(v["ruta_local"]):
+                return v
+    return None
+
+
+def _archivo_meta(ruta_catalogo, id_fuente):
+    """Envelope del archivo verificado (contrato servicio v1):
+    recomputa el sha256 en vivo; estado_integridad nunca se afirma
+    sin verificación presente."""
+    import hashlib
+    catalogo = _cargar_catalogo(ruta_catalogo)
+    fuente = _fuente(catalogo, id_fuente)
+    verificacion = _verificacion_con_archivo(fuente)
+    if verificacion is None:
+        raise ErrorServicio(
+            404, f"sin archivo local verificado para '{id_fuente}'")
+    ruta = verificacion["ruta_local"]
+    digest = hashlib.sha256()
+    with open(ruta, "rb") as archivo:
+        for bloque in iter(lambda: archivo.read(1 << 20), b""):
+            digest.update(bloque)
+    sha256 = digest.hexdigest()
+    fecha = verificacion.get("fecha")
+    return {
+        "id": id_fuente,
+        "titulo": fuente.get("titulo"),
+        "nombre_archivo": os.path.basename(ruta),
+        "formato": fuente.get("formato", "otro"),
+        "tamanio_bytes": os.path.getsize(ruta),
+        "sha256": sha256,
+        "sha256_registrado": verificacion["huella"],
+        "corte": fecha,
+        "fecha_descarga": fecha,
+        "url_origen_imss": fuente.get("url"),
+        "origen": "IMSS",
+        "estado_integridad": ("verificado"
+                              if sha256 == verificacion["huella"]
+                              else "alterado"),
+        "estado_semantico": "sin_evaluar",
+        "descarga_url": f"/fuentes/{id_fuente}/archivo",
+    }
+
+
+def _archivo_binario(ruta_catalogo, id_fuente):
+    """Devuelve (bytes, nombre, content_type) del archivo verificado;
+    exige integridad: si el sha256 vivo difiere del registrado,
+    falla con 409 en lugar de servir contenido alterado."""
+    import hashlib
+    meta = _archivo_meta(ruta_catalogo, id_fuente)
+    if meta["estado_integridad"] != "verificado":
+        raise ErrorServicio(
+            409, "integridad alterada: el sha256 del archivo local "
+                 "no coincide con el registrado")
+    catalogo = _cargar_catalogo(ruta_catalogo)
+    fuente = _fuente(catalogo, id_fuente)
+    ruta = _verificacion_con_archivo(fuente)["ruta_local"]
+    with open(ruta, "rb") as archivo:
+        datos = archivo.read()
+    extension = os.path.splitext(ruta)[1].lower()
+    return (datos, meta["nombre_archivo"],
+            CONTENT_TYPES.get(extension, "application/octet-stream"))
 
 
 def _exportar_zip(ruta_catalogo, id_fuente, formato):
@@ -185,6 +296,21 @@ HERRAMIENTAS = [
     {"name": "historia_fuente",
      "description": "Historial append-only de verificaciones de "
                     "vigencia de una fuente.",
+     "inputSchema": {"type": "object", "properties": {
+         "id": {"type": "string"}}, "required": ["id"]}},
+    {"name": "cobertura_fuentes",
+     "description": "Índice de cobertura: para cada fuente, años "
+                    "detectados (título/URL/notas), vigencia, fecha "
+                    "de última verificación y si el archivo ya está "
+                    "descargado en el servidor.",
+     "inputSchema": {"type": "object", "properties": {
+         "seccion": {"type": "string"}}}},
+    {"name": "archivo_fuente",
+     "description": "Metadatos del archivo original verificado "
+                    "(nombre, tamaño, sha256 recomputado en vivo, "
+                    "corte, URL de origen IMSS, estado de "
+                    "integridad); el binario se descarga en "
+                    "GET /fuentes/{id}/archivo.",
      "inputSchema": {"type": "object", "properties": {
          "id": {"type": "string"}}, "required": ["id"]}},
     {"name": "exportar_fuente",
@@ -245,6 +371,19 @@ def _llamada_tool(ruta_catalogo, nombre, argumentos):
                             _obligatorio(argumentos, "id"))
     if nombre == "historia_fuente":
         return _historia(catalogo, _obligatorio(argumentos, "id"))
+    if nombre == "archivo_fuente":
+        return _archivo_meta(ruta_catalogo,
+                             _obligatorio(argumentos, "id"))
+    if nombre == "cobertura_fuentes":
+        catalogo = _cargar_catalogo(ruta_catalogo)
+        cobertura = _cobertura(catalogo)
+        seccion = argumentos.get("seccion")
+        if seccion:
+            cobertura["cobertura"] = [
+                fila for fila in cobertura["cobertura"]
+                if fila["seccion"] == seccion]
+            cobertura["total"] = len(cobertura["cobertura"])
+        return cobertura
     if nombre == "exportar_fuente":
         return _exportar_resumen(
             ruta_catalogo, _obligatorio(argumentos, "id"),
@@ -264,10 +403,28 @@ def _mcp_responder(ruta_catalogo, cuerpo):
         peticion = json.loads(cuerpo.decode("utf-8"))
     except (UnicodeDecodeError, json.JSONDecodeError):
         return 400, _rpc_error(None, -32700, "JSON inválido")
+    if not isinstance(peticion, dict):
+        return 400, _rpc_error(None, -32600,
+                               "la petición debe ser un objeto JSON-RPC")
     metodo = peticion.get("method", "")
+    if not isinstance(metodo, str):
+        return 400, _rpc_error(peticion.get("id"), -32600,
+                               "'method' debe ser texto")
     if metodo.startswith("notifications/"):
         return 202, None
     id_peticion = peticion.get("id")
+    try:
+        respuesta = _mcp_despachar(ruta_catalogo, peticion, metodo,
+                                   id_peticion)
+    except ErrorServicio as exc:
+        return 200, _rpc_error(id_peticion, -32603, exc.mensaje)
+    except Exception as exc:  # última red: la conexión nunca muere
+        return 200, _rpc_error(id_peticion, -32603,
+                               f"error interno: {type(exc).__name__}")
+    return respuesta
+
+
+def _mcp_despachar(ruta_catalogo, peticion, metodo, id_peticion):
     if metodo == "initialize":
         return 200, {"jsonrpc": "2.0", "id": id_peticion, "result": {
             "protocolVersion": PROTOCOL_VERSION_MCP,
@@ -279,8 +436,14 @@ def _mcp_responder(ruta_catalogo, cuerpo):
                      "result": {"tools": HERRAMIENTAS}}
     if metodo == "tools/call":
         parametros = peticion.get("params") or {}
+        if not isinstance(parametros, dict):
+            return 400, _rpc_error(id_peticion, -32602,
+                                   "'params' debe ser un objeto")
         nombre = parametros.get("name")
         argumentos = parametros.get("arguments") or {}
+        if not isinstance(argumentos, dict):
+            return 400, _rpc_error(id_peticion, -32602,
+                                   "'arguments' debe ser un objeto")
         try:
             if not isinstance(nombre, str) or not nombre:
                 raise ErrorServicio(400, "falta 'name' de la tool")
@@ -333,6 +496,9 @@ class Manejador(BaseHTTPRequestHandler):
                 return self._enviar_json(200, _mapa(catalogo))
             if ruta == "/healthz":
                 return self._enviar_json(200, _healthz(catalogo))
+            if ruta == "/cobertura":
+                return self._enviar_json(
+                    200, _cobertura(catalogo))
             piezas = [p for p in ruta.split("/") if p]
             if piezas and piezas[0] == "fuentes":
                 if len(piezas) == 1:
@@ -349,6 +515,21 @@ class Manejador(BaseHTTPRequestHandler):
                 if len(piezas) == 3 and piezas[2] == "historia":
                     return self._enviar_json(
                         200, _historia(catalogo, piezas[1]))
+                if len(piezas) == 3 and piezas[2] == "archivo":
+                    datos, nombre, tipo = _archivo_binario(
+                        self.server.catalogo, piezas[1])
+                    self.send_response(200)
+                    self.send_header("Content-Type", tipo)
+                    self.send_header("Content-Disposition",
+                                     f'attachment; filename="{nombre}"')
+                    self.send_header("Content-Length", str(len(datos)))
+                    self.end_headers()
+                    return self.wfile.write(datos)
+                if (len(piezas) == 4 and piezas[2] == "archivo"
+                        and piezas[3] == "meta"):
+                    return self._enviar_json(
+                        200, _archivo_meta(self.server.catalogo,
+                                           piezas[1]))
                 if len(piezas) == 3 and piezas[2] == "exportar":
                     cuerpo, nombre = _exportar_zip(
                         self.server.catalogo, piezas[1],
@@ -373,6 +554,9 @@ class Manejador(BaseHTTPRequestHandler):
             return self._enviar_json(
                 404, {"error": f"ruta desconocida: {partes.path}"})
         longitud = int(self.headers.get("Content-Length") or 0)
+        if longitud > 1_048_576:  # 1 MiB; JSON-RPC no necesita más
+            return self._enviar_json(
+                413, {"error": "cuerpo demasiado grande"})
         cuerpo = self.rfile.read(longitud) if longitud else b""
         try:
             codigo, respuesta = _mcp_responder(

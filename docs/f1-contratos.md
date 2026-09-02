@@ -214,11 +214,23 @@ API JSON (Content-Type application/json en todos los casos):
   GET /                  → mapa: servicio, contrato, versión, corte,
                            resúmenes por sección y vigencia, endpoints
   GET /healthz           → {ok, fuentes, ultima_verificacion}
+  GET /cobertura         → índice por fuente: años detectados,
+                           vigencia, última verificación y si el
+                           archivo ya está descargado en disco
   GET /fuentes           → {fuentes: [registro…], total}
       parámetros: seccion, formato, q (búsqueda en id/título/notas)
   GET /fuentes/{id}      → registro completo (verificaciones incluidas)
   GET /fuentes/{id}/campos    → diccionario-de-fuente v1
   GET /fuentes/{id}/historia  → {id, verificaciones: […]}
+  GET /fuentes/{id}/archivo       → binario del archivo original
+      verificado (última verificación con huella y ruta local
+      existente); si el sha256 recomputado en vivo difiere del
+      registrado responde 409 y NO sirve el contenido
+  GET /fuentes/{id}/archivo/meta  → envelope de integridad:
+      {id, titulo, nombre_archivo, formato, tamanio_bytes, sha256,
+       sha256_registrado, corte, fecha_descarga, url_origen_imss,
+       origen: "IMSS", estado_integridad: verificado|alterado,
+       estado_semantico: sin_evaluar, descarga_url}
   GET /fuentes/{id}/exportar?formato=csv|sqlite
                          → zip en memoria con los productos de
                            fuente-exportar (ADR-011) generados en
@@ -232,7 +244,8 @@ MCP (JSON-RPC 2.0; POST /mcp; modo sin sesión):
                serverInfo {name "infosalud-servicio", version}
   tools/list → mapa_servicio, buscar_fuentes(q, seccion?, formato?),
                detalle_fuente(id), diccionario_fuente(id),
-               historia_fuente(id), exportar_fuente(id, formato?)
+               historia_fuente(id), archivo_fuente(id),
+               exportar_fuente(id, formato?)
   tools/call → {content: [{type: "text", text: <json>}], isError}
   Errores: -32601 método desconocido; -32602 parámetros/ herramienta
   inválidos. notifications/* → 202 sin cuerpo.

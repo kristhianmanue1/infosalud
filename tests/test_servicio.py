@@ -131,12 +131,59 @@ class PruebaServicio(unittest.TestCase):
         self.assertEqual(codigo, 404)
         self.assertIn("error", cuerpo)
 
+    def test_cobertura(self):
+        """DADO el catálogo de prueba CUANDO GET /cobertura ENTONCES
+        cada fuente reporta años detectados y estado de descarga."""
+        codigo, cuerpo = self._json("/cobertura")
+        self.assertEqual(codigo, 200)
+        self.assertEqual(cuerpo["total"], 1)
+        fila = cuerpo["cobertura"][0]
+        self.assertEqual(fila["id"], ID)
+        self.assertIn("anios", fila)
+        self.assertFalse(fila["descargado"])  # ruta_local no existe
+
     def test_exportar_sin_archivo_da_400(self):
         """DADO fuente cuya verificación apunta a ruta inexistente
         CUANDO GET exportar ENTONCES 400 con causa (nunca 500)."""
         codigo, cuerpo = self._json(
             f"/fuentes/{ID}/exportar?formato=csv")
         self.assertEqual(codigo, 400)
+        self.assertIn("error", cuerpo)
+
+    def test_archivo_meta_y_binario(self):
+        """DADO un archivo local existente con huella registrada
+        CUANDO GET archivo/meta y archivo ENTONCES envelope con
+        sha256 recomputado igual al registrado (verificado) y el
+        binario coincide byte a byte."""
+        import hashlib
+        contenido = b"contenido-de-prueba" * 100
+        ruta_local = os.path.join(self.dir_tmp.name, "archivo.xlsx")
+        with open(ruta_local, "wb") as archivo:
+            archivo.write(contenido)
+        huella = hashlib.sha256(contenido).hexdigest()
+        with open(self.catalogo, encoding="utf-8") as archivo:
+            datos = json.load(archivo)
+        datos["fuentes"][0]["verificaciones"][0]["ruta_local"] = \
+            ruta_local
+        datos["fuentes"][0]["verificaciones"][0]["huella"] = huella
+        with open(self.catalogo, "w", encoding="utf-8") as archivo:
+            json.dump(datos, archivo, ensure_ascii=False)
+        codigo, meta = self._json(f"/fuentes/{ID}/archivo/meta")
+        self.assertEqual(codigo, 200)
+        self.assertEqual(meta["estado_integridad"], "verificado")
+        self.assertEqual(meta["sha256"], huella)
+        self.assertEqual(meta["tamanio_bytes"], len(contenido))
+        self.assertEqual(meta["origen"], "IMSS")
+        self.assertEqual(meta["estado_semantico"], "sin_evaluar")
+        codigo, binario = self._peticion(f"/fuentes/{ID}/archivo")
+        self.assertEqual(codigo, 200)
+        self.assertEqual(binario, contenido)
+
+    def test_archivo_meta_sin_archivo_da_404(self):
+        """DADO ruta_local inexistente CUANDO GET archivo/meta
+        ENTONCES 404 (nunca se afirma integridad sin archivo)."""
+        codigo, cuerpo = self._json(f"/fuentes/{ID}/archivo/meta")
+        self.assertEqual(codigo, 404)
         self.assertIn("error", cuerpo)
 
     def test_mcp_ciclo_completo(self):
@@ -152,8 +199,10 @@ class PruebaServicio(unittest.TestCase):
             "jsonrpc": "2.0", "id": 2, "method": "tools/list"})
         self.assertEqual(codigo, 200)
         nombres = {t["name"] for t in r["result"]["tools"]}
-        self.assertEqual(len(nombres), 6)
+        self.assertEqual(len(nombres), 8)
         self.assertIn("detalle_fuente", nombres)
+        self.assertIn("archivo_fuente", nombres)
+        self.assertIn("cobertura_fuentes", nombres)
         codigo, r = self._json("/mcp", cuerpo={
             "jsonrpc": "2.0", "id": 3, "method": "tools/call",
             "params": {"name": "detalle_fuente",
@@ -182,6 +231,28 @@ class PruebaServicio(unittest.TestCase):
             "/mcp", metodo="POST", datos_crudos=b"no-es-json")
         self.assertEqual(codigo, 400)
         self.assertEqual(json.loads(cuerpo)["error"]["code"], -32700)
+
+    def test_mcp_entradas_hostiles_no_tumban_la_conexion(self):
+        """Ronda adversarial 2026-09-02: DADO params/arguments no-dict,
+        cuerpo array, cuerpo texto o cuerpo numérico ENTONCES siempre
+        hay respuesta JSON-RPC (sin conexión cortada) con código
+        -32600/-32602 o resultado isError."""
+        hostiles = [
+            {"jsonrpc": "2.0", "id": 1, "method": "tools/call",
+             "params": ["x"]},
+            {"jsonrpc": "2.0", "id": 2, "method": "tools/call",
+             "params": {"name": "detalle_fuente", "arguments": [1]}},
+            {"jsonrpc": "2.0", "id": 3, "method": "tools/call"},
+            [1, 2, 3],
+            "\"hola\"",
+            42,
+        ]
+        for i, cuerpo in enumerate(hostiles):
+            codigo, r = self._json("/mcp", cuerpo=cuerpo)
+            self.assertIn(codigo, (200, 400), f"caso {i}")
+            fallo = ("error" in r
+                     or r.get("result", {}).get("isError") is True)
+            self.assertTrue(fallo, f"caso {i}: {r}")
 
 
 class PruebaServicioConToken(PruebaServicio):
