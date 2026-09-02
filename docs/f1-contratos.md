@@ -199,3 +199,49 @@ INVARIANTES:
   - El historial es append-only; el estado actual es el último
     registro, nunca se sobrescribe.
   - `inaccesible` siempre registra la causa declarada.
+
+## CONTRATO servicio-infosalud v1 (ADR-013, SPEC-9)
+
+Servicio HTTP de SÓLO LECTURA para agentes remotos:
+`python3 -m infosalud servir [--host H] [--puerto P] [--catalogo R]`;
+token opcional por entorno `INFOSALUD_SERVICIO_TOKEN` (Bearer; si
+está configurado, toda petición sin él responde 401). Sólo stdlib;
+sin sesiones MCP ni SSE. El servicio nunca muta el catálogo ni
+descarga del portal: la frescura pertenece a vigencia-verificar y
+al sondeo (ADR-008).
+
+API JSON (Content-Type application/json en todos los casos):
+  GET /                  → mapa: servicio, contrato, versión, corte,
+                           resúmenes por sección y vigencia, endpoints
+  GET /healthz           → {ok, fuentes, ultima_verificacion}
+  GET /fuentes           → {fuentes: [registro…], total}
+      parámetros: seccion, formato, q (búsqueda en id/título/notas)
+  GET /fuentes/{id}      → registro completo (verificaciones incluidas)
+  GET /fuentes/{id}/campos    → diccionario-de-fuente v1
+  GET /fuentes/{id}/historia  → {id, verificaciones: […]}
+  GET /fuentes/{id}/exportar?formato=csv|sqlite
+                         → zip en memoria con los productos de
+                           fuente-exportar (ADR-011) generados en
+                           directorio temporal por petición
+Errores HTTP: 400 E-VALID; 401 sin token válido; 404 E-NOEXISTE;
+405 método no permitido; 500 fallo de entorno (catálogo ausente o
+inválido). Cuerpo de error: {"error": mensaje}.
+
+MCP (JSON-RPC 2.0; POST /mcp; modo sin sesión):
+  initialize → protocolVersion "2025-06-18", capabilities {tools:{}},
+               serverInfo {name "infosalud-servicio", version}
+  tools/list → mapa_servicio, buscar_fuentes(q, seccion?, formato?),
+               detalle_fuente(id), diccionario_fuente(id),
+               historia_fuente(id), exportar_fuente(id, formato?)
+  tools/call → {content: [{type: "text", text: <json>}], isError}
+  Errores: -32601 método desconocido; -32602 parámetros/ herramienta
+  inválidos. notifications/* → 202 sin cuerpo.
+
+Invariantes:
+  - Ningún endpoint acepta escritura; el árbol de rutas no expone
+    el filesystem.
+  - Toda respuesta de error es JSON con campo "error" (o error
+    JSON-RPC en /mcp).
+  - El token nunca se registra en bitácoras ni aparece en argv.
+Compatibilidad: añadir rutas o tools es compatible; cambiar formas
+de respuesta o códigos exige v2 del contrato.

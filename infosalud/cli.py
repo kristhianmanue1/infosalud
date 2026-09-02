@@ -144,6 +144,18 @@ def _construir_parser():
         help=f"directorio destino; por defecto "
              f"{EXPORTACIONES_POR_DEFECTO}/<id>")
 
+    p_servir = sub.add_parser(
+        "servir", help="servicio HTTP de lectura para agentes "
+                       "(API JSON + MCP; ADR-013, SPEC-9)")
+    p_servir.add_argument("--catalogo", default=CATALOGO_POR_DEFECTO,
+                          help="ruta del catálogo JSON")
+    p_servir.add_argument("--host", default="127.0.0.1",
+                          help="interfaz de escucha (por defecto "
+                               "127.0.0.1; usar la IP de intranet "
+                               "para exposición deliberada)")
+    p_servir.add_argument("--puerto", type=int, default=8081,
+                          help="puerto de escucha (por defecto 8081)")
+
     return parser
 
 
@@ -159,6 +171,7 @@ def main(argv=None):
         "vigencia-registrar": _vigencia_registrar,
         "vigencia-verificar": _vigencia_verificar,
         "vigencia-historia": _vigencia_historia,
+        "servir": _servir,
     }
     return comandos[args.comando](args)
 
@@ -600,6 +613,13 @@ def _estructura_observada(fuente, destino):
 def _destino_por_defecto(url, id_fuente):
     return os.path.join(DESCARGAS_POR_DEFECTO, id_fuente,
                         nombre_desde_url(url))
+
+
+def _servir(args):
+    """Delega en infosalud.servicio (ADR-013, SPEC-9); el token
+    opcional llega por entorno, nunca por argv."""
+    from infosalud.servicio import servir
+    return servir(args)
 
 
 def _vigencia_historia(args):

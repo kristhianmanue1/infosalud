@@ -48,6 +48,20 @@ encontrado. El esquema del registro está en `docs/f1-contratos.md`
 (`registro-de-fuente v1`); el diccionario de datos, en
 `diccionario-de-fuente v1` (`data/diccionarios/<id>.json`, ADR-009).
 
+## Servicio para agentes (v2, ADR-013)
+
+```bash
+python3 -m infosalud servir                    # http://127.0.0.1:8081
+python3 -m infosalud servir --host <ip-intranet> --puerto 8081
+INFOSALUD_SERVICIO_TOKEN=... python3 -m infosalud servir
+```
+
+API JSON de sólo lectura (`/`, `/healthz`, `/fuentes`,
+`/fuentes/{id}`, `/fuentes/{id}/campos`, `/fuentes/{id}/historia`,
+`/fuentes/{id}/exportar`) y MCP (JSON-RPC 2.0 en `POST /mcp`,
+`initialize`/`tools/list`/`tools/call`). Sólo stdlib; no muta el
+catálogo ni descarga del portal (contrato `servicio-infosalud v1`).
+
 ## Cómo probar
 
 ```bash
