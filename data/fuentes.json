@@ -2050,6 +2050,1583 @@
           ]
         }
       ]
+    },
+    {
+      "id": "consulta-externa-dental-2012-2024",
+      "seccion": "consulta-externa",
+      "titulo": "Consultas dentales homologadas 2012-2024",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/Dental_homologado_2012-2024_.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie histórica del fragmento 2 del portal",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-dental-2012-2024/Dental_homologado_2012-2024_.xlsx",
+          "resultado": "vigente",
+          "huella": "554459ef7a3ec9760a239b73aabe6716b7548fac13090f366ed94df82a1b94ab",
+          "estructura": [
+            {
+              "hoja": "2012 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2012 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por OOAD y unidad médica, Ene - Dic 2012"
+              ]
+            },
+            {
+              "hoja": "2012 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental, por OOAD, según mes, Ene - Dic 2012",
+                ""
+              ]
+            },
+            {
+              "hoja": "2013 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2013 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por OOAD y unidad médica, Ene - Dic 2013"
+              ]
+            },
+            {
+              "hoja": "2013 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental, por OOAD, según mes, Ene - Dic 2013",
+                ""
+              ]
+            },
+            {
+              "hoja": "2014 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2014 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por OOAD y unidad médica, Ene - Dic 2014"
+              ]
+            },
+            {
+              "hoja": "2014 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental, por OOAD, según mes, Ene - Dic 2014",
+                ""
+              ]
+            },
+            {
+              "hoja": "2015 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2015 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por OOAD y unidad médica, Ene - Dic 2015"
+              ]
+            },
+            {
+              "hoja": "2015 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental, por OOAD, según mes, Ene - Dic 2015",
+                ""
+              ]
+            },
+            {
+              "hoja": "2016 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2016 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por OOAD y unidad médica, Ene - Dic 2016"
+              ]
+            },
+            {
+              "hoja": "2016 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental, por OOAD, según mes, Ene - Dic 2016",
+                ""
+              ]
+            },
+            {
+              "hoja": "2017 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2017 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por OOAD y unidad médica, Ene - Dic 2017"
+              ]
+            },
+            {
+              "hoja": "2017 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental, por OOAD, según mes, Ene - Dic 2017",
+                ""
+              ]
+            },
+            {
+              "hoja": "2018 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2018 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por OOAD y unidad médica, Ene - Dic 2018"
+              ]
+            },
+            {
+              "hoja": "2018 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental, por OOAD, según mes, Ene - Dic 2018",
+                ""
+              ]
+            },
+            {
+              "hoja": "2019 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2019 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por OOAD y unidad médica, Ene - Dic 2019"
+              ]
+            },
+            {
+              "hoja": "2019 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental, por OOAD, según mes, Ene - Dic 2019",
+                ""
+              ]
+            },
+            {
+              "hoja": "2020 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2020 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por delegación y unidad médica, según ocasión de servicio y sexo, Ene-Dic. 2020."
+              ]
+            },
+            {
+              "hoja": "2020 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental, por OOAD, según mes, Ene - Dic 2020",
+                ""
+              ]
+            },
+            {
+              "hoja": "2021 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2021 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por OOAD y unidad médica, Ene - Dic 2021"
+              ]
+            },
+            {
+              "hoja": "2021 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Dental por OOAD y unidad médica, Ene - Dic 2021",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consulta-externa-especialidades-2012-2024",
+      "seccion": "consulta-externa",
+      "titulo": "Consultas de especialidades homologadas 2012-2024",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/Consulta%20Especialidades%202012-2024_.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie histórica del fragmento 2 del portal; numerador candidato CEPI (consultas por especialidad)",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-especialidades-2012-2024/Consulta Especialidades 2012-2024_.xlsx",
+          "resultado": "vigente",
+          "huella": "8e19088e47c81e8863bb9510fa576d3471fe350f826f165538c39f239dba2fda",
+          "estructura": [
+            {
+              "hoja": "2012 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2012 Acum",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2012 AcumOcaSexo",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2012 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Especialidades por OOAD y unidad médica, Ene - Dic 2012",
+                ""
+              ]
+            },
+            {
+              "hoja": "2013 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2013 Acum",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2013 AcumOcaSexo",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2013 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Especialidades por OOAD y unidad médica, Ene - Dic 2013",
+                ""
+              ]
+            },
+            {
+              "hoja": "2014 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2014 Acum",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2014 AcumOcaSexo",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2014 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Especialidades por OOAD y unidad médica, Ene - Dic 2014",
+                ""
+              ]
+            },
+            {
+              "hoja": "2015 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2015 Acum",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2015 AcumOcaSexo",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2015 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Especialidades por OOAD y unidad médica, Ene - Dic 2015",
+                ""
+              ]
+            },
+            {
+              "hoja": "2016 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2016 Acum",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2016 AcumOcaSexo",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2016 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Especialidades por OOAD y unidad médica, Ene - Dic 2016",
+                ""
+              ]
+            },
+            {
+              "hoja": "2017 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2017 Acum",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2017 AcumOcaSexo",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2017 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Especialidades por OOAD y unidad médica, Ene - Dic 2017",
+                ""
+              ]
+            },
+            {
+              "hoja": "2018 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2018 Acum",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2018 AcumOcaSexo",
+              "columnas": [
+                " "
+              ]
+            },
+            {
+              "hoja": "2018 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Especialidades por OOAD y unidad médica, Ene - Dic 2018",
+                ""
+              ]
+            },
+            {
+              "hoja": "2019 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2019 Acum",
+              "columnas": [
+                " "
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consulta-externa-medicina-familiar-2012-2024",
+      "seccion": "consulta-externa",
+      "titulo": "Consultas de Medicina Familiar homologadas 2012-2024",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/Consultas%20Med%20Fam%202012-%202024_.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie histórica 1N del fragmento 2 del portal",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-medicina-familiar-2012-2024/Consultas Med Fam 2012- 2024_.xlsx",
+          "resultado": "vigente",
+          "huella": "987183254607721abe689acfcb3652d19f230ee1ca0ef423d98c4e68418e453f",
+          "estructura": [
+            {
+              "hoja": "2012 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2012 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2012"
+              ]
+            },
+            {
+              "hoja": "2012 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2012",
+                ""
+              ]
+            },
+            {
+              "hoja": "2013 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2013 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2013"
+              ]
+            },
+            {
+              "hoja": "2013 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2013",
+                ""
+              ]
+            },
+            {
+              "hoja": "2014 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2014 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2014"
+              ]
+            },
+            {
+              "hoja": "2014 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2014",
+                ""
+              ]
+            },
+            {
+              "hoja": "2015 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2015 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2015"
+              ]
+            },
+            {
+              "hoja": "2015 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2015",
+                ""
+              ]
+            },
+            {
+              "hoja": "2016 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2016 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2016"
+              ]
+            },
+            {
+              "hoja": "2016 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2016",
+                ""
+              ]
+            },
+            {
+              "hoja": "2017 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2017 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2017"
+              ]
+            },
+            {
+              "hoja": "2017 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2017",
+                ""
+              ]
+            },
+            {
+              "hoja": "2018 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2018 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2018"
+              ]
+            },
+            {
+              "hoja": "2018 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2018",
+                ""
+              ]
+            },
+            {
+              "hoja": "2019 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2019 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2019"
+              ]
+            },
+            {
+              "hoja": "2019 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por OOAD y unidad médica, Ene - Dic 2019",
+                ""
+              ]
+            },
+            {
+              "hoja": "2020 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2020 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por delegación y unidad médica, según ocasión de servicio y sexo, Ene-Dic. 2020."
+              ]
+            },
+            {
+              "hoja": "2020 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar, por OOAD, según mes, Ene - Dic 2020",
+                ""
+              ]
+            },
+            {
+              "hoja": "2021 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2021 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar por delegación y unidad médica, según ocasión de servicio y sexo, Ene-Dic. 2021."
+              ]
+            },
+            {
+              "hoja": "2021 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Medicina Familiar, por OOAD, según mes, Ene - Dic 2021",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consulta-externa-urgencias-2012-2024",
+      "seccion": "consulta-externa",
+      "titulo": "Consultas de urgencias homologadas 2012-2024",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/Cons%20Urgencias%202012-2024_.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie histórica del fragmento 2 del portal",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/consulta-externa-urgencias-2012-2024/Cons Urgencias 2012-2024_.xlsx",
+          "resultado": "vigente",
+          "huella": "beb444c912d29a3641c2f5f1dcbaeaa618581769a51af097bc8607a7ae95ef5b",
+          "estructura": [
+            {
+              "hoja": "2012 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2012 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2012"
+              ]
+            },
+            {
+              "hoja": "2012 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2012",
+                ""
+              ]
+            },
+            {
+              "hoja": "2013 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2013 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2013"
+              ]
+            },
+            {
+              "hoja": "2013 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2013",
+                ""
+              ]
+            },
+            {
+              "hoja": "2014 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2014 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2014"
+              ]
+            },
+            {
+              "hoja": "2014 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2014",
+                ""
+              ]
+            },
+            {
+              "hoja": "2015 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2015 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2015"
+              ]
+            },
+            {
+              "hoja": "2015 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2015",
+                ""
+              ]
+            },
+            {
+              "hoja": "2016 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2016 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2016"
+              ]
+            },
+            {
+              "hoja": "2016 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2016",
+                ""
+              ]
+            },
+            {
+              "hoja": "2017 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2017 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2017"
+              ]
+            },
+            {
+              "hoja": "2017 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2017",
+                ""
+              ]
+            },
+            {
+              "hoja": "2018 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2018 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2018"
+              ]
+            },
+            {
+              "hoja": "2018 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2018",
+                ""
+              ]
+            },
+            {
+              "hoja": "2019 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2019 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2019"
+              ]
+            },
+            {
+              "hoja": "2019 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por OOAD y unidad médica, Ene - Dic 2019",
+                ""
+              ]
+            },
+            {
+              "hoja": "2020 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2020 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por delegación y unidad médica, según ocasión de servicio y sexo, Ene-Dic. 2020."
+              ]
+            },
+            {
+              "hoja": "2020 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias, por OOAD, según mes, Ene - Dic 2020",
+                ""
+              ]
+            },
+            {
+              "hoja": "2021 Resumen",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2021 Acum",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias por delegación y unidad médica, según ocasión de servicio y sexo, Ene-Dic. 2021."
+              ]
+            },
+            {
+              "hoja": "2021 OOAD_UMAE",
+              "columnas": [
+                " ",
+                "Consultas otorgadas en Urgencias, por OOAD, según mes, Ene - Dic 2021",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hospital-egresos-ooad-umae-2012-2024",
+      "seccion": "hospital",
+      "titulo": "Egresos 2012-2024 por OOAD-UMAE",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/Egresos_2012-2024_20250613.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie histórica del fragmento 3 del portal; numerador hospitalización agregado",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/hospital-egresos-ooad-umae-2012-2024/Egresos_2012-2024_20250613.xlsx",
+          "resultado": "vigente",
+          "huella": "f53703dfdeb7af0e713278eeb8fe869c3e3c13f5112ac4baf51645f24c41f59e",
+          "estructura": [
+            {
+              "hoja": " 2024",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, Enero-Diciembre, 2024"
+              ]
+            },
+            {
+              "hoja": "2023",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, Enero-Diciembre 2023"
+              ]
+            },
+            {
+              "hoja": "2022",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, 2022"
+              ]
+            },
+            {
+              "hoja": "2021",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, 2021"
+              ]
+            },
+            {
+              "hoja": "2020",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, 2020"
+              ]
+            },
+            {
+              "hoja": "2019",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, 2019"
+              ]
+            },
+            {
+              "hoja": "2018",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, 2018"
+              ]
+            },
+            {
+              "hoja": "2017",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, 2017"
+              ]
+            },
+            {
+              "hoja": "2016",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, 2016"
+              ]
+            },
+            {
+              "hoja": "2015",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "2014",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, 2014"
+              ]
+            },
+            {
+              "hoja": "2013",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, 2013"
+              ]
+            },
+            {
+              "hoja": "2012",
+              "columnas": [
+                "",
+                "Egresos por OOAD y UMAE, según mes, tipo de ingreso y sexo, 2012"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hospital-egresos-unidad-2012-2024",
+      "seccion": "hospital",
+      "titulo": "Egresos 2012-2024 por unidad médica (tipo de ingreso, secundarias)",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/EgreTipoIng_Sx_2012-2024_UM_13062025.xlsb",
+      "formato": "otro",
+      "periodicidad": "anual",
+      "notas": "Formato xlsb fuera de los lectores actuales; requiere conversión o lector nuevo (ADR-013 potencial)",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/hospital-egresos-unidad-2012-2024/EgreTipoIng_Sx_2012-2024_UM_13062025.xlsb",
+          "resultado": "vigente",
+          "huella": "ac8571b9dd585670a5c8b1fb00011547ebc08b9da0840e3cb3df413985a94580"
+        }
+      ]
+    },
+    {
+      "id": "hospital-intervenciones-qx-2019-2024",
+      "seccion": "hospital",
+      "titulo": "Intervenciones quirúrgicas SIMO 2019-2024 (tipo de ingreso, secundarias)",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/SimoIQx_TipoIng_secundarias_2019-2024_.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie histórica del fragmento 3 del portal",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/hospital-intervenciones-qx-2019-2024/SimoIQx_TipoIng_secundarias_2019-2024_.xlsx",
+          "resultado": "vigente",
+          "huella": "46f73e55ad177ac23d5acf2ebf807fd296320ed49ac4ef0efbcb2bdad1fe6413",
+          "estructura": [
+            {
+              "hoja": "Resumen 2019",
+              "columnas": [
+                "",
+                "Total de intervenciones por OOAD y unidad médica, según mes, tipo de intervención y sexo. Enero-Diciembre, 2019"
+              ]
+            },
+            {
+              "hoja": "Acum_Mes-Jornada 2019",
+              "columnas": [
+                "",
+                "Total de Intervención quirúrgica principal y procedimientos secundarios por OOAD y unidad médica, según mes, tipo de jornada, Enero-Diciembre, 2019"
+              ]
+            },
+            {
+              "hoja": "Resumen 2020",
+              "columnas": [
+                "",
+                "Total de intervenciones por OOAD y unidad médica, según mes, tipo de intervención y sexo. Enero-Diciembre, 2020"
+              ]
+            },
+            {
+              "hoja": "Acum_Mes-Jornada 2020",
+              "columnas": [
+                "",
+                "Total de Intervención quirúrgica principal y procedimientos secundarios por OOAD y unidad médica, según mes, tipo de jornada, Enero-Diciembre, 2020"
+              ]
+            },
+            {
+              "hoja": "Resumen 2021",
+              "columnas": [
+                "",
+                "Total de intervenciones por OOAD y unidad médica, según mes, tipo de intervención y sexo. Enero-Diciembre, 2021"
+              ]
+            },
+            {
+              "hoja": "Acum_Mes-Jornada 2021",
+              "columnas": [
+                "",
+                "Total de Intervención quirúrgica principal y procedimientos secundarios por OOAD y unidad médica, según mes, tipo de jornada, Enero-Diciembre, 2021 "
+              ]
+            },
+            {
+              "hoja": "Resumen 2022",
+              "columnas": [
+                "",
+                "Total de intervenciones por OOAD y unidad médica, según mes, tipo de intervención y sexo. Enero-Diciembre, 2022"
+              ]
+            },
+            {
+              "hoja": "Acum_Mes-Jornada 2022",
+              "columnas": [
+                "",
+                "Total de Intervención quirúrgica principal y procedimientos secundarios por OOAD y unidad médica, según mes, tipo de jornada, Enero-Diciembre 2022"
+              ]
+            },
+            {
+              "hoja": "Resumen_2023",
+              "columnas": [
+                "",
+                "Total de intervenciones por OOAD y unidad médica, según mes, tipo de intervención y sexo. Enero-Diciembre, 2023 "
+              ]
+            },
+            {
+              "hoja": "Acum_Mes-Jornada_2023",
+              "columnas": [
+                "",
+                "Total de Intervención quirúrgica principal y procedimientos secundarios por OOAD y unidad médica, según mes, tipo de jornada, Enero-Diciembre, 2023 "
+              ]
+            },
+            {
+              "hoja": "Resumen_2024",
+              "columnas": [
+                "",
+                "Total de intervenciones por OOAD y unidad médica, según mes, tipo de intervención y sexo. Enero-Diciembre, 2024"
+              ]
+            },
+            {
+              "hoja": "Acum_Mes-Jornada_2024",
+              "columnas": [
+                "",
+                "Total de Intervención quirúrgica principal y procedimientos secundarios por OOAD y unidad médica, según mes, tipo de jornada, Enero-Diciembre, 2024 (preliminar)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hospital-uci-2016-2024",
+      "seccion": "hospital",
+      "titulo": "Base de datos UCI 2016-2024 por unidad",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/BDUCI%202016-2024_.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie histórica del fragmento 3 del portal; existe corte 2026 Ene-Abr",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/hospital-uci-2016-2024/BDUCI 2016-2024_.xlsx",
+          "resultado": "vigente",
+          "huella": "4c18f735b10d60b66b690d203b3ace60e2d96690c4b97ae0a2f2ad1f2bd983cc",
+          "estructura": [
+            {
+              "hoja": "2016",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por delegación y unidad médica, según grupo de edad, 2016"
+              ]
+            },
+            {
+              "hoja": "2017",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por delegación y unidad médica, según grupo de edad, 2017"
+              ]
+            },
+            {
+              "hoja": "2018",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por delegación y unidad médica, según grupo de edad, 2018"
+              ]
+            },
+            {
+              "hoja": "2019",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por delegación y unidad médica, según grupo de edad, 2019"
+              ]
+            },
+            {
+              "hoja": "2020",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por delegación y unidad médica, según grupo de edad, 2020"
+              ]
+            },
+            {
+              "hoja": "2021",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por OOAD y unidad médica, según grupo de edad, Ene-Dic. 2021"
+              ]
+            },
+            {
+              "hoja": "2022",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por OOAD y unidad médica, según grupo de edad, Ene-Dic. 2022 "
+              ]
+            },
+            {
+              "hoja": "2023",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por OOAD y unidad médica, según grupo de edad, Ene-Dic. 2023"
+              ]
+            },
+            {
+              "hoja": "2024",
+              "columnas": [
+                "",
+                "Egresos de la Unidad de Cuidados Intensivos por OOAD y unidad médica, según grupo de edad, Ene.-Dic. 2024"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recursos-ifu-2026",
+      "seccion": "recursos",
+      "titulo": "IFU 2026 (página índice anual)",
+      "url": "http://infosalud.imss.gob.mx:8080/paginas/ifu_2026.html",
+      "formato": "html",
+      "periodicidad": "anual",
+      "notas": "Índice anual de la Infraestructura Física Usada; serie de páginas 2012-2026 en fragmento 6; formato html no filtrado por el parser de listados (EXTENSIONES_LISTADO)",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/recursos-ifu-2026/ifu_2026.html",
+          "resultado": "vigente",
+          "huella": "becd955fd30ce4c10123994c327f7ca396ea1d968f017709345a0b8776aba164"
+        }
+      ]
     }
   ]
 }

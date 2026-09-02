@@ -1,0 +1,91 @@
+{
+  "id": "hospital-egresos-ooad-umae-2012-2024",
+  "campos": [
+    {
+      "nombre": "OOAD / UMAE",
+      "tipo": "clave",
+      "ejemplo": "00",
+      "valores": "00 | 01 | 02 | 03 | 04 | ..."
+    },
+    {
+      "nombre": "Total del periodo",
+      "tipo": "otro",
+      "ejemplo": "Suma sui13",
+      "valores": "Suma sui13 | Total | 2682999 | 36987 | 106770 | ..."
+    },
+    {
+      "nombre": "Enero",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 60468 | 783 | 2355 | ..."
+    },
+    {
+      "nombre": "Febrero",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 66220 | 784 | 2527 | ..."
+    },
+    {
+      "nombre": "Marzo",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 58199 | 677 | 2221 | ..."
+    },
+    {
+      "nombre": "Abril",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 63002 | 771 | 2367 | ..."
+    },
+    {
+      "nombre": "Mayo",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 61848 | 778 | 2372 | ..."
+    },
+    {
+      "nombre": "Junio",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 67343 | 802 | 2419 | ..."
+    },
+    {
+      "nombre": "Julio",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 63304 | 766 | 2174 | ..."
+    },
+    {
+      "nombre": "Agosto",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 64664 | 815 | 2333 | ..."
+    },
+    {
+      "nombre": "Septiembre",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 65879 | 809 | 2341 | ..."
+    },
+    {
+      "nombre": "Octubre",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 62053 | 702 | 2270 | ..."
+    },
+    {
+      "nombre": "Noviembre",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 64823 | 780 | 2417 | ..."
+    },
+    {
+      "nombre": "Diciembre",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 63409 | 868 | 2356 | ..."
+    }
+  ],
+  "huella_base": "f53703dfdeb7af0e713278eeb8fe869c3e3c13f5112ac4baf51645f24c41f59e",
+  "fecha": "2026-09-02"
+}

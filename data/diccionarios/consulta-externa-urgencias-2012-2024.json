@@ -1,0 +1,103 @@
+{
+  "id": "consulta-externa-urgencias-2012-2024",
+  "campos": [
+    {
+      "nombre": "OOAD",
+      "tipo": "clave",
+      "ejemplo": "Total Nacional",
+      "valores": "Total Nacional | Aguascalientes | Baja California | Baja California Sur | Campeche | ..."
+    },
+    {
+      "nombre": "Clave Presupuestal",
+      "tipo": "otro",
+      "ejemplo": "010101012151",
+      "valores": "010101012151 | 010113252110 | 010115252110 | 010117252110 | 010120252110 | ..."
+    },
+    {
+      "nombre": "Unidad",
+      "tipo": "otro",
+      "ejemplo": "HGZ 1 Aguascalientes",
+      "valores": "HGZ 1 Aguascalientes | UMF 10 Aguascalientes | UMF 8 Aguascalientes | UMF 9 Aguascalientes | UMF 7 San Marcos | ..."
+    },
+    {
+      "nombre": "Total",
+      "tipo": "otro",
+      "ejemplo": "18252058",
+      "valores": "18252058 | 90036 | 45313 | 53023 | 42050 | ..."
+    },
+    {
+      "nombre": "Enero",
+      "tipo": "otro",
+      "ejemplo": "1508049",
+      "valores": "1508049 | 6885 | 3600 | 4081 | 2842 | ..."
+    },
+    {
+      "nombre": "Febrero",
+      "tipo": "otro",
+      "ejemplo": "1535603",
+      "valores": "1535603 | 7952 | 3737 | 4525 | 3219 | ..."
+    },
+    {
+      "nombre": "Marzo",
+      "tipo": "otro",
+      "ejemplo": "1388154",
+      "valores": "1388154 | 7753 | 3628 | 4446 | 3292 | ..."
+    },
+    {
+      "nombre": "Abril",
+      "tipo": "otro",
+      "ejemplo": "1468470",
+      "valores": "1468470 | 8515 | 4103 | 4685 | 3608 | ..."
+    },
+    {
+      "nombre": "Mayo",
+      "tipo": "otro",
+      "ejemplo": "1483716",
+      "valores": "1483716 | 7739 | 3817 | 4101 | 3417 | ..."
+    },
+    {
+      "nombre": "Junio",
+      "tipo": "otro",
+      "ejemplo": "1513355",
+      "valores": "1513355 | 7909 | 3812 | 4195 | 3291 | ..."
+    },
+    {
+      "nombre": "Julio",
+      "tipo": "otro",
+      "ejemplo": "1419274",
+      "valores": "1419274 | 6339 | 3462 | 3736 | 2891 | ..."
+    },
+    {
+      "nombre": "Agosto",
+      "tipo": "otro",
+      "ejemplo": "1465838",
+      "valores": "1465838 | 7270 | 3728 | 4544 | 3535 | ..."
+    },
+    {
+      "nombre": "Septiembre",
+      "tipo": "otro",
+      "ejemplo": "1582126",
+      "valores": "1582126 | 7536 | 4073 | 4641 | 3893 | ..."
+    },
+    {
+      "nombre": "Octubre",
+      "tipo": "otro",
+      "ejemplo": "1554202",
+      "valores": "1554202 | 7407 | 3704 | 4577 | 4031 | ..."
+    },
+    {
+      "nombre": "Noviembre",
+      "tipo": "otro",
+      "ejemplo": "1640463",
+      "valores": "1640463 | 7149 | 3746 | 4297 | 3696 | ..."
+    },
+    {
+      "nombre": "Diciembre",
+      "tipo": "otro",
+      "ejemplo": "1692808",
+      "valores": "1692808 | 7582 | 3903 | 5195 | 4335 | ..."
+    }
+  ],
+  "huella_base": "beb444c912d29a3641c2f5f1dcbaeaa618581769a51af097bc8607a7ae95ef5b",
+  "fecha": "2026-09-02"
+}

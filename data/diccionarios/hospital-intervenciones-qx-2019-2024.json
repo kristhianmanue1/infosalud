@@ -1,0 +1,109 @@
+{
+  "id": "hospital-intervenciones-qx-2019-2024",
+  "campos": [
+    {
+      "nombre": "OOAD",
+      "tipo": "clave",
+      "ejemplo": "Total Nacional",
+      "valores": "Total Nacional | Aguascalientes | Baja California | Baja California Sur | Campeche | ..."
+    },
+    {
+      "nombre": "Clave Presupuestal",
+      "tipo": "otro",
+      "ejemplo": "010101012151",
+      "valores": "010101012151 | 010113UA2151 | 010126012151 | 012004012151 | 020101012151 | ..."
+    },
+    {
+      "nombre": "Unidad Médica",
+      "tipo": "otro",
+      "ejemplo": "HGZ 1 Aguascalientes",
+      "valores": "HGZ 1 Aguascalientes | UMAA 1 Aguascalientes (Aut) | HGZ 2 Aguascalientes | HGZ 3 Jesús María | HGZ 30 Mexicali | ..."
+    },
+    {
+      "nombre": "Suman Todas",
+      "tipo": "otro",
+      "ejemplo": "1813088",
+      "valores": "1813088 | 10571 | 4810 | 8914 | 9041 | ..."
+    },
+    {
+      "nombre": "Total",
+      "tipo": "otro",
+      "ejemplo": "Hombres",
+      "valores": "Hombres | 682660 | 4199 | 2261 | 3215 | ..."
+    },
+    {
+      "nombre": "Enero",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 42806 | 224 | 131 | ..."
+    },
+    {
+      "nombre": "Febrero",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 44205 | 238 | 206 | ..."
+    },
+    {
+      "nombre": "Marzo",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 40917 | 218 | 165 | ..."
+    },
+    {
+      "nombre": "Abril",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 44255 | 261 | 168 | ..."
+    },
+    {
+      "nombre": "Mayo",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 41941 | 247 | 128 | ..."
+    },
+    {
+      "nombre": "Junio",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 47843 | 302 | 188 | ..."
+    },
+    {
+      "nombre": "Julio",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 47408 | 284 | 157 | ..."
+    },
+    {
+      "nombre": "Agosto",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 45790 | 237 | 156 | ..."
+    },
+    {
+      "nombre": "Septiembre",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 46889 | 289 | 185 | ..."
+    },
+    {
+      "nombre": "Octubre",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 45604 | 276 | 177 | ..."
+    },
+    {
+      "nombre": "Noviembre",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 43014 | 237 | 142 | ..."
+    },
+    {
+      "nombre": "Diciembre",
+      "tipo": "otro",
+      "ejemplo": "Principal",
+      "valores": "Principal | Hombres | 40921 | 258 | 141 | ..."
+    }
+  ],
+  "huella_base": "46f73e55ad177ac23d5acf2ebf807fd296320ed49ac4ef0efbcb2bdad1fe6413",
+  "fecha": "2026-09-02"
+}
