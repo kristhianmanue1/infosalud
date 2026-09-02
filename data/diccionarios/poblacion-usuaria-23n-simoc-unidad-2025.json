@@ -1,0 +1,91 @@
+{
+  "id": "poblacion-usuaria-23n-simoc-unidad-2025",
+  "campos": [
+    {
+      "nombre": "OOAD",
+      "tipo": "clave",
+      "ejemplo": "Aguascalientes",
+      "valores": "Aguascalientes | Baja California | Baja California Sur | Campeche | Chiapas | ..."
+    },
+    {
+      "nombre": "UNIDAD",
+      "tipo": "otro",
+      "ejemplo": "UMAA 1 Aguascalientes (Aut)",
+      "valores": "UMAA 1 Aguascalientes (Aut) | HGZ 3 Jesús María | HGZ 1 Aguascalientes | HGZ 2 Aguascalientes | HGOMF 7 Tijuana | ..."
+    },
+    {
+      "nombre": "CVE_PRESUPUESTAL",
+      "tipo": "otro",
+      "ejemplo": "010113UA2151",
+      "valores": "010113UA2151 | 012004012151 | 010101012151 | 010126012151 | 020501142151 | ..."
+    },
+    {
+      "nombre": "No Derechohabiente",
+      "tipo": "otro",
+      "ejemplo": "106752",
+      "valores": "106752 | 0 | 1 | 2 | 5 | ..."
+    },
+    {
+      "nombre": "Asegurado(a)",
+      "tipo": "otro",
+      "ejemplo": "3524180",
+      "valores": "3524180 | 5135 | 23526 | 26875 | 18079 | ..."
+    },
+    {
+      "nombre": "Beneficiario esposa(o) o concubina(rio) de asegurado(a)",
+      "tipo": "otro",
+      "ejemplo": "964271",
+      "valores": "964271 | 1176 | 6694 | 7003 | 4743 | ..."
+    },
+    {
+      "nombre": "Beneficiarios hijos de asegurado(a)",
+      "tipo": "otro",
+      "ejemplo": "1069561",
+      "valores": "1069561 | 510 | 9541 | 7267 | 6180 | ..."
+    },
+    {
+      "nombre": "Beneficiarios padres de asegurado(a)",
+      "tipo": "otro",
+      "ejemplo": "1142926",
+      "valores": "1142926 | 1006 | 4586 | 4816 | 3066 | ..."
+    },
+    {
+      "nombre": "Pensionado",
+      "tipo": "otro",
+      "ejemplo": "1690716",
+      "valores": "1690716 | 2305 | 7797 | 11724 | 6192 | ..."
+    },
+    {
+      "nombre": "Beneficiarios de pensionado",
+      "tipo": "otro",
+      "ejemplo": "1262230",
+      "valores": "1262230 | 1640 | 6289 | 8636 | 5060 | ..."
+    },
+    {
+      "nombre": "Beneficiarios hijo de asegurado (gemelar)",
+      "tipo": "otro",
+      "ejemplo": "24",
+      "valores": "24 | 0 | 1 | 3 | 2 | ..."
+    },
+    {
+      "nombre": "Beneficiarios hijo de asegurado (tercer hijo[a])",
+      "tipo": "otro",
+      "ejemplo": "6",
+      "valores": "6 | 0 | 1 | 4"
+    },
+    {
+      "nombre": "Beneficiarios hijo de asegurado (cuarto hijo[a])",
+      "tipo": "otro",
+      "ejemplo": "7",
+      "valores": "7 | 0 | 1"
+    },
+    {
+      "nombre": "Total",
+      "tipo": "otro",
+      "ejemplo": "9760673",
+      "valores": "9760673 | 11772 | 58434 | 66322 | 43322 | ..."
+    }
+  ],
+  "huella_base": "72a70b71a0d556d12799466cf35d462ac5a725a2a08ee62f89bc655140065525",
+  "fecha": "2026-09-02"
+}

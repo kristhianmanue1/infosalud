@@ -1,0 +1,25 @@
+{
+  "id": "estadisticas-nacionales-cifras-2025",
+  "campos": [
+    {
+      "nombre": "Clave",
+      "tipo": "clave",
+      "ejemplo": "Nacional",
+      "valores": "Nacional | Total Delegaciones (Primer y Segundo Nivel) | 01 | 02 | 03 | ..."
+    },
+    {
+      "nombre": "Nombre OOAD o UMAE",
+      "tipo": "otro",
+      "ejemplo": "Aguascalientes",
+      "valores": "Aguascalientes | Baja California | Baja California Sur | Campeche | Coahuila | ..."
+    },
+    {
+      "nombre": "33 Procedimientos fuera de Quirofáno",
+      "tipo": "otro",
+      "ejemplo": "ABORDAJE ENDOVASCULAR MENOR",
+      "valores": "ABORDAJE ENDOVASCULAR MENOR | 1685180 | 1369935 | 32494 | 90619 | ..."
+    }
+  ],
+  "huella_base": "d9095b1d10dccceea2f61501d7be59c92a02bb8031fca7cc42a1648e2e950566",
+  "fecha": "2026-09-02"
+}

@@ -215,3 +215,41 @@ listado (o archivos locales), registrar los rubros y correr
 la prueba mínima en un OOAD conocido; el pipeline
 `vigencia-verificar` → `fuente-campos` → `fuente-exportar`
 ya soporta el ciclo completo en modo sólo lectura.
+
+## Addendum (2026-09-02): el portal expone los insumos por puerto 80
+
+El hallazgo de navegación (ver `docs/mapa-portal.md`) cambia el
+estado de la investigación: la raíz por puerto 80 responde 200 y
+los modales del menú cargan `/fragmentos/seccion/1..11` con los
+enlaces directos a los archivos. Los tres huecos del bloque
+"SABEMOS" original quedan resueltos a nivel *localización*:
+
+- **PAMF localizado y registrado**: `poblacion-pamf-siais-2025`
+  (`ARCHIVOS/poblacion/SIAIS/SIAIS_PAMF_Junio_2025_ver1_2026-02-24.xlsx`,
+  200 OK, 13.8 MB), serie 2007–2025 con corte junio. Es el
+  denominador candidato natural de FN-19/FN-20.
+- **Total Consultorios MedFam PAMF localizado y registrado**:
+  `poblacion-consultorios-medfam-pamf-2025`, serie 2018–2025.
+- **Numeradores (casos) localizados**: productividad semanal
+  estadística xlsx (`seguimiento-productividad-semanal-2025`,
+  semana 52 cierre 2025-12-21), series homologadas de Consulta
+  Externa 2012–2024 (Especialidades, Urgencias, Med Fam, Dental),
+  Egresos 2012–2024 por OOAD-UMAE y por unidad médica,
+  Intervenciones Qx, Partos/Cesáreas y UCI (fragmentos 2, 3 y 11).
+- **IFU localizado**: páginas anuales `paginas/ifu_YYYY.html`
+  2012–2026 (fragmento 6) y tablero `CifrasGenerales/IFU`
+  (fragmento 11). Aún no registrado (es página índice, no archivo).
+- **Pista de DataMart**: el tablero de Subrogados al cierre mensual
+  se llama `SERVICIOSMEDICOSSUBROGADOSCIERREMENSUAL/
+  SUBROGADOS_DataMart` — evidencia directa de que la capa DataMart
+  alimenta al menos un tablero vigente. Pregunta 5 de §G sigue
+  abierta pero ya no es "estado desconocido".
+
+Efecto sobre la matriz (§D): las filas "Población (denominador)",
+"Claves de unidad" y parcialmente "Hospitalización", "Consultas de
+especialidades" y "Urgencias" pasan de *evidencia insuficiente* a
+**localizadas con URL directa y en proceso de captura/estructura**.
+La prueba mínima de §F ya es ejecutable: los archivos están
+alcanzables y el área sólo debe dar el OOAD y el total oficial de
+referencia. El corte junio del PAMF vs año estadístico de los casos
+sigue siendo la condición crítica de coincidencia de universos.

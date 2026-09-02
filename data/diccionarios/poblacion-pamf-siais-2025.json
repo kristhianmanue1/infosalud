@@ -1,0 +1,871 @@
+{
+  "id": "poblacion-pamf-siais-2025",
+  "campos": [
+    {
+      "nombre": "Periodo PAMF",
+      "tipo": "clave",
+      "ejemplo": "202506",
+      "valores": "202506"
+    },
+    {
+      "nombre": "Cve. OOAD",
+      "tipo": "otro",
+      "ejemplo": "01",
+      "valores": "01"
+    },
+    {
+      "nombre": "OOAD",
+      "tipo": "otro",
+      "ejemplo": "Aguascalientes",
+      "valores": "Aguascalientes"
+    },
+    {
+      "nombre": "Clave Presupuestal",
+      "tipo": "otro",
+      "ejemplo": "010106252110",
+      "valores": "010106252110 | 010113252110 | 010115252110 | 010117252110 | 010120252110 | ..."
+    },
+    {
+      "nombre": "Unidad Medica",
+      "tipo": "otro",
+      "ejemplo": "UMF 1 Aguascalientes",
+      "valores": "UMF 1 Aguascalientes | UMF 10 Aguascalientes | UMF 8 Aguascalientes | UMF 9 Aguascalientes | UMF 7 San Marcos | ..."
+    },
+    {
+      "nombre": "Consultorio\n(9999 = Total Unidad)",
+      "tipo": "otro",
+      "ejemplo": "01",
+      "valores": "01 | 02 | 03 | 04 | 05 | ..."
+    },
+    {
+      "nombre": "Turno\n( 1 = Matutino,  2 = Vespertino, 6 = Fin de Semana )",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 2 | 6 | 99"
+    },
+    {
+      "nombre": "Asegurados_Derechohabientes",
+      "tipo": "otro",
+      "ejemplo": "2176",
+      "valores": "2176 | 1961 | 3 | 1868 | 1701 | ..."
+    },
+    {
+      "nombre": "Beneficiarios_Derechohabientes",
+      "tipo": "otro",
+      "ejemplo": "1473",
+      "valores": "1473 | 1545 | 1 | 1547 | 1470 | ..."
+    },
+    {
+      "nombre": "Mujeres",
+      "tipo": "otro",
+      "ejemplo": "1865",
+      "valores": "1865 | 1892 | 1 | 1782 | 1694 | ..."
+    },
+    {
+      "nombre": "Hombres",
+      "tipo": "otro",
+      "ejemplo": "1784",
+      "valores": "1784 | 1614 | 3 | 1633 | 1477 | ..."
+    },
+    {
+      "nombre": "Asegurados",
+      "tipo": "otro",
+      "ejemplo": "1839",
+      "valores": "1839 | 1692 | 3 | 1559 | 1437 | ..."
+    },
+    {
+      "nombre": "Beneficiarios_Esposa",
+      "tipo": "otro",
+      "ejemplo": "447",
+      "valores": "447 | 499 | 0 | 481 | 472 | ..."
+    },
+    {
+      "nombre": "Beneficiarios_Hijos",
+      "tipo": "otro",
+      "ejemplo": "712",
+      "valores": "712 | 776 | 0 | 771 | 734 | ..."
+    },
+    {
+      "nombre": "Beneficiarios_Padres",
+      "tipo": "otro",
+      "ejemplo": "213",
+      "valores": "213 | 178 | 1 | 177 | 176 | ..."
+    },
+    {
+      "nombre": "Pensionados",
+      "tipo": "otro",
+      "ejemplo": "253",
+      "valores": "253 | 188 | 0 | 214 | 186 | ..."
+    },
+    {
+      "nombre": "Beneficiarios_Pensionado",
+      "tipo": "otro",
+      "ejemplo": "185",
+      "valores": "185 | 173 | 0 | 213 | 166 | ..."
+    },
+    {
+      "nombre": "Ninos_0_9_años",
+      "tipo": "otro",
+      "ejemplo": "427",
+      "valores": "427 | 422 | 0 | 456 | 391 | ..."
+    },
+    {
+      "nombre": "Adolescentes_10_19_años",
+      "tipo": "otro",
+      "ejemplo": "399",
+      "valores": "399 | 439 | 0 | 389 | 451 | ..."
+    },
+    {
+      "nombre": "Adultos_Hombres_20_59_años",
+      "tipo": "otro",
+      "ejemplo": "959",
+      "valores": "959 | 838 | 3 | 767 | 1 | ..."
+    },
+    {
+      "nombre": "Adultos_Mujeres_20_59_años",
+      "tipo": "otro",
+      "ejemplo": "958",
+      "valores": "958 | 1021 | 1 | 900 | 936 | ..."
+    },
+    {
+      "nombre": "Adultos_Mayores_60_yMas_años",
+      "tipo": "otro",
+      "ejemplo": "906",
+      "valores": "906 | 786 | 0 | 782 | 688 | ..."
+    },
+    {
+      "nombre": "Menores_1_año",
+      "tipo": "otro",
+      "ejemplo": "28",
+      "valores": "28 | 30 | 0 | 23 | 17 | ..."
+    },
+    {
+      "nombre": "Pob_1_Año",
+      "tipo": "otro",
+      "ejemplo": "48",
+      "valores": "48 | 44 | 0 | 40 | 23 | ..."
+    },
+    {
+      "nombre": "Pob_2_Años",
+      "tipo": "otro",
+      "ejemplo": "44",
+      "valores": "44 | 32 | 0 | 33 | 35 | ..."
+    },
+    {
+      "nombre": "Pob_3_Años",
+      "tipo": "otro",
+      "ejemplo": "49",
+      "valores": "49 | 34 | 0 | 39 | 44 | ..."
+    },
+    {
+      "nombre": "Pob_4_Años",
+      "tipo": "otro",
+      "ejemplo": "44",
+      "valores": "44 | 0 | 39 | 32 | 45 | ..."
+    },
+    {
+      "nombre": "Pob_1_4_años",
+      "tipo": "otro",
+      "ejemplo": "185",
+      "valores": "185 | 154 | 0 | 161 | 129 | ..."
+    },
+    {
+      "nombre": "Pob_5_Años",
+      "tipo": "otro",
+      "ejemplo": "35",
+      "valores": "35 | 0 | 55 | 42 | 66 | ..."
+    },
+    {
+      "nombre": "Pob_6_Años",
+      "tipo": "otro",
+      "ejemplo": "36",
+      "valores": "36 | 48 | 0 | 46 | 68 | ..."
+    },
+    {
+      "nombre": "Pob_7_Años",
+      "tipo": "otro",
+      "ejemplo": "44",
+      "valores": "44 | 46 | 0 | 51 | 53 | ..."
+    },
+    {
+      "nombre": "Pob_8_Años",
+      "tipo": "otro",
+      "ejemplo": "57",
+      "valores": "57 | 51 | 0 | 71 | 56 | ..."
+    },
+    {
+      "nombre": "Pob_9_Años",
+      "tipo": "otro",
+      "ejemplo": "42",
+      "valores": "42 | 58 | 0 | 49 | 46 | ..."
+    },
+    {
+      "nombre": "Pob_2_9_años",
+      "tipo": "otro",
+      "ejemplo": "351",
+      "valores": "351 | 348 | 0 | 393 | 464 | ..."
+    },
+    {
+      "nombre": "Pob_3_9_años",
+      "tipo": "otro",
+      "ejemplo": "307",
+      "valores": "307 | 316 | 0 | 360 | 436 | ..."
+    },
+    {
+      "nombre": "Pob_5_9_años",
+      "tipo": "otro",
+      "ejemplo": "214",
+      "valores": "214 | 238 | 0 | 272 | 245 | ..."
+    },
+    {
+      "nombre": "Pob_10_14_años",
+      "tipo": "otro",
+      "ejemplo": "235",
+      "valores": "235 | 279 | 0 | 258 | 289 | ..."
+    },
+    {
+      "nombre": "Pob_12_Años",
+      "tipo": "otro",
+      "ejemplo": "41",
+      "valores": "41 | 57 | 0 | 56 | 45 | ..."
+    },
+    {
+      "nombre": "Pob_13_Años",
+      "tipo": "otro",
+      "ejemplo": "53",
+      "valores": "53 | 55 | 0 | 48 | 57 | ..."
+    },
+    {
+      "nombre": "Pob_14_Años",
+      "tipo": "otro",
+      "ejemplo": "47",
+      "valores": "47 | 59 | 0 | 44 | 63 | ..."
+    },
+    {
+      "nombre": "Pob_15_Años",
+      "tipo": "otro",
+      "ejemplo": "39",
+      "valores": "39 | 55 | 0 | 48 | 51 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_15_19",
+      "tipo": "otro",
+      "ejemplo": "77",
+      "valores": "77 | 80 | 0 | 91 | 50 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_15_19",
+      "tipo": "otro",
+      "ejemplo": "87",
+      "valores": "87 | 80 | 0 | 90 | 50 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_20_24",
+      "tipo": "otro",
+      "ejemplo": "111",
+      "valores": "111 | 87 | 0 | 99 | 79 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_20_24",
+      "tipo": "otro",
+      "ejemplo": "148",
+      "valores": "148 | 89 | 0 | 113 | 79 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_25_29",
+      "tipo": "otro",
+      "ejemplo": "133",
+      "valores": "133 | 134 | 0 | 110 | 89 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_25_29",
+      "tipo": "otro",
+      "ejemplo": "169",
+      "valores": "169 | 114 | 2 | 109 | 88 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_30_34",
+      "tipo": "otro",
+      "ejemplo": "175",
+      "valores": "175 | 138 | 0 | 134 | 118 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_30_34",
+      "tipo": "otro",
+      "ejemplo": "154",
+      "valores": "154 | 103 | 0 | 123 | 98 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_35_39",
+      "tipo": "otro",
+      "ejemplo": "137",
+      "valores": "137 | 167 | 0 | 116 | 125 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_35_39",
+      "tipo": "otro",
+      "ejemplo": "147",
+      "valores": "147 | 119 | 0 | 112 | 97 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_40_44",
+      "tipo": "otro",
+      "ejemplo": "103",
+      "valores": "103 | 130 | 0 | 126 | 138 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_40_44",
+      "tipo": "otro",
+      "ejemplo": "93",
+      "valores": "93 | 125 | 0 | 115 | 130 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_45_49",
+      "tipo": "otro",
+      "ejemplo": "86",
+      "valores": "86 | 115 | 1 | 106 | 142 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_45_49",
+      "tipo": "otro",
+      "ejemplo": "78",
+      "valores": "78 | 96 | 1 | 89 | 106 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_50_54",
+      "tipo": "otro",
+      "ejemplo": "96",
+      "valores": "96 | 120 | 0 | 100 | 127 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_50_54",
+      "tipo": "otro",
+      "ejemplo": "78",
+      "valores": "78 | 102 | 0 | 92 | 97 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_55_59",
+      "tipo": "otro",
+      "ejemplo": "117",
+      "valores": "117 | 130 | 0 | 109 | 118 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_55_59",
+      "tipo": "otro",
+      "ejemplo": "92",
+      "valores": "92 | 90 | 0 | 85 | 87 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_60_64",
+      "tipo": "otro",
+      "ejemplo": "138",
+      "valores": "138 | 126 | 0 | 106 | 88 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_60_64",
+      "tipo": "otro",
+      "ejemplo": "123",
+      "valores": "123 | 98 | 0 | 100 | 51 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_65_69",
+      "tipo": "otro",
+      "ejemplo": "111",
+      "valores": "111 | 93 | 0 | 115 | 107 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_65_69",
+      "tipo": "otro",
+      "ejemplo": "99",
+      "valores": "99 | 83 | 0 | 79 | 76 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_70_74",
+      "tipo": "otro",
+      "ejemplo": "96",
+      "valores": "96 | 75 | 0 | 64 | 82 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_70_74",
+      "tipo": "otro",
+      "ejemplo": "65",
+      "valores": "65 | 52 | 0 | 63 | 55 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_75_79",
+      "tipo": "otro",
+      "ejemplo": "50",
+      "valores": "50 | 52 | 0 | 48 | 58 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_75_79",
+      "tipo": "otro",
+      "ejemplo": "52",
+      "valores": "52 | 34 | 0 | 40 | 25 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_80_84",
+      "tipo": "otro",
+      "ejemplo": "45",
+      "valores": "45 | 40 | 0 | 33 | 27 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_80_84",
+      "tipo": "otro",
+      "ejemplo": "17",
+      "valores": "17 | 34 | 0 | 28 | 9 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_85_yMas",
+      "tipo": "otro",
+      "ejemplo": "69",
+      "valores": "69 | 62 | 0 | 68 | 47 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_85_yMas",
+      "tipo": "otro",
+      "ejemplo": "41",
+      "valores": "41 | 37 | 0 | 38 | 29 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_20_44",
+      "tipo": "otro",
+      "ejemplo": "711",
+      "valores": "711 | 550 | 2 | 572 | 477 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_20_44",
+      "tipo": "otro",
+      "ejemplo": "659",
+      "valores": "659 | 656 | 0 | 585 | 549 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_25_59",
+      "tipo": "otro",
+      "ejemplo": "847",
+      "valores": "847 | 934 | 1 | 801 | 857 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_30_59",
+      "tipo": "otro",
+      "ejemplo": "642",
+      "valores": "642 | 635 | 1 | 616 | 600 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_30_59",
+      "tipo": "otro",
+      "ejemplo": "714",
+      "valores": "714 | 800 | 1 | 691 | 768 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_60_65",
+      "tipo": "otro",
+      "ejemplo": "167",
+      "valores": "167 | 147 | 0 | 122 | 108 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_60_69",
+      "tipo": "otro",
+      "ejemplo": "249",
+      "valores": "249 | 219 | 0 | 221 | 195 | ..."
+    },
+    {
+      "nombre": "Poblacion_Total",
+      "tipo": "otro",
+      "ejemplo": "3649",
+      "valores": "3649 | 3506 | 4 | 3415 | 3171 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_10_14_años",
+      "tipo": "otro",
+      "ejemplo": "122",
+      "valores": "122 | 130 | 0 | 134 | 124 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_10_14_años",
+      "tipo": "otro",
+      "ejemplo": "113",
+      "valores": "113 | 149 | 0 | 124 | 165 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_0_meses",
+      "tipo": "otro",
+      "ejemplo": "0",
+      "valores": "0 | 2 | 1 | 3 | 37 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_0_meses",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 0 | 2 | 3 | 44 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_1_meses",
+      "tipo": "otro",
+      "ejemplo": "3",
+      "valores": "3 | 0 | 1 | 2 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_1_meses",
+      "tipo": "otro",
+      "ejemplo": "2",
+      "valores": "2 | 1 | 0 | 4 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_2_meses",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 0 | 3 | 5 | 2 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_2_meses",
+      "tipo": "otro",
+      "ejemplo": "0",
+      "valores": "0 | 3 | 1 | 2 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_3_meses",
+      "tipo": "otro",
+      "ejemplo": "3",
+      "valores": "3 | 0 | 1 | 2 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_3_meses",
+      "tipo": "otro",
+      "ejemplo": "2",
+      "valores": "2 | 4 | 0 | 1 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_4_meses",
+      "tipo": "otro",
+      "ejemplo": "0",
+      "valores": "0 | 1 | 3 | 2 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_4_meses",
+      "tipo": "otro",
+      "ejemplo": "4",
+      "valores": "4 | 0 | 1 | 2 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_5_meses",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 0 | 2 | 4 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_5_meses",
+      "tipo": "otro",
+      "ejemplo": "0",
+      "valores": "0 | 1 | 2 | 5 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_6_meses",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 0 | 3 | 2 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_6_meses",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 0 | 2 | 3 | 52 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_7_meses",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 3 | 0 | 2 | 6 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_7_meses",
+      "tipo": "otro",
+      "ejemplo": "2",
+      "valores": "2 | 1 | 0 | 3 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_8_meses",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 0 | 2 | 5 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_8_meses",
+      "tipo": "otro",
+      "ejemplo": "2",
+      "valores": "2 | 1 | 0 | 3 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_9_meses",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 2 | 0 | 3 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_9_meses",
+      "tipo": "otro",
+      "ejemplo": "0",
+      "valores": "0 | 4 | 3 | 1 | 2 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_10_meses",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 0 | 2 | 3 | 5 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_10_meses",
+      "tipo": "otro",
+      "ejemplo": "0",
+      "valores": "0 | 1 | 2 | 3 | 59 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_11_meses",
+      "tipo": "otro",
+      "ejemplo": "0",
+      "valores": "0 | 1 | 2 | 3 | 49 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_11_meses",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 0 | 2 | 3 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_1_Años",
+      "tipo": "otro",
+      "ejemplo": "21",
+      "valores": "21 | 23 | 0 | 17 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_1_Años",
+      "tipo": "otro",
+      "ejemplo": "27",
+      "valores": "27 | 21 | 0 | 23 | 19 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_2_Años",
+      "tipo": "otro",
+      "ejemplo": "24",
+      "valores": "24 | 11 | 0 | 17 | 14 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_2_Años",
+      "tipo": "otro",
+      "ejemplo": "20",
+      "valores": "20 | 21 | 0 | 16 | 18 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_3_Años",
+      "tipo": "otro",
+      "ejemplo": "21",
+      "valores": "21 | 20 | 0 | 28 | 17 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_3_Años",
+      "tipo": "otro",
+      "ejemplo": "28",
+      "valores": "28 | 14 | 0 | 21 | 22 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_4_Años",
+      "tipo": "otro",
+      "ejemplo": "23",
+      "valores": "23 | 18 | 0 | 15 | 21 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_4_Años",
+      "tipo": "otro",
+      "ejemplo": "21",
+      "valores": "21 | 26 | 0 | 17 | 24 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_5_Años",
+      "tipo": "otro",
+      "ejemplo": "17",
+      "valores": "17 | 18 | 0 | 30 | 23 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_5_Años",
+      "tipo": "otro",
+      "ejemplo": "18",
+      "valores": "18 | 17 | 0 | 25 | 24 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_6_Años",
+      "tipo": "otro",
+      "ejemplo": "14",
+      "valores": "14 | 25 | 0 | 22 | 31 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_6_Años",
+      "tipo": "otro",
+      "ejemplo": "22",
+      "valores": "22 | 23 | 0 | 24 | 37 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_7_Años",
+      "tipo": "otro",
+      "ejemplo": "17",
+      "valores": "17 | 26 | 0 | 28 | 32 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_7_Años",
+      "tipo": "otro",
+      "ejemplo": "27",
+      "valores": "27 | 20 | 0 | 25 | 36 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_8_Años",
+      "tipo": "otro",
+      "ejemplo": "29",
+      "valores": "29 | 28 | 0 | 40 | 25 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_8_Años",
+      "tipo": "otro",
+      "ejemplo": "28",
+      "valores": "28 | 23 | 0 | 31 | 34 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_9_Años",
+      "tipo": "otro",
+      "ejemplo": "20",
+      "valores": "20 | 32 | 0 | 19 | 16 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_9_Años",
+      "tipo": "otro",
+      "ejemplo": "22",
+      "valores": "22 | 26 | 0 | 30 | 35 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_10_Años",
+      "tipo": "otro",
+      "ejemplo": "29",
+      "valores": "29 | 22 | 0 | 23 | 26 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_10_Años",
+      "tipo": "otro",
+      "ejemplo": "27",
+      "valores": "27 | 33 | 0 | 23 | 31 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_11_Años",
+      "tipo": "otro",
+      "ejemplo": "19",
+      "valores": "19 | 23 | 0 | 32 | 28 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_11_Años",
+      "tipo": "otro",
+      "ejemplo": "19",
+      "valores": "19 | 30 | 0 | 31 | 28 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_12_Años",
+      "tipo": "otro",
+      "ejemplo": "17",
+      "valores": "17 | 26 | 0 | 33 | 20 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_12_Años",
+      "tipo": "otro",
+      "ejemplo": "24",
+      "valores": "24 | 31 | 0 | 36 | 20 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_13_Años",
+      "tipo": "otro",
+      "ejemplo": "27",
+      "valores": "27 | 32 | 0 | 26 | 24 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_13_Años",
+      "tipo": "otro",
+      "ejemplo": "26",
+      "valores": "26 | 23 | 0 | 22 | 33 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_14_Años",
+      "tipo": "otro",
+      "ejemplo": "30",
+      "valores": "30 | 27 | 0 | 20 | 26 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_14_Años",
+      "tipo": "otro",
+      "ejemplo": "17",
+      "valores": "17 | 32 | 0 | 24 | 37 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_15_Años",
+      "tipo": "otro",
+      "ejemplo": "18",
+      "valores": "18 | 29 | 0 | 17 | 25 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_15_Años",
+      "tipo": "otro",
+      "ejemplo": "21",
+      "valores": "21 | 26 | 0 | 31 | 29 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_16_Años",
+      "tipo": "otro",
+      "ejemplo": "16",
+      "valores": "16 | 13 | 0 | 29 | 8 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_16_Años",
+      "tipo": "otro",
+      "ejemplo": "14",
+      "valores": "14 | 16 | 0 | 17 | 10 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_17_Años",
+      "tipo": "otro",
+      "ejemplo": "12",
+      "valores": "12 | 14 | 0 | 20 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_17_Años",
+      "tipo": "otro",
+      "ejemplo": "10",
+      "valores": "10 | 13 | 0 | 12 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_18_Años",
+      "tipo": "otro",
+      "ejemplo": "19",
+      "valores": "19 | 9 | 0 | 13 | 5 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_18_Años",
+      "tipo": "otro",
+      "ejemplo": "21",
+      "valores": "21 | 6 | 0 | 15 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_Mujeres_19_Años",
+      "tipo": "otro",
+      "ejemplo": "12",
+      "valores": "12 | 15 | 0 | 8 | 16 | ..."
+    },
+    {
+      "nombre": "Pob_Hombres_19_Años",
+      "tipo": "otro",
+      "ejemplo": "21",
+      "valores": "21 | 19 | 0 | 15 | 6 | ..."
+    },
+    {
+      "nombre": "No_Especificados",
+      "tipo": "otro",
+      "ejemplo": "0",
+      "valores": "0"
+    }
+  ],
+  "huella_base": "6e4a3b951aeedd4b31f5a30521d8394cdd564e0f86005cb866fa083c002b5c3f",
+  "fecha": "2026-09-02"
+}

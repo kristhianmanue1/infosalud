@@ -1,0 +1,571 @@
+{
+  "id": "poblacion-consultorios-medfam-pamf-2025",
+  "campos": [
+    {
+      "nombre": "Periodo_PAMF",
+      "tipo": "clave",
+      "ejemplo": "201806",
+      "valores": "201806"
+    },
+    {
+      "nombre": "CVE_DELEG",
+      "tipo": "otro",
+      "ejemplo": "71",
+      "valores": "71 | 76 | 34"
+    },
+    {
+      "nombre": "DELEGACION",
+      "tipo": "otro",
+      "ejemplo": "Oaxaca",
+      "valores": "Oaxaca | Sinaloa | Zacatecas"
+    },
+    {
+      "nombre": "CVE_PRESUPUESTAL",
+      "tipo": "otro",
+      "ejemplo": "710301073200",
+      "valores": "710301073200 | 710302073200 | 710303073200 | 710304073200 | 710305073200 | ..."
+    },
+    {
+      "nombre": "UNIDAD_MEDICA",
+      "tipo": "otro",
+      "ejemplo": "UNIDAD MEDICA",
+      "valores": "UNIDAD MEDICA | UMF 23 E. Estrada"
+    },
+    {
+      "nombre": "CONSULTORIO",
+      "tipo": "otro",
+      "ejemplo": "04",
+      "valores": "04 | 999 | 9999 | 01 | 02 | ..."
+    },
+    {
+      "nombre": "TURNO",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 0.- No especificado | 99 | 2"
+    },
+    {
+      "nombre": "Ninos_0_9",
+      "tipo": "otro",
+      "ejemplo": "1049",
+      "valores": "1049 | 0 | 35 | 52 | 41 | ..."
+    },
+    {
+      "nombre": "Adolescentes_10_19",
+      "tipo": "otro",
+      "ejemplo": "1754",
+      "valores": "1754 | 0 | 167 | 144 | 73 | ..."
+    },
+    {
+      "nombre": "AdultosH_20_59",
+      "tipo": "otro",
+      "ejemplo": "1905",
+      "valores": "1905 | 0 | 81 | 84 | 71 | ..."
+    },
+    {
+      "nombre": "AdultosM_20_59",
+      "tipo": "otro",
+      "ejemplo": "1978",
+      "valores": "1978 | 0 | 115 | 106 | 111 | ..."
+    },
+    {
+      "nombre": "AdultoMayor_Mas_59",
+      "tipo": "otro",
+      "ejemplo": "595",
+      "valores": "595 | 0 | 76 | 96 | 110 | ..."
+    },
+    {
+      "nombre": "Menores_1",
+      "tipo": "otro",
+      "ejemplo": "61",
+      "valores": "61 | 0 | 2 | 4 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_1_A",
+      "tipo": "otro",
+      "ejemplo": "94",
+      "valores": "94 | 0 | 5 | 2 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_2_A",
+      "tipo": "otro",
+      "ejemplo": "82",
+      "valores": "82 | 0 | 4 | 2 | 7 | ..."
+    },
+    {
+      "nombre": "Pob_3_A",
+      "tipo": "otro",
+      "ejemplo": "110",
+      "valores": "110 | 0 | 5 | 6 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_4_A",
+      "tipo": "otro",
+      "ejemplo": "113",
+      "valores": "113 | 0 | 1 | 7 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_1_4",
+      "tipo": "otro",
+      "ejemplo": "399",
+      "valores": "399 | 0 | 15 | 17 | 18 | ..."
+    },
+    {
+      "nombre": "Pob_5_A",
+      "tipo": "otro",
+      "ejemplo": "121",
+      "valores": "121 | 0 | 4 | 8 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_6_A",
+      "tipo": "otro",
+      "ejemplo": "115",
+      "valores": "115 | 0 | 5 | 7 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_7_A",
+      "tipo": "otro",
+      "ejemplo": "119",
+      "valores": "119 | 0 | 1 | 4 | 13 | ..."
+    },
+    {
+      "nombre": "Pob_8_A",
+      "tipo": "otro",
+      "ejemplo": "118",
+      "valores": "118 | 0 | 5 | 8 | 29 | ..."
+    },
+    {
+      "nombre": "Pob_9_A",
+      "tipo": "otro",
+      "ejemplo": "116",
+      "valores": "116 | 0 | 5 | 6 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_2_9",
+      "tipo": "otro",
+      "ejemplo": "894",
+      "valores": "894 | 0 | 30 | 48 | 36 | ..."
+    },
+    {
+      "nombre": "Pob_3_9",
+      "tipo": "otro",
+      "ejemplo": "812",
+      "valores": "812 | 0 | 26 | 46 | 32 | ..."
+    },
+    {
+      "nombre": "Pob_5_9",
+      "tipo": "otro",
+      "ejemplo": "589",
+      "valores": "589 | 0 | 20 | 33 | 23 | ..."
+    },
+    {
+      "nombre": "Pob_10_14",
+      "tipo": "otro",
+      "ejemplo": "575",
+      "valores": "575 | 0 | 30 | 26 | 28 | ..."
+    },
+    {
+      "nombre": "Pob_12_A",
+      "tipo": "otro",
+      "ejemplo": "131",
+      "valores": "131 | 0 | 3 | 2 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_13_A",
+      "tipo": "otro",
+      "ejemplo": "118",
+      "valores": "118 | 0 | 9 | 7 | 12 | ..."
+    },
+    {
+      "nombre": "Pob_14_A",
+      "tipo": "otro",
+      "ejemplo": "102",
+      "valores": "102 | 0 | 5 | 7 | 9 | ..."
+    },
+    {
+      "nombre": "Pob_15_A",
+      "tipo": "otro",
+      "ejemplo": "211",
+      "valores": "211 | 0 | 15 | 8 | 53 | ..."
+    },
+    {
+      "nombre": "PobM_15_19",
+      "tipo": "otro",
+      "ejemplo": "662",
+      "valores": "662 | 0 | 73 | 62 | 28 | ..."
+    },
+    {
+      "nombre": "PobH_15_19",
+      "tipo": "otro",
+      "ejemplo": "517",
+      "valores": "517 | 0 | 64 | 56 | 17 | ..."
+    },
+    {
+      "nombre": "PobM_20_24",
+      "tipo": "otro",
+      "ejemplo": "248",
+      "valores": "248 | 0 | 7 | 9 | 6 | ..."
+    },
+    {
+      "nombre": "PobH_20_24",
+      "tipo": "otro",
+      "ejemplo": "247",
+      "valores": "247 | 0 | 1 | 7 | 3 | ..."
+    },
+    {
+      "nombre": "PobM_25_29",
+      "tipo": "otro",
+      "ejemplo": "325",
+      "valores": "325 | 0 | 9 | 7 | 34 | ..."
+    },
+    {
+      "nombre": "PobH_25_29",
+      "tipo": "otro",
+      "ejemplo": "345",
+      "valores": "345 | 0 | 4 | 8 | 7 | ..."
+    },
+    {
+      "nombre": "PobM_30_34",
+      "tipo": "otro",
+      "ejemplo": "390",
+      "valores": "390 | 0 | 19 | 18 | 11 | ..."
+    },
+    {
+      "nombre": "PobH_30_34",
+      "tipo": "otro",
+      "ejemplo": "348",
+      "valores": "348 | 0 | 12 | 10 | 6 | ..."
+    },
+    {
+      "nombre": "PobM_35_39",
+      "tipo": "otro",
+      "ejemplo": "302",
+      "valores": "302 | 0 | 14 | 9 | 24 | ..."
+    },
+    {
+      "nombre": "PobH_35_39",
+      "tipo": "otro",
+      "ejemplo": "327",
+      "valores": "327 | 0 | 11 | 10 | 4 | ..."
+    },
+    {
+      "nombre": "PobM_40_44",
+      "tipo": "otro",
+      "ejemplo": "228",
+      "valores": "228 | 0 | 14 | 21 | 12 | ..."
+    },
+    {
+      "nombre": "PobH_40_44",
+      "tipo": "otro",
+      "ejemplo": "248",
+      "valores": "248 | 0 | 12 | 16 | 9 | ..."
+    },
+    {
+      "nombre": "PobM_45_49",
+      "tipo": "otro",
+      "ejemplo": "195",
+      "valores": "195 | 0 | 16 | 8 | 26 | ..."
+    },
+    {
+      "nombre": "PobH_45_49",
+      "tipo": "otro",
+      "ejemplo": "153",
+      "valores": "153 | 0 | 8 | 10 | 12 | ..."
+    },
+    {
+      "nombre": "PobM_50_54",
+      "tipo": "otro",
+      "ejemplo": "154",
+      "valores": "154 | 0 | 21 | 20 | 13 | ..."
+    },
+    {
+      "nombre": "PobH_50_54",
+      "tipo": "otro",
+      "ejemplo": "133",
+      "valores": "133 | 0 | 9 | 13 | 10 | ..."
+    },
+    {
+      "nombre": "PobM_55_59",
+      "tipo": "otro",
+      "ejemplo": "136",
+      "valores": "136 | 0 | 15 | 11 | 20 | ..."
+    },
+    {
+      "nombre": "PobH_55_59",
+      "tipo": "otro",
+      "ejemplo": "104",
+      "valores": "104 | 0 | 24 | 8 | 15 | ..."
+    },
+    {
+      "nombre": "PobM_60_64",
+      "tipo": "otro",
+      "ejemplo": "93",
+      "valores": "93 | 0 | 16 | 15 | 17 | ..."
+    },
+    {
+      "nombre": "PobH_60_64",
+      "tipo": "otro",
+      "ejemplo": "85",
+      "valores": "85 | 0 | 12 | 11 | 5 | ..."
+    },
+    {
+      "nombre": "PobM_65_69",
+      "tipo": "otro",
+      "ejemplo": "66",
+      "valores": "66 | 0 | 13 | 1 | 7 | ..."
+    },
+    {
+      "nombre": "PobH_65_69",
+      "tipo": "otro",
+      "ejemplo": "83",
+      "valores": "83 | 0 | 10 | 5 | 25 | ..."
+    },
+    {
+      "nombre": "PobM_70_74",
+      "tipo": "otro",
+      "ejemplo": "52",
+      "valores": "52 | 0 | 2 | 13 | 6 | ..."
+    },
+    {
+      "nombre": "PobH_70_74",
+      "tipo": "otro",
+      "ejemplo": "47",
+      "valores": "47 | 0 | 3 | 4 | 7 | ..."
+    },
+    {
+      "nombre": "PobM_75_79",
+      "tipo": "otro",
+      "ejemplo": "33",
+      "valores": "33 | 0 | 4 | 6 | 11 | ..."
+    },
+    {
+      "nombre": "PobH_75_79",
+      "tipo": "otro",
+      "ejemplo": "41",
+      "valores": "41 | 0 | 4 | 6 | 7 | ..."
+    },
+    {
+      "nombre": "PobM_80_84",
+      "tipo": "otro",
+      "ejemplo": "32",
+      "valores": "32 | 0 | 2 | 6 | 11 | ..."
+    },
+    {
+      "nombre": "PobH_80_84",
+      "tipo": "otro",
+      "ejemplo": "23",
+      "valores": "23 | 0 | 3 | 9 | 5 | ..."
+    },
+    {
+      "nombre": "PobM_85_",
+      "tipo": "otro",
+      "ejemplo": "20",
+      "valores": "20 | 0 | 3 | 9 | 4 | ..."
+    },
+    {
+      "nombre": "PobH_85_",
+      "tipo": "otro",
+      "ejemplo": "20",
+      "valores": "20 | 0 | 4 | 11 | 13 | ..."
+    },
+    {
+      "nombre": "PobH_20_44",
+      "tipo": "otro",
+      "ejemplo": "1515",
+      "valores": "1515 | 0 | 40 | 53 | 34 | ..."
+    },
+    {
+      "nombre": "PobM_20_44",
+      "tipo": "otro",
+      "ejemplo": "1493",
+      "valores": "1493 | 0 | 63 | 67 | 52 | ..."
+    },
+    {
+      "nombre": "PobM_25_59",
+      "tipo": "otro",
+      "ejemplo": "1730",
+      "valores": "1730 | 0 | 108 | 97 | 105 | ..."
+    },
+    {
+      "nombre": "PobH_30_59",
+      "tipo": "otro",
+      "ejemplo": "1313",
+      "valores": "1313 | 0 | 76 | 69 | 60 | ..."
+    },
+    {
+      "nombre": "PobM_30_59",
+      "tipo": "otro",
+      "ejemplo": "1405",
+      "valores": "1405 | 0 | 99 | 88 | 98 | ..."
+    },
+    {
+      "nombre": "PobM_60_65",
+      "tipo": "otro",
+      "ejemplo": "116",
+      "valores": "116 | 0 | 20 | 15 | 17 | ..."
+    },
+    {
+      "nombre": "PobM_60_69",
+      "tipo": "otro",
+      "ejemplo": "159",
+      "valores": "159 | 0 | 29 | 16 | 24 | ..."
+    },
+    {
+      "nombre": "Poblacion_Total",
+      "tipo": "otro",
+      "ejemplo": "7281",
+      "valores": "7281 | 61 | 474 | 482 | 406 | ..."
+    },
+    {
+      "nombre": "PobM_10_14",
+      "tipo": "otro",
+      "ejemplo": "281",
+      "valores": "281 | 0 | 15 | 13 | 16 | ..."
+    },
+    {
+      "nombre": "PobH_10_14",
+      "tipo": "otro",
+      "ejemplo": "294",
+      "valores": "294 | 0 | 15 | 13 | 12 | ..."
+    },
+    {
+      "nombre": "Pob_0_m",
+      "tipo": "otro",
+      "ejemplo": "3",
+      "valores": "3 | 0 | 2 | 1 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_1_m",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 0 | 3 | 4 | 5 | ..."
+    },
+    {
+      "nombre": "Pob_2_m",
+      "tipo": "otro",
+      "ejemplo": "5",
+      "valores": "5 | 0 | 1 | 2 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_3_m",
+      "tipo": "otro",
+      "ejemplo": "6",
+      "valores": "6 | 0 | 1 | 2 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_4_m",
+      "tipo": "otro",
+      "ejemplo": "2",
+      "valores": "2 | 0 | 3 | 1 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_5_m",
+      "tipo": "otro",
+      "ejemplo": "6",
+      "valores": "6 | 0 | 2 | 1 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_6_m",
+      "tipo": "otro",
+      "ejemplo": "4",
+      "valores": "4 | 0 | 1 | 2 | 5 | ..."
+    },
+    {
+      "nombre": "Pob_7_m",
+      "tipo": "otro",
+      "ejemplo": "8",
+      "valores": "8 | 0 | 1 | 2 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_8_m",
+      "tipo": "otro",
+      "ejemplo": "6",
+      "valores": "6 | 0 | 1 | 5 | 2 | ..."
+    },
+    {
+      "nombre": "Pob_9_m",
+      "tipo": "otro",
+      "ejemplo": "9",
+      "valores": "9 | 0 | 1 | 2 | 3 | ..."
+    },
+    {
+      "nombre": "Pob_10_m",
+      "tipo": "otro",
+      "ejemplo": "2",
+      "valores": "2 | 0 | 1 | 3 | 4 | ..."
+    },
+    {
+      "nombre": "Pob_11_m",
+      "tipo": "otro",
+      "ejemplo": "9",
+      "valores": "9 | 0 | 1 | 3 | 5 | ..."
+    },
+    {
+      "nombre": "PobM_10_A",
+      "tipo": "otro",
+      "ejemplo": "53",
+      "valores": "53 | 0 | 4 | 3 | 2 | ..."
+    },
+    {
+      "nombre": "PobH_10_A",
+      "tipo": "otro",
+      "ejemplo": "57",
+      "valores": "57 | 0 | 6 | 5 | 2 | ..."
+    },
+    {
+      "nombre": "PobM_11_A",
+      "tipo": "otro",
+      "ejemplo": "49",
+      "valores": "49 | 0 | 3 | 1 | 7 | ..."
+    },
+    {
+      "nombre": "PobH_11_A",
+      "tipo": "otro",
+      "ejemplo": "65",
+      "valores": "65 | 0 | 1 | 3 | 4 | ..."
+    },
+    {
+      "nombre": "PobM_12_A",
+      "tipo": "otro",
+      "ejemplo": "72",
+      "valores": "72 | 0 | 1 | 2 | 3 | ..."
+    },
+    {
+      "nombre": "PobH_12_A",
+      "tipo": "otro",
+      "ejemplo": "59",
+      "valores": "59 | 0 | 2 | 8 | 12 | ..."
+    },
+    {
+      "nombre": "PobM_13_A",
+      "tipo": "otro",
+      "ejemplo": "56",
+      "valores": "56 | 0 | 5 | 7 | 2 | ..."
+    },
+    {
+      "nombre": "PobH_13_A",
+      "tipo": "otro",
+      "ejemplo": "62",
+      "valores": "62 | 0 | 4 | 2 | 5 | ..."
+    },
+    {
+      "nombre": "PobM_14_A",
+      "tipo": "otro",
+      "ejemplo": "51",
+      "valores": "51 | 0 | 2 | 4 | 10 | ..."
+    },
+    {
+      "nombre": "PobH_14_A",
+      "tipo": "otro",
+      "ejemplo": "51",
+      "valores": "51 | 0 | 3 | 5 | 16 | ..."
+    },
+    {
+      "nombre": "No_Especificados",
+      "tipo": "otro",
+      "ejemplo": "0",
+      "valores": "0"
+    }
+  ],
+  "huella_base": "b60776fba64fcb17811732ff18ab34e5213aa013685320eae4f9312fcf52da1c",
+  "fecha": "2026-09-02"
+}
