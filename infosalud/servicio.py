@@ -184,6 +184,21 @@ def _verificacion_con_archivo(fuente):
     return None
 
 
+def _ruta_confinada(ruta_catalogo, ruta_local):
+    """Defensa de perímetro (ronda adversarial 2026-09-02): el archivo
+    servido debe vivir dentro del directorio del catálogo. Un
+    `ruta_local` apuntando fuera (absoluto o con ..) se rechaza con
+    403 aunque la huella coincida: el catálogo no puede usarse como
+    catálogo de lectura de todo el filesystem."""
+    from pathlib import Path
+    perimetro = Path(ruta_catalogo).resolve().parent
+    objetivo = Path(ruta_local).resolve()
+    if perimetro not in objetivo.parents and objetivo != perimetro:
+        raise ErrorServicio(
+            403, "ruta_local fuera del perímetro del catálogo")
+    return str(objetivo)
+
+
 def _archivo_meta(ruta_catalogo, id_fuente):
     """Envelope del archivo verificado (contrato servicio v1):
     recomputa el sha256 en vivo; estado_integridad nunca se afirma
@@ -195,7 +210,7 @@ def _archivo_meta(ruta_catalogo, id_fuente):
     if verificacion is None:
         raise ErrorServicio(
             404, f"sin archivo local verificado para '{id_fuente}'")
-    ruta = verificacion["ruta_local"]
+    ruta = _ruta_confinada(ruta_catalogo, verificacion["ruta_local"])
     digest = hashlib.sha256()
     with open(ruta, "rb") as archivo:
         for bloque in iter(lambda: archivo.read(1 << 20), b""):
@@ -468,6 +483,7 @@ def _mcp_despachar(ruta_catalogo, peticion, metodo, id_peticion):
 
 class Manejador(BaseHTTPRequestHandler):
     server_version = "infosalud-servicio/" + __version__
+    timeout = 30  # corta conexiones colgadas (Content-Length mentiroso)
 
     def _autorizado(self):
         token = getattr(self.server, "token", None)

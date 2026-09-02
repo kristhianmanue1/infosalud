@@ -47,7 +47,24 @@ resistió.
 - Lector xlsb (egresos por unidad médica): requiere ADR de lectores.
 - Conciliación semántica FN-19/20: pertenece al área, no al código.
 
-## Adenda 2026-09-02 (misma ronda, operación en vivo)
+## Adenda 2 (segunda pasada, 2026-09-02)
+
+- **Fuzzing del validador**: 17 mutaciones hostiles de un registro
+  válido (ids numéricos/de path, secciones inventadas, urls
+  `file://` y externas, formatos fuera de enum, campos extra,
+  `verificaciones` no-lista…): **17/17 rechazadas, 0 fugas**.
+- **FUGA de perímetro (hallazgo grave, corregido)**: un catálogo
+  manipulado con `ruta_local` absoluto (o con `..`) hacía que
+  `GET /fuentes/{id}/archivo` sirviera **cualquier archivo legible
+  de la máquina** si la huella coincidía. Corrección: confinamiento
+  en `_ruta_confinada` — el archivo debe vivir dentro del directorio
+  del catálogo; fuera de él → 403 aunque la huella sea correcta.
+  Test de regresión con catálogo envenenado (403 en meta y binario).
+- **Conexiones colgadas**: `Content-Length` mentiroso podía
+  bloquear un hilo indefinidamente; `Manejador.timeout = 30` corta.
+- **Concurrencia**: 30 peticiones paralelas a `/healthz` → 0 errores.
+
+## Adenda 3 (operación en vivo, 2026-09-02)
 
 - **Carrera de escritores (hallazgo real)**: lanzar `fuente-alta`
   mientras un lote de `vigencia-verificar` corría en segundo plano
@@ -58,6 +75,10 @@ resistió.
   manual + lote en paralelo); se recuperaron las altas y quedaron
   50/50 fuentes con verificación. Candidato a ADR: lock de catálogo
   (flock) en `guardar_catalogo` antes del sondeo automatizado.
+- **Descargas interrumpidas**: un ZIP de 27.5 MB quedó como `.tmp`
+  al morir el proceso; se completó con `curl -C -` (el portal
+  acepta rangos) y se registró con `vigencia-registrar`. El diseño
+  temporal+rename evitó registrar un archivo parcial.
 - **Descargas interrumpidas**: un ZIP de 27.5 MB quedó como `.tmp`
   al morir el proceso; se completó con `curl -C -` (el portal
   acepta rangos) y se registró con `vigencia-registrar`. El diseño
