@@ -266,12 +266,14 @@ class TestSinRed(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stderr)
 
     def test_solo_infosalud_red_importa_librerias_de_red(self):
-        """Ningún módulo de infosalud salvo red.py importa urllib/http/
-        socket directamente (barrido estático)."""
+        """Ningún módulo de infosalud salvo red.py (red saliente,
+        ADR-008) y servicio.py (servidor de lectura, ADR-013) importa
+        urllib/http/socket directamente (barrido estático)."""
         paquete = Path("infosalud")
+        exentos = {"red.py", "servicio.py"}
         for ruta in paquete.glob("*.py"):
             texto = ruta.read_text(encoding="utf-8")
-            if ruta.name == "red.py":
+            if ruta.name in exentos:
                 continue
             for prohibido in ("urllib", "import socket", "import http",
                               "import ssl"):

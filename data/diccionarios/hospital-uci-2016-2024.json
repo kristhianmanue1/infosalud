@@ -1,0 +1,73 @@
+{
+  "id": "hospital-uci-2016-2024",
+  "campos": [
+    {
+      "nombre": "Delegación",
+      "tipo": "clave",
+      "ejemplo": "Total",
+      "valores": "Total | Aguascalientes | Baja California | Baja California Sur | Campeche | ..."
+    },
+    {
+      "nombre": "Cve. Presupuestal",
+      "tipo": "otro",
+      "ejemplo": "010101012151",
+      "valores": "010101012151 | 010126012151 | 012004012151 | 020101012151 | 020115182151 | ..."
+    },
+    {
+      "nombre": "Unidad",
+      "tipo": "otro",
+      "ejemplo": "HGZ 1 Aguascalientes",
+      "valores": "HGZ 1 Aguascalientes | HGZ 2 Aguascalientes | HGZ 3 Jesús María | HGZ 30 Mexicali | HGPMF 31 Mexicali | ..."
+    },
+    {
+      "nombre": "Total",
+      "tipo": "otro",
+      "ejemplo": "44998",
+      "valores": "44998 | 228 | 170 | 140 | 235 | ..."
+    },
+    {
+      "nombre": "Neonatos",
+      "tipo": "otro",
+      "ejemplo": "1718",
+      "valores": "1718 | 31 | 1 | 40 | 0 | ..."
+    },
+    {
+      "nombre": "Menores de 1 año",
+      "tipo": "otro",
+      "ejemplo": "1015",
+      "valores": "1015 | 1 | 0 | 7 | 21 | ..."
+    },
+    {
+      "nombre": "1 a 4 años",
+      "tipo": "otro",
+      "ejemplo": "1482",
+      "valores": "1482 | 8 | 0 | 6 | 15 | ..."
+    },
+    {
+      "nombre": "5 a 9 años",
+      "tipo": "otro",
+      "ejemplo": "953",
+      "valores": "953 | 1 | 0 | 9 | 19 | ..."
+    },
+    {
+      "nombre": "10 a 14 años",
+      "tipo": "otro",
+      "ejemplo": "1038",
+      "valores": "1038 | 1 | 8 | 0 | 13 | ..."
+    },
+    {
+      "nombre": "15 a 19 años",
+      "tipo": "otro",
+      "ejemplo": "1799",
+      "valores": "1799 | 11 | 14 | 8 | 9 | ..."
+    },
+    {
+      "nombre": "De 20 años y más",
+      "tipo": "otro",
+      "ejemplo": "36993",
+      "valores": "36993 | 175 | 154 | 62 | 227 | ..."
+    }
+  ],
+  "huella_base": "4c18f735b10d60b66b690d203b3ace60e2d96690c4b97ae0a2f2ad1f2bd983cc",
+  "fecha": "2026-09-02"
+}

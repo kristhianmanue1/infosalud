@@ -70,3 +70,40 @@ Fuentes registradas a partir de este hallazgo (2026-09-02): PAMF
 2025, Total Consultorios MedFam PAMF 2025, población usuaria 1N
 unidad 2004-2025, usuaria 2N/3N SIMOC 2025, productividad semanal
 semana 52/2025 y Cifras Nacionales 2025 (catálogo pasa de 23 a 29).
+
+## Validación del parser `url_listado` contra fragmentos (2026-09-02)
+
+Prueba empírica (en copia del catálogo, sin mutar el real): se
+asignó `url_listado=/fragmentos/seccion/7` a `poblacion-pamf-siais-2025`
+y se corrió `vigencia-verificar`. Resultado:
+
+- **Mecánicamente funcional**: el parser encontró 39 enlaces a
+  archivos en el fragmento; la comparación de host es por hostname
+  (sin puerto), así que los enlaces `:8080` dentro de un fragmento
+  del puerto 80 califican; la heurística de fechas leyó los nombres
+  fechados (`_24082026…`, `_2026-02-24`).
+- **Inseguro con fragmentos multi-producto**: eligió
+  `PDA_DPM260731_24082026114154.xlsx` ("Reporte DIR 2004–2026"),
+  un producto DISTINTO del mismo fragmento con fecha más nueva, y
+  reportó un falso `cambiada` reemplazando la `url` del PAMF.
+  "La última ingresada del fragmento" ≠ "la última del producto".
+- **Ciego a páginas índice html**: `EXTENSIONES_LISTADO` no incluye
+  `.html`, así que las páginas anuales de IFU/CUUMSP (`paginas/…`)
+  nunca serían seleccionadas como "nueva versión".
+
+Conclusión: NO usar fragmentos como `url_listado` de fuentes
+individuales en el estado actual. Caminos posibles (ADR-013
+potencial, requiere decisión): (a) páginas de listado dedicadas por
+producto si el portal las ofrece; (b) extender el parser con
+acotamiento por producto (similitud de ruta/texto contra la `url`
+registrada); (c) ampliar `EXTENSIONES_LISTADO` para índices html.
+Mientras tanto, las series se vigilan por URL fija (comportamiento
+ADR-012 sin `url_listado`).
+
+Series de casos registradas y vigentes (2026-09-02, catálogo 29→38):
+consulta externa homologada 2012-2024 (especialidades, urgencias,
+medicina familiar, dental), egresos 2012-2024 por OOAD-UMAE (hoja
+por año: "Egresos por OOAD y UMAE, según mes, tipo de ingreso y
+sexo") y por unidad médica (xlsb, formato "otro"), intervenciones
+Qx 2019-2024, UCI 2016-2024 e IFU 2026 (página índice html).
+Diccionarios borrador generados para los 7 xlsx.

@@ -252,3 +252,32 @@ Invariantes:
   reproducibles; no participan en la máquina de vigencia.
 - Topes declarados: 30 hojas, 200 columnas, 200 000 filas por hoja.
 - Sólo stdlib (csv, sqlite3); sin red (ADR-004 en este comando).
+
+## SPEC-9 [cubre: REQ-5; ADR-013 — v2]
+
+Comportamiento: `python3 -m infosalud servir` levanta un servidor
+HTTP de sólo lectura (stdlib) que expone el catálogo, la vigencia,
+los diccionarios y las exportaciones a agentes remotos, por API JSON
+(contrato `servicio-infosalud v1`) y por MCP (JSON-RPC 2.0 en
+`POST /mcp`: initialize, tools/list, tools/call).
+Entradas: `--host` (por defecto 127.0.0.1), `--puerto` (8081),
+`--catalogo`; token opcional por entorno `INFOSALUD_SERVICIO_TOKEN`.
+Salidas: JSON en todas las rutas; errores HTTP: 400 E-VALID,
+401 no autorizado, 404 E-NOEXISTE, 405 método, 500 entorno.
+Casos:
+- DADO el servicio en pie CUANDO GET /fuentes/{id} ENTONCES responde
+  200 con el registro completo (url, verificaciones con huella,
+  fecha, resultado, url_previa, estructura).
+- DADO un id inexistente CUANDO GET /fuentes/{id} ENTONCES 404 con
+  JSON {"error": ...}.
+- DADO token configurado CUANDO petición sin Authorization: Bearer
+  ENTONCES 401; con token correcto ENTONCES 200.
+- DADO MCP inicializado CUANDO tools/list ENTONCES lista las 6
+  herramientas; CUANDO tools/call detalle_fuente con id válido
+  ENTONCES contenido JSON de texto con el registro; con id
+  inexistente ENTONCES resultado isError con causa.
+Invariantes:
+- El servicio no muta el catálogo ni descarga del portal; la
+  vigencia pertenece a vigencia-verificar + sondeo (ADR-008).
+- Sólo GET (API) y POST /mcp (JSON-RPC); sin rutas de filesystem.
+- Sólo stdlib; sin sesiones MCP ni SSE (modo sin sesión).

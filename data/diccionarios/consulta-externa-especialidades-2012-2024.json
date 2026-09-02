@@ -1,0 +1,583 @@
+{
+  "id": "consulta-externa-especialidades-2012-2024",
+  "campos": [
+    {
+      "nombre": "OOAD",
+      "tipo": "clave",
+      "ejemplo": "Total Nacional",
+      "valores": "Total Nacional | Aguascalientes | Baja California | Baja California Sur | Campeche | ..."
+    },
+    {
+      "nombre": "Clave Presupuestal",
+      "tipo": "otro",
+      "ejemplo": "010101012151",
+      "valores": "010101012151 | 010106252110 | 010113252110 | 010113UA2151 | 010115252110 | ..."
+    },
+    {
+      "nombre": "Unidad Médica",
+      "tipo": "otro",
+      "ejemplo": "HGZ 1 Aguascalientes",
+      "valores": "HGZ 1 Aguascalientes | UMF 1 Aguascalientes | UMF 10 Aguascalientes | UMAA 1 Aguascalientes (Aut) | UMF 8 Aguascalientes | ..."
+    },
+    {
+      "nombre": "Total",
+      "tipo": "otro",
+      "ejemplo": "20145948",
+      "valores": "20145948 | 98708 | 2901 | 6811 | 17090 | ..."
+    },
+    {
+      "nombre": "Alergia e Inmunología",
+      "tipo": "otro",
+      "ejemplo": "1000",
+      "valores": "1000 | PrimeraVez | 108917 | 2375 | 0 | ..."
+    },
+    {
+      "nombre": "Angiología y Cirugía Vascular",
+      "tipo": "otro",
+      "ejemplo": "1100",
+      "valores": "1100 | PrimeraVez | 96403 | 610 | 0 | ..."
+    },
+    {
+      "nombre": "Cirugía Maxilo Facial",
+      "tipo": "otro",
+      "ejemplo": "1200",
+      "valores": "1200 | PrimeraVez | 102061 | 1728 | 0 | ..."
+    },
+    {
+      "nombre": "Cardiología",
+      "tipo": "otro",
+      "ejemplo": "1400",
+      "valores": "1400 | PrimeraVez | 381338 | 1283 | 0 | ..."
+    },
+    {
+      "nombre": "Fisiología cardiopulmonar",
+      "tipo": "otro",
+      "ejemplo": "1401",
+      "valores": "1401 | PrimeraVez | 238 | 0"
+    },
+    {
+      "nombre": "Cirugía Cardiotorácica",
+      "tipo": "otro",
+      "ejemplo": "1500",
+      "valores": "1500 | PrimeraVez | 4334 | 0 | 77 | ..."
+    },
+    {
+      "nombre": "Cirugía General",
+      "tipo": "otro",
+      "ejemplo": "1600",
+      "valores": "1600 | PrimeraVez | 640824 | 1367 | 0 | ..."
+    },
+    {
+      "nombre": "Cirugía Bariátrica",
+      "tipo": "otro",
+      "ejemplo": "1601",
+      "valores": "1601 | PrimeraVez | 77 | 0"
+    },
+    {
+      "nombre": "Cirugía Cabeza y Cuello",
+      "tipo": "otro",
+      "ejemplo": "1602",
+      "valores": "1602 | PrimeraVez | 333 | 0"
+    },
+    {
+      "nombre": "Gastrocirugía",
+      "tipo": "otro",
+      "ejemplo": "1603",
+      "valores": "1603 | PrimeraVez | 1 | 0"
+    },
+    {
+      "nombre": "Dermatología",
+      "tipo": "otro",
+      "ejemplo": "1800",
+      "valores": "1800 | PrimeraVez | 244298 | 1942 | 0 | ..."
+    },
+    {
+      "nombre": "Endocrinología",
+      "tipo": "otro",
+      "ejemplo": "1900",
+      "valores": "1900 | PrimeraVez | 152835 | 0 | 1267 | ..."
+    },
+    {
+      "nombre": "Gastroenterología",
+      "tipo": "otro",
+      "ejemplo": "2000",
+      "valores": "2000 | PrimeraVez | 166408 | 1522 | 0 | ..."
+    },
+    {
+      "nombre": "Ginecología",
+      "tipo": "otro",
+      "ejemplo": "2100",
+      "valores": "2100 | PrimeraVez | 924607 | 1626 | 0 | ..."
+    },
+    {
+      "nombre": "Biología de la Reproducción Humana",
+      "tipo": "otro",
+      "ejemplo": "2101",
+      "valores": "2101 | PrimeraVez | 3256 | 0 | 276 | ..."
+    },
+    {
+      "nombre": "Cirugía laparoscópica en ginecología",
+      "tipo": "otro",
+      "ejemplo": "2102",
+      "valores": "2102 | PrimeraVez | 78 | 0"
+    },
+    {
+      "nombre": "Urología Ginecológica",
+      "tipo": "otro",
+      "ejemplo": "2103",
+      "valores": "2103 | PrimeraVez | 6087 | 0 | 391 | ..."
+    },
+    {
+      "nombre": "Ginecología endócrina",
+      "tipo": "otro",
+      "ejemplo": "2104",
+      "valores": "2104 | PrimeraVez | 338 | 0"
+    },
+    {
+      "nombre": "Clínica de Displasia",
+      "tipo": "otro",
+      "ejemplo": "2105",
+      "valores": "2105 | PrimeraVez | 18713 | 0 | 824 | ..."
+    },
+    {
+      "nombre": "Clínica de Mama",
+      "tipo": "otro",
+      "ejemplo": "2106",
+      "valores": "2106 | PrimeraVez | 4531 | 0 | 1620 | ..."
+    },
+    {
+      "nombre": "Hematología",
+      "tipo": "otro",
+      "ejemplo": "2200",
+      "valores": "2200 | PrimeraVez | 51519 | 524 | 0 | ..."
+    },
+    {
+      "nombre": "Infectología",
+      "tipo": "otro",
+      "ejemplo": "2300",
+      "valores": "2300 | PrimeraVez | 25898 | 0 | 452 | ..."
+    },
+    {
+      "nombre": "Obstetricia",
+      "tipo": "otro",
+      "ejemplo": "2400",
+      "valores": "2400 | PrimeraVez | 137989 | 724 | 0 | ..."
+    },
+    {
+      "nombre": "Medicina Materno Fetal",
+      "tipo": "otro",
+      "ejemplo": "2401",
+      "valores": "2401 | PrimeraVez | 2051 | 0 | 680 | ..."
+    },
+    {
+      "nombre": "Salud Reproductiva",
+      "tipo": "otro",
+      "ejemplo": "2405",
+      "valores": "2405 | PrimeraVez | 486 | 0"
+    },
+    {
+      "nombre": "Medicina Interna",
+      "tipo": "otro",
+      "ejemplo": "2500",
+      "valores": "2500 | PrimeraVez | 1181667 | 4061 | 0 | ..."
+    },
+    {
+      "nombre": "Nefrología",
+      "tipo": "otro",
+      "ejemplo": "2600",
+      "valores": "2600 | PrimeraVez | 186177 | 404 | 0 | ..."
+    },
+    {
+      "nombre": "Neumología",
+      "tipo": "otro",
+      "ejemplo": "2700",
+      "valores": "2700 | PrimeraVez | 165119 | 437 | 0 | ..."
+    },
+    {
+      "nombre": "Neurología",
+      "tipo": "otro",
+      "ejemplo": "2800",
+      "valores": "2800 | PrimeraVez | 206833 | 882 | 0 | ..."
+    },
+    {
+      "nombre": "Oftalmología",
+      "tipo": "otro",
+      "ejemplo": "3000",
+      "valores": "3000 | PrimeraVez | 708341 | 2028 | 0 | ..."
+    },
+    {
+      "nombre": "Oftalmología Segmento Anterior",
+      "tipo": "otro",
+      "ejemplo": "3001",
+      "valores": "3001 | PrimeraVez | 85 | 0"
+    },
+    {
+      "nombre": "Oftalmología oncológica",
+      "tipo": "otro",
+      "ejemplo": "3005",
+      "valores": "3005 | PrimeraVez | 215 | 0"
+    },
+    {
+      "nombre": "Otorrinolaringología",
+      "tipo": "otro",
+      "ejemplo": "3100",
+      "valores": "3100 | PrimeraVez | 453082 | 1863 | 0 | ..."
+    },
+    {
+      "nombre": "Pediatría",
+      "tipo": "otro",
+      "ejemplo": "3200",
+      "valores": "3200 | PrimeraVez | 453295 | 1781 | 0 | ..."
+    },
+    {
+      "nombre": "Cardiología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "3201",
+      "valores": "3201 | PrimeraVez | 24413 | 0 | 665 | ..."
+    },
+    {
+      "nombre": "Endocrinología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "3202",
+      "valores": "3202 | PrimeraVez | 11336 | 0 | 490 | ..."
+    },
+    {
+      "nombre": "Gastroenterología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "3203",
+      "valores": "3203 | PrimeraVez | 7509 | 0 | 378 | ..."
+    },
+    {
+      "nombre": "Hematología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "3204",
+      "valores": "3204 | PrimeraVez | 3330 | 0 | 196 | ..."
+    },
+    {
+      "nombre": "Infectología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "3205",
+      "valores": "3205 | PrimeraVez | 1106 | 0 | 179 | ..."
+    },
+    {
+      "nombre": "Neumología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "3206",
+      "valores": "3206 | PrimeraVez | 5594 | 0 | 315 | ..."
+    },
+    {
+      "nombre": "Neurología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "3207",
+      "valores": "3207 | PrimeraVez | 26057 | 0 | 828 | ..."
+    },
+    {
+      "nombre": "Oncología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "3208",
+      "valores": "3208 | PrimeraVez | 818 | 0 | 49 | ..."
+    },
+    {
+      "nombre": "Reumatología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "3209",
+      "valores": "3209 | PrimeraVez | 1354 | 0"
+    },
+    {
+      "nombre": "Proctología",
+      "tipo": "otro",
+      "ejemplo": "3400",
+      "valores": "3400 | PrimeraVez | 29367 | 0 | 1161 | ..."
+    },
+    {
+      "nombre": "Psiquiatría",
+      "tipo": "otro",
+      "ejemplo": "3500",
+      "valores": "3500 | PrimeraVez | 303144 | 1337 | 0 | ..."
+    },
+    {
+      "nombre": "Hospital Psiquiatría Tiempo Parcial",
+      "tipo": "otro",
+      "ejemplo": "3501",
+      "valores": "3501 | PrimeraVez | 36 | 0"
+    },
+    {
+      "nombre": "Reumatología",
+      "tipo": "otro",
+      "ejemplo": "3600",
+      "valores": "3600 | PrimeraVez | 143253 | 1786 | 0 | ..."
+    },
+    {
+      "nombre": "Traumatología y ortopedia",
+      "tipo": "otro",
+      "ejemplo": "3800",
+      "valores": "3800 | PrimeraVez | 892423 | 1888 | 0 | ..."
+    },
+    {
+      "nombre": "Traumatología",
+      "tipo": "otro",
+      "ejemplo": "3801",
+      "valores": "3801 | PrimeraVez | 1806 | 0 | 27 | ..."
+    },
+    {
+      "nombre": "Ortopedia",
+      "tipo": "otro",
+      "ejemplo": "3802",
+      "valores": "3802 | PrimeraVez | 31412 | 0"
+    },
+    {
+      "nombre": "Miembro Torácico",
+      "tipo": "otro",
+      "ejemplo": "3803",
+      "valores": "3803 | PrimeraVez | 11614 | 0"
+    },
+    {
+      "nombre": "Columna",
+      "tipo": "otro",
+      "ejemplo": "3804",
+      "valores": "3804 | PrimeraVez | 15301 | 0"
+    },
+    {
+      "nombre": "Miembro Pélvico",
+      "tipo": "otro",
+      "ejemplo": "3805",
+      "valores": "3805 | PrimeraVez | 10709 | 0"
+    },
+    {
+      "nombre": "Rodilla",
+      "tipo": "otro",
+      "ejemplo": "3806",
+      "valores": "3806 | PrimeraVez | 5493 | 0"
+    },
+    {
+      "nombre": "Pie y Tobillo",
+      "tipo": "otro",
+      "ejemplo": "3807",
+      "valores": "3807 | PrimeraVez | 3612 | 0"
+    },
+    {
+      "nombre": "Reemplazos Articulares",
+      "tipo": "otro",
+      "ejemplo": "3809",
+      "valores": "3809 | PrimeraVez | 15974 | 0"
+    },
+    {
+      "nombre": "Geriatría",
+      "tipo": "otro",
+      "ejemplo": "3900",
+      "valores": "3900 | PrimeraVez | 52141 | 6 | 0 | ..."
+    },
+    {
+      "nombre": "Urología",
+      "tipo": "otro",
+      "ejemplo": "4100",
+      "valores": "4100 | PrimeraVez | 335471 | 1138 | 0 | ..."
+    },
+    {
+      "nombre": "Clínica de Andrología",
+      "tipo": "otro",
+      "ejemplo": "4101",
+      "valores": "4101 | PrimeraVez | 13 | 0"
+    },
+    {
+      "nombre": "Audiología, otoneurologia y foniatría",
+      "tipo": "otro",
+      "ejemplo": "4200",
+      "valores": "4200 | PrimeraVez | 78032 | 0 | 1278 | ..."
+    },
+    {
+      "nombre": "Neurocirugía",
+      "tipo": "otro",
+      "ejemplo": "4300",
+      "valores": "4300 | PrimeraVez | 41546 | 938 | 0 | ..."
+    },
+    {
+      "nombre": "Cirugía Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "4400",
+      "valores": "4400 | PrimeraVez | 51895 | 157 | 0 | ..."
+    },
+    {
+      "nombre": "Nefrología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "4401",
+      "valores": "4401 | PrimeraVez | 4012 | 0 | 319 | ..."
+    },
+    {
+      "nombre": "Neurocirugía Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "4402",
+      "valores": "4402 | PrimeraVez | 2067 | 0 | 43 | ..."
+    },
+    {
+      "nombre": "Otorrinolaringología Pediátrica",
+      "tipo": "otro",
+      "ejemplo": "4403",
+      "valores": "4403 | PrimeraVez | 2228 | 0"
+    },
+    {
+      "nombre": "Oncología Médica",
+      "tipo": "otro",
+      "ejemplo": "4500",
+      "valores": "4500 | PrimeraVez | 101043 | 493 | 0 | ..."
+    },
+    {
+      "nombre": "Cirugía Plástica y Reconstructiva",
+      "tipo": "otro",
+      "ejemplo": "4600",
+      "valores": "4600 | PrimeraVez | 60040 | 641 | 0 | ..."
+    },
+    {
+      "nombre": "Unidad de Quemados",
+      "tipo": "otro",
+      "ejemplo": "4601",
+      "valores": "4601 | PrimeraVez | 112 | 0"
+    },
+    {
+      "nombre": "Unidad de Cuidados Intensivos",
+      "tipo": "otro",
+      "ejemplo": "4800",
+      "valores": "4800 | PrimeraVez | 2 | 0"
+    },
+    {
+      "nombre": "Cirugía oncológica",
+      "tipo": "otro",
+      "ejemplo": "5100",
+      "valores": "5100 | PrimeraVez | 79557 | 766 | 0 | ..."
+    },
+    {
+      "nombre": "Tumores de Colon y Recto",
+      "tipo": "otro",
+      "ejemplo": "5101",
+      "valores": "5101 | PrimeraVez | 855 | 0"
+    },
+    {
+      "nombre": "Tumores Cabeza y Cuello",
+      "tipo": "otro",
+      "ejemplo": "5102",
+      "valores": "5102 | PrimeraVez | 2212 | 0"
+    },
+    {
+      "nombre": "Ginecología Oncológica",
+      "tipo": "otro",
+      "ejemplo": "5103",
+      "valores": "5103 | PrimeraVez | 5021 | 15 | 0 | ..."
+    },
+    {
+      "nombre": "Oncología de Mama",
+      "tipo": "otro",
+      "ejemplo": "5104",
+      "valores": "5104 | PrimeraVez | 8374 | 0"
+    },
+    {
+      "nombre": "Tumores Tórax",
+      "tipo": "otro",
+      "ejemplo": "5105",
+      "valores": "5105 | PrimeraVez | 365 | 0"
+    },
+    {
+      "nombre": "Sarcomas",
+      "tipo": "otro",
+      "ejemplo": "5106",
+      "valores": "5106 | PrimeraVez | 1187 | 0"
+    },
+    {
+      "nombre": "Uro Oncología",
+      "tipo": "otro",
+      "ejemplo": "5107",
+      "valores": "5107 | PrimeraVez | 2033 | 0"
+    },
+    {
+      "nombre": "Medicina del trabajo y ambiental",
+      "tipo": "otro",
+      "ejemplo": "5600",
+      "valores": "5600 | PrimeraVez | 779665 | 0 | 1890 | ..."
+    },
+    {
+      "nombre": "Genética Médica",
+      "tipo": "otro",
+      "ejemplo": "6500",
+      "valores": "6500 | PrimeraVez | 7994 | 0 | 13 | ..."
+    },
+    {
+      "nombre": "Medicina Física y Rehabilitación",
+      "tipo": "otro",
+      "ejemplo": "6800",
+      "valores": "6800 | PrimeraVez | 498717 | 2874 | 0 | ..."
+    },
+    {
+      "nombre": "Rehabilitación Cardiaca",
+      "tipo": "otro",
+      "ejemplo": "6801",
+      "valores": "6801 | PrimeraVez | 2403 | 0"
+    },
+    {
+      "nombre": "Rehabilitación Profesional",
+      "tipo": "otro",
+      "ejemplo": "6802",
+      "valores": "6802 | PrimeraVez | 1271 | 0"
+    },
+    {
+      "nombre": "Diagnóstico por Imagen",
+      "tipo": "otro",
+      "ejemplo": "7300",
+      "valores": "7300 | PrimeraVez | 1270 | 0"
+    },
+    {
+      "nombre": "Evaluación Diagnostica",
+      "tipo": "otro",
+      "ejemplo": "7301",
+      "valores": "7301 | PrimeraVez | 4597 | 0 | 132 | ..."
+    },
+    {
+      "nombre": "Unidad Metabólica",
+      "tipo": "otro",
+      "ejemplo": "7700",
+      "valores": "7700 | PrimeraVez | 1140 | 0"
+    },
+    {
+      "nombre": "Anestesiología",
+      "tipo": "otro",
+      "ejemplo": "8800",
+      "valores": "8800 | PrimeraVez | 115588 | 315 | 0 | ..."
+    },
+    {
+      "nombre": "Clínica del Dolor",
+      "tipo": "otro",
+      "ejemplo": "8802",
+      "valores": "8802 | PrimeraVez | 11122 | 112 | 0 | ..."
+    },
+    {
+      "nombre": "Unidad de Trasplantes",
+      "tipo": "otro",
+      "ejemplo": "UT00",
+      "valores": "UT00 | PrimeraVez | 1342 | 0"
+    },
+    {
+      "nombre": "Trasplantes Córnea",
+      "tipo": "otro",
+      "ejemplo": "UT01",
+      "valores": "UT01 | PrimeraVez | 130 | 0"
+    },
+    {
+      "nombre": "Trasplantes Riñón",
+      "tipo": "otro",
+      "ejemplo": "UT02",
+      "valores": "UT02 | PrimeraVez | 1719 | 0 | 902 | ..."
+    },
+    {
+      "nombre": "Trasplantes Hígado",
+      "tipo": "otro",
+      "ejemplo": "UT03",
+      "valores": "UT03 | PrimeraVez | 4 | 0"
+    },
+    {
+      "nombre": "Trasplantes Médula Ósea",
+      "tipo": "otro",
+      "ejemplo": "UT04",
+      "valores": "UT04 | PrimeraVez | 109 | 0"
+    }
+  ],
+  "huella_base": "8e19088e47c81e8863bb9510fa576d3471fe350f826f165538c39f239dba2fda",
+  "fecha": "2026-09-02"
+}

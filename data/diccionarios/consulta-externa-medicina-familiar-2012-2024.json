@@ -1,0 +1,103 @@
+{
+  "id": "consulta-externa-medicina-familiar-2012-2024",
+  "campos": [
+    {
+      "nombre": "OOAD",
+      "tipo": "clave",
+      "ejemplo": "Total Nacional",
+      "valores": "Total Nacional | Aguascalientes | Baja California | Baja California Sur | Campeche | ..."
+    },
+    {
+      "nombre": "Clave Presupuestal",
+      "tipo": "otro",
+      "ejemplo": "010106252110",
+      "valores": "010106252110 | 010113252110 | 010115252110 | 010117252110 | 010120252110 | ..."
+    },
+    {
+      "nombre": "Unidad",
+      "tipo": "otro",
+      "ejemplo": "UMF 1 Aguascalientes",
+      "valores": "UMF 1 Aguascalientes | UMF 10 Aguascalientes | UMF 8 Aguascalientes | UMF 9 Aguascalientes | UMF 7 San Marcos | ..."
+    },
+    {
+      "nombre": "Total",
+      "tipo": "otro",
+      "ejemplo": "81605089",
+      "valores": "81605089 | 244970 | 299264 | 278288 | 174985 | ..."
+    },
+    {
+      "nombre": "Enero",
+      "tipo": "otro",
+      "ejemplo": "7103671",
+      "valores": "7103671 | 21547 | 26596 | 24335 | 14575 | ..."
+    },
+    {
+      "nombre": "Febrero",
+      "tipo": "otro",
+      "ejemplo": "6784984",
+      "valores": "6784984 | 20663 | 25232 | 20864 | 14207 | ..."
+    },
+    {
+      "nombre": "Marzo",
+      "tipo": "otro",
+      "ejemplo": "6155804",
+      "valores": "6155804 | 18421 | 22896 | 22253 | 13553 | ..."
+    },
+    {
+      "nombre": "Abril",
+      "tipo": "otro",
+      "ejemplo": "6752474",
+      "valores": "6752474 | 19796 | 24872 | 21793 | 14583 | ..."
+    },
+    {
+      "nombre": "Mayo",
+      "tipo": "otro",
+      "ejemplo": "6495334",
+      "valores": "6495334 | 19295 | 23747 | 21778 | 13836 | ..."
+    },
+    {
+      "nombre": "Junio",
+      "tipo": "otro",
+      "ejemplo": "6715093",
+      "valores": "6715093 | 20623 | 24952 | 21348 | 14533 | ..."
+    },
+    {
+      "nombre": "Julio",
+      "tipo": "otro",
+      "ejemplo": "6907497",
+      "valores": "6907497 | 21352 | 25702 | 21125 | 14863 | ..."
+    },
+    {
+      "nombre": "Agosto",
+      "tipo": "otro",
+      "ejemplo": "6919641",
+      "valores": "6919641 | 21695 | 25857 | 25414 | 14936 | ..."
+    },
+    {
+      "nombre": "Septiembre",
+      "tipo": "otro",
+      "ejemplo": "7107484",
+      "valores": "7107484 | 21308 | 25276 | 24905 | 15166 | ..."
+    },
+    {
+      "nombre": "Octubre",
+      "tipo": "otro",
+      "ejemplo": "7204331",
+      "valores": "7204331 | 20113 | 25289 | 26400 | 15480 | ..."
+    },
+    {
+      "nombre": "Noviembre",
+      "tipo": "otro",
+      "ejemplo": "6676693",
+      "valores": "6676693 | 19396 | 23878 | 22391 | 14190 | ..."
+    },
+    {
+      "nombre": "Diciembre",
+      "tipo": "otro",
+      "ejemplo": "6782083",
+      "valores": "6782083 | 20761 | 24967 | 25682 | 15063 | ..."
+    }
+  ],
+  "huella_base": "987183254607721abe689acfcb3652d19f230ee1ca0ef423d98c4e68418e453f",
+  "fecha": "2026-09-02"
+}
