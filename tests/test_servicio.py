@@ -220,6 +220,28 @@ class PruebaServicio(unittest.TestCase):
         self.assertEqual(codigo, 400)
         self.assertEqual(json.loads(cuerpo)["error"]["code"], -32700)
 
+    def test_mcp_entradas_hostiles_no_tumban_la_conexion(self):
+        """Ronda adversarial 2026-09-02: DADO params/arguments no-dict,
+        cuerpo array, cuerpo texto o cuerpo numérico ENTONCES siempre
+        hay respuesta JSON-RPC (sin conexión cortada) con código
+        -32600/-32602 o resultado isError."""
+        hostiles = [
+            {"jsonrpc": "2.0", "id": 1, "method": "tools/call",
+             "params": ["x"]},
+            {"jsonrpc": "2.0", "id": 2, "method": "tools/call",
+             "params": {"name": "detalle_fuente", "arguments": [1]}},
+            {"jsonrpc": "2.0", "id": 3, "method": "tools/call"},
+            [1, 2, 3],
+            "\"hola\"",
+            42,
+        ]
+        for i, cuerpo in enumerate(hostiles):
+            codigo, r = self._json("/mcp", cuerpo=cuerpo)
+            self.assertIn(codigo, (200, 400), f"caso {i}")
+            fallo = ("error" in r
+                     or r.get("result", {}).get("isError") is True)
+            self.assertTrue(fallo, f"caso {i}: {r}")
+
 
 class PruebaServicioConToken(PruebaServicio):
     """DADO token configurado CUANDO petición sin Authorization

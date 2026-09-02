@@ -353,10 +353,28 @@ def _mcp_responder(ruta_catalogo, cuerpo):
         peticion = json.loads(cuerpo.decode("utf-8"))
     except (UnicodeDecodeError, json.JSONDecodeError):
         return 400, _rpc_error(None, -32700, "JSON inválido")
+    if not isinstance(peticion, dict):
+        return 400, _rpc_error(None, -32600,
+                               "la petición debe ser un objeto JSON-RPC")
     metodo = peticion.get("method", "")
+    if not isinstance(metodo, str):
+        return 400, _rpc_error(peticion.get("id"), -32600,
+                               "'method' debe ser texto")
     if metodo.startswith("notifications/"):
         return 202, None
     id_peticion = peticion.get("id")
+    try:
+        respuesta = _mcp_despachar(ruta_catalogo, peticion, metodo,
+                                   id_peticion)
+    except ErrorServicio as exc:
+        return 200, _rpc_error(id_peticion, -32603, exc.mensaje)
+    except Exception as exc:  # última red: la conexión nunca muere
+        return 200, _rpc_error(id_peticion, -32603,
+                               f"error interno: {type(exc).__name__}")
+    return respuesta
+
+
+def _mcp_despachar(ruta_catalogo, peticion, metodo, id_peticion):
     if metodo == "initialize":
         return 200, {"jsonrpc": "2.0", "id": id_peticion, "result": {
             "protocolVersion": PROTOCOL_VERSION_MCP,
@@ -368,8 +386,14 @@ def _mcp_responder(ruta_catalogo, cuerpo):
                      "result": {"tools": HERRAMIENTAS}}
     if metodo == "tools/call":
         parametros = peticion.get("params") or {}
+        if not isinstance(parametros, dict):
+            return 400, _rpc_error(id_peticion, -32602,
+                                   "'params' debe ser un objeto")
         nombre = parametros.get("name")
         argumentos = parametros.get("arguments") or {}
+        if not isinstance(argumentos, dict):
+            return 400, _rpc_error(id_peticion, -32602,
+                                   "'arguments' debe ser un objeto")
         try:
             if not isinstance(nombre, str) or not nombre:
                 raise ErrorServicio(400, "falta 'name' de la tool")
@@ -477,6 +501,9 @@ class Manejador(BaseHTTPRequestHandler):
             return self._enviar_json(
                 404, {"error": f"ruta desconocida: {partes.path}"})
         longitud = int(self.headers.get("Content-Length") or 0)
+        if longitud > 1_048_576:  # 1 MiB; JSON-RPC no necesita más
+            return self._enviar_json(
+                413, {"error": "cuerpo demasiado grande"})
         cuerpo = self.rfile.read(longitud) if longitud else b""
         try:
             codigo, respuesta = _mcp_responder(
