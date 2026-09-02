@@ -1,0 +1,43 @@
+{
+  "id": "seguimiento-productividad-semanal-2025",
+  "campos": [
+    {
+      "nombre": "OOAD/UMAE",
+      "tipo": "clave",
+      "ejemplo": "Aguascalientes",
+      "valores": "Aguascalientes | Baja California"
+    },
+    {
+      "nombre": "Clave Presupuestal",
+      "tipo": "otro",
+      "ejemplo": "010113UA2151",
+      "valores": "010113UA2151 | 010101012151 | 010106252110 | 010113252110 | 010115252110 | ..."
+    },
+    {
+      "nombre": "Unidad",
+      "tipo": "otro",
+      "ejemplo": "UMAA 1 Aguascalientes (Aut)",
+      "valores": "UMAA 1 Aguascalientes (Aut) | HGZ 1 Aguascalientes | UMF 1 Aguascalientes | UMF 10 Aguascalientes | UMF 8 Aguascalientes | ..."
+    },
+    {
+      "nombre": "Servicio",
+      "tipo": "otro",
+      "ejemplo": "2. Especialidades",
+      "valores": "2. Especialidades | 1. Medicina Familiar"
+    },
+    {
+      "nombre": "Año",
+      "tipo": "otro",
+      "ejemplo": "2019",
+      "valores": "2019 | 2020 | 2021 | 2022 | 2023 | ..."
+    },
+    {
+      "nombre": "Semana ACUMULADA",
+      "tipo": "otro",
+      "ejemplo": "1",
+      "valores": "1 | 234 | 199 | 21 | 105 | ..."
+    }
+  ],
+  "huella_base": "39175c9a02145d182cfe8caa72906ff5b0a2fde39b9a23c3c27f37cc82fafd57",
+  "fecha": "2026-09-02"
+}

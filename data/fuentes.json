@@ -1383,6 +1383,673 @@
         }
       ],
       "notas": "Versión 11/08/2025"
+    },
+    {
+      "id": "poblacion-pamf-siais-2025",
+      "seccion": "poblacion",
+      "titulo": "SIAIS: Población Adscrita a Médico Familiar (PAMF), corte junio 2025",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacion/SIAIS/SIAIS_PAMF_Junio_2025_ver1_2026-02-24.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie 2007-2025 publicada en el fragmento /fragmentos/seccion/7 del portal (puerto 80); corte junio de cada año; denominador candidato de FN-19/FN-20",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/poblacion-pamf-siais-2025/SIAIS_PAMF_Junio_2025_ver1_2026-02-24.xlsx",
+          "resultado": "vigente",
+          "huella": "6e4a3b951aeedd4b31f5a30521d8394cdd564e0f86005cb866fa083c002b5c3f",
+          "estructura": [
+            {
+              "hoja": "PAMF_202506_Consultorios",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "PAMF_202506_UM_Totales",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "PAMF_202506_OOAD",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Unidades_No_Consideradas",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/poblacion-pamf-siais-2025/SIAIS_PAMF_Junio_2025_ver1_2026-02-24.xlsx",
+          "resultado": "vigente",
+          "huella": "6e4a3b951aeedd4b31f5a30521d8394cdd564e0f86005cb866fa083c002b5c3f",
+          "estructura": [
+            {
+              "hoja": "PAMF_202506_Consultorios",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "PAMF_202506_UM_Totales",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "PAMF_202506_OOAD",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Unidades_No_Consideradas",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poblacion-consultorios-medfam-pamf-2025",
+      "seccion": "poblacion",
+      "titulo": "SIAIS: Total de consultorios de Medicina Familiar con PAMF, corte junio 2025",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacion/SIAIS_Total_Consultorios_MedFam_PAMF_202506_2026-02-24.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie 2018-2025 en /fragmentos/seccion/7; complementa la nomenclatura de consultorios SIMF",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/poblacion-consultorios-medfam-pamf-2025/SIAIS_Total_Consultorios_MedFam_PAMF_202506_2026-02-24.xlsx",
+          "resultado": "vigente",
+          "huella": "b60776fba64fcb17811732ff18ab34e5213aa013685320eae4f9312fcf52da1c",
+          "estructura": [
+            {
+              "hoja": "Tot_Cons_MedFam",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Tot_Cons_MF_OOAD",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "PAMF_Consultorios",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "NO CONTEMPLADAS",
+              "columnas": [
+                "Periodo_PAMF",
+                "CVE_DELEG",
+                "DELEGACION",
+                "CVE_PRESUPUESTAL",
+                "UNIDAD_MEDICA",
+                "CONSULTORIO",
+                "TURNO",
+                "Ninos_0_9",
+                "Adolescentes_10_19",
+                "AdultosH_20_59",
+                "AdultosM_20_59",
+                "AdultoMayor_Mas_59",
+                "Menores_1",
+                "Pob_1_A",
+                "Pob_2_A",
+                "Pob_3_A",
+                "Pob_4_A",
+                "Pob_1_4",
+                "Pob_5_A",
+                "Pob_6_A",
+                "Pob_7_A",
+                "Pob_8_A",
+                "Pob_9_A",
+                "Pob_2_9",
+                "Pob_3_9",
+                "Pob_5_9",
+                "Pob_10_14",
+                "Pob_12_A",
+                "Pob_13_A",
+                "Pob_14_A",
+                "Pob_15_A",
+                "PobM_15_19",
+                "PobH_15_19",
+                "PobM_20_24",
+                "PobH_20_24",
+                "PobM_25_29",
+                "PobH_25_29",
+                "PobM_30_34",
+                "PobH_30_34",
+                "PobM_35_39",
+                "PobH_35_39",
+                "PobM_40_44",
+                "PobH_40_44",
+                "PobM_45_49",
+                "PobH_45_49",
+                "PobM_50_54",
+                "PobH_50_54",
+                "PobM_55_59",
+                "PobH_55_59",
+                "PobM_60_64",
+                "PobH_60_64",
+                "PobM_65_69",
+                "PobH_65_69",
+                "PobM_70_74",
+                "PobH_70_74",
+                "PobM_75_79",
+                "PobH_75_79",
+                "PobM_80_84",
+                "PobH_80_84",
+                "PobM_85_",
+                "PobH_85_",
+                "PobH_20_44",
+                "PobM_20_44",
+                "PobM_25_59",
+                "PobH_30_59",
+                "PobM_30_59",
+                "PobM_60_65",
+                "PobM_60_69",
+                "Poblacion_Total",
+                "PobM_10_14",
+                "PobH_10_14",
+                "Pob_0_m",
+                "Pob_1_m",
+                "Pob_2_m",
+                "Pob_3_m",
+                "Pob_4_m",
+                "Pob_5_m",
+                "Pob_6_m",
+                "Pob_7_m",
+                "Pob_8_m",
+                "Pob_9_m",
+                "Pob_10_m",
+                "Pob_11_m",
+                "PobM_10_A",
+                "PobH_10_A",
+                "PobM_11_A",
+                "PobH_11_A",
+                "PobM_12_A",
+                "PobH_12_A",
+                "PobM_13_A",
+                "PobH_13_A",
+                "PobM_14_A",
+                "PobH_14_A",
+                "No_Especificados"
+              ]
+            }
+          ]
+        },
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/poblacion-consultorios-medfam-pamf-2025/SIAIS_Total_Consultorios_MedFam_PAMF_202506_2026-02-24.xlsx",
+          "resultado": "vigente",
+          "huella": "b60776fba64fcb17811732ff18ab34e5213aa013685320eae4f9312fcf52da1c",
+          "estructura": [
+            {
+              "hoja": "Tot_Cons_MedFam",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Tot_Cons_MF_OOAD",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "PAMF_Consultorios",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "NO CONTEMPLADAS",
+              "columnas": [
+                "Periodo_PAMF",
+                "CVE_DELEG",
+                "DELEGACION",
+                "CVE_PRESUPUESTAL",
+                "UNIDAD_MEDICA",
+                "CONSULTORIO",
+                "TURNO",
+                "Ninos_0_9",
+                "Adolescentes_10_19",
+                "AdultosH_20_59",
+                "AdultosM_20_59",
+                "AdultoMayor_Mas_59",
+                "Menores_1",
+                "Pob_1_A",
+                "Pob_2_A",
+                "Pob_3_A",
+                "Pob_4_A",
+                "Pob_1_4",
+                "Pob_5_A",
+                "Pob_6_A",
+                "Pob_7_A",
+                "Pob_8_A",
+                "Pob_9_A",
+                "Pob_2_9",
+                "Pob_3_9",
+                "Pob_5_9",
+                "Pob_10_14",
+                "Pob_12_A",
+                "Pob_13_A",
+                "Pob_14_A",
+                "Pob_15_A",
+                "PobM_15_19",
+                "PobH_15_19",
+                "PobM_20_24",
+                "PobH_20_24",
+                "PobM_25_29",
+                "PobH_25_29",
+                "PobM_30_34",
+                "PobH_30_34",
+                "PobM_35_39",
+                "PobH_35_39",
+                "PobM_40_44",
+                "PobH_40_44",
+                "PobM_45_49",
+                "PobH_45_49",
+                "PobM_50_54",
+                "PobH_50_54",
+                "PobM_55_59",
+                "PobH_55_59",
+                "PobM_60_64",
+                "PobH_60_64",
+                "PobM_65_69",
+                "PobH_65_69",
+                "PobM_70_74",
+                "PobH_70_74",
+                "PobM_75_79",
+                "PobH_75_79",
+                "PobM_80_84",
+                "PobH_80_84",
+                "PobM_85_",
+                "PobH_85_",
+                "PobH_20_44",
+                "PobM_20_44",
+                "PobM_25_59",
+                "PobH_30_59",
+                "PobM_30_59",
+                "PobM_60_65",
+                "PobM_60_69",
+                "Poblacion_Total",
+                "PobM_10_14",
+                "PobH_10_14",
+                "Pob_0_m",
+                "Pob_1_m",
+                "Pob_2_m",
+                "Pob_3_m",
+                "Pob_4_m",
+                "Pob_5_m",
+                "Pob_6_m",
+                "Pob_7_m",
+                "Pob_8_m",
+                "Pob_9_m",
+                "Pob_10_m",
+                "Pob_11_m",
+                "PobM_10_A",
+                "PobH_10_A",
+                "PobM_11_A",
+                "PobH_11_A",
+                "PobM_12_A",
+                "PobH_12_A",
+                "PobM_13_A",
+                "PobH_13_A",
+                "PobM_14_A",
+                "PobH_14_A",
+                "No_Especificados"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poblacion-usuaria-1n-unidad-2004-2025",
+      "seccion": "poblacion",
+      "titulo": "SIAIS: Población usuaria primer nivel por unidad, 2004-2025",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacionUsuaria/Pob_Usuaria_SIAIS_2004_2025_Primer_Nivel_Unidad_18032026.xls",
+      "formato": "xls",
+      "periodicidad": "anual",
+      "notas": "Histórico por unidad; existe variante por OOAD y serie 2N/3N SIMOC por unidad 2017-2025 (fragmento 7 del portal)",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/poblacion-usuaria-1n-unidad-2004-2025/Pob_Usuaria_SIAIS_2004_2025_Primer_Nivel_Unidad_18032026.xls",
+          "resultado": "vigente",
+          "huella": "b294479c87cc237f6f94de0196d37c6aab08926f998302f21aa3c2790b5365ef"
+        }
+      ]
+    },
+    {
+      "id": "poblacion-usuaria-23n-simoc-unidad-2025",
+      "seccion": "poblacion",
+      "titulo": "SIMOC: Población usuaria 2do y 3er nivel por unidad, 2025",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacionUsuaria/Poblaci%C3%B3n%20usuaria%202do%20y%203er%20nivel%20unidad%20SIMOC%202025.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie 2017-2025; denominador 2N/3N para indicadores por UMAE/HGZ",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/poblacion-usuaria-23n-simoc-unidad-2025/Población usuaria 2do y 3er nivel unidad SIMOC 2025.xlsx",
+          "resultado": "vigente",
+          "huella": "72a70b71a0d556d12799466cf35d462ac5a725a2a08ee62f89bc655140065525",
+          "estructura": [
+            {
+              "hoja": "Población_usuaria_2025_Esp",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Población_usuaria_2025_Urg",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seguimiento-productividad-semanal-2025",
+      "seccion": "seguimiento",
+      "titulo": "Productividad por semana estadística, semana 52 cierre 2025-12-21",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infoSalud/PRODUCTIVIDAD%20POR%20SEMANA%20ESTADISTICA%20semana52_2025-12-21.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "semanal",
+      "notas": "Casos agregados por semana estadística; candidato numerador FN-19; rankings OOAD/UMAE en PDF y tablero SIAIS en Seguimiento D/S/M",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/seguimiento-productividad-semanal-2025/PRODUCTIVIDAD POR SEMANA ESTADISTICA semana52_2025-12-21.xlsx",
+          "resultado": "vigente",
+          "huella": "39175c9a02145d182cfe8caa72906ff5b0a2fde39b9a23c3c27f37cc82fafd57",
+          "estructura": [
+            {
+              "hoja": "Resumen Atenciones 2019-2025",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Fechas de año estadistico",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Consulta",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Fechas de año estadistico",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "IQX",
+              "columnas": [
+                "",
+                "Egresos Hospitalarios en camas censables, Egresos sin alojamiento  e Intervenciones Quirurgícas, otorgadas por semana acumulada y unidad médica 2019-2024 (al mismo corte del  21/12/2025)",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estadisticas-nacionales-cifras-2025",
+      "seccion": "estadisticas-nacionales",
+      "titulo": "Cifras Nacionales 2025, cierre diciembre (anual)",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/Cifras_Nacionales_2025_Diciembre_Anual_04032026.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Serie 2019-2026 en /fragmentos/seccion/1; 2026 julio va como preliminar en /uploads/",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-02",
+          "ruta_local": "data/descargas/estadisticas-nacionales-cifras-2025/Cifras_Nacionales_2025_Diciembre_Anual_04032026.xlsx",
+          "resultado": "vigente",
+          "huella": "d9095b1d10dccceea2f61501d7be59c92a02bb8031fca7cc42a1648e2e950566",
+          "estructura": [
+            {
+              "hoja": "Consultas",
+              "columnas": [
+                "Consulta Externa otorgada, Diciembre 2025"
+              ]
+            },
+            {
+              "hoja": "Egresos",
+              "columnas": [
+                "Atenciones Hospitalarias, Diciembre 2025"
+              ]
+            },
+            {
+              "hoja": " Aux Dx",
+              "columnas": [
+                "Auxiliares de Diagnóstico,  Diciembre 2025"
+              ]
+            },
+            {
+              "hoja": "Aux Tx",
+              "columnas": [
+                "Auxiliares de Tratamiento,  Diciembre 2025"
+              ]
+            },
+            {
+              "hoja": "33 Procedimientos",
+              "columnas": [
+                "33 Procedimientos fuera de Quirófano,  Diciembre 2025"
+              ]
+            },
+            {
+              "hoja": "Atenciones Prof. de Salud",
+              "columnas": [
+                "Atenciones Profesionales de Salud, Diciembre 2025"
+              ]
+            },
+            {
+              "hoja": "Mortalidad",
+              "columnas": [
+                "Mortalidad General por Grupos de Edad, Preliminar Diciembre 2025"
+              ]
+            },
+            {
+              "hoja": "PAMF Mes",
+              "columnas": [
+                "Población Adscrita a Médico Familiar, Diciembre 2025"
+              ]
+            },
+            {
+              "hoja": "Control",
+              "columnas": [
+                "Actualizar periodo",
+                "Preliminar 2025"
+              ]
+            },
+            {
+              "hoja": "Banco de Sangre",
+              "columnas": [
+                ""
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
