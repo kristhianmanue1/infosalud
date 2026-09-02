@@ -1,0 +1,8 @@
+data
+docs
+tests
+skevi
+.git
+.an-kla
+**/__pycache__
+*.pyc
