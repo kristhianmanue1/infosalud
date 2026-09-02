@@ -3416,7 +3416,7 @@
       "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/EgreTipoIng_Sx_2012-2024_UM_13062025.xlsb",
       "formato": "otro",
       "periodicidad": "anual",
-      "notas": "Formato xlsb fuera de los lectores actuales; requiere conversión o lector nuevo (ADR-013 potencial)",
+      "notas": "Formato xlsb fuera de los lectores actuales; requiere conversión o lector nuevo (ADR pendiente)",
       "verificaciones": [
         {
           "fecha": "2026-09-02",
