@@ -131,6 +131,84 @@ def _historia(catalogo, id_fuente):
             "verificaciones": fuente.get("verificaciones") or []}
 
 
+CONTENT_TYPES = {
+    ".xlsx": "application/vnd.openxmlformats-officedocument"
+             ".spreadsheetml.sheet",
+    ".xls": "application/vnd.ms-excel",
+    ".pdf": "application/pdf",
+    ".html": "text/html; charset=utf-8",
+    ".csv": "text/csv; charset=utf-8",
+    ".zip": "application/zip",
+}
+
+
+def _verificacion_con_archivo(fuente):
+    """Última verificación con huella y ruta local existente."""
+    for v in reversed(fuente.get("verificaciones") or []):
+        if v.get("huella") and v.get("ruta_local"):
+            if os.path.isfile(v["ruta_local"]):
+                return v
+    return None
+
+
+def _archivo_meta(ruta_catalogo, id_fuente):
+    """Envelope del archivo verificado (contrato servicio v1):
+    recomputa el sha256 en vivo; estado_integridad nunca se afirma
+    sin verificación presente."""
+    import hashlib
+    catalogo = _cargar_catalogo(ruta_catalogo)
+    fuente = _fuente(catalogo, id_fuente)
+    verificacion = _verificacion_con_archivo(fuente)
+    if verificacion is None:
+        raise ErrorServicio(
+            404, f"sin archivo local verificado para '{id_fuente}'")
+    ruta = verificacion["ruta_local"]
+    digest = hashlib.sha256()
+    with open(ruta, "rb") as archivo:
+        for bloque in iter(lambda: archivo.read(1 << 20), b""):
+            digest.update(bloque)
+    sha256 = digest.hexdigest()
+    fecha = verificacion.get("fecha")
+    return {
+        "id": id_fuente,
+        "titulo": fuente.get("titulo"),
+        "nombre_archivo": os.path.basename(ruta),
+        "formato": fuente.get("formato", "otro"),
+        "tamanio_bytes": os.path.getsize(ruta),
+        "sha256": sha256,
+        "sha256_registrado": verificacion["huella"],
+        "corte": fecha,
+        "fecha_descarga": fecha,
+        "url_origen_imss": fuente.get("url"),
+        "origen": "IMSS",
+        "estado_integridad": ("verificado"
+                              if sha256 == verificacion["huella"]
+                              else "alterado"),
+        "estado_semantico": "sin_evaluar",
+        "descarga_url": f"/fuentes/{id_fuente}/archivo",
+    }
+
+
+def _archivo_binario(ruta_catalogo, id_fuente):
+    """Devuelve (bytes, nombre, content_type) del archivo verificado;
+    exige integridad: si el sha256 vivo difiere del registrado,
+    falla con 409 en lugar de servir contenido alterado."""
+    import hashlib
+    meta = _archivo_meta(ruta_catalogo, id_fuente)
+    if meta["estado_integridad"] != "verificado":
+        raise ErrorServicio(
+            409, "integridad alterada: el sha256 del archivo local "
+                 "no coincide con el registrado")
+    catalogo = _cargar_catalogo(ruta_catalogo)
+    fuente = _fuente(catalogo, id_fuente)
+    ruta = _verificacion_con_archivo(fuente)["ruta_local"]
+    with open(ruta, "rb") as archivo:
+        datos = archivo.read()
+    extension = os.path.splitext(ruta)[1].lower()
+    return (datos, meta["nombre_archivo"],
+            CONTENT_TYPES.get(extension, "application/octet-stream"))
+
+
 def _exportar_zip(ruta_catalogo, id_fuente, formato):
     """Corre fuente-exportar a directorio temporal y devuelve el zip
     con los productos (ADR-011); el temporal se elimina al salir."""
@@ -185,6 +263,14 @@ HERRAMIENTAS = [
     {"name": "historia_fuente",
      "description": "Historial append-only de verificaciones de "
                     "vigencia de una fuente.",
+     "inputSchema": {"type": "object", "properties": {
+         "id": {"type": "string"}}, "required": ["id"]}},
+    {"name": "archivo_fuente",
+     "description": "Metadatos del archivo original verificado "
+                    "(nombre, tamaño, sha256 recomputado en vivo, "
+                    "corte, URL de origen IMSS, estado de "
+                    "integridad); el binario se descarga en "
+                    "GET /fuentes/{id}/archivo.",
      "inputSchema": {"type": "object", "properties": {
          "id": {"type": "string"}}, "required": ["id"]}},
     {"name": "exportar_fuente",
@@ -245,6 +331,9 @@ def _llamada_tool(ruta_catalogo, nombre, argumentos):
                             _obligatorio(argumentos, "id"))
     if nombre == "historia_fuente":
         return _historia(catalogo, _obligatorio(argumentos, "id"))
+    if nombre == "archivo_fuente":
+        return _archivo_meta(ruta_catalogo,
+                             _obligatorio(argumentos, "id"))
     if nombre == "exportar_fuente":
         return _exportar_resumen(
             ruta_catalogo, _obligatorio(argumentos, "id"),
@@ -349,6 +438,21 @@ class Manejador(BaseHTTPRequestHandler):
                 if len(piezas) == 3 and piezas[2] == "historia":
                     return self._enviar_json(
                         200, _historia(catalogo, piezas[1]))
+                if len(piezas) == 3 and piezas[2] == "archivo":
+                    datos, nombre, tipo = _archivo_binario(
+                        self.server.catalogo, piezas[1])
+                    self.send_response(200)
+                    self.send_header("Content-Type", tipo)
+                    self.send_header("Content-Disposition",
+                                     f'attachment; filename="{nombre}"')
+                    self.send_header("Content-Length", str(len(datos)))
+                    self.end_headers()
+                    return self.wfile.write(datos)
+                if (len(piezas) == 4 and piezas[2] == "archivo"
+                        and piezas[3] == "meta"):
+                    return self._enviar_json(
+                        200, _archivo_meta(self.server.catalogo,
+                                           piezas[1]))
                 if len(piezas) == 3 and piezas[2] == "exportar":
                     cuerpo, nombre = _exportar_zip(
                         self.server.catalogo, piezas[1],
