@@ -24,7 +24,7 @@ Reglas (heredadas, no nuevas):
 | Ola | Alcance | Volumen | Formatos |
 |---|---|---|---|
 | 1 | CUUMSP 2025 (mensuales faltantes) | ~11 | xlsx |
-| 2 | CUUMSP 2021–2024 (nuevo→viejo) | ~48 | xlsx (2021–2023 por confirmar) |
+| 2 | CUUMSP 2021–2024 (nuevo→viejo) | ~48 | xlsx (2021–23 por confirmar) |
 | 3 | IFU 2025 (mensuales faltantes) | ~11 | xlsb (estructura: conversor) |
 | 4 | IFU 2012–2024 (nuevo→viejo) | ~150 | xlsb/xlsx mixto |
 | — | Tableros Tableau | 0 | no descargables (fuera de alcance) |
