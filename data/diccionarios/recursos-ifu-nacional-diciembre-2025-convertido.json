@@ -1,0 +1,694 @@
+{
+  "id": "recursos-ifu-nacional-diciembre-2025-convertido",
+  "campos": [
+    {
+      "nombre": "Camas Censables",
+      "tipo": "clave",
+      "ejemplo": "50100 Total de Camas Censables de la unidad",
+      "valores": "50100 Total de Camas Censables de la unidad | 38824 | 221 | 0 | 174 | ..."
+    },
+    {
+      "nombre": "Lo anterior con la finalidad de poder desactivar la 52600.",
+      "tipo": "otro",
+      "ejemplo": "52600 Incubadora para Prematuros y Patológicos",
+      "valores": "52600 Incubadora para Prematuros y Patológicos | 130 | 0 | 21 | 6 | ..."
+    }
+  ],
+  "metadatos": [
+    {
+      "hoja": "Equivalencias",
+      "metadatos": [
+        {
+          "etiqueta": "2B52-B03-004 Procedimiento para el registro en el Sistema de Información para la actualización del I",
+          "contenido": "2E10-A03-002 Procedimiento para la actualización del Inventario Físico de Unidades\n(Metodología anterior)"
+        },
+        {
+          "etiqueta": "Clave",
+          "contenido": "Concepto | Clave | Concepto"
+        },
+        {
+          "etiqueta": "52500",
+          "contenido": "Incubadora en Prematuros | 52501 | Cuna de Calor Radiante Prematuros no patológicos"
+        },
+        {
+          "etiqueta": "52503",
+          "contenido": "Cuna de calor radiante en prematuros | 60701 | Cuna de calor radiante en prematuros"
+        },
+        {
+          "etiqueta": "53634",
+          "contenido": "Carro/cuna/bacinete en alojamiento conjunto | 90023 | Bacinete para Recién Nacido en Alojamiento Conjunto"
+        },
+        {
+          "etiqueta": "53635",
+          "contenido": "Cama/Cuna de Reumatología Pediátrica | 52317 | Cama de Reumatología Pediátrica"
+        },
+        {
+          "etiqueta": "54401",
+          "contenido": "Cama en Unidad de Trasplantes Adultos | 53903 | Cama en Unidad de Trasplantes Adultos"
+        },
+        {
+          "etiqueta": "54402",
+          "contenido": "Cama en Unidad de Trasplantes Pediatrico | 53904 | Cama en Unidad de Trasplantes Pediatrico"
+        },
+        {
+          "etiqueta": "60104",
+          "contenido": "Cama de Urgencias Médicas Corta Estancia | 60101 | Cama de Urgencias Médicas (primer contacto)"
+        },
+        {
+          "etiqueta": "60202",
+          "contenido": "Cama de Urgencias Médicas Observación Adulto | 60203 | Cama de Urgencias Médicas Observación de Corta Estancia y Preparación Adultos (antes intermedia)"
+        },
+        {
+          "etiqueta": "60401",
+          "contenido": "Cama de Admisión Continua Observación Adulto | 60404 | Cama de Admisión Continua Observación Oftalmológicas"
+        },
+        {
+          "etiqueta": "60502",
+          "contenido": "Cama de Recuperación Post-Parto | 60503 | Cama de Recuperación Post-Parto (PBR)"
+        },
+        {
+          "etiqueta": "70108",
+          "contenido": "Consultorio Médico Auxiliar | 70102 | Consultorio de Unidad Auxiliar de Medicina Familiar"
+        },
+        {
+          "etiqueta": "74301",
+          "contenido": "Consultorio de Traumatología y Ortopedia Pediátrica | 74315 | Consultorio de Fracturas"
+        },
+        {
+          "etiqueta": "77101",
+          "contenido": "Servicio de Salud en el Trabajo | 77100 | Consultorio de Salud en el Trabajo"
+        },
+        {
+          "etiqueta": "77300",
+          "contenido": "Consultorio de Clínica de Sueño | 90012 | Consultorio de Clínica de Sueño"
+        },
+        {
+          "etiqueta": "80015",
+          "contenido": "Área de Hospitalización | 80000 | Área de Hospitalización (si, no)"
+        },
+        {
+          "etiqueta": "80016",
+          "contenido": "Admisión Hospitalaria | 80001 | Admisión Hospitalaria (si, no)"
+        },
+        {
+          "etiqueta": "80017",
+          "contenido": "Área de Reanimación en Hospitalización | 80007 | Sala de Choque/Reanimación en Hospitalización"
+        },
+        {
+          "etiqueta": "80018",
+          "contenido": "Nutrición Parenteral | 80009 | Nutrición Parenteral (si, no)"
+        },
+        {
+          "etiqueta": "80020",
+          "contenido": "Central de Esterilización | 80005 | Central de Equipo y Esterilización"
+        },
+        {
+          "etiqueta": "80021",
+          "contenido": "Servicio de Nutrición y Dietética | 80013 | Servicio de Nutrición y Dietética (si, no)"
+        },
+        {
+          "etiqueta": "80022",
+          "contenido": "Área de \"Sigamos Aprendiendo en el Hospital\" | 80011 | Área de \"Sigamos Aprendiendo en el Hospital\" (si, no)"
+        },
+        {
+          "etiqueta": "80023",
+          "contenido": "Área de Dormitorio o Cuarto de Descanso para Residentes | 80012 | Área de Dormitorio o Cuarto de Médico (si, no)"
+        },
+        {
+          "etiqueta": "80024",
+          "contenido": "Modulo de Enfermería Especialista en Geriatría | 90009 | Modulo de Enfermería Especialista en Geriatría"
+        },
+        {
+          "etiqueta": "80025",
+          "contenido": "Cubículo para Clínica de heridas y estomas | 90010 | Cubículo para Clínica de Heridas"
+        },
+        {
+          "etiqueta": "80026",
+          "contenido": "Cubículo anexo de Oftamología para Campimetría | 90021 | Cubículo anexo de Oftalmología para Campimetría"
+        },
+        {
+          "etiqueta": "80027",
+          "contenido": "Cubículo anexo de Oftamología para Fluorangiografía | 90019 | Cubículo anexo de Oftalmología para Fluorangiografía"
+        },
+        {
+          "etiqueta": "80028",
+          "contenido": "Cubículo anexo de Oftamología para Ultrasonido Ocular | 90020 | Cubículo anexo de Oftalmología para Ultrasonido Ocular"
+        },
+        {
+          "etiqueta": "80029",
+          "contenido": "Cubículo para Atención Domiciliaria del Enfermo Crónico (ADEC) | 90017 | Cubículo para Atención Domiciliaria del Enfermo Crónico (ADEC)"
+        },
+        {
+          "etiqueta": "80030",
+          "contenido": "Cubículo para cambio de Línea de Transferencia a Pacientes en Diálisis Peritoneal | 90018 | Cubículo para cambio de Línea de Transferencia a Pacientes en Diálisis Peritoneal"
+        },
+        {
+          "etiqueta": "80031",
+          "contenido": "Cubículo para realización de Ecocardiograma | 90015 | Cubículo para realización de Ecocardiograma"
+        },
+        {
+          "etiqueta": "80032",
+          "contenido": "Cubículo para realización de Prueba de Esfuerzo | 90016 | Cubículo para realización de Prueba de Esfuerzo"
+        },
+        {
+          "etiqueta": "80033",
+          "contenido": "Cubículo para toma de Electrocardiograma | 90014 | Cubículo para toma de Electrocardiograma"
+        },
+        {
+          "etiqueta": "80117",
+          "contenido": "Área de Información Médica y Archivo Clínico (ARIMAC) | 80104 | Área de Información Médica y Archivo Clínico (ARIMAC) (si, no)"
+        },
+        {
+          "etiqueta": "80254",
+          "contenido": "Centro de invitación organizada | 90013 | Control (Centro de invitación)"
+        },
+        {
+          "etiqueta": "80309",
+          "contenido": "Admisión Continua | 80305 | Admisión Continua (si, no)"
+        },
+        {
+          "etiqueta": "80310",
+          "contenido": "Observación Admisión Continua | 80306 | Observación Admisión Continua (si, no)"
+        },
+        {
+          "etiqueta": "80362",
+          "contenido": "Área de Preparación de Pacientes Común para Quirófano y Endoscopías | 80352 | Área de Preparación de Pacientes Común para Quirófano y Endoscopías (si, no)"
+        },
+        {
+          "etiqueta": "80363",
+          "contenido": "Área Quirúrgica | 80350 | Área Quirúrgica (si, no)"
+        },
+        {
+          "etiqueta": "80364",
+          "contenido": "Sala de Quirófano | 80353 | Sala de Operaciones (Quirófano)"
+        },
+        {
+          "etiqueta": "80405",
+          "contenido": "Incubadora de Traslado | 61406 | Incubadora de Traslado"
+        },
+        {
+          "etiqueta": "80406",
+          "contenido": "Área de Tococirugía | 80400 | Área de Tococirugía (si, no)"
+        },
+        {
+          "etiqueta": "80407",
+          "contenido": "Quirófanos en Tococirugía | 80401 | Sala de Operaciones de Tococirugía (Quirófano)"
+        },
+        {
+          "etiqueta": "80513",
+          "contenido": "Equipos de monitor | 80506 | Equipo para Monitoreo/Hemodinámia"
+        },
+        {
+          "etiqueta": "80602",
+          "contenido": "Aparatos de Tomografía | 80601 | Aparatos de Tomografía Axial Computarizada"
+        },
+        {
+          "etiqueta": "80655",
+          "contenido": "Equipos de Resonancia Magnética | 80553 | Resonancia Magnética"
+        },
+        {
+          "etiqueta": "80671",
+          "contenido": "Área de Radiodiagnóstico | 80650 | Área de Radiodiagnóstico (si, no)"
+        },
+        {
+          "etiqueta": "80721",
+          "contenido": "Área de Radioterapia | 80700 | Área de Radioterapia (si, no)"
+        },
+        {
+          "etiqueta": "80757",
+          "contenido": "Flexoextensor de muñeca (Amadeus) | 81783 | Ventilador soporte de vida reportados en CEVOED"
+        },
+        {
+          "etiqueta": "80761",
+          "contenido": "Área de Electrodiagnóstico | 80750 | Área de Electrodiagnóstico (si, no)"
+        },
+        {
+          "etiqueta": "80854",
+          "contenido": "Área de Electroterapia | 80850 | Área de Electroterapia (si, no)"
+        },
+        {
+          "etiqueta": "80910",
+          "contenido": "Área de Mecanoterapia | 80900 | Área de Mecanoterapia (si, no)"
+        },
+        {
+          "etiqueta": "80911",
+          "contenido": "Gimnasio | 80901 | Gimnasio (si, no)"
+        },
+        {
+          "etiqueta": "80912",
+          "contenido": "Isocinecia | 80902 | Isocinecia (si, no)"
+        },
+        {
+          "etiqueta": "80913",
+          "contenido": "Marcha | 80903 | Marcha (si, no)"
+        },
+        {
+          "etiqueta": "80960",
+          "contenido": "Área de Hidroterapia | 80950 | Área de Hidroterapia (si, no)"
+        },
+        {
+          "etiqueta": "81007",
+          "contenido": "Área de Terapia Ocupacional | 81000 | Área de Terapia Ocupacional (si, no)"
+        },
+        {
+          "etiqueta": "81008",
+          "contenido": "Actividades de la Vida Diaria | 81001 | Actividades de la Vida Diaria (si, no)"
+        },
+        {
+          "etiqueta": "81009",
+          "contenido": "Rehabilitación Cardiaca | 81002 | Rehabilitación Cardiaca (si, no)"
+        },
+        {
+          "etiqueta": "81010",
+          "contenido": "Higiene de Columna | 81003 | Higiene de Columna (si, no)"
+        },
+        {
+          "etiqueta": "81011",
+          "contenido": "Simulación Laboral | 81004 | Simulación Laboral (si, no)"
+        },
+        {
+          "etiqueta": "81012",
+          "contenido": "Reeducación laboral | 81005 | Reeducación laboral (si, no)"
+        },
+        {
+          "etiqueta": "81013",
+          "contenido": "Niños | 81006 | Niños (si, no)"
+        },
+        {
+          "etiqueta": "81055",
+          "contenido": "Área de Audiología y Otoneurología | 81050 | Área de Audiología y Otoneurología (si, no)"
+        },
+        {
+          "etiqueta": "81203",
+          "contenido": "Área de Espirometría | 81200 | Área de Espirometría (si, no)"
+        },
+        {
+          "etiqueta": "81205",
+          "contenido": "Unidad de Cuidados Intensivos Respiratorios | 81201 | Unidad de Cuidados Intensivos Respiratorios (si, no)"
+        },
+        {
+          "etiqueta": "81253",
+          "contenido": "Área de Diálisis | 81250 | Área de Diálisis (si, no)"
+        },
+        {
+          "etiqueta": "81303",
+          "contenido": "Área de Hemodiálisis | 81300 | Área de Hemodiálisis (si, no)"
+        },
+        {
+          "etiqueta": "81351",
+          "contenido": "Área de Quimioterapia | 81350 | Área de Quimioterapia (si, no)"
+        },
+        {
+          "etiqueta": "81410",
+          "contenido": "Área de Laboratorio Clínico | 81400 | Área de Laboratorio Clínico (si, no)"
+        },
+        {
+          "etiqueta": "81455",
+          "contenido": "Área de Anatomía Patológica | 81450 | Área de Anatomía Patológica (si, no)"
+        },
+        {
+          "etiqueta": "81505",
+          "contenido": "Auditorio | 81504 | Auditorio (si, no)"
+        },
+        {
+          "etiqueta": "81608",
+          "contenido": "Unidad de Cuidados Intensivos | 81600 | Unidad de Cuidados Intensivos (si, no)"
+        },
+        {
+          "etiqueta": "81609",
+          "contenido": "Unidad de Cuidados Intensivos de Adultos | 81601 | Unidad de Cuidados Intensivos de Adultos (si, no)"
+        },
+        {
+          "etiqueta": "81610",
+          "contenido": "Unidad de Cuidados Intensivos Pediátricos | 81602 | Unidad de Cuidados Intensivos Pediátricos (si, no)"
+        },
+        {
+          "etiqueta": "81611",
+          "contenido": "Unidad de Cuidados Intensivos Neonatales | 81603 | Unidad de Cuidados Intensivos Neonatales (si, no)"
+        },
+        {
+          "etiqueta": "81612",
+          "contenido": "Unidad de Cuidados intermedios | 81604 | Unidad de Cuidados intermedios (si, no)"
+        },
+        {
+          "etiqueta": "81613",
+          "contenido": "Unidad Metabólica | 81605 | Unidad Metabólica (si, no)"
+        },
+        {
+          "etiqueta": "81614",
+          "contenido": "Unidad de Cuidados Intensivos para paciente Quemados | 81606 | Unidad de Quemados (si, no)"
+        },
+        {
+          "etiqueta": "81615",
+          "contenido": "Unidad de Trasplantes | 81607 | Unidad de Trasplantes (si, no)"
+        },
+        {
+          "etiqueta": "81712",
+          "contenido": "Oficina del Director UMAE/Director Médico | 81700 | Oficina del Director UMAE/Director Médico (si, no)"
+        },
+        {
+          "etiqueta": "81713",
+          "contenido": "Oficina de Director Administrativo UMAE/Administrador | 81701 | Oficina de Director Administrativo UMAE/Administrador (si, no)"
+        },
+        {
+          "etiqueta": "81714",
+          "contenido": "Oficina del Director Médico de UMAE/ Subdirector Médico | 81702 | Oficina del Director Médico de UMAE/ Subdirector Médico (si, no)"
+        },
+        {
+          "etiqueta": "81715",
+          "contenido": "Oficina de Jefatura de División | 81703 | Oficina de Jefatura de División (si, no)"
+        },
+        {
+          "etiqueta": "81716",
+          "contenido": "Oficina del Coordinador Clínico | 81704 | Oficina del Coordinador Clínico (si, no)"
+        },
+        {
+          "etiqueta": "81717",
+          "contenido": "Oficina de Jefatura de Servicio/Especialidad en UMAE | 81705 | Oficina de Jefatura de Servicio/Especialidad en UMAE (si, no)"
+        },
+        {
+          "etiqueta": "81718",
+          "contenido": "Oficina de Directora de Enfermería en UMAE | 81706 | Oficina de Directora de Enfermería en UMAE (si, no)"
+        },
+        {
+          "etiqueta": "81719",
+          "contenido": "Oficina de Jefatura de Enfermeras | 81707 | Oficina de Jefatura de Enfermeras (si, no)"
+        },
+        {
+          "etiqueta": "81720",
+          "contenido": "Oficina de Ingeniería Biomedica | 81708 | Oficina de Ingeniería Biomedica (si, no)"
+        },
+        {
+          "etiqueta": "81721",
+          "contenido": "Oficina de Nutrición y Dietética | 81709 | Oficina de Nutrición y Dietética (si, no)"
+        },
+        {
+          "etiqueta": "81722",
+          "contenido": "Servicios de Seguridad en el Trabajo Hospitales A y B | 81710 | Oficina de Seguridad en el Trabajo (si, no)"
+        },
+        {
+          "etiqueta": "81724",
+          "contenido": "Oficina de Personal | 81711 | Oficina de Personal (si, no)"
+        },
+        {
+          "etiqueta": "81766",
+          "contenido": "Cámara para fondo de ojo no midriática | 81754 | Cámaras para fondo de ojo"
+        },
+        {
+          "etiqueta": "81770",
+          "contenido": "Monitor de signos vitales para el traslado del paciente | 90022 | Ventiladores de soporte de vida"
+        },
+        {
+          "etiqueta": "81805",
+          "contenido": "Banco de Sangre | 81800 | Banco de Sangre (si, no)"
+        },
+        {
+          "etiqueta": "81806",
+          "contenido": "Puesto de Sangrado | 81801 | Puesto de Sangrado (si, no)"
+        },
+        {
+          "etiqueta": "81807",
+          "contenido": "Depósito de Sangre | 81802 | Depósito de Sangre (si, no)"
+        },
+        {
+          "etiqueta": "81808",
+          "contenido": "Servicio de transfusión sanguínea | 81803 | Servicio de transfusión sanguínea (si, no)"
+        },
+        {
+          "etiqueta": "81809",
+          "contenido": "Área de Aféresis | 81804 | Área de Aféresis (si, no)"
+        },
+        {
+          "etiqueta": "81867",
+          "contenido": "Ancho de Banda en Mbps | 81855 | Ancho de Banda en Kbps"
+        },
+        {
+          "etiqueta": "81864",
+          "contenido": "Servicio Integral de Laboratorio | 81850 | Servicio Integral de Laboratorio (si, no)"
+        },
+        {
+          "etiqueta": "81865",
+          "contenido": "Resguardo de Servicios de Telecomunicaciones Principal | 80108 | Área de Resguardo de Servidor de Datos"
+        },
+        {
+          "etiqueta": "81868",
+          "contenido": "Enlace Satelital | 81856 | Radio (si, no)"
+        },
+        {
+          "etiqueta": "81869",
+          "contenido": "Telefonía convencional | 81857 | Red de Voz (si, no)"
+        },
+        {
+          "etiqueta": "81952",
+          "contenido": "Coordinación de Evaluación de Salud en el Trabajo (CEST) | 90002 | Módulo de la División de Salud en el Trabajo"
+        },
+        {
+          "etiqueta": "81953",
+          "contenido": "Coordinación Clínica de Salud en el Trabajo | 90003 | Módulo de la Coordinación Clínica de Salud en el Trabajo"
+        },
+        {
+          "etiqueta": "53623",
+          "contenido": "Cama/Cuna de Dermatología Pediátrica | 52303 | Cama de Dermatología Pediátrica"
+        },
+        {
+          "etiqueta": "52403",
+          "contenido": "Cuna de Dermatología Pediátrica"
+        },
+        {
+          "etiqueta": "53624",
+          "contenido": "Cama/Cuna de Endocrinología Pediátrica | 52304 | Cama de Endocrinología Pediátrica"
+        },
+        {
+          "etiqueta": "52404",
+          "contenido": "Cuna de Endocrinología Pediátrica"
+        },
+        {
+          "etiqueta": "53625",
+          "contenido": "Cama/Cuna de Gastroenterología Pediátrica | 52306 | Cama de Gastroenterología Pediátrica"
+        },
+        {
+          "etiqueta": "52405",
+          "contenido": "Cuna de Gastroenterología Pediátrica"
+        },
+        {
+          "etiqueta": "53627",
+          "contenido": "Cama/Cuna de Hematología Pediátrica | 52308 | Cama de Hematología Pediátrica"
+        },
+        {
+          "etiqueta": "52407",
+          "contenido": "Cuna de Hematología Pediátrica"
+        },
+        {
+          "etiqueta": "53628",
+          "contenido": "Cama/Cuna de Infectología Pediátrica | 52309 | Cama de Infectología Pediátrica"
+        },
+        {
+          "etiqueta": "52408",
+          "contenido": "Cuna de Infectología Pediátrica"
+        },
+        {
+          "etiqueta": "53629",
+          "contenido": "Cama/Cuna de Medicina Interna Pediátrica | 52311 | Cama de Medicina Interna Pediátrica"
+        },
+        {
+          "etiqueta": "52410",
+          "contenido": "Cuna de Medicina Interna Pediátrica"
+        },
+        {
+          "etiqueta": "53630",
+          "contenido": "Cama/Cuna de Nefrología Pediátrica | 52312 | Cama de Nefrología Pediátrica"
+        },
+        {
+          "etiqueta": "52411",
+          "contenido": "Cuna de Nefrología Pediátrica"
+        },
+        {
+          "etiqueta": "53631",
+          "contenido": "Cama/Cuna de Neumología Pediátrica | 52313 | Cama de Neumología Pediátrica"
+        },
+        {
+          "etiqueta": "52412",
+          "contenido": "Cuna de Neumología Pediátrica"
+        },
+        {
+          "etiqueta": "53632",
+          "contenido": "Cama/Cuna de Neurología Pediátrica | 52314 | Cama de Neurología Pediátrica"
+        },
+        {
+          "etiqueta": "52413",
+          "contenido": "Cuna de Neurología Pediátrica"
+        },
+        {
+          "etiqueta": "53633",
+          "contenido": "Cama/Cuna de Oncología Pediátrica | 52315 | Cama de Oncología Pediátrica"
+        },
+        {
+          "etiqueta": "52414",
+          "contenido": "Cuna de Oncología Pediátrica"
+        },
+        {
+          "etiqueta": "53622",
+          "contenido": "Cama/Cuna de Cardiología Pediátrica | 52402 | Cuna de Cardiología Pediátrica"
+        },
+        {
+          "etiqueta": "52302",
+          "contenido": "Cama de Cardiología Pediátrica"
+        },
+        {
+          "etiqueta": "52316",
+          "contenido": "Cama/Cuna de Preescolares | 52415 | Cuna de Preescolares"
+        },
+        {
+          "etiqueta": "52316",
+          "contenido": "Cama de Preescolares"
+        },
+        {
+          "etiqueta": "81658",
+          "contenido": "Sala de Dictado de Médicos | 81652 | Sala de Dictado de Médicos de Área Quirúrgica"
+        },
+        {
+          "etiqueta": "81653",
+          "contenido": "Sala de Dictado de Médicos de Cirugía Ambulatoria"
+        },
+        {
+          "etiqueta": "81655",
+          "contenido": "Sala de Dictado de Médicos de Endoscopía"
+        },
+        {
+          "etiqueta": "81656",
+          "contenido": "Sala de Dictado de Médicos de Hemodiálisis"
+        },
+        {
+          "etiqueta": "81650",
+          "contenido": "Sala de Dictado de Médicos de Hospitalización"
+        },
+        {
+          "etiqueta": "81654",
+          "contenido": "Sala de Dictado de Médicos de Puerperio de Bajo Riesgo"
+        },
+        {
+          "etiqueta": "81657",
+          "contenido": "Sala de Dictado de Médicos de Quimioterapia"
+        },
+        {
+          "etiqueta": "81651",
+          "contenido": "Sala de Dictado de Médicos de Urgencias"
+        },
+        {
+          "etiqueta": "90000",
+          "contenido": "Salas de Dictado"
+        },
+        {
+          "etiqueta": "81821",
+          "contenido": "Ventilador Mecánico Neonatal-Pediátrico-Adulto | 81773 | Ventiladores de Soporte de Vida adultos"
+        },
+        {
+          "etiqueta": "81774",
+          "contenido": "Ventiladores de Soporte de Vida para Neonatos"
+        },
+        {
+          "etiqueta": "81775",
+          "contenido": "Ventiladores de Soporte de Vida pediátricos"
+        },
+        {
+          "etiqueta": "52310",
+          "contenido": "Cama/Cuna de Lactantes | 52401 | -- Cuna de Pediatría Médica"
+        },
+        {
+          "etiqueta": "52409",
+          "contenido": "-- Cuna de Lactantes"
+        },
+        {
+          "etiqueta": "52802",
+          "contenido": "Cama de Coloproctología | 52801 | - Cama de Colon y Recto"
+        },
+        {
+          "etiqueta": "53201",
+          "contenido": "Cama de Traumatología | 53214 | - Cama de Fracturas"
+        },
+        {
+          "etiqueta": "53901",
+          "contenido": "Cama en Unidad de Quemados Adultos | 53900 | Total de Camas de Quemados"
+        },
+        {
+          "etiqueta": "54401",
+          "contenido": "Cama en Unidad de Trasplantes Adultos | 54400 | Total de Trasplantes"
+        },
+        {
+          "etiqueta": "60105",
+          "contenido": "Cama en el Área de Reanimación Adulto | 60102 | - Cama de Área de Choque"
+        },
+        {
+          "etiqueta": "60401",
+          "contenido": "Cama de Admisión Continua Observación Adulto | 60403 | -- Cama de Admisión Continua Observación Adultos"
+        },
+        {
+          "etiqueta": "74500",
+          "contenido": "Consultorio de Geriatría | 73400 | Consultorio de Gerontología."
+        },
+        {
+          "etiqueta": "74002",
+          "contenido": "Consultorio de Coloproctología | 74001 | - Consultorio de Colon y Recto"
+        },
+        {
+          "etiqueta": "73200",
+          "contenido": "Consultorio de Neumología | 76800 | Consultorio de Endoscopía Neumológica"
+        },
+        {
+          "etiqueta": "76600",
+          "contenido": "Consultorio de Endoscopia Gástrica | 76900 | Consultorio de Endoscopia de Vías Digestivas Altas"
+        },
+        {
+          "etiqueta": "76600",
+          "contenido": "Consultorio de Endoscopia Gástrica | 77000 | Consultorio de Endoscopía de Vías Digestivas Bajas"
+        },
+        {
+          "etiqueta": "73501",
+          "contenido": "Consultorio de Oftalmología | 73502 | - Consultorio de Oftalmología Segmento Anterior"
+        },
+        {
+          "etiqueta": "73501",
+          "contenido": "Consultorio de Oftalmología | 73503 | - Consultorio de Oftalmología Segmento Posterior"
+        },
+        {
+          "etiqueta": "72701",
+          "contenido": "Consultorio de Obstetricia | 72703 | --Consultorio de Medicina Materno Fetal"
+        },
+        {
+          "etiqueta": "72704",
+          "contenido": "--Consultorio de Preeclampsia Eclampsia"
+        },
+        {
+          "etiqueta": "72705",
+          "contenido": "Consultorio de Complicación 1a. Mitad Embarazo"
+        },
+        {
+          "etiqueta": "72706",
+          "contenido": "Consultorio de Complicación 2a. Mitad Embarazo"
+        },
+        {
+          "etiqueta": "81101",
+          "contenido": "Área de Terapia de Lenguaje | 81100 | Área de Terapia de Lenguaje (si, no)"
+        },
+        {
+          "etiqueta": "80019",
+          "contenido": "Laboratorio de formula láctea y dietas enterales | 80010 | Banco de Leche (si, no)"
+        },
+        {
+          "etiqueta": "80311",
+          "contenido": "Área de Reanimación en urgencias | 80307 | Área de Choque en Urgencias (si, no)"
+        },
+        {
+          "etiqueta": "80408",
+          "contenido": "Sala de Procedimientos Quirúrgicos | 81552 | Sala de Procedimientos Quirúrgica"
+        },
+        {
+          "etiqueta": "81502",
+          "contenido": "Aulas | 80054 | Aulas de Sesiones Educativas (DiabetIMSS)"
+        }
+      ]
+    }
+  ],
+  "huella_base": "44e32f177d1d36d085d1119dbcd5b298798c029726e5ed945543e2007d065b80",
+  "fecha": "2026-09-03"
+}

@@ -4680,6 +4680,40 @@
           ]
         }
       ]
+    },
+    {
+      "id": "recursos-ifu-nacional-diciembre-2025-convertido",
+      "seccion": "recursos",
+      "titulo": "IFU nacional diciembre 2025 — conversión xlsx (derivado)",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/IFU/IFU_nacional_Diciembre2025_21012026.xlsb",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "notas": "Derivado: conversión LibreOffice headless del original xlsb (id recursos-ifu-nacional-diciembre-2025, huella 8f7e92dff5f000039778a31831b83a374c5587a4af66b5618bbf5d8bfce8b8c1) hecha 2026-09-03; el original manda",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-03",
+          "ruta_local": "data/convertidos/recursos-ifu-nacional-diciembre-2025/IFU_nacional_Diciembre2025_21012026.xlsx",
+          "resultado": "vigente",
+          "huella": "44e32f177d1d36d085d1119dbcd5b298798c029726e5ed945543e2007d065b80"
+        }
+      ]
+    },
+    {
+      "id": "hospital-egresos-unidad-2012-2024-convertido",
+      "seccion": "hospital",
+      "titulo": "Egresos 2012-2024 por unidad médica — conversión xlsx (derivado)",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/infosalud/EgreTipoIng_Sx_2012-2024_UM_13062025.xlsb",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Derivado: conversión LibreOffice headless del original xlsb (id hospital-egresos-unidad-2012-2024, huella registrada en su fuente) hecha 2026-09-03; el original manda",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-03",
+          "ruta_local": "data/convertidos/hospital-egresos-unidad-2012-2024/EgreTipoIng_Sx_2012-2024_UM_13062025.xlsx",
+          "resultado": "vigente",
+          "huella": "887aaac31622e3e4220fabda09ddda56d710fa3502cd3afefdfca1cdb7503906"
+        }
+      ]
     }
   ]
 }
