@@ -63,6 +63,16 @@ API JSON de sólo lectura (`/`, `/healthz`, `/fuentes`,
 (JSON-RPC 2.0 en `POST /mcp`, 7 herramientas). Sólo stdlib; no muta
 el catálogo ni descarga del portal (contrato `servicio-infosalud v1`).
 
+
+## Contenedor (OrbStack/Docker)
+
+```bash
+docker compose up -d --build   # contenedor 1nf0541ud, restart: always
+```
+
+`data/` se monta como volumen; el servicio queda permanente en el
+puerto 8081 de todas las interfaces (ADR-013).
+
 ## Cómo probar
 
 ```bash

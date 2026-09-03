@@ -1,0 +1,16 @@
+# Túnel multi-proyecto halt-to-safe.dev (ronda 2026-09-02)
+# Convención: un subdominio por proyecto → puerto local propio.
+# Agregar un proyecto = agregar su bloque hostname/service aquí.
+tunnel: d5f2e82c-dbd2-48f4-9c62-5a6694789492
+credentials-file: /Users/krisnova/.cloudflared/d5f2e82c-dbd2-48f4-9c62-5a6694789492.json
+ingress:
+  # ── Infosalud Nexus (API + MCP, contenedor 1nf0541ud) ──
+  - hostname: infosalud.halt-to-safe.dev
+    service: http://localhost:8081
+  - hostname: api.halt-to-safe.dev
+    service: http://localhost:8081
+  # ── futuros proyectos: agregar bloques hostname/service ──
+  # - hostname: <proyecto>.halt-to-safe.dev
+  #   service: http://localhost:<puerto>
+  # ── todo lo demás: 404 (fail-closed) ──
+  - service: http_status:404
