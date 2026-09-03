@@ -6,6 +6,10 @@
   <key>ProgramArguments</key>
   <array>
     <string>/Users/krisnova/bin/cloudflared</string>
+    <string>--protocol</string>
+    <string>http2</string>
+    <string>--edge-ip-version</string>
+    <string>4</string>
     <string>tunnel</string>
     <string>--config</string>
     <string>/Users/krisnova/.cloudflared/config.yml</string>
