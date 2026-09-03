@@ -43,9 +43,13 @@ sustituye.
 
 ## Tareas y decisiones abiertas
 
-- ADR-014 (propuesto): perfiles estructurales + datos normalizados
-  + auditoría por agente.
-- ADR-015 (candidato): lock de catálogo (carrera de escritores).
+- ADR-014 (propuesto, redactado):
+  `adr/ADR-014-perfiles-datos-normalizados-auditoria.md` — espera
+  aceptación del humano; la implementación será por fases (SPEC +
+  tests por fase).
+- ADR-015 (candidato, redactado): `adr/ADR-015-lock-catalogo.md` —
+  lock flock para escritores concurrentes; espera aceptación e
+  implementación (SPEC-10 + tests).
 - Conciliación FN-19/20: espera OOAD de prueba y total oficial del
   área.
 - Lector xlsb / conversión por lote (IFU, egresos).
