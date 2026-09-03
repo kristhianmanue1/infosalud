@@ -214,6 +214,54 @@ redacta ANTES del cargador Postgres, no después.
 | Perfiles | P11 olas |
 | Operación | P12 respaldo de perfiles/auditorias, P13 lock antes del cargador |
 
+# Pasada 4: sistema de rutas y exposición (2026-09-03, post-implementación)
+
+Ataque al diseño recién desplegado: policy-routing del túnel por
+WiFi + LaunchDaemon de rutas + doble canal público/privado.
+
+## Verificado en vivo (sin fugas)
+
+- Rutas aplicadas y estables: `198.41.192.0/24` y `198.41.200.0/24`
+  → gateway `192.168.100.1` por `en1` ✅
+- Túnel registrado por **IPv4/http2** (`--edge-ip-version 4`) ✅
+- La Mac **alcanza su propia URL pública estando en la red IMSS**:
+  `curl https://api.halt-to-safe.dev/healthz` → 200 (la intercepción
+  Fortinet no afecta este dominio; sí afectó `pkgs.tailscale.com`).
+- Servicio local intacto: `127.0.0.1:8081` → 50→70 fuentes, OK.
+
+## Hallazgo de seguridad — H1: escalada local potencial
+
+El LaunchDaemon de rutas corre como **root** ejecutando un script
+que vive en una ruta editable por el usuario
+(`~/www/infosalud/deploy/…`): cualquier proceso que modifique ese
+script corre código arbitrario como root cada 60s (escalada local).
+
+**Corrección aplicada al script**: `install` ahora copia el script a
+`/usr/local/sbin/routes-cloudflare.sh` (root-owned, 755) y el
+LaunchDaemon instalado ejecuta **esa copia**, no la del repo. El
+repo conserva el original como fuente documental.
+
+## Afinamientos documentados (aceptados, no implementados)
+
+- **R1**: si el WiFi cae estando en IMSS, el túnel cae hasta volver
+  el WiFi (el daemon re-aplica rutas solo cuando hay gateway en
+  en1). Aceptado: la alternativa es enrutar por el firewall que
+  bloquea.
+- **R2**: ventana de interrupción ≤60s al cambiar de red WiFi
+  (StartInterval del daemon). Aceptado; reducible a 15s si molesta.
+- **R3**: Tailscale sigue offline en red IMSS (relays bloqueados);
+  enrutar los rangos DERP es complejo y dinámico — se queda como
+  limitación: Tailscale funciona fuera del IMSS.
+- **R4**: deriva de plists — `deploy/` es canónico; tras editar
+  ahí, recopiar a `~/Library/LaunchAgents` y `launchctl` reload.
+
+## Cadena de arranque final (post-ronda)
+
+login → OrbStack → contenedor `1nf0541ud` (8081) → cloudflared
+(LaunchAgent, IPv4/http2) → **rutas cloudflared por WiFi
+(LaunchDaemon root, script root-owned en /usr/local/sbin)** →
+Tailscale userspace (LaunchAgent).
+
 # Pasada 3: entrega de preservación CEPI (2026-09-03)
 
 Ataque a la entrega de preservación (contrato con parent_source_id/
