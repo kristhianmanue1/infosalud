@@ -231,6 +231,55 @@ class TestVigenciaHistoria(unittest.TestCase):
             self.assertIn("fecha", v)
 
 
+class TestAliasYProcedencia(unittest.TestCase):
+    """Campos opcionales de preservación (retro CEPI 2026-09-03):
+    aliases, parent_source_id y corte_declarado."""
+
+    def test_alta_acepta_y_busca_por_alias(self):
+        """DADO una fuente madre registrada y una hija con aliases,
+        parent_source_id y corte_declarado CUANDO se da de alta y se
+        busca por alias ENTONCES alta 0 (padre existe) y búsqueda la
+        encuentra."""
+        dir_tmp = tempfile.mkdtemp()
+        madre = dict(FUENTE_CIE10, id="recursos-ifu-2026",
+                     titulo="índice madre")
+        hija = dict(FUENTE_CIE10, id="hija-1", titulo="hija",
+                    aliases=["IFU", "Infraestructura Física Usada"],
+                    parent_source_id="recursos-ifu-2026",
+                    corte_declarado="diciembre de 2025")
+        catalogo = _catalogo_tmp(dir_tmp, [madre])
+        ruta = _archivo_tmp(dir_tmp, "fuente.json", hija)
+        r = _ejecutar("fuente-alta", "--catalogo", catalogo,
+                      "--archivo", ruta)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        r = _ejecutar("fuente-buscar", "Infraestructura Física",
+                      "--catalogo", catalogo, "--json")
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn("hija-1", r.stdout)
+
+    def test_parent_colgante_rechaza(self):
+        """Ronda adversarial 2026-09-03 (pasada 3): DADO
+        parent_source_id que no existe en el catálogo CUANDO alta
+        ENTONCES rechaza (sin referencias colgantes)."""
+        dir_tmp = tempfile.mkdtemp()
+        fuente = dict(FUENTE_CIE10, parent_source_id="madrastra")
+        catalogo = _catalogo_tmp(dir_tmp)
+        ruta = _archivo_tmp(dir_tmp, "fuente.json", fuente)
+        r = _ejecutar("fuente-alta", "--catalogo", catalogo,
+                      "--archivo", ruta)
+        self.assertEqual(r.returncode, 1, r.stdout)
+
+    def test_alias_malformado_rechaza(self):
+        """DADO aliases que no son lista de textos ENTONCES rechaza."""
+        dir_tmp = tempfile.mkdtemp()
+        fuente = dict(FUENTE_CIE10, aliases="IFU")
+        catalogo = _catalogo_tmp(dir_tmp, [])
+        ruta = _archivo_tmp(dir_tmp, "fuente.json", fuente)
+        r = _ejecutar("fuente-alta", "--catalogo", catalogo,
+                      "--archivo", ruta)
+        self.assertEqual(r.returncode, 1, r.stdout)
+
+
 class TestSinRed(unittest.TestCase):
     """SPEC-3 / ADR-004 / ADR-008: la red vive sólo en infosalud.red.
 

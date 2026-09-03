@@ -215,6 +215,12 @@ def _fuente_alta(args):
         return _salir(args, str(exc), 1)
     if _buscar_fuente(catalogo, fuente["id"]) is not None:
         return _salir(args, f"id: duplicado '{fuente['id']}'", 1)
+    # Ronda adversarial 2026-09-03: parent_source_id debe apuntar a
+    # una fuente ya registrada (sin referencias colgantes).
+    parent = fuente.get("parent_source_id")
+    if parent is not None and _buscar_fuente(catalogo, parent) is None:
+        return _salir(args,
+                      f"parent_source_id: no existe '{parent}'", 1)
     catalogo["fuentes"].append(fuente)
     guardar_catalogo(args.catalogo, catalogo)
     _emitir(args, {"alta": "ok", "fuente": fuente},
@@ -249,7 +255,9 @@ def _fuente_buscar(args):
     fuentes = [
         f for f in catalogo["fuentes"]
         if termino in (f.get("id", "") + " " + f.get("titulo", "")
-                       + " " + f.get("notas", "")).lower()
+                       + " " + f.get("notas", "")
+                       + " " + " ".join(f.get("aliases", []))
+                       + " " + f.get("corte_declarado", "")).lower()
     ]
     if not fuentes:
         return _salir(args, f"sin resultados para '{args.termino}'", 2)

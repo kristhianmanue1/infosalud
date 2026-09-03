@@ -25,6 +25,18 @@ Entrada (campos cerrados):
        existe, vigencia-verificar verifica la última ingresada del
        listado y actualiza `url` si cambió (queda `url_previa` en la
        verificación)
+  parent_source_id: string [opcional, enmienda 2026-09-03, retro
+       CEPI] [patrón ^[a-z0-9-]+$] — id de la fuente madre cuando el
+       archivo fue descubierto desde una página índice; el alta
+       rechaza referencias colgantes (el parent debe existir en el
+       catálogo)
+  aliases: lista de strings [opcional, enmienda 2026-09-03] [1-20
+       textos de 1-100 caracteres] — alias generales de búsqueda
+       (ej. "IFU", "Infraestructura Física Usada"); los usan
+       fuente-buscar y la API/MCP
+  corte_declarado: string [opcional, enmienda 2026-09-03] [1-100
+       caracteres] — periodo o corte que el archivo declara cubrir,
+       tal como aparece en su origen; NO implica vigencia
   formato: enum [obligatorio]: xlsx | xls | csv | pdf | html | otro
   periodicidad: enum [opcional]: diaria | semanal | mensual |
        anual | eventual | desconocida (ausente = desconocida)

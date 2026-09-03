@@ -213,3 +213,19 @@ redacta ANTES del cargador Postgres, no después.
 | Auditoría | P9 visibilidad pasiva, P10 segunda opinión |
 | Perfiles | P11 olas |
 | Operación | P12 respaldo de perfiles/auditorias, P13 lock antes del cargador |
+
+# Pasada 3: entrega de preservación CEPI (2026-09-03)
+
+Ataque a la entrega de preservación (contrato con parent_source_id/
+aliases/corte_declarado + registro masivo de 14 hijos):
+
+- **F1 — referencias colgantes**: `fuente-alta` aceptaba
+  `parent_source_id` apuntando a fuentes inexistentes. Corregido:
+  el alta valida que el parent exista en el catálogo (fail-closed,
+  test de regresión).
+- **Contrato sin documentar**: los 3 campos nuevos no estaban en
+  `docs/f1-contratos.md`. Corregido (enmienda compatible).
+- **Huellas repetidas**: verificadas — todas son historial
+  append-only de la misma fuente; **sin duplicados entre fuentes
+  distintas**.
+- **parent_source_id en catálogo real**: 14, todos resuelven.
