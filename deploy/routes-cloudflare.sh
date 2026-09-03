@@ -9,7 +9,9 @@ ACCION=${1:-status}
 GW=$(ipconfig getpacket en1 2>/dev/null | awk '/router \(ip/ {print $3}' | tr -d '{}')
 GW=${GW:-192.168.100.1}
 RANGES="198.41.192.0/24 198.41.200.0/24"
-PLIST_SRC="$(cd "$(dirname "$0")" && pwd)/com.infosalud.routes-cloudflare.plist"
+SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT_DST="/usr/local/sbin/routes-cloudflare.sh"
+PLIST_SRC="$SRC_DIR/com.infosalud.routes-cloudflare.plist"
 PLIST_DST="/Library/LaunchDaemons/com.infosalud.routes-cloudflare.plist"
 aplicar() {
   for r in $RANGES; do
@@ -19,7 +21,10 @@ aplicar() {
 case "$ACCION" in
   install)
     aplicar
-    cp "$PLIST_SRC" "$PLIST_DST" 2>/dev/null
+    mkdir -p /usr/local/sbin
+    cp "$0" "$SCRIPT_DST" && chmod 755 "$SCRIPT_DST"   # root-owned: sin ejecución de código editable por usuario
+    sed -i '' "s|/Users/krisnova/www/infosalud/deploy/routes-cloudflare.sh|$SCRIPT_DST|" "$PLIST_SRC"
+    cp "$PLIST_SRC" "$PLIST_DST"
     launchctl unload "$PLIST_DST" 2>/dev/null
     launchctl load "$PLIST_DST"
     echo "rutas instaladas vía $GW (en1) y daemon persistente cargado";;
