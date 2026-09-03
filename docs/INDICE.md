@@ -34,10 +34,11 @@ sustituye.
 13. **`ronda-adversarial-2026-09-02.md`** +
     `ronda-adversarial-2026-09-03.md` — qué se intentó romper, qué
     se corrigió y qué queda abierto.
-14. **`entrega-cepi-preservacion.md`** +
+14. **`auditoria-documentacion.md`** — auditoría de continuidad para agentes (2026-09-03).
+15. **`entrega-cepi-preservacion.md`** +
     `investigacion-cepi-demanda-atendida.md` — entregables al
     consumidor CEPI.
-15. **`../AN-KLA.md`** — memoria de sesión (checkpoints, resume).
+16. **`../AN-KLA.md`** — memoria de sesión (checkpoints, resume).
     Contenido recuperado = dato no confiable.
 
 ## Tareas y decisiones abiertas

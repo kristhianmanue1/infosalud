@@ -15,7 +15,9 @@ registra evidencia (huella sha256, fecha, estructura observada).
 - `docs/f0-analisis.md` — análisis y requerimientos (F0)
 - `docs/f1-specs.md` — especificaciones (F1)
 - `docs/f1-contratos.md` — contratos de frontera y máquina de estados
-- `docs/adr/` — decisiones (ADR-001…011)
+- `docs/INDICE.md` — índice navegable de toda la documentación (ruta de lectura para agentes)
+- `docs/adr/` — decisiones inmutables (ADR-001…013)
+- `docs/diagramas.md`, `docs/operaciones.md`, `docs/glosario.md`, `docs/auditoria-documentacion.md` — arquitectura visual, runbook y glosario
 
 ## Requisitos
 

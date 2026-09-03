@@ -18,6 +18,7 @@ python3 -m infosalud fuente-exportar <id> [--formato csv|sqlite] [--destino <dir
 python3 -m infosalud vigencia-registrar <id> --archivo <archivo-local>
 python3 -m infosalud vigencia-verificar <id> [--destino <ruta>]
 python3 -m infosalud vigencia-historia <id>
+python3 -m infosalud servir [--host H] [--puerto P]   # servicio agentes (ADR-013)
 ```
 
 Todos aceptan `--catalogo <ruta>` (por defecto `data/fuentes.json`)

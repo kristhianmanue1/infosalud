@@ -277,3 +277,26 @@ aliases/corte_declarado + registro masivo de 14 hijos):
   append-only de la misma fuente; **sin duplicados entre fuentes
   distintas**.
 - **parent_source_id en catálogo real**: 14, todos resuelven.
+
+# Pasada 5: auditoría de documentación y deriva (2026-09-03)
+
+Ataque a la consistencia de la documentación tras la ampliación
+(INDICE, diagramas, operaciones, glosario, contratos) y sondas de
+búsqueda sobre el catálogo real:
+
+- **D1 — deriva de README (corregida)**: README decía
+  "ADR-001…011" (somos 001–013) y no referenciaba INDICE, diagramas,
+  operaciones ni glosario. Corregido; README apunta a
+  `docs/INDICE.md` como índice canónico.
+- **D2 — deriva de AGENTS.md (corregida)**: la lista de comandos no
+  incluía `servir`. Añadido (fuera del bloque administrado AN-KLA;
+  context adopt-baseline aplicado tras el cambio).
+- **D3 — falso positivo descartado**: `buscar IFU` también
+  retornaba `recursos-cuumsp-2026` — verificado: su nota del portal
+  dice "Similar a IFU 2026"; el match es legítimo, no bug.
+- **D4 — integridad del catálogo verificada**: 70 fuentes, cero ids
+  duplicados, cero huellas compartidas entre fuentes distintas; los
+  repetidos son historial append-only de la misma fuente.
+- **D5 — referencias cruzadas completadas**: INDICE referencian la
+  auditoría de documentación; README/AGENTS/INDICE quedan
+  consistentes entre sí (verificación con grep + unittest OK).
