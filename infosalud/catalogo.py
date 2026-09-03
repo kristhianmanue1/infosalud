@@ -34,6 +34,7 @@ RESULTADOS = {"vigente", "cambiada", "inaccesible"}
 CAMPOS_FUENTE = {
     "id", "seccion", "titulo", "url", "url_listado", "formato",
     "periodicidad", "notas", "verificaciones",
+    "parent_source_id", "aliases", "corte_declarado",
 }
 CAMPOS_VERIFICACION = {"fecha", "resultado", "huella", "ruta_local",
                        "causa", "estructura", "estructura_causa",
@@ -131,6 +132,23 @@ def validar_fuente(fuente):
     if notas is not None and (
             not isinstance(notas, str) or len(notas) > 500):
         errores.append("notas: excede 500 caracteres")
+    parent = fuente.get("parent_source_id")
+    if parent is not None and (
+            not isinstance(parent, str) or not re.fullmatch(
+                r"[a-z0-9-]+", parent)):
+        errores.append(
+            "parent_source_id: no cumple el patrón ^[a-z0-9-]+$")
+    aliases = fuente.get("aliases")
+    if aliases is not None:
+        if not isinstance(aliases, list) or not all(
+                isinstance(a, str) and 1 <= len(a) <= 100
+                for a in aliases) or len(aliases) > 20:
+            errores.append(
+                "aliases: debe ser lista de 1-20 textos (1-100 caracteres)")
+    corte = fuente.get("corte_declarado")
+    if corte is not None and (
+            not isinstance(corte, str) or not 1 <= len(corte) <= 100):
+        errores.append("corte_declarado: debe ser texto de 1..100")
     if not isinstance(fuente.get("verificaciones"), list):
         errores.append("verificaciones: falta (lista, inicia vacía)")
     elif fuente["verificaciones"]:

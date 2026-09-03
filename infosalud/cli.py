@@ -249,7 +249,9 @@ def _fuente_buscar(args):
     fuentes = [
         f for f in catalogo["fuentes"]
         if termino in (f.get("id", "") + " " + f.get("titulo", "")
-                       + " " + f.get("notas", "")).lower()
+                       + " " + f.get("notas", "")
+                       + " " + " ".join(f.get("aliases", []))
+                       + " " + f.get("corte_declarado", "")).lower()
     ]
     if not fuentes:
         return _salir(args, f"sin resultados para '{args.termino}'", 2)

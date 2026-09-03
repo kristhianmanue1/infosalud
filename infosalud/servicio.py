@@ -63,8 +63,11 @@ def _coincide(fuente, q):
     if not q:
         return True
     q = q.lower()
-    return any(q in str(fuente.get(campo, "")).lower()
-               for campo in ("id", "titulo", "notas"))
+    texto = (" ".join([fuente.get("id", ""), fuente.get("titulo", ""),
+                       fuente.get("notas", ""),
+                       " ".join(fuente.get("aliases", [])),
+                       fuente.get("corte_declarado", "")])).lower()
+    return q in texto
 
 
 def _lista(catalogo, seccion=None, formato=None, q=None):
