@@ -53,7 +53,9 @@ sustituye.
 - Conciliación FN-19/20: espera OOAD de prueba y total oficial del
   área.
 - Lector xlsb / conversión por lote (IFU, egresos).
-- Serie histórica IFU/CUUMSP completa (por olas).
+- Serie histórica IFU/CUUMSP completa: por olas — plan redactado en
+  `plan-olas-serie-historica-ifu-cuumsp.md` (ola 1 = CUUMSP 2025;
+  ejecución pendiente de autorización).
 
 ## Convenciones del repositorio
 
