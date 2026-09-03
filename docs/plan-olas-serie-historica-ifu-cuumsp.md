@@ -21,12 +21,12 @@ Reglas (heredadas, no nuevas):
 - Toda ola termina en commit en rama propia + informe en
   `docs/`; el catálogo queda íntegro (fail-closed ante fallos).
 
-| Ola | Alcance | Volumen estimado | Formatos |
+| Ola | Alcance | Volumen | Formatos |
 |---|---|---|---|
 | 1 | CUUMSP 2025 (mensuales faltantes) | ~11 | xlsx |
-| 2 | CUUMSP 2021–2024 (por año, de lo más nuevo a lo viejo) | ~48 | xlsx (2021–2023 formato por confirmar) |
-| 3 | IFU 2025 (mensuales faltantes) | ~11 | xlsb (conversor requerido para estructura) |
-| 4 | IFU 2012–2024 (por año, de lo más nuevo a lo viejo) | ~150 | xlsb/xlsx mixto |
+| 2 | CUUMSP 2021–2024 (de lo más nuevo a lo viejo) | ~48 | xlsx (2021–2023 por confirmar) |
+| 3 | IFU 2025 (mensuales faltantes) | ~11 | xlsb (estructura requiere conversor) |
+| 4 | IFU 2012–2024 (de lo más nuevo a lo viejo) | ~150 | xlsb/xlsx mixto |
 | — | Tableros Tableau | 0 | no descargables (fuera de alcance) |
 
 Orden de las olas: primero CUUMSP (xlsx legible hoy, mayor valor
