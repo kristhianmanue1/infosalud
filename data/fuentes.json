@@ -532,6 +532,70 @@
               ]
             }
           ]
+        },
+        {
+          "fecha": "2026-09-03",
+          "ruta_local": "data/descargas/catalogo-maestro-semanas-estadisticas/CatalogoMaestroSemanasEstadisticas2025_2019_10012025.xlsx",
+          "resultado": "vigente",
+          "huella": "d77e1260078798a75bbe03806c3ba53f56e2872a0b0427464f33da077f189864",
+          "estructura": [
+            {
+              "hoja": "2025",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2024",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2023",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2022",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2021",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2020",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            },
+            {
+              "hoja": "2019",
+              "columnas": [
+                "",
+                "Catálogo maestro de semanas",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "notas": "Base de cierres semanales de los SIS"
