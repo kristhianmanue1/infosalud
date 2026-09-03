@@ -78,6 +78,14 @@ Esto convierte el patrón "sondeo → huella → caché" en una
 arquitectura de **data products con invalidación por contenido**,
 sin base de datos ni colas: stdlib puro.
 
+Corrección por ronda adversarial (2026-09-03): el ETag de `/datos`
+**no puede ser la huella sola** — el contenido depende también de la
+versión del perfil. ETag correcto =
+`sha256(huella_archivo + sha_perfil + forma_de_respuesta)`. Y si se
+activa token: `Cache-Control: private` (nunca `public` con auth),
+para que Cloudflare no sirva una respuesta autenticada a quien no
+lo está.
+
 ## 5. Roadmap propuesto
 
 ### Fase 1 — servir información (alta valeur, ~1 sesión)

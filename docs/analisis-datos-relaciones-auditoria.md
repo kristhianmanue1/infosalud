@@ -114,6 +114,20 @@ Artefactos y gobernanza:
   no los informes completos (frontera de verdad: docs/ y Git son
   canónicos).
 
+Correcciones por ronda adversarial de diseño (2026-09-03,
+docs/ronda-adversarial-2026-09-03.md):
+
+- **Veredicto advisory**: el agente solo puede marcar
+  `requiere_revision`; `rechazada` exige confirmación del área/humano.
+  El informe registra modelo, versión y fecha (no determinista).
+- **Perfil desactualizado = pérdida silenciosa**: tras normalizar se
+  expone `fuera_de_rango: n` (filas con contenido fuera del rango
+  declarado); n > 0 → `requiere_revision` (disparador del nivel 1).
+- **Parser numérico + tolerancia explícita** para la reconciliación
+  ("1,234.56", subtotales intercalados, múltiples filas de total).
+- **Dimensiones**: tabla de alias por sistema y **ciclo propio de
+  vigencia** con fecha de corte visible (el catálogo OOAD vence).
+
 ## E. Requisitos para implementar (cuando se apruebe)
 
 1. ADR-014: perfiles estructurales + niveles de datos + auditoría.
