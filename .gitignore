@@ -21,3 +21,4 @@ data/descargas/
 # Exportaciones (productos derivados reproducibles; la evidencia
 # versionada vive en data/fuentes.json y data/diccionarios/)
 data/exportaciones/
+data/convertidos/

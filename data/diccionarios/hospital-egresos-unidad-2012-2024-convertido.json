@@ -1,0 +1,103 @@
+{
+  "id": "hospital-egresos-unidad-2012-2024-convertido",
+  "campos": [
+    {
+      "nombre": "Clave Presupuestal",
+      "tipo": "clave",
+      "ejemplo": "Total Nacional",
+      "valores": "Total Nacional | 010101012151 | 010113UA2151 | 010126012151 | 020101012151 | ..."
+    },
+    {
+      "nombre": "OOAD",
+      "tipo": "otro",
+      "ejemplo": "Aguascalientes",
+      "valores": "Aguascalientes | Baja California | Baja California Sur | Campeche | Coahuila | ..."
+    },
+    {
+      "nombre": "Unidad",
+      "tipo": "otro",
+      "ejemplo": "HGZ 1 Aguascalientes",
+      "valores": "HGZ 1 Aguascalientes | UMAA 1 Aguascalientes (Aut) | HGZ 2 Aguascalientes | HGZ 30 Mexicali | HGPMF 31 Mexicali | ..."
+    },
+    {
+      "nombre": "Total del periodo",
+      "tipo": "otro",
+      "ejemplo": "Suma sui13",
+      "valores": "Suma sui13 | 2729662 | 18151 | 4531 | 14367 | ..."
+    },
+    {
+      "nombre": "Enero",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 62048 | 416 | 0 | ..."
+    },
+    {
+      "nombre": "Febrero",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 64865 | 393 | 0 | ..."
+    },
+    {
+      "nombre": "Marzo",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 59414 | 392 | 0 | ..."
+    },
+    {
+      "nombre": "Abril",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 64784 | 528 | 0 | ..."
+    },
+    {
+      "nombre": "Mayo",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 60500 | 404 | 0 | ..."
+    },
+    {
+      "nombre": "Junio",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 66189 | 461 | 0 | ..."
+    },
+    {
+      "nombre": "Julio",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 64434 | 493 | 0 | ..."
+    },
+    {
+      "nombre": "Agosto",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 63698 | 458 | 0 | ..."
+    },
+    {
+      "nombre": "Septiembre",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 65659 | 484 | 0 | ..."
+    },
+    {
+      "nombre": "Octubre",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 64652 | 462 | 0 | ..."
+    },
+    {
+      "nombre": "Noviembre",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 64492 | 398 | 0 | ..."
+    },
+    {
+      "nombre": "Diciembre",
+      "tipo": "otro",
+      "ejemplo": "Hospitalarios",
+      "valores": "Hospitalarios | Hombres | 64098 | 407 | 0 | ..."
+    }
+  ],
+  "huella_base": "887aaac31622e3e4220fabda09ddda56d710fa3502cd3afefdfca1cdb7503906",
+  "fecha": "2026-09-03"
+}
