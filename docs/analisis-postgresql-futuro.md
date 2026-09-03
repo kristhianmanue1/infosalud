@@ -106,7 +106,7 @@ versionados y tests DADO/CUANDO/ENTONCES. Estado:
 | 001–011 | runtime, catálogo, CLI, red, ámbito, agentes, memoria, vigencia, diccionario, borrador, exportación | aceptados |
 | 012 | listados históricos url_listado | aceptado (parser multi-producto pendiente de decisión) |
 | 013 | servicio agentes HTTP+MCP | aceptado (con despliegue público halt-to-safe.dev) |
-| **014 (propuesto)** | perfiles estructurales + nivel de datos normalizado + auditoría por agente (con correcciones adversariales: ETag compuesto, veredicto advisory, parser numérico, fuera_de_rango) | pendiente de redactar y aceptar |
+| **014 (aceptado)** | perfiles estructurales + nivel de datos normalizado + auditoría por agente (con correcciones adversariales: ETag compuesto, veredicto advisory, parser numérico, fuera_de_rango) | fase 1 implementada: contrato perfil-de-fuente v1 + validador + SPEC-11; fases 2-4 pendientes |
 | **015 (candidato)** | lock de catálogo (carrera de escritores) | pendiente |
 | (futuro) | paquete de tablas + Postgres como consumidor | se documenta como este análisis; ADR solo al ser decisión inmediata |
 

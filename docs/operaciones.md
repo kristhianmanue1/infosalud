@@ -41,7 +41,7 @@ launchctl load ~/Library/LaunchAgents/com.infosalud.tailscaled.plist
 | `api.halt-to-safe.dev` no responde en red IMSS | Fortinet bloquea egreso 7844 (QUIC/UDP y TCP) | Esperado. Usar `http://172.25.0.115:8081` (intranet) o salir de la red IMSS y `launchctl load` del túnel. NO forzar reintentos (riesgo de ban) |
 | `curl https://api…` falla con error SSL 60 | Intercepción TLS Fortinet sobre el dominio, solo afecta al curl local en red IMSS | Probar desde fuera, o usar la URL local |
 | `ERROR: id: duplicado` en fuente-alta | La fuente ya existe | Verificar con `fuente-detalle`; para actualizaciones usar `vigencia-registrar` o editar campos opcionales |
-| Alta de fuente se pierde | Carrera de escritores: alta concurrente con lote vigencia-verificar (P13) | Regla: nunca alta manual + lote en paralelo. Pendiente ADR-015 (flock) |
+| Alta de fuente se pierde | ~~Carrera de escritores~~ CERRADO (ADR-015): lock flock en todo escritor de la CLI; ver `docs/adr/ADR-015-lock-catalogo.md` | Igual aplicable: un proceso externo que escriba el catálogo fuera de `bloque_catalogo` evade el lock |
 | Tailscale `offline` en red IMSS | Relays DERP bloqueados por el firewall | Limitación documentada (R3). Funciona fuera de la red IMSS |
 | xlsb "sin estructura" | Formato binario sin lector | Convertir con LibreOffice headless (ver contenedor debian; patrón en docs/ronda-adversarial-2026-09-03.md) y registrar el derivado |
 | IP de la Mac cambia y el agente no conecta | DHCP por red | Usar nombres: `1nf0541ud.orb.local` (Mac), `api.halt-to-safe.dev` (público), o Tailscale `*.ts.net` |

@@ -1,8 +1,7 @@
 # ADR-015: Lock de catálogo — exclusión mutua para escritores
 # concurrentes
 
-Estado: propuesto (redactado 2026-09-03; espera aceptación del
-humano)
+Estado: aceptado (SPEC-10 e implementación en esta misma rama)
 Fecha: 2026-09-03
 
 Contexto: `guardar_catalogo` escribe atómicamente (temporal +

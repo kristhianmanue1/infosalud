@@ -1,9 +1,10 @@
 # ADR-014: Perfiles estructurales, datos normalizados (nivel 2) y
 # auditoría por agente de IA
 
-Estado: propuesto (redactado 2026-09-03; incorpora las correcciones
-de docs/ronda-adversarial-2026-09-03.md, pasadas 1 y 2; espera
-aceptación del humano)
+Estado: aceptado (fase 1 implementada en esta misma rama: contrato
+`perfil-de-fuente v1` + validador `infosalud/perfiles.py` + SPEC-11
++ tests; fases 2–4 —endpoint `/datos`, dimensiones, auditoría—
+pendientes, cada una con SPEC y tests propios)
 Fecha: 2026-09-03
 
 Contexto: el servicio (ADR-013) es un servidor de archivos con

@@ -4,11 +4,19 @@ Esquemas: CONTRATO registro-de-fuente v1 y cli-infosalud v1.1
 (docs/f1-contratos.md).
 """
 
+import contextlib
+import errno
+import fcntl
 import json
 import os
 import re
+import time
 from datetime import date
 from pathlib import Path
+
+# ADR-015 (SPEC-10): espera por defecto para adquirir el lock del
+# catálogo; acotable por entorno para pruebas y lotes cortos.
+ESPERA_LOCK = 30.0
 
 SECCIONES = {
     "catalogos",
@@ -89,6 +97,49 @@ def guardar_catalogo(ruta, datos):
         encoding="utf-8",
     )
     os.replace(temporal, ruta)
+
+
+@contextlib.contextmanager
+def bloque_catalogo(ruta, espera=None):
+    """Lock advisory exclusivo sobre el catálogo (ADR-015, SPEC-10).
+
+    Adquiere fcntl.flock exclusivo sobre el archivo lateral
+    `<catalogo>.lock` —creado si falta y jamás borrado (la carrera
+    de unlink/recreación es peor que un archivo vacío persistente)—.
+    Todo read-modify-write del catálogo (cargar → mutar → guardar)
+    debe ejecutarse dentro de este context manager: sin él, el
+    último guardado pisa al anterior (incidente 2026-09-02).
+
+    Espera acotada: intento no bloqueante con reintentos breves
+    hasta `espera` segundos (por defecto ESPERA_LOCK, acotable por
+    INFOSALUD_LOCK_ESPERA). Vencida la espera lanza ErrorCatalogo
+    sin escribir nada (fail-closed). El lock se libera al cerrar.
+    Los lectores NO lo usan: la lectura es atómica por os.replace.
+    """
+    ruta = Path(ruta)
+    ruta_lock = ruta.with_name(ruta.name + ".lock")
+    if espera is None:
+        espera = float(os.environ.get("INFOSALUD_LOCK_ESPERA",
+                                      ESPERA_LOCK))
+    descriptor = os.open(ruta_lock, os.O_CREAT | os.O_RDWR, 0o644)
+    limite = time.monotonic() + max(espera, 0.0)
+    try:
+        while True:
+            try:
+                fcntl.flock(descriptor, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except OSError as exc:
+                if exc.errno not in (errno.EACCES, errno.EAGAIN):
+                    raise
+                if time.monotonic() >= limite:
+                    raise ErrorCatalogo(
+                        "catálogo bloqueado por otro proceso: "
+                        f"{ruta_lock} (espera agotada tras "
+                        f"{espera:g} s)") from exc
+                time.sleep(0.05)
+        yield
+    finally:
+        os.close(descriptor)  # cerrar libera el flock del proceso
 
 
 def validar_fuente(fuente):

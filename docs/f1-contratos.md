@@ -270,3 +270,61 @@ Invariantes:
   - El token nunca se registra en bitácoras ni aparece en argv.
 Compatibilidad: añadir rutas o tools es compatible; cambiar formas
 de respuesta o códigos exige v2 del contrato.
+
+## CONTRATO: perfil-de-fuente v1 (ADR-014, SPEC-11)
+
+Archivo por fuente: `data/perfiles/<id>.json` (junto al catálogo).
+Declaración estructural versionada que permite normalizar el
+contenido de una fuente sin heurísticas re-ejecutadas: dónde están
+los encabezados, dónde empiezan y terminan los datos y qué filas
+son totales. Los totales se separan, no se eliminan; lo que está
+fuera del rango declarado no entra al dato.
+
+Entrada (campos cerrados):
+  id: string [obligatorio] [patrón ^[a-z0-9-]+$] — debe existir en
+        el catálogo y coincidir con el nombre del archivo
+  huella_base: string [obligatorio] [sha256 hex] — huella del
+        archivo contra el que se levantó el perfil (procedencia;
+        regla de oro ADR-014)
+  fecha: ISO-8601 [obligatorio] — fecha del levantamiento
+  version_perfil: entero [obligatorio] [>= 1] — versión de la
+        declaración; cambia al corregir el perfil (forma parte del
+        ETag compuesto del futuro endpoint /datos)
+  hojas: lista [obligatorio, >= 1] de:
+    nombre: string [obligatorio] [1..200 chars] — único por perfil
+    tipo: enum [obligatorio]: datos | descriptiva | totales | otra
+    fila_encabezados: entero [opcional] [>= 1]
+    columnas: lista de string [opcional; obligatoria cuando
+          tipo=datos]
+    filas_datos: {desde: entero >= 1, hasta: entero >= desde}
+          [obligatorio cuando tipo=datos]
+    clave_primaria: string [opcional] [1..100] — debe estar en
+          columnas cuando ambas están declaradas
+    claves_foraneas: lista [opcional] de {campo: string [1..100],
+          dimension: string [1..100]} — campo hacia endpoint de
+          dimensión (ej. "dimensiones/unidad"); campo debe estar en
+          columnas
+    columnas_numericas: lista de string [opcional] — subconjunto de
+          columnas cuando ambas están declaradas
+    filas_total: lista de enteros [opcional] [cada uno >= 1] —
+          filas de total/subtotal FUERA del rango de datos
+    tolerancia: número [opcional] [> 0] — tolerancia relativa de
+          reconciliación (ej. 0.005 = ±0.5%)
+  notas: string [opcional] [máx 500 chars]
+
+Salida: el archivo almacenado, idéntico al validado (escritura
+  atómica temporal + rename).
+Errores:
+  E-VALID: campo faltante o no declarado, tipo=datos sin
+    columnas/filas_datos, rango inválido, clave fuera de columnas,
+    total dentro del rango, tolerancia <= 0 → rechazo; archivo sin
+    cambios.
+  E-NOEXISTE: consulta de perfil inexistente.
+Invariantes:
+  - Ningún campo fuera del esquema; nombres de hoja únicos.
+  - La procedencia (huella_base) es obligatoria: un perfil sin
+    archivo verificado detrás no existe.
+  - Los totales declarados quedan fuera del rango de datos.
+  - El perfil no altera la máquina de estados de vigencia.
+Compatibilidad: añadir campos opcionales u hojas es compatible;
+  quitar campos, cambiar tipos o estrechar rangos exige v2.

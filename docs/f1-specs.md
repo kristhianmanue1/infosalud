@@ -281,3 +281,66 @@ Invariantes:
   vigencia pertenece a vigencia-verificar + sondeo (ADR-008).
 - Sólo GET (API) y POST /mcp (JSON-RPC); sin rutas de filesystem.
 - Sólo stdlib; sin sesiones MCP ni SSE (modo sin sesión).
+
+## SPEC-10 [cubre: REQ-7; ADR-015 — lock de catálogo]
+
+Comportamiento: toda escritura del catálogo (`fuente-alta`,
+`vigencia-registrar`, `vigencia-verificar` y su lote) se ejecuta
+dentro de un lock advisory exclusivo (`fcntl.flock`) sobre el
+archivo lateral `<catalogo>.lock`, adquirido antes de leer y
+liberado tras guardar: ningún read-modify-write completo pisa a
+otro (incidente 2026-09-02, ronda adversarial P13).
+Entradas: los caminos de escritura existentes; variable de entorno
+`INFOSALUD_LOCK_ESPERA` (segundos; por defecto 30) para acotar la
+espera.
+Salidas: las de cada comando, sin cambios.
+Errores:
+- E-BLOQUEADO: lock no obtenido dentro de la espera → mensaje
+  claro, salida 1, catálogo sin cambios (fail-closed).
+Casos:
+- DADO un proceso que mantiene el lock CUANDO otro ejecuta
+  `fuente-alta` ENTONCES espera y procede al liberarse, o falla
+  acotado (salida 1) si la espera se agota, sin escribir.
+- DADO dos altas simultáneas de ids distintos ENTONCES ambas quedan
+  en el catálogo (ninguna se pierde).
+- DADO el lock liberado CUANDO cualquier escritor procede ENTONCES
+  el comportamiento es idéntico al previo al ADR.
+Invariantes:
+- El archivo de lock no se borra tras usarlo (la carrera de
+  unlink/recreación es peor que un archivo vacío persistente).
+- Los lectores no toman el lock: la lectura es atómica por
+  `os.replace` (SPEC-3).
+- Sólo stdlib (`fcntl`, POSIX).
+
+## SPEC-11 [cubre: ADR-014 — fase 1: contrato y validador de perfil]
+
+Comportamiento: el sistema valida y persiste perfiles estructurales
+en `data/perfiles/<id>.json` (CONTRATO `perfil-de-fuente v1`): por
+hoja, tipo, fila de encabezados, columnas, rango de filas de datos,
+clave primaria/foráneas, columnas numéricas, filas de total y
+tolerancia. La normalización futura (endpoint `/datos`) consumirá
+este perfil; los totales se separan, no se eliminan (ADR-014).
+Entradas: archivo JSON conforme al contrato; `id` que existe en el
+catálogo y coincide con el nombre del archivo.
+Salidas: perfil validado y almacenado (escritura atómica
+temporal + rename).
+Errores:
+- E-VALID: campo faltante o no declarado, `tipo=datos` sin
+  `columnas`/`filas_datos`, rango inválido, clave primaria o
+  foránea fuera de `columnas`, numérica no declarada, fila de total
+  dentro del rango, tolerancia <= 0 → rechazo; archivo sin cambios.
+- E-NOEXISTE: consulta de perfil inexistente.
+Casos:
+- DADO un perfil válido de tipo datos (encabezado en fila 4, rango
+  5..1742, totales en filas 1-2, tolerancia 0.005) CUANDO se
+  valida ENTONCES cero errores y el archivo se persiste idéntico.
+- DADO un perfil con campo no declarado ENTONCES rechazo nombrando
+  el campo (esquema cerrado).
+- DADO `huella_base` ausente o no-hex ENTONCES rechazo (procedencia
+  obligatoria).
+- DADO una fila de total dentro del rango de datos ENTONCES
+  rechazo.
+Invariantes:
+- Esquema cerrado; `huella_base` sha256 obligatoria; `fecha` ISO.
+- Los totales declarados quedan fuera del rango de datos.
+- El perfil no altera la máquina de estados de vigencia.

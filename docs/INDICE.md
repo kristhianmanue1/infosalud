@@ -43,13 +43,14 @@ sustituye.
 
 ## Tareas y decisiones abiertas
 
-- ADR-014 (propuesto, redactado):
-  `adr/ADR-014-perfiles-datos-normalizados-auditoria.md` — espera
-  aceptación del humano; la implementación será por fases (SPEC +
-  tests por fase).
-- ADR-015 (candidato, redactado): `adr/ADR-015-lock-catalogo.md` —
-  lock flock para escritores concurrentes; espera aceptación e
-  implementación (SPEC-10 + tests).
+- ADR-014 (aceptado, fase 1 implementada):
+  `adr/ADR-014-perfiles-datos-normalizados-auditoria.md` — contrato
+  `perfil-de-fuente v1` + validador (`infosalud/perfiles.py`) +
+  SPEC-11 + tests. Fases 2–4 (`/datos`, dimensiones, auditoría)
+  pendientes con SPEC y tests propios.
+- ADR-015 (aceptado, implementado): `adr/ADR-015-lock-catalogo.md`
+  — lock flock en los tres escritores de la CLI (SPEC-10 + tests,
+  `tests/test_lock.py`).
 - Conciliación FN-19/20: espera OOAD de prueba y total oficial del
   área.
 - Lector xlsb / conversión por lote (IFU, egresos).
