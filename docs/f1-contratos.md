@@ -243,6 +243,14 @@ API JSON (Content-Type application/json en todos los casos):
        sha256_registrado, corte, fecha_descarga, url_origen_imss,
        origen: "IMSS", estado_integridad: verificado|alterado,
        estado_semantico: sin_evaluar, descarga_url}
+  GET /dimensiones/{nombre}
+                          → dimensión canónica (ADR-014 fase 4,
+                            contrato dimension-v1): clave →
+                            atributos derivada de la fuente
+                            verificada y perfilada declarada en
+                            data/dimensiones.json, con procedencia
+                            sha256, perfil_version, total y
+                            sin_clave. 404 si no está configurada
   GET /fuentes/{id}/datos?hoja=&max_filas=
                           → datos normalizados (nivel 2, ADR-014
                             fase 2, SPEC-12): {id, contrato:
@@ -277,7 +285,8 @@ MCP (JSON-RPC 2.0; POST /mcp; modo sin sesión):
                detalle_fuente(id), diccionario_fuente(id),
                historia_fuente(id), cobertura_fuentes(seccion?),
                archivo_fuente(id), datos_fuente(id, hoja?,
-               max_filas?), exportar_fuente(id, formato?)
+               max_filas?), dimension(nombre),
+               exportar_fuente(id, formato?)
   tools/call → {content: [{type: "text", text: <json>}], isError}
   Errores: -32601 método desconocido; -32602 parámetros/ herramienta
   inválidos. notifications/* → 202 sin cuerpo.

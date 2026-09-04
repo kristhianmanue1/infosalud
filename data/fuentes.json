@@ -10789,6 +10789,28 @@
           "huella": "180c7f5b3642121700552e3539e314932ff55679c11291d098b55eeb6f5602a7"
         }
       ]
+    },
+    {
+      "id": "catalogo-ooad-subdelegaciones-convertido",
+      "seccion": "catalogos",
+      "titulo": "Catálogo OOAD y Subdelegaciones feb 2025 — conversión xlsx (derivado)",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/Catalogos/Catalogo%20de%20OOAD%20y%20Subdelegaciones%20Febrero%202025_10022025.xls",
+      "formato": "xlsx",
+      "periodicidad": "eventual",
+      "notas": "Derivado: conversión LibreOffice headless del original xls (id catalogo-ooad-subdelegaciones, huella b0d9d26bc99d3811dc67350a52d36bbea478c19f014df4c73e6bd9db138ce76e) hecha 2026-09-04 para la dimensión unidad (ADR-014); el original manda",
+      "aliases": [
+        "OOAD",
+        "Unidades médicas",
+        "OOAD convertido"
+      ],
+      "verificaciones": [
+        {
+          "fecha": "2026-09-04",
+          "ruta_local": "data/convertidos/catalogo-ooad-subdelegaciones/Catalogo de OOAD y Subdelegaciones Febrero 2025_10022025.xlsx",
+          "resultado": "vigente",
+          "huella": "85fd3fd6d31d37d2666e4a99818a6dfae49d06357c13c614df8f5ad0fd52d946"
+        }
+      ]
     }
   ]
 }

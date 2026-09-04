@@ -19,7 +19,9 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlsplit, parse_qs
 
 from infosalud import __version__
+from infosalud import auditor
 from infosalud import datos
+from infosalud import dimensiones
 from infosalud.catalogo import ErrorCatalogo, cargar_catalogo
 from infosalud.datos import TOP_FILAS_DEFECTO
 from infosalud.diccionario import (
@@ -109,7 +111,8 @@ def _mapa(catalogo):
         "version": __version__,
         "adr": "ADR-013",
         "resumen": _resumen(catalogo),
-        "endpoints": ["/", "/healthz", "/cobertura", "/fuentes",
+        "endpoints": ["/", "/healthz", "/cobertura",
+                      "/dimensiones/{nombre}", "/fuentes",
                       "/fuentes/{id}",
                       "/fuentes/{id}/campos", "/fuentes/{id}/historia",
                       "/fuentes/{id}/archivo",
@@ -306,6 +309,26 @@ def _datos(ruta_catalogo, id_fuente, hoja=None, max_filas=None):
         raise ErrorServicio(exc.codigo, exc.mensaje) from exc
 
 
+def _dimension(ruta_catalogo, nombre):
+    """Dimensión canónica (ADR-014 fase 4): clave → atributos desde
+    la fuente verificada declarada en data/dimensiones.json."""
+    config = dimensiones.cargar_config(ruta_catalogo)
+    if config is None:
+        raise ErrorServicio(
+            404, "sin configuración de dimensiones "
+                 "(data/dimensiones.json)")
+    spec = config["dimensiones"].get(nombre)
+    if spec is None:
+        raise ErrorServicio(
+            404, f"dimensión no configurada: '{nombre}'")
+    try:
+        return dimensiones.construir(
+            ruta_catalogo, nombre, spec["fuente"], spec["hoja"],
+            spec["clave"], spec["atributos"])
+    except dimensiones.ErrorDimension as exc:
+        raise ErrorServicio(exc.codigo, exc.mensaje) from exc
+
+
 def _exportar_zip(ruta_catalogo, id_fuente, formato):
     """Corre fuente-exportar a directorio temporal y devuelve el zip
     con los productos (ADR-011); el temporal se elimina al salir."""
@@ -388,6 +411,13 @@ HERRAMIENTAS = [
          "id": {"type": "string"},
          "hoja": {"type": "string"},
          "max_filas": {"type": "integer"}}, "required": ["id"]}},
+    {"name": "dimension",
+     "description": "Dimensión canónica (ADR-014 fase 4): clave → "
+                    "atributos derivada de una fuente verificada y "
+                    "perfilada, según data/dimensiones.json, con "
+                    "procedencia sha256.",
+     "inputSchema": {"type": "object", "properties": {
+         "nombre": {"type": "string"}}, "required": ["nombre"]}},
     {"name": "exportar_fuente",
      "description": "Exporta el archivo verificado a CSV o SQLite con "
                     "evidencia (ADR-011) en el directorio de "
@@ -464,6 +494,9 @@ def _llamada_tool(ruta_catalogo, nombre, argumentos):
             ruta_catalogo, _obligatorio(argumentos, "id"),
             argumentos.get("hoja"), argumentos.get("max_filas"))
         return cuerpo
+    if nombre == "dimension":
+        return _dimension(ruta_catalogo,
+                          _obligatorio(argumentos, "nombre"))
     if nombre == "exportar_fuente":
         return _exportar_resumen(
             ruta_catalogo, _obligatorio(argumentos, "id"),
@@ -616,10 +649,19 @@ class Manejador(BaseHTTPRequestHandler):
             if ruta == "/":
                 return self._enviar_json(200, _mapa(catalogo))
             if ruta == "/healthz":
-                return self._enviar_json(200, _healthz(catalogo))
+                salud = _healthz(catalogo)
+                salud["auditorias_requieren_revision"] = \
+                    auditor.contar_requieren_revision(
+                        self.server.catalogo)
+                return self._enviar_json(200, salud)
             if ruta == "/cobertura":
                 return self._enviar_json(
                     200, _cobertura(catalogo))
+            if ruta.startswith("/dimensiones/"):
+                nombre_dimension = ruta.split("/", 2)[2]
+                return self._enviar_json(
+                    200, _dimension(self.server.catalogo,
+                                    nombre_dimension))
             piezas = [p for p in ruta.split("/") if p]
             if piezas and piezas[0] == "fuentes":
                 if len(piezas) == 1:

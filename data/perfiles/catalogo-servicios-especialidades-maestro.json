@@ -1,0 +1,91 @@
+{
+  "id": "catalogo-servicios-especialidades-maestro",
+  "huella_base": "ff7adb1ee78ae87d7fff065d1b883644b27e31aee4ed5b1e5e197a860491b9e3",
+  "fecha": "2026-09-04",
+  "version_perfil": 1,
+  "hojas": [
+    {
+      "nombre": "Catálogo_Maestro_de_Servicios",
+      "tipo": "datos",
+      "fila_encabezados": 6,
+      "columnas": [
+        "CLAVE",
+        "DESCRIPCIÓN",
+        "RAMA DE LA MEDICINA O TRONCAL",
+        "UBICACIÓN",
+        "QX",
+        "SEXO",
+        "EDAD MIN AÑOS",
+        "EDAD MIN SEM",
+        "EDAD MAX AÑOS",
+        "EDAD MAX SEM",
+        "MARCA PEDIATRIA",
+        "AREA_RESPONSABILIDAD",
+        "CLAVE_SIMO_SIAIS_DMEM",
+        "SUBCLAVE",
+        "MOVIMIENTO INTRAHOSPITALARIO",
+        "INTERCONSULTA",
+        "CATEGORIA",
+        "VIGENTE",
+        "PRIMER NIVEL",
+        "SEGUNDO NIVEL",
+        "TERCER NIVEL",
+        "TIPO DE MOVIMIENTO",
+        "MODIFICADO EN "
+      ],
+      "filas_datos": {
+        "desde": 7,
+        "hasta": 201
+      },
+      "clave_primaria": "CLAVE",
+      "columnas_numericas": [
+        "RAMA DE LA MEDICINA O TRONCAL",
+        "UBICACIÓN",
+        "EDAD MIN AÑOS",
+        "EDAD MIN SEM",
+        "EDAD MAX AÑOS",
+        "EDAD MAX SEM"
+      ]
+    },
+    {
+      "nombre": "Solo_Cambios",
+      "tipo": "datos",
+      "fila_encabezados": 7,
+      "columnas": [
+        "CLAVE",
+        "DESCRIPCIÓN",
+        "RAMA DE LA MEDICINA O TRONCAL",
+        "UBICACIÓN",
+        "QX",
+        "SEXO",
+        "EDAD MIN AÑOS",
+        "EDAD MIN SEM",
+        "EDAD MAX AÑOS",
+        "EDAD MAX SEM",
+        "MARCA PEDIATRIA",
+        "AREA_RESPONSABILIDAD",
+        "CLAVE_SIMO_SIAIS_DMEM",
+        "SUBCLAVE",
+        "MOVIMIENTO INTRAHOSPITALARIO",
+        "INTERCONSULTA",
+        "CATEGORIA",
+        "VIGENTE",
+        "PRIMER NIVEL",
+        "SEGUNDO NIVEL",
+        "TERCER NIVEL",
+        "TIPO DE MOVIMIENTO",
+        "MODIFICADO EN "
+      ],
+      "filas_datos": {
+        "desde": 8,
+        "hasta": 10
+      },
+      "clave_primaria": "CLAVE"
+    },
+    {
+      "nombre": "Variables",
+      "tipo": "descriptiva"
+    }
+  ],
+  "notas": "Dimensión servicio (ADR-014): clave CLAVE + atributos. Variables = diccionario embebido (descriptiva)."
+}

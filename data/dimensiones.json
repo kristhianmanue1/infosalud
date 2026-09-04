@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "dimensiones": {
+    "servicio": {
+      "fuente": "catalogo-servicios-especialidades-maestro",
+      "hoja": "Catálogo_Maestro_de_Servicios",
+      "clave": "CLAVE",
+      "atributos": [
+        "DESCRIPCIÓN",
+        "RAMA DE LA MEDICINA O TRONCAL",
+        "UBICACIÓN",
+        "QX",
+        "SEXO",
+        "VIGENTE"
+      ]
+    },
+    "subdelegacion": {
+      "fuente": "catalogo-ooad-subdelegaciones-convertido",
+      "hoja": "febrero 2025",
+      "clave": [
+        "CVE_DELEGACION",
+        "CVE_SUBDELEGACION"
+      ],
+      "atributos": [
+        "DESC_DELEGACION",
+        "DESC_SUBDELEGACION",
+        "FEC_ALTA"
+      ]
+    }
+  }
+}

@@ -327,6 +327,49 @@ Invariantes:
 - Sólo lectura; el catálogo no se muta; sin red.
 - ETag compuesto; caché pública sólo con API abierto.
 
+## SPEC-13 [cubre: ADR-014 — fase 4: dimensiones y auditoría nivel 1]
+
+Comportamiento (dimensiones): `GET /dimensiones/{nombre}` y la tool
+MCP `dimension(nombre)` sirven clave → atributos, derivados de la
+fuente verificada y perfilada declarada en
+`data/dimensiones.json` (esquema cerrado; `clave` puede ser
+compuesta como lista). Toda dimensión lleva procedencia
+(huella viva recomputada), `perfil_version`, `total` y
+`sin_clave` (filas cuyo clave no resolvió — cobertura de clave
+visible, no error).
+Comportamiento (auditoría nivel 1): `auditoria-estructura <id>`
+compara la `estructura` de las dos últimas verificaciones con
+estructura (hojas nuevas/eliminadas, columnas
+agregadas/eliminadas) y escribe un informe versionado
+`data/auditorias/<id>/<fecha>.json` con veredicto advisory
+(`conforme` | `requiere_revision`; jamás `rechazada`) y la huella
+sha256 del propio informe. `/healthz` expone
+`auditorias_requieren_revision` (visibilidad pasiva, P9).
+Entradas: config de dimensiones; fuente con ≥ 2 verificaciones con
+estructura.
+Salidas: JSON `dimension-v1`; informe JSON con huella de sí mismo.
+Errores:
+- E-VALID: config inválida, clave fuera de columnas → 400/500.
+- E-NOEXISTE: dimensión no configurada, id inexistente → 404.
+- E-INTEGRIDAD: sha256 vivo ≠ registrado → 409.
+- DIFERENCIAS INSUFICIENTES: < 2 verificaciones con estructura →
+  salida 1 (nada se infiere).
+Casos:
+- DADO una fuente configurada como dimensión CUANDO GET
+  /dimensiones/{nombre} ENTONCES 200 con clave → atributos,
+  total y procedencia verificado.
+- DADO una clave compuesta (lista) CUANDO se construye ENTONCES la
+  llave une las partes con '-'.
+- DADO dos verificaciones con estructura idéntica CUANDO se audita
+  ENTONCES informe `conforme` con huella de sí mismo.
+- DADO una columna eliminada en la estructura nueva CUANDO se
+  audita ENTONCES `requiere_revision` con el hallazgo.
+Invariantes:
+- La dimensión es derivada de archivos verificados; procedencia
+  obligatoria; sin red; esquema cerrado en la config.
+- El veredicto del auditor es advisory: jamás rechaza el dato
+  (eso exige confirmación del área/humano).
+
 ## SPEC-10 [cubre: REQ-7; ADR-015 — lock de catálogo]
 
 Comportamiento: toda escritura del catálogo (`fuente-alta`,

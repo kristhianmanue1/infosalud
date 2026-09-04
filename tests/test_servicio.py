@@ -237,7 +237,7 @@ class PruebaServicio(unittest.TestCase):
             "jsonrpc": "2.0", "id": 2, "method": "tools/list"})
         self.assertEqual(codigo, 200)
         nombres = {t["name"] for t in r["result"]["tools"]}
-        self.assertEqual(len(nombres), 9)
+        self.assertEqual(len(nombres), 10)
         self.assertIn("detalle_fuente", nombres)
         self.assertIn("archivo_fuente", nombres)
         self.assertIn("cobertura_fuentes", nombres)

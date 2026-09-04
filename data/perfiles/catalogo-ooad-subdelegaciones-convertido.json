@@ -1,0 +1,29 @@
+{
+  "id": "catalogo-ooad-subdelegaciones-convertido",
+  "huella_base": "85fd3fd6d31d37d2666e4a99818a6dfae49d06357c13c614df8f5ad0fd52d946",
+  "fecha": "2026-09-04",
+  "version_perfil": 1,
+  "hojas": [
+    {
+      "nombre": "febrero 2025",
+      "tipo": "datos",
+      "fila_encabezados": 8,
+      "columnas": [
+        "CVE_DELEGACION",
+        "DESC_DELEGACION",
+        "CVE_SUBDELEGACION",
+        "DESC_SUBDELEGACION",
+        "FEC_ALTA"
+      ],
+      "filas_datos": {
+        "desde": 9,
+        "hasta": 144
+      },
+      "columnas_numericas": [
+        "CVE_DELEGACION",
+        "CVE_SUBDELEGACION"
+      ]
+    }
+  ],
+  "notas": "Dimensión subdelegación (ADR-014): clave compuesta CVE_DELEGACION + CVE_SUBDELEGACION. Derivado de conversión LibreOffice (xls→xlsx); el original manda."
+}

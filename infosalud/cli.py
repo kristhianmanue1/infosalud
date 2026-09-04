@@ -145,6 +145,12 @@ def _construir_parser():
         help=f"directorio destino; por defecto "
              f"{EXPORTACIONES_POR_DEFECTO}/<id>")
 
+    p_aud = con_catalogo(sub.add_parser(
+        "auditoria-estructura",
+        help="auditoría de nivel 1: diff estructural entre las dos "
+             "últimas verificaciones con estructura (ADR-014)"))
+    p_aud.add_argument("id")
+
     p_servir = sub.add_parser(
         "servir", help="servicio HTTP de lectura para agentes "
                        "(API JSON + MCP; ADR-013, SPEC-9)")
@@ -172,6 +178,7 @@ def main(argv=None):
         "vigencia-registrar": _vigencia_registrar,
         "vigencia-verificar": _vigencia_verificar,
         "vigencia-historia": _vigencia_historia,
+        "auditoria-estructura": _auditoria_estructura,
         "servir": _servir,
     }
     return comandos[args.comando](args)
@@ -638,6 +645,23 @@ def _estructura_observada(fuente, destino):
 def _destino_por_defecto(url, id_fuente):
     return os.path.join(DESCARGAS_POR_DEFECTO, id_fuente,
                         nombre_desde_url(url))
+
+
+def _auditoria_estructura(args):
+    """Auditoría de nivel 1 (ADR-014 fase 4): diff estructural entre
+    las dos últimas verificaciones con estructura; escribe el
+    informe versionado en data/auditorias/<id>/. Veredicto
+    advisory: conforme | requiere_revision (jamás rechazada)."""
+    from infosalud.auditor import ErrorAuditoria, auditar
+    try:
+        informe = auditar(args.catalogo, args.id)
+    except ErrorAuditoria as exc:
+        return _salir(args, exc.mensaje, 1 if exc.codigo != 404 else 2)
+    _emitir(args, informe,
+            f"{args.id}: {informe['veredicto']} "
+            f"({len(informe['hallazgos'])} hallazgos; informe con "
+            f"huella {informe['huella_informe'][:12]}…)")
+    return 0
 
 
 def _servir(args):

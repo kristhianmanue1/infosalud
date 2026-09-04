@@ -63,7 +63,7 @@ API JSON de sólo lectura (`/`, `/healthz`, `/fuentes`,
 `/fuentes/{id}/archivo` —binario verificado—,
 `/fuentes/{id}/archivo/meta`, `/fuentes/{id}/datos`,
 `/fuentes/{id}/exportar`) y MCP
-(JSON-RPC 2.0 en `POST /mcp`, 9 herramientas). Sólo stdlib; no muta
+(JSON-RPC 2.0 en `POST /mcp`, 10 herramientas). Sólo stdlib; no muta
 el catálogo ni descarga del portal (contrato `servicio-infosalud v1`).
 
 
