@@ -53,11 +53,11 @@ sustituye.
 - ADR-015 (aceptado, implementado): `adr/ADR-015-lock-catalogo.md`
   — lock flock en los tres escritores de la CLI (SPEC-10 + tests,
   `tests/test_lock.py`).
-- Perfiles estructurales ola 1 (piloto CEPI): 5/6 en producción
-  (`perfiles-piloto-ola1.md`); conciliación numérica (fase 3)
-  implementada en `/datos`; restan `columnas_numericas` de
-  cifras-nacionales (opcional) y productividad semanal
-  (multi-bloque, diseño de segmentos propuesto).
+- Perfiles estructurales ola 1 (piloto CEPI): **6/6 en producción**
+  (`perfiles-piloto-ola1.md`); conciliación numérica (fase 3) y
+  enmienda `segmentos` (multi-bloque) implementadas en `/datos`.
+  Pendiente opcional: `columnas_numericas` de cifras-nacionales y
+  productividad (activaría conciliación automática).
 - Ola 2 CUUMSP 2021–2024 ejecutada (2026-09-04): 34 cortes nuevos
   `vigente` + índice 2022 (catálogo 119 fuentes); brechas MAYO-21,
   ENE/FEB-23 y 11 meses de 2024 sin localizar

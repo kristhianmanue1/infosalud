@@ -89,18 +89,21 @@ cada total con la tolerancia declarada (defecto ±0.5%),
 `reconciliado: true/false` con ejemplos de descuadre (hasta 3) —
 sin bloquear el dato: lo califica. (Corrección adversarial #5.)
 
-## Diseño pendiente: hojas multi-bloque
+## Enmienda segmentos implementada (2026-09-04)
 
-Las hojas multi-bloque (varias tablas con encabezados propios en
-una misma hoja, p. ej. `seguimiento-productividad-semanal-2025`)
-no se resuelven con un solo `filas_datos` por hoja. Propuesta de
-diseño (enmienda compatible futura): segmentos declarados —
-`segmentos: [{nombre, fila_encabezados, filas_datos, ...}]` por
-hoja, donde cada segmento es una tabla independiente; la respuesta
-de `/datos` expondría `hojas/{nombre}/segmentos/{nombre}`. Requiere
-enmienda del contrato + SPEC antes de implementar; el perfil
-actual (un rango por hoja) sigue siendo válido para hojas de tabla
-única.
+`segmentos: [{nombre, fila_encabezados, [fila_encabezados_sub],
+columnas, filas_datos, [clave_primaria], [filas_total],
+[columnas_numericas], [tolerancia]}]` por hoja (>= 2 segmentos):
+declara las tablas independientes de una hoja multi-bloque. En
+`/datos` cada segmento se expone con su nombre y su
+`fuera_de_rango` acotado a su bloque (termina donde inicia el
+encabezado del siguiente segmento). Reglas: los campos de tabla se
+declaran dentro de cada segmento (no en la hoja), nombres únicos y
+totales fuera del rango de su segmento. Implementado en
+`perfiles.py` (validador) y `datos.py` (`segmentar` → `_tabla`).
+Nota: el hallazgo posterior mostró que productividad semanal tiene
+una tabla por hoja y se perfiló con el contrato base; `segmentos`
+queda disponible para hojas verdaderamente multi-bloque.
 
 ## Hallazgos del perfilado
 
