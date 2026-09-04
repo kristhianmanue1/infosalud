@@ -8,9 +8,9 @@ base del piloto CEPI (P11, ADR-014).
 
 | Fuente | Hojas perfiladas | Estado en `/datos` |
 |---|---|---|
-| `poblacion-pamf-siais-2025` | 4 (Consultorios, UM_Totales, OOAD, No_Consideradas) | `perfil_aplicado: true`, `fuera_de_rango: 0` |
+| `poblacion-pamf-siais-2025` | 4 (Consultorios, UM_Totales, OOAD, No_Consideradas) | aplicado, `fuera_de_rango: 0` |
 | `poblacion-consultorios-medfam-pamf-2025` | 4 (Tot_Cons_MedFam, Tot_Cons_MF_OOAD, PAMF_Consultorios, NO CONTEMPLADAS) | ídem |
-| `poblacion-usuaria-23n-simoc-unidad-2025` | 2 (Esp, Urg; fila 12 = total nacional declarada en `filas_total`) | ídem; totales servidos aparte |
+| `poblacion-usuaria-23n-simoc-unidad-2025` | 2 (Esp, Urg; fila 12 = total nacional en `filas_total`) | ídem; totales aparte |
 
 Generación semi-automática (P11): `scripts/generar_perfiles_piloto.py`
 extrae las columnas de la fila de encabezados declarada, valida con
