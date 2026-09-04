@@ -282,6 +282,46 @@ Invariantes:
 - Sólo GET (API) y POST /mcp (JSON-RPC); sin rutas de filesystem.
 - Sólo stdlib; sin sesiones MCP ni SSE (modo sin sesión).
 
+## SPEC-12 [cubre: ADR-014 — fase 2: datos normalizados (nivel 2)]
+
+Comportamiento: `GET /fuentes/{id}/datos` (y la tool MCP
+`datos_fuente`) sirven las filas del archivo local verificado —
+nunca del portal— segmentadas por el perfil estructural cuando
+existe: encabezados, filas de datos, totales aparte (separación, no
+eliminación) y `fuera_de_rango` contado (filas con contenido
+después del rango declarado → `requiere_revision`: el portal
+publicó filas nuevas que el perfil viejo recortaría en silencio).
+Sin perfil sirve filas crudas con `perfil_aplicado: false`. El
+ETag es COMPUESTO: sha256(huella_archivo + sello_del_perfil +
+forma_de_respuesta) — la huella sola NO basta (corrección
+adversarial #1). Cache-Control: `public, max-age=86400` con API
+abierto; `private, no-store` con token (corrección #2). HEAD en
+las rutas GET; X-Content-Type-Options: nosniff en toda respuesta.
+Entradas: id existente con archivo verificado; parámetros
+`hoja` (opcional) y `max_filas` (1..200 000, defecto 20 000).
+Salidas: JSON `datos-v1` con procedencia (huella viva recomputada)
+y etag; 304 sin cuerpo ante If-None-Match.
+Errores:
+- E-VALID: max_filas inválido, formato no tabular → 400.
+- E-NOEXISTE: id, hoja no declarada en el perfil o inexistente → 404.
+- E-INTEGRIDAD: sha256 vivo ≠ registrado → 409, sin contenido.
+Casos:
+- DADO un xlsx verificado con perfil (encabezado en fila 2, datos
+  3..5, total en fila 1) CUANDO GET /datos ENTONCES 200 con datos
+  segmentados, totales aparte y fuera_de_rango 0.
+- DADO filas nuevas después del rango declarado CUANDO GET /datos
+  ENTONCES fuera_de_rango > 0 y requiere_revision true.
+- DADO el ETag recibido CUANDO se repite la petición con
+  If-None-Match ENTONCES 304 sin cuerpo.
+- DADO el perfil corregido con el MISMO archivo CUANDO GET /datos
+  ENTONCES el ETag CAMBIA.
+- DADO el archivo alterado tras la verificación CUANDO GET /datos
+  ENTONCES 409 y el contenido jamás se sirve.
+Invariantes:
+- La procedencia viaja con el dato (sha256 vivo en cada respuesta).
+- Sólo lectura; el catálogo no se muta; sin red.
+- ETag compuesto; caché pública sólo con API abierto.
+
 ## SPEC-10 [cubre: REQ-7; ADR-015 — lock de catálogo]
 
 Comportamiento: toda escritura del catálogo (`fuente-alta`,
