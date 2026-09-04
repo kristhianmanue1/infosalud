@@ -17,19 +17,32 @@ fail-closed o `requiere_revision`. Ese patrón se corrigió.
 
 ## Hallazgos y correcciones
 
-| # | Severidad | Hallazgo | Corrección |
-|---|---|---|---|
-| H-1 | ALTA | Hoja declarada en el perfil pero ausente del archivo → respuesta "limpia" vacía (pérdida del 100% del dato enmascarada) | `construir` marca `ausente_del_archivo: true` + `requiere_revision: true` (test en test_servicio) |
-| H-2 | ALTA | `segmentos` sin validar orden ni solapamiento → filas duplicadas o ventanas de fuera_de_rango vacías en silencio | `_validar_segmentos` exige orden por fila_encabezados y rangos no solapados (test) |
-| H-3 | ALTA | Con `segmentos`, `conciliaciones`/`filas_total`/`filas_nota`/`tolerancia` a nivel hoja se aceptaban y el runtime los ignoraba en silencio | El validador los rechaza (test por cada campo) |
-| H-4 | ALTA | El lote CUUMSP pisa perfiles refinados a mano (v2+) con v1 sin aviso | El lote omite fuentes con perfil existente y lo reporta |
-| M-1 | MEDIA | `huella_base` del perfil sin cotejo en runtime | `/datos` expone `perfil_huella_desactualizada: true` |
-| M-2 | MEDIA | Grupos de conciliación no evaluables se descartaban en silencio | Se reportan `no_evaluado: true` + `reconciliado: false` |
-| M-3 | MEDIA | Parser numérico aceptaba `inf`, `nan`, `1_0` (float de Python) | Regex estricta `-?\d+(\.\d+)?` |
-| M-4 | MEDIA | Dimensiones: atributos inexistentes se perdían en silencio | La respuesta expone `atributos_omitidos` |
-| M-5 | MEDIA | Auditoría: dos informes el mismo día se pisaban | Nombre con hora + escritura atómica (L-6) |
-| L-2 | BAJA | `tolerancia: 1e9` neutralizaba la conciliación advisory | Techo `0 < tolerancia <= 0.5` en hoja/segmento/grupo |
-| L-1, L-3..L-6 | BAJA | Duplicados en diff, techo de 200k filas, booleanos, etc. | Documentados; corrección diferida (ver Debilitamientos conocidos) |
+Hallazgos corregidos en esta misma ronda:
+
+- **H-1 (alta)**: hoja declarada en el perfil pero ausente del
+  archivo → respuesta "limpia" vacía (pérdida del 100% enmascarada).
+  Corregido: `construir` marca `ausente_del_archivo` +
+  `requiere_revision` (test en test_servicio).
+- **H-2 (alta)**: `segmentos` sin validar orden ni solapamiento →
+  filas duplicadas o ventanas vacías en silencio. Corregido: el
+  validador exige orden por fila_encabezados y rangos no solapados.
+- **H-3 (alta)**: con `segmentos`, los campos de tabla a nivel
+  hoja se aceptaban y el runtime los ignoraba en silencio.
+  Corregido: el validador los rechaza.
+- **H-4 (alta)**: el lote CUUMSP pisaba perfiles refinados a mano.
+  Corregido: omite fuentes con perfil existente y lo reporta.
+- **M-1**: `huella_base` del perfil sin cotejo en runtime →
+  `/datos` expone `perfil_huella_desactualizada`.
+- **M-2**: grupos de conciliación no evaluables se descartaban →
+  se reportan `no_evaluado` + `reconciliado: false`.
+- **M-3**: el parser numérico aceptaba `inf`/`nan`/`1_0` → regex
+  estricta.
+- **M-4**: dimensiones perdía atributos inexistentes en silencio →
+  expone `atributos_omitidos`.
+- **M-5 + L-6**: informes de auditoría se pisaban el mismo día y
+  la escritura no era atómica → nombre con hora + temporal/rename.
+- **L-2**: `tolerancia: 1e9` neutralizaba la conciliación → techo
+  `0 < tolerancia <= 0.5` en hoja/segmento/grupo.
 
 ## Confirmados como comportamiento correcto (no bugs)
 
