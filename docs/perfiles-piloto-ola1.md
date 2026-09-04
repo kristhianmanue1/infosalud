@@ -43,7 +43,7 @@ página índice en `paginas/cuumspYYYY.html`; sólo 2022). Resultado:
 
 | Año | Cortes | Nota |
 |---|---|---|
-| 2021 | 11 de 12 | sin MAYO (no existe en ninguna variante de nombre; ENERO con sufijo `_n`) |
+| 2021 | 11 de 12 | sin MAYO; ENERO con sufijo `_n` |
 | 2022 | 12 de 12 | página índice sí existe; MARZO con sufijo `_n` |
 | 2023 | 10 de 12 | sin ENERO ni FEBRERO |
 | 2024 | 1 (AGOSTO) | los demás meses con nombres fechados no adivinables |
