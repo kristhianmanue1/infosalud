@@ -272,7 +272,7 @@ Casos:
   JSON {"error": ...}.
 - DADO token configurado CUANDO petición sin Authorization: Bearer
   ENTONCES 401; con token correcto ENTONCES 200.
-- DADO MCP inicializado CUANDO tools/list ENTONCES lista las 6
+- DADO MCP inicializado CUANDO tools/list ENTONCES lista las 10
   herramientas; CUANDO tools/call detalle_fuente con id válido
   ENTONCES contenido JSON de texto con el registro; con id
   inexistente ENTONCES resultado isError con causa.

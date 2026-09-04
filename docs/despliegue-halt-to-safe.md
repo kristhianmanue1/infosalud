@@ -33,4 +33,4 @@ cloudflared (KeepAlive) → https://… público.
 
 - https://infosalud.halt-to-safe.dev/healthz → 50 fuentes vigente
 - https://api.halt-to-safe.dev/fuentes/{id}/archivo/meta → integridad OK
-- https://api.halt-to-safe.dev/mcp → 8 herramientas MCP
+- https://api.halt-to-safe.dev/mcp → 10 herramientas MCP

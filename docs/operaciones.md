@@ -50,13 +50,18 @@ launchctl load ~/Library/LaunchAgents/com.infosalud.tailscaled.plist
 
 ## 4. Reglas operativas duras
 
-- **Escritor único del catálogo**: nunca `fuente-alta` manual junto
-  a lotes de `vigencia-verificar` en paralelo (carrera documentada:
-  ronda adversarial, P13).
+- **Lock de catálogo (ADR-015)**: toda escritura de la CLI pasa por
+  `bloque_catalogo` (flock); altas manuales y lotes pueden convivir.
+  Un proceso externo que escriba fuera de `bloque_catalogo` evade
+  el lock.
 - **Servidor único del puerto 8081**: contenedor O host, nunca ambos.
 - **Red IMSS**: no forzar egreso de túneles (riesgo de ban); servir
   solo local/intranet.
 - El catálogo se recarga por petición: los cambios en
   `data/fuentes.json` se sirven sin reiniciar el servicio.
+- Tras un cambio de estructura del portal, correr
+  `auditoria-estructura <id>`: diff contra la verificación previa
+  e informe versionado en `data/auditorias/` (ADR-014; `/healthz`
+  expone el conteo `auditorias_requieren_revision`).
 - Toda verificación de vigencia es la única fuente del estado
   "vigente/cambiada/inaccesible"; nunca inferir por nombre de archivo.

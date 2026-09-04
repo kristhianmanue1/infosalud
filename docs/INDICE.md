@@ -19,7 +19,7 @@ sustituye.
    acepta lo declarado, se rechaza lo demás.
 7. **`f1-specs.md`** — especificaciones SPEC-1..9, implementadas en
    `../tests/` como casos DADO/CUANDO/ENTONCES.
-8. **`adr/`** — decisiones inmutables (ADR-001..013). Cambiar una
+8. **`adr/`** — decisiones inmutables (ADR-001..015). Cambiar una
    decisión = ADR nuevo.
 9. **`diagramas.md`** — arquitectura, red, flujo de datos y máquina
    de vigencia (mermaid).

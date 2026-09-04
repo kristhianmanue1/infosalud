@@ -7,7 +7,7 @@ análisis evalúa el estado actual contra buenas prácticas de
 arquitectura de software y propone cómo evolucionar el *servicio de
 información* — no solo de archivos.
 
-## 1. Estado actual (inventario)
+## 1. Estado actual (inventario al 2026-09-03; hoy: 10 herramientas MCP + `/datos` + `/dimensiones/*`, ver ADR-014)
 
 - API JSON de sólo lectura: `/`, `/healthz`, `/cobertura`,
   `/fuentes` (+filtros), `/fuentes/{id}`, `/campos`, `/historia`,

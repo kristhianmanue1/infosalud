@@ -16,7 +16,7 @@ registra evidencia (huella sha256, fecha, estructura observada).
 - `docs/f1-specs.md` — especificaciones (F1)
 - `docs/f1-contratos.md` — contratos de frontera y máquina de estados
 - `docs/INDICE.md` — índice navegable de toda la documentación (ruta de lectura para agentes)
-- `docs/adr/` — decisiones inmutables (ADR-001…013)
+- `docs/adr/` — decisiones inmutables (ADR-001…015)
 - `docs/diagramas.md`, `docs/operaciones.md`, `docs/glosario.md`, `docs/auditoria-documentacion.md` — arquitectura visual, runbook y glosario
 
 ## Requisitos
@@ -41,12 +41,15 @@ python3 -m infosalud fuente-exportar catalogo-cie10  # CSV/SQLite con evidencia 
 python3 -m infosalud vigencia-registrar catalogo-cie10 --archivo cie10.xlsx
 python3 -m infosalud vigencia-verificar catalogo-cie10  # descarga read-only (ADR-008)
 python3 -m infosalud vigencia-historia catalogo-cie10
+python3 -m infosalud auditoria-estructura catalogo-cie10  # ADR-014
 ```
 
 Todos los comandos aceptan `--catalogo <ruta>` (por defecto
 `data/fuentes.json`) y `--json` (contrato `cli-infosalud v1.1`,
 ADR-006). Códigos de salida: 0 éxito, 1 error de validación, 2 no
-encontrado. El esquema del registro está en `docs/f1-contratos.md`
+encontrado. Los perfiles estructurales viven en `data/perfiles/` y las
+dimensiones canónicas en `data/dimensiones.json` (contrato
+`dimension-v1`). El esquema del registro está en `docs/f1-contratos.md`
 (`registro-de-fuente v1`); el diccionario de datos, en
 `diccionario-de-fuente v1` (`data/diccionarios/<id>.json`, ADR-009).
 

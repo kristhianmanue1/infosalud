@@ -63,6 +63,12 @@ sequenceDiagram
     S->>H: productos + evidencia (ADR-011)
     H->>S: GET /fuentes/{id}/archivo/meta
     S-->>H: envelope (sha256 recomputado en vivo)
+    H->>S: perfil v1 (data/perfiles/<id>.json)
+    S->>S: valida contrato perfil-de-fuente v1
+    H->>S: GET /fuentes/{id}/datos (nivel 2)
+    S-->>H: datos segmentados + conciliación + ETag compuesto
+    H->>S: GET /dimensiones/{nombre}
+    S-->>H: clave → atributos (derivada de catálogo verificado)
 ```
 
 ## 4. Máquina de estados: vigencia de una fuente

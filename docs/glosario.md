@@ -43,8 +43,10 @@
 | **Diccionario** | `data/diccionarios/<id>.json`: campos observados de una fuente (ADR-009) |
 | **Borrador asistido** | Generación de diccionario desde el archivo local verificado (ADR-010) |
 | **Exportación** | CSV/SQLite con evidencia de origen (ADR-011) |
-| **Perfil estructural** | (ADR-014 propuesto) contrato por hoja: encabezados, rango de datos, totales |
-| **Dimensiones** | Tablas canónicas de claves (unidad, servicio, periodo) servidas por la API |
+| **Conciliación numérica** | Σ(detalles) ≈ total declarado, con tolerancia; advisory: califica el dato sin bloquearlo (ADR-014) |
+| **Auditoría nivel 1** | Diff estructural automático entre verificaciones; informe versionado con huella propia |
+| **Perfil estructural** | (ADR-014, v1) contrato por hoja: encabezados (y sub), rango de datos, totales, notas, segmentos multi-bloque y conciliaciones |
+| **Dimensiones** | Clave → atributos canónicos (servicio, subdelegación) derivadas de catálogos verificados y servidas en `/dimensiones/{nombre}` |
 | **FN-19 / FN-20** | Indicador de demanda (casos/población×1000) y demanda esperada (CEPI) |
 | **Sondeo** | Verificación automática programada vía launchd (ADR-008) |
 | **Túnel / halt-to-safe.dev** | Exposición pública vía Cloudflare (rutas policy-routing por WiFi) |
