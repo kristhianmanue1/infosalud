@@ -184,6 +184,21 @@ class PruebaValidarPerfil(unittest.TestCase):
         self.assertEqual(r["fuera_de_rango"], 1)  # sólo la 99 NUEVA
         self.assertTrue(r["requiere_revision"])
 
+    def test_segmentar_ignora_celdas_basura(self):
+        """DADO filas posteriores al rango con celdas de sólo
+        espacios o apóstrofes (artefactos de conversión) CUANDO
+        segmentar ENTONCES no cuentan como fuera_de_rango."""
+        from infosalud.datos import segmentar
+        declaracion = {"nombre": "H", "tipo": "datos",
+                       "fila_encabezados": 1,
+                       "columnas": ["CLAVE", "VALOR"],
+                       "filas_datos": {"desde": 2, "hasta": 3}}
+        filas = [["CLAVE", "VALOR"], ["01", "5"], ["02", "6"],
+                 [" ", "''"], ["", "   "]]
+        r = segmentar(declaracion, filas, 100)
+        self.assertEqual(r["fuera_de_rango"], 0)
+        self.assertFalse(r["requiere_revision"])
+
     def test_clave_primaria_debe_estar_en_columnas(self):
         """DADO clave_primaria fuera de columnas ENTONCES rechazo."""
         hoja = dict(PERFIL_VALIDO["hojas"][0], clave_primaria="nope")
