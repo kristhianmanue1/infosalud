@@ -275,9 +275,9 @@ MCP (JSON-RPC 2.0; POST /mcp; modo sin sesión):
                serverInfo {name "infosalud-servicio", version}
   tools/list → mapa_servicio, buscar_fuentes(q, seccion?, formato?),
                detalle_fuente(id), diccionario_fuente(id),
-               historia_fuente(id), archivo_fuente(id),
-               datos_fuente(id, hoja?, max_filas?),
-               exportar_fuente(id, formato?)
+               historia_fuente(id), cobertura_fuentes(seccion?),
+               archivo_fuente(id), datos_fuente(id, hoja?,
+               max_filas?), exportar_fuente(id, formato?)
   tools/call → {content: [{type: "text", text: <json>}], isError}
   Errores: -32601 método desconocido; -32602 parámetros/ herramienta
   inválidos. notifications/* → 202 sin cuerpo.
