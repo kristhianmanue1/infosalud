@@ -178,12 +178,14 @@ def segmentar(declaracion, filas, max_filas):
     datos = filas[desde - 1:hasta]
     fila_enc = declaracion.get("fila_encabezados")
     fila_sub = declaracion.get("fila_encabezados_sub")
+    notas_declaradas = declaracion.get("filas_nota") or []
 
     def _fila(n):
         return filas[n - 1] if n and n <= len(filas) else None
 
     fuera = [i for i in range(hasta + 1, len(filas) + 1)
              if i not in totales_declarados
+             and i not in notas_declaradas
              and any(c not in ("", None) for c in filas[i - 1])]
     conciliacion = None
     if declaracion.get("filas_total") \

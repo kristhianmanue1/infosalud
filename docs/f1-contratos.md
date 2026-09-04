@@ -318,6 +318,10 @@ Entrada (campos cerrados):
           encabezados] — segunda fila de un encabezado compuesto
           (enmienda 2026-09-04; ej. Cifras Nacionales: grupo en la
           fila principal, subgrupo en la sub)
+    filas_nota: lista de enteros [opcional, enmienda 2026-09-04,
+          cada uno >= 1, FUERA del rango de datos] — filas de nota
+          al pie conocidas (ej. '** Conforme a lo indicado...'); no
+          cuentan como fuera_de_rango ni entran al dato
     columnas: lista de string [opcional; obligatoria cuando
           tipo=datos]
     filas_datos: {desde: entero >= 1, hasta: entero >= desde}

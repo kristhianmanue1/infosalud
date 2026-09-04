@@ -15,18 +15,18 @@ ID = "estadisticas-nacionales-cifras-2025"
 CATALOGO = "data/fuentes.json"
 FECHA = "2026-09-04"
 
-# (hoja, fila_encabezados, fila_sub, filas_total, desde, hasta)
+# (hoja, fila_encabezados, fila_sub, filas_total, desde, hasta, notas)
 HOJAS = [
-    ("Consultas", 3, 4, [5, 6], 7, 67),
-    ("Egresos", 4, 5, [7, 8], 9, 69),      # f6 es 3a fila de encabezado
-    (" Aux Dx", 3, 4, [5, 6], 7, 67),
-    ("Aux Tx", 3, 4, [5, 6], 7, 67),
-    ("33 Procedimientos", 3, 4, [5, 6], 7, 67),
-    ("Atenciones Prof. de Salud", 3, 4, [5, 6], 7, 67),
-    ("Mortalidad", 3, 4, [5, 6], 7, 139),  # f138-139: categorías fuera de IMSS
-    ("PAMF Mes", 3, 4, [5], 6, 40),
-    ("Banco de Sangre", 10, 11, [12, 13], 14, 74),
-    ("Control", None, None, None, None, None),  # tipo otra
+    ("Consultas", 3, 4, [5, 6], 7, 67, [68]),
+    ("Egresos", 4, 5, [7, 8], 9, 69, []),   # f6 es 3a fila de encabezado
+    (" Aux Dx", 3, 4, [5, 6], 7, 67, []),
+    ("Aux Tx", 3, 4, [5, 6], 7, 67, []),
+    ("33 Procedimientos", 3, 4, [5, 6], 7, 67, []),
+    ("Atenciones Prof. de Salud", 3, 4, [5, 6], 7, 67, [68]),
+    ("Mortalidad", 3, 4, [5, 6], 7, 139, []),  # f138-139: fuera de IMSS
+    ("PAMF Mes", 3, 4, [5], 6, 40, []),
+    ("Banco de Sangre", 10, 11, [12, 13], 14, 74, []),
+    ("Control", None, None, None, None, None, []),  # tipo otra
 ]
 
 NOTAS = ("Encabezado compuesto: fila de grupo + fila sub "
@@ -46,7 +46,8 @@ def main():
                     for h in leer_filas(ver["ruta_local"],
                                         max_filas=200000)}
     perfil_hojas = []
-    for nombre, fila_enc, fila_sub, filas_total, desde, hasta in HOJAS:
+    for (nombre, fila_enc, fila_sub, filas_total, desde, hasta,
+         filas_nota) in HOJAS:
         filas = hojas_leidas[nombre]
         if fila_enc is None:
             perfil_hojas.append({"nombre": nombre, "tipo": "otra"})
@@ -59,6 +60,8 @@ def main():
                 "filas_datos": {"desde": desde, "hasta": hasta},
                 "clave_primaria": "Clave ",
                 "filas_total": filas_total}
+        if filas_nota:
+            hoja["filas_nota"] = filas_nota
         perfil_hojas.append(hoja)
         print(f"  {nombre}: enc f{fila_enc}, sub f{fila_sub}, "
               f"totales {filas_total}, datos {desde}..{hasta}")

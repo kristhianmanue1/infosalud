@@ -21,7 +21,8 @@ CAMPOS_PERFIL = {"id", "huella_base", "fecha", "version_perfil",
 CAMPOS_HOJA = {"nombre", "tipo", "fila_encabezados",
                "fila_encabezados_sub", "columnas",
                "filas_datos", "clave_primaria", "claves_foraneas",
-               "columnas_numericas", "filas_total", "tolerancia"}
+               "columnas_numericas", "filas_total", "filas_nota",
+               "tolerancia"}
 
 
 class ErrorPerfil(Exception):
@@ -205,6 +206,22 @@ def _validar_rango(hoja, prefijo, columnas):
                 f"{prefijo}.filas_total: una fila de total está "
                 "dentro del rango de datos (los totales se declaran "
                 "FUERA del rango, ADR-014)")
+    filas_nota = hoja.get("filas_nota")
+    if filas_nota is not None and (
+            not isinstance(filas_nota, list) or not filas_nota
+            or not all(isinstance(f, int) and not isinstance(f, bool)
+                       and f >= 1 for f in filas_nota)):
+        errores.append(
+            f"{prefijo}.filas_nota: falta o no es lista de enteros "
+            ">= 1")
+    elif filas_nota and isinstance(rango, dict) and isinstance(
+            rango.get("desde"), int):
+        if any(rango["desde"] <= f <= rango["hasta"]
+               for f in filas_nota):
+            errores.append(
+                f"{prefijo}.filas_nota: una fila de nota está dentro "
+                "del rango de datos (las notas se declaran FUERA del "
+                "rango)")
     clave = hoja.get("clave_primaria")
     if clave is not None:
         if not isinstance(clave, str) or not 1 <= len(clave) <= 100:

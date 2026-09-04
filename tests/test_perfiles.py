@@ -156,6 +156,34 @@ class PruebaValidarPerfil(unittest.TestCase):
                       [["Total", "5"], ["01", "2"], ["02", "3"]], 100)
         self.assertIsNone(r["conciliacion"])
 
+    def test_filas_nota_validacion(self):
+        """DADO filas_nota declaradas FUERA del rango CUANDO se
+        valida ENTONCES es válido; dentro del rango ENTONCES
+        rechazo (enmienda 2026-09-04)."""
+        base = dict(PERFIL_VALIDO["hojas"][0])
+        ok = dict(base, filas_nota=[1744])
+        self.assertEqual(validar(dict(PERFIL_VALIDO, hojas=[ok])), [])
+        mal = dict(base, filas_nota=[10])
+        self.assertTrue(any("filas_nota" in e
+                            for e in validar(dict(PERFIL_VALIDO,
+                                                  hojas=[mal]))))
+
+    def test_segmentar_excluye_notas_de_fuera_de_rango(self):
+        """DADO una fila de nota después del rango declarada en
+        filas_nota CUANDO segmentar ENTONCES no cuenta como
+        fuera_de_rango (no requiere_revision por una nota)."""
+        from infosalud.datos import segmentar
+        declaracion = {"nombre": "H", "tipo": "datos",
+                       "fila_encabezados": 1,
+                       "columnas": ["CLAVE", "VALOR"],
+                       "filas_datos": {"desde": 2, "hasta": 3},
+                       "filas_nota": [4]}
+        filas = [["CLAVE", "VALOR"], ["01", "5"], ["02", "6"],
+                 ["**", "Conforme a lo indicado"], ["99", "NUEVA"]]
+        r = segmentar(declaracion, filas, 100)
+        self.assertEqual(r["fuera_de_rango"], 1)  # sólo la 99 NUEVA
+        self.assertTrue(r["requiere_revision"])
+
     def test_clave_primaria_debe_estar_en_columnas(self):
         """DADO clave_primaria fuera de columnas ENTONCES rechazo."""
         hoja = dict(PERFIL_VALIDO["hojas"][0], clave_primaria="nope")
