@@ -74,6 +74,12 @@ sustituye.
 - Ronda adversarial 2026-09-04: `ronda-adversarial-2026-09-04.md`
   (11 hallazgos sobre segmentos/conciliaciones/dimensiones/auditoría;
   10 corregidos, debilitamientos documentados).
+- Ronda adversarial sobre el análisis de la minuta Garma
+  (2026-09-04):
+  `ronda-adversarial-analisis-minuta-garma-2026-09-04.md`
+  (autorrevisión: retracta H-1/H-2, refina las 6 recomendaciones a
+  una secuencia propositiva de 6 pasos).
+
 ## Convenciones del repositorio
 
 - Español, líneas ~80 columnas, markdown.
