@@ -53,11 +53,11 @@ sustituye.
 - ADR-015 (aceptado, implementado): `adr/ADR-015-lock-catalogo.md`
   — lock flock en los tres escritores de la CLI (SPEC-10 + tests,
   `tests/test_lock.py`).
-- Perfiles estructurales ola 1 (piloto CEPI): 4/6 en producción
-  (`perfiles-piloto-ola1.md`); usuaria-1N desbloqueada vía
-  conversión xls→xlsx; restan cifras-nacionales (10 hojas,
-  usa `fila_encabezados_sub`) y productividad semanal
-  (multi-bloque).
+- Perfiles estructurales ola 1 (piloto CEPI): 5/6 en producción
+  (`perfiles-piloto-ola1.md`); conciliación numérica (fase 3)
+  implementada en `/datos`; restan `columnas_numericas` de
+  cifras-nacionales (opcional) y productividad semanal
+  (multi-bloque, diseño de segmentos propuesto).
 - Conciliación FN-19/20: espera OOAD de prueba y total oficial del
   área.
 - Lector xlsb / conversión por lote (IFU, egresos).

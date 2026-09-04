@@ -36,13 +36,24 @@ Página índice `recursos-cuumsp-2025` + 11 cortes mensuales
 
 ## Pendientes de perfil (con causa)
 
-- `estadisticas-nacionales-cifras-2025`: encabezados compuestos de
-  dos filas — resuelto a nivel contrato con la enmienda
-  `fila_encabezados_sub` (2026-09-04); falta perfilar sus 10 hojas
-  (layouts propios por hoja).
+- `estadisticas-nacionales-cifras-2025`: **perfilado** (10 hojas,
+  `fila_encabezados_sub` para el encabezado compuesto, totales
+  Nacional/Total Delegaciones/Total OOAD en `filas_total`, fila
+  '**' en `filas_nota`). Pendiente opcional: declarar
+  `columnas_numericas` por hoja para activar la conciliación
+  automática (fase 3, ya implementada en `/datos`).
 - `seguimiento-productividad-semanal-2025`: multi-bloque (varias
-  tablas por hoja, notas intercaladas). Requiere diseño antes de
-  declarar rangos.
+  tablas por hoja, notas intercaladas). Propuesta de diseño:
+  `segmentos` por hoja (ver abajo); requiere enmienda + SPEC.
+
+## Fase 3 implementada: conciliación numérica
+
+`/datos` incluye ahora el bloque `conciliacion` por hoja cuando el
+perfil declara `columnas_numericas` + `filas_total`: parser
+numérico tolerante (comas de millar, $, %), Σ(detalles) contra
+cada total con la tolerancia declarada (defecto ±0.5%),
+`reconciliado: true/false` con ejemplos de descuadre (hasta 3) —
+sin bloquear el dato: lo califica. (Corrección adversarial #5.)
 
 ## Diseño pendiente: hojas multi-bloque
 
