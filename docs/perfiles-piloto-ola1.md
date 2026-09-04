@@ -34,6 +34,27 @@ Página índice `recursos-cuumsp-2025` + 11 cortes mensuales
 (enero–noviembre) registrados, descargados y `vigente`
 (catálogo 70→83 fuentes, 0 ids duplicados, 0 huellas compartidas).
 
+## Ola 2 CUUMSP 2021–2024 (2026-09-04)
+
+Sondeo sistemático de URLs (los años 2021/2023/2024 no tienen
+página índice en `paginas/cuumspYYYY.html`; sólo 2022). Resultado:
+**33 cortes nuevos + índice 2022**, todos `vigente`
+(catálogo 84→119 fuentes; 119 ids únicos, 0 huellas compartidas).
+
+| Año | Cortes | Nota |
+|---|---|---|
+| 2021 | 11 de 12 | sin MAYO (no existe en ninguna variante de nombre; ENERO con sufijo `_n`) |
+| 2022 | 12 de 12 | página índice sí existe; MARZO con sufijo `_n` |
+| 2023 | 10 de 12 | sin ENERO ni FEBRERO |
+| 2024 | 1 (AGOSTO) | los demás meses con nombres fechados no adivinables |
+
+Brechas pendientes de localización (MAYO-2021; ENERO/FEBRERO-2023;
+11 meses de 2024): requieren la página o fragmento del portal que
+los enliste (el fragmento `seccion/6` por puerto 80 no respondió
+en esta sesión) o confirmación de la DIS. `recursos-cuumsp-mayo-2023`
+quedó registrado con verificación `inaccesible` (404) como
+evidencia del intento.
+
 ## Pendientes de perfil (con causa)
 
 - `estadisticas-nacionales-cifras-2025`: **perfilado** (10 hojas,
