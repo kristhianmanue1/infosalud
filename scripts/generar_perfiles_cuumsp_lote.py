@@ -63,7 +63,7 @@ def main():
         # 'CLUES' (con uno o dos espacios según la entrega).
         fila_enc = None
         for i in range(FILA_ENCABEZADOS - 1,
-                       min(FILA_ENCABEZADOS + 20, len(um))):
+                       min(FILA_ENCABEZADOS + 21, len(um))):
             if any(str(c).strip().upper().startswith("CLUES")
                           for c in um[i]):
                 fila_enc = i + 1
@@ -79,12 +79,26 @@ def main():
         con = [i for i in range(fila_enc + 1, len(um) + 1)
                if any(str(c).strip() for c in um[i - 1]
                       if c is not None)]
+        # L-3 (ronda adversarial 2026-09-04): las notas al final
+        # ('Nota: …', '*…') se declaran en filas_nota y se recortan
+        # del rango de datos, en vez de quedar dentro.
+        notas_finales = []
+        while con:
+            primera = next((c for c in um[con[-1] - 1]
+                            if str(c).strip()), None)
+            if primera and (primera.strip().startswith("Nota")
+                            or primera.strip().startswith("*")):
+                notas_finales.append(con.pop())
+            else:
+                break
+        notas_finales.reverse()
         perfil_hojas = [{
             "nombre": "Unidad Médica", "tipo": "datos",
             "fila_encabezados": fila_enc,
             "columnas": columnas,
             "filas_datos": {"desde": con[0], "hasta": con[-1]},
             "clave_primaria": clave_real,
+            **({"filas_nota": notas_finales} if notas_finales else {}),
         }]
         for nombre in hojas_leidas:
             if nombre == "Unidad Médica":

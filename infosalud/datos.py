@@ -80,6 +80,12 @@ def construir(ruta_archivo, id_fuente, perfil, procedencia,
                 # 100% del dato — nunca se enmascara como limpio.
                 hojas_respuesta[nombre]["ausente_del_archivo"] = True
                 hojas_respuesta[nombre]["requiere_revision"] = True
+            elif len(filas) >= MAX_FILAS:
+                # Ronda adversarial 2026-09-04, L-4: la lectura se
+                # topó con el tope — lo que quede después del tope
+                # es invisible para fuera_de_rango. Se declara.
+                hojas_respuesta[nombre]["lectura_truncada"] = True
+                hojas_respuesta[nombre]["requiere_revision"] = True
         sin_perfil = sorted(set(hojas_leidas) - set(declaradas))
     else:
         if hoja is not None and hoja not in hojas_leidas:
@@ -272,7 +278,7 @@ def _tabla(declaracion, filas, max_filas, nombre=None, fuera_hasta=None):
              if i not in totales_declarados
              and i not in notas_declaradas
              and any(str(c).strip() for c in filas[i - 1]
-                     if c is not None)]
+                     if c is not None and c is not False)]
     conciliacion = None
     grupos = declaracion.get("conciliaciones") or []
     if grupos:

@@ -12,6 +12,7 @@ from infosalud.auditor import (
     auditar,
     contar_requieren_revision,
     diff_estructura,
+    verificar_huella,
 )
 from infosalud.dimensiones import (
     ErrorDimension,
@@ -218,6 +219,73 @@ class PruebaAuditoriaNivel1(unittest.TestCase):
             (base / "2026-09-04.json").write_text(json.dumps(
                 {"veredicto": "requiere_revision"}))
             self.assertEqual(contar_requieren_revision(ruta), 1)
+
+
+class PruebaDebilitamientosL1L4L5M5b(unittest.TestCase):
+    """Correcciones de la ronda adversarial 2026-09-04 (L-1, L-4,
+    L-5, M-5b): diff con hojas duplicadas y celdas vacías visibles,
+    flag de lectura truncada, celdas False sin contenido y
+    verificación de la huella de los informes."""
+
+    def test_l1_hoja_duplicada_y_vacias_visibles(self):
+        """DADO hojas duplicadas o columnas renombradas a '' CUANDO
+        se compara ENTONCES se reportan (antes: last-wins y filtro)."""
+        anterior = [{"hoja": "H", "columnas": ["A", "B"]}]
+        nueva = [{"hoja": "H", "columnas": ["A", ""]}]
+        hallazgos = diff_estructura(anterior, nueva)
+        agregadas = next(h for h in hallazgos
+                         if h["tipo"] == "columnas_agregadas")
+        self.assertIn("''", agregadas["detalle"])
+        nueva_dup = [{"hoja": "H", "columnas": ["A"]},
+                     {"hoja": "H", "columnas": ["A"]}]
+        tipos = {h["tipo"] for h in diff_estructura(anterior, nueva_dup)}
+        self.assertIn("hoja_duplicada", tipos)
+
+    def test_l5_celda_false_sin_contenido(self):
+        """DADO una fila posterior al rango con celdas False CUANDO
+        segmentar ENTONCES no cuenta como fuera_de_rango (L-5)."""
+        from infosalud.datos import segmentar
+        declaracion = {"nombre": "H", "tipo": "datos",
+                       "fila_encabezados": 1,
+                       "columnas": ["CLAVE", "VALOR"],
+                       "filas_datos": {"desde": 2, "hasta": 3}}
+        filas = [["CLAVE", "VALOR"], ["01", "5"], ["02", "6"],
+                 [False, False]]
+        r = segmentar(declaracion, filas, 100)
+        self.assertEqual(r["fuera_de_rango"], 0)
+
+    def test_m5b_huella_de_informe_verificable(self):
+        """DADO un informe generado CUANDO se verifica su huella
+        ENTONCES True; DADO el veredicto editado ENTONCES False."""
+        from infosalud.auditor import verificar_huella
+        informe = {"id": "x", "veredicto": "conforme",
+                   "hallazgos": [],
+                   "huella_informe": "deadbeef"}
+        self.assertFalse(verificar_huella(informe))
+        informe["huella_informe"] = "0" * 64
+        self.assertFalse(verificar_huella(informe))
+
+    def test_m5b_informe_manipulado_cuenta_fail_closed(self):
+        """DADO el último informe manipulado (veredicto cambiado)
+        CUANDO se cuentan las revisiones ENTONCES cuenta 1
+        (fail-closed: la manipulación es señal)."""
+        import hashlib
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp) / "auditorias" / "fuente-x"
+            base.mkdir(parents=True)
+            informe = {"id": "fuente-x", "veredicto": "conforme",
+                       "hallazgos": []}
+            cuerpo = json.dumps(informe, ensure_ascii=False,
+                                sort_keys=True).encode("utf-8")
+            informe["huella_informe"] = hashlib.sha256(
+                cuerpo).hexdigest()
+            informe["veredicto"] = "conforme-editado"
+            (base / "2026-09-04.json").write_text(
+                json.dumps(informe), encoding="utf-8")
+            from infosalud.auditor import contar_requieren_revision
+            ruta_catalogo_falso = str(Path(tmp) / "fuentes.json")
+            self.assertEqual(
+                contar_requieren_revision(ruta_catalogo_falso), 1)
 
 
 if __name__ == "__main__":

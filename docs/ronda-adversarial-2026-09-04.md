@@ -52,11 +52,21 @@ Hallazgos corregidos en esta misma ronda:
   parser: es inconsistencia real del archivo, que la conciliación
   advisory debe reportar.
 
-## Debilitamientos conocidos (documentados, sin corregir hoy)
+## Debilitamientos — corregidos en commit de seguimiento
 
-- Lectura topada a 200k filas ANTES de calcular `fuera_de_rango`
-  (L-4): hojas mayores quedan fuera del tripwire.
-- Celdas booleanas `False` cuentan como contenido (L-5).
-- `huella_informe` es verificable pero nada la verifica al leer (M-5b).
-- Filas totales/notas del CUUMSP dentro del rango de datos sin
-  declarar (L-3) — pendiente del refinamiento por corte.
+- **L-1**: `diff_estructura` reporta hojas duplicadas y ve las
+  celdas vacías de encabezado (test).
+- **L-3**: el lote declara las notas finales (`Nota: …`, `*…`) en
+  `filas_nota` y las recorta del rango de datos; off-by-one de la
+  ventana de encabezado corregido (+21).
+- **L-4**: hojas cuya lectura topa el tope de 200k filas se marcan
+  `lectura_truncada` + `requiere_revision` (el tripwire ya no es
+  mudo).
+- **L-5**: las celdas booleanas `False` ya no cuentan como
+  contenido (test).
+- **M-5b**: `verificar_huella(informe)` implementada y usada por
+  `contar_requieren_revision` (fail-closed: un informe manipulado
+  o corrupto CUENTA como requiere_revision; test).
+
+Verificación de lectura truncada: los informes manipulados y las
+filas booleanas tienen tests automatizados (tests/test_fase4.py).

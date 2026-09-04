@@ -32,10 +32,24 @@ def ruta_auditorias(ruta_catalogo, id_fuente):
 
 def diff_estructura(anterior, nueva):
     """Diff de listas [{hoja, columnas}]. Devuelve hallazgos:
-    lista de {tipo, hoja, detalle}."""
+    lista de {tipo, hoja, detalle}. Ronda adversarial 2026-09-04
+    (L-1): hojas duplicadas se reportan (antes: dict last-wins
+    silencioso) y las celdas vacías de encabezado ya no se filtran
+    (un renombre a '' es visible)."""
     an = {h["hoja"]: h.get("columnas") or [] for h in (anterior or [])}
     nu = {h["hoja"]: h.get("columnas") or [] for h in (nueva or [])}
     hallazgos = []
+    for lista, etiqueta in ((anterior or [], "anterior"),
+                            (nueva or [], "nueva")):
+        vistos = set()
+        for h in lista:
+            if h["hoja"] in vistos:
+                hallazgos.append({
+                    "tipo": "hoja_duplicada",
+                    "hoja": h["hoja"],
+                    "detalle": f"hoja repetida en la estructur"
+                               f" {etiqueta}"})
+            vistos.add(h["hoja"])
     for hoja in nu:
         if hoja not in an:
             hallazgos.append({"tipo": "hoja_nueva", "hoja": hoja,
@@ -49,16 +63,18 @@ def diff_estructura(anterior, nueva):
         if hoja not in an:
             continue
         previas, actuales = an[hoja], nu[hoja]
-        agregadas = [c for c in actuales if c and c not in previas]
-        eliminadas = [c for c in previas if c and c not in actuales]
+        agregadas = [c for c in actuales
+                     if c is not None and c not in previas]
+        eliminadas = [c for c in previas
+                      if c is not None and c not in actuales]
         if agregadas:
             hallazgos.append({
                 "tipo": "columnas_agregadas", "hoja": hoja,
-                "detalle": ", ".join(agregadas[:10])})
+                "detalle": ", ".join(repr(c) for c in agregadas[:10])})
         if eliminadas:
             hallazgos.append({
                 "tipo": "columnas_eliminadas", "hoja": hoja,
-                "detalle": ", ".join(eliminadas[:10])})
+                "detalle": ", ".join(repr(c) for c in eliminadas[:10])})
     return hallazgos
 
 
@@ -114,9 +130,26 @@ def auditar(ruta_catalogo, id_fuente):
     return informe
 
 
+def verificar_huella(informe):
+    """Verifica la huella de un informe (ronda adversarial
+    2026-09-04, M-5b): recalcula el sha256 del contenido sin el
+    campo 'huella_informe' y lo compara. Un informe editado no
+    verifica."""
+    if "huella_informe" not in informe:
+        return False
+    copia = {k: v for k, v in informe.items()
+             if k != "huella_informe"}
+    cuerpo = json.dumps(copia, ensure_ascii=False,
+                        sort_keys=True).encode("utf-8")
+    return hashlib.sha256(cuerpo).hexdigest() == \
+        informe["huella_informe"]
+
+
 def contar_requieren_revision(ruta_catalogo):
     """Visibilidad pasiva (P9): número de fuentes cuyo último
-    informe de auditoría requiere revisión."""
+    informe de auditoría requiere revisión. Fail-closed (M-5b): un
+    último informe cuya huella no verifica se cuenta como
+    requiere_revision — la manipulación es ella misma una señal."""
     base = Path(ruta_catalogo).parent / "auditorias"
     if not base.is_dir():
         return 0
@@ -129,6 +162,11 @@ def contar_requieren_revision(ruta_catalogo):
             ultimo = json.loads(informes[-1].read_text(
                 encoding="utf-8"))
         except (json.JSONDecodeError, OSError):
+            # JSON truncado/corrupto: fail-closed, cuenta.
+            total += 1
+            continue
+        if not verificar_huella(ultimo):
+            total += 1
             continue
         if ultimo.get("veredicto") == "requiere_revision":
             total += 1
