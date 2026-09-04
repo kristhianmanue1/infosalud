@@ -43,11 +43,13 @@ sustituye.
 
 ## Tareas y decisiones abiertas
 
-- ADR-014 (aceptado, fase 1 implementada):
+- ADR-014 (aceptado, fases 1-2 implementadas):
   `adr/ADR-014-perfiles-datos-normalizados-auditoria.md` — contrato
   `perfil-de-fuente v1` + validador (`infosalud/perfiles.py`) +
-  SPEC-11 + tests. Fases 2–4 (`/datos`, dimensiones, auditoría)
-  pendientes con SPEC y tests propios.
+  SPEC-11; endpoint `/fuentes/{id}/datos` con ETag compuesto +
+  tool MCP `datos_fuente` + SPEC-12 (`infosalud/datos.py`).
+  Fases 3-4 (dimensiones, auditoría) pendientes con SPEC y tests
+  propios.
 - ADR-015 (aceptado, implementado): `adr/ADR-015-lock-catalogo.md`
   — lock flock en los tres escritores de la CLI (SPEC-10 + tests,
   `tests/test_lock.py`).

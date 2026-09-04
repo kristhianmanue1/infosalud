@@ -237,7 +237,7 @@ class PruebaServicio(unittest.TestCase):
             "jsonrpc": "2.0", "id": 2, "method": "tools/list"})
         self.assertEqual(codigo, 200)
         nombres = {t["name"] for t in r["result"]["tools"]}
-        self.assertEqual(len(nombres), 8)
+        self.assertEqual(len(nombres), 9)
         self.assertIn("detalle_fuente", nombres)
         self.assertIn("archivo_fuente", nombres)
         self.assertIn("cobertura_fuentes", nombres)
@@ -305,6 +305,251 @@ class PruebaServicioConToken(PruebaServicio):
         self.assertIn("error", cuerpo)
         codigo, _cuerpo = self._peticion("/fuentes")
         self.assertEqual(codigo, 200)
+
+
+# ---------------------------------------------------------- SPEC-12
+
+def _xlsx_datos(filas, nombre_hoja="Catalogo"):
+    """xlsx mínimo de una hoja con filas inlineStr numeradas."""
+    import io
+    import zipfile
+    buffer = io.BytesIO()
+    ns = "http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+
+    def fila(celdas, numero):
+        cuerpo = "".join(
+            f'<c r="{chr(65 + i)}{numero}" t="inlineStr">'
+            f"<is><t>{v}</t></is></c>"
+            for i, v in enumerate(celdas))
+        return f'<row r="{numero}">{cuerpo}</row>'
+
+    cuerpo_hoja = "".join(
+        fila(celdas, numero)
+        for numero, celdas in enumerate(filas, start=1))
+    with zipfile.ZipFile(buffer, "w") as z:
+        z.writestr("xl/workbook.xml",
+                   f'<?xml version="1.0"?><workbook xmlns="{ns}" '
+                   'xmlns:r="http://schemas.openxmlformats.org/'
+                   'officeDocument/2006/relationships"><sheets>'
+                   f'<sheet name="{nombre_hoja}" sheetId="1" '
+                   'r:id="rId1"/></sheets></workbook>')
+        z.writestr("xl/_rels/workbook.xml.rels",
+                   '<?xml version="1.0"?>'
+                   '<Relationships xmlns="http://schemas.'
+                   'openxmlformats.org/package/2006/relationships">'
+                   '<Relationship Id="rId1" Target='
+                   '"worksheets/sheet1.xml"/></Relationships>')
+        z.writestr("xl/worksheets/sheet1.xml",
+                   f'<?xml version="1.0"?><worksheet xmlns="{ns}">'
+                   f"<sheetData>{cuerpo_hoja}</sheetData>"
+                   "</worksheet>")
+    return buffer.getvalue()
+
+
+class PruebaDatosFuente(unittest.TestCase):
+    """SPEC-12 (ADR-014 fase 2): GET/HEAD /fuentes/{id}/datos,
+    ETag compuesto, 304, segmentación por perfil y tool MCP
+    datos_fuente."""
+
+    def setUp(self):
+        self.dir_tmp = tempfile.TemporaryDirectory()
+        base = self.dir_tmp.name
+        # xlsx: fila 1 total, fila 2 encabezados, filas 3-5 datos.
+        self.filas = [["TOTAL", ""],
+                      ["CLAVE", "NOMBRE"],
+                      ["A001", "FIEBRES"],
+                      ["A002", "DENGUE"],
+                      ["A003", "VARICELA"]]
+        self.xlsx = _xlsx_datos(self.filas)
+        self.ruta_xlsx = os.path.join(base, "f.xlsx")
+        with open(self.ruta_xlsx, "wb") as archivo:
+            archivo.write(self.xlsx)
+        import hashlib
+        self.huella = hashlib.sha256(self.xlsx).hexdigest()
+        self.catalogo = os.path.join(base, "fuentes.json")
+        fuente = dict(FUENTE)
+        fuente["verificaciones"] = [
+            {"fecha": "2026-09-03", "resultado": "vigente",
+             "huella": self.huella, "ruta_local": self.ruta_xlsx}]
+        with open(self.catalogo, "w", encoding="utf-8") as archivo:
+            json.dump({"version": 1, "fuentes": [fuente]}, archivo,
+                      ensure_ascii=False)
+        self.ruta_perfil = os.path.join(base, "perfiles",
+                                        ID + ".json")
+        self.servidor = crear_servidor(self.catalogo, "127.0.0.1", 0)
+        self.hilo = threading.Thread(
+            target=self.servidor.serve_forever, daemon=True)
+        self.hilo.start()
+        self.base = "http://127.0.0.1:" \
+            f"{self.servidor.server_address[1]}"
+
+    def tearDown(self):
+        self.servidor.shutdown()
+        self.servidor.server_close()
+        self.hilo.join(timeout=5)
+        self.dir_tmp.cleanup()
+
+    def _pedir(self, ruta, encabezados=None, metodo="GET"):
+        peticion = urllib.request.Request(
+            self.base + ruta, headers=encabezados or {},
+            method=metodo)
+        try:
+            with urllib.request.urlopen(peticion, timeout=10) as r:
+                return (r.status, r.read(), dict(r.headers))
+        except urllib.error.HTTPError as exc:
+            return (exc.code, exc.read(), dict(exc.headers))
+
+    def _json_datos(self, ruta="/fuentes/" + ID + "/datos"):
+        codigo, cuerpo, _enc = self._pedir(ruta)
+        return codigo, json.loads(cuerpo)
+
+    def _escribir_perfil(self, perfil):
+        os.makedirs(os.path.dirname(self.ruta_perfil), exist_ok=True)
+        with open(self.ruta_perfil, "w", encoding="utf-8") as archivo:
+            json.dump(perfil, archivo, ensure_ascii=False)
+    def test_sin_perfil_filas_crudas(self):
+        """DADO fuente sin perfil CUANDO GET /datos ENTONCES 200 con
+        perfil_aplicado false, filas crudas y procedencia
+        (sha256 vivo = registrado, verificado)."""
+        codigo, cuerpo = self._json_datos()
+        self.assertEqual(codigo, 200)
+        self.assertFalse(cuerpo["perfil_aplicado"])
+        hoja = cuerpo["hojas"]["Catalogo"]
+        self.assertEqual(hoja["filas"], self.filas)
+        self.assertEqual(cuerpo["procedencia"]["sha256"], self.huella)
+        self.assertEqual(
+            cuerpo["procedencia"]["estado_integridad"], "verificado")
+        self.assertTrue(cuerpo["etag"])
+
+    def test_con_perfil_segmenta_datos_y_totales(self):
+        """DADO un perfil (encabezado fila 2, datos 3..5, total fila 1)
+        CUANDO GET /datos ENTONCES datos segmentados, totales aparte
+        y fuera_de_rango en cero."""
+        self._escribir_perfil({
+            "id": ID, "huella_base": self.huella,
+            "fecha": "2026-09-03", "version_perfil": 1,
+            "hojas": [{"nombre": "Catalogo", "tipo": "datos",
+                       "fila_encabezados": 2,
+                       "columnas": ["CLAVE", "NOMBRE"],
+                       "filas_datos": {"desde": 3, "hasta": 5},
+                       "clave_primaria": "CLAVE",
+                       "filas_total": [1]}]})
+        codigo, cuerpo = self._json_datos()
+        self.assertEqual(codigo, 200)
+        self.assertTrue(cuerpo["perfil_aplicado"])
+        hoja = cuerpo["hojas"]["Catalogo"]
+        self.assertEqual(hoja["encabezados"], ["CLAVE", "NOMBRE"])
+        self.assertEqual(hoja["datos"], self.filas[2:5])
+        self.assertEqual(hoja["totales"], [self.filas[0]])
+        self.assertEqual(hoja["fuera_de_rango"], 0)
+        self.assertFalse(hoja["requiere_revision"])
+
+    def test_fuera_de_rango_requiere_revision(self):
+        """DADO filas fuera del rango declarado (pérdida silenciosa,
+        corrección adversarial #4) CUANDO GET /datos ENTONCES
+        fuera_de_rango n>0 y requiere_revision true."""
+        self._escribir_perfil({
+            "id": ID, "huella_base": self.huella,
+            "fecha": "2026-09-03", "version_perfil": 1,
+            "hojas": [{"nombre": "Catalogo", "tipo": "datos",
+                       "fila_encabezados": 2,
+                       "columnas": ["CLAVE", "NOMBRE"],
+                       "filas_datos": {"desde": 3, "hasta": 4},
+                       "filas_total": [1]}]})
+        _codigo, cuerpo = self._json_datos()
+        hoja = cuerpo["hojas"]["Catalogo"]
+        self.assertEqual(hoja["fuera_de_rango"], 1)
+        self.assertTrue(hoja["requiere_revision"])
+    def test_etag_compuesto_y_304(self):
+        """DADO el ETag de una respuesta CUANDO se repite con
+        If-None-Match ENTONCES 304 sin cuerpo; DADO perfil corregido
+        con el MISMO archivo CUANDO se repite ENTONCES el ETag CAMBIA
+        (la huella sola no basta — corrección adversarial #1)."""
+        self._escribir_perfil({
+            "id": ID, "huella_base": self.huella,
+            "fecha": "2026-09-03", "version_perfil": 1,
+            "hojas": [{"nombre": "Catalogo", "tipo": "datos",
+                       "fila_encabezados": 2,
+                       "columnas": ["CLAVE", "NOMBRE"],
+                       "filas_datos": {"desde": 3, "hasta": 5}}]})
+        codigo, _cuerpo, encabezados = self._pedir(
+            "/fuentes/" + ID + "/datos")
+        self.assertEqual(codigo, 200)
+        etag = encabezados["ETag"]
+        self.assertTrue(etag)
+        self.assertEqual(encabezados["Cache-Control"],
+                         "public, max-age=86400")
+        self.assertEqual(
+            encabezados["X-Content-Type-Options"], "nosniff")
+        codigo_304, cuerpo_304, _enc = self._pedir(
+            "/fuentes/" + ID + "/datos",
+            encabezados={"If-None-Match": etag})
+        self.assertEqual(codigo_304, 304)
+        self.assertEqual(cuerpo_304, b"")
+        # Corregir el perfil con el mismo archivo cambia el ETag.
+        self._escribir_perfil({
+            "id": ID, "huella_base": self.huella,
+            "fecha": "2026-09-03", "version_perfil": 2,
+            "hojas": [{"nombre": "Catalogo", "tipo": "datos",
+                       "fila_encabezados": 2,
+                       "columnas": ["CLAVE", "NOMBRE"],
+                       "filas_datos": {"desde": 3, "hasta": 5}}]})
+        _codigo, cuerpo2, enc2 = self._pedir(
+            "/fuentes/" + ID + "/datos")
+        self.assertNotEqual(enc2["ETag"], etag)
+
+    def test_hoja_y_max_filas(self):
+        """DADO hoja inexistente ENTONCES 404; DADO max_filas=1 con
+        filas crudas ENTONCES truncado true; DADO max_filas inválido
+        ENTONCES 400."""
+        _codigo, _cuerpo = self._json_datos(
+            "/fuentes/" + ID + "/datos?hoja=NoExiste")
+        self.assertEqual(_codigo, 404)
+        _codigo, cuerpo = self._json_datos(
+            "/fuentes/" + ID + "/datos?max_filas=1")
+        self.assertEqual(_codigo, 200)
+        self.assertTrue(cuerpo["hojas"]["Catalogo"]["truncado"])
+        self.assertEqual(len(cuerpo["hojas"]["Catalogo"]["filas"]), 1)
+        codigo, _cuerpo = self._json_datos(
+            "/fuentes/" + ID + "/datos?max_filas=abc")
+        self.assertEqual(codigo, 400)
+
+    def test_integridad_alterada_409(self):
+        """DADO el archivo local alterado tras la verificación CUANDO
+        GET /datos ENTONCES 409 (el dato nunca se sirve alterado)."""
+        with open(self.ruta_xlsx, "ab") as archivo:
+            archivo.write(b"basura")
+        codigo, cuerpo = self._json_datos()
+        self.assertEqual(codigo, 409)
+        self.assertIn("integridad", cuerpo["error"])
+
+    def test_head_sin_cuerpo(self):
+        """DADO HEAD /datos CUANDO se atiende ENTONCES mismos
+        encabezados (ETag) sin cuerpo."""
+        codigo, cuerpo, encabezados = self._pedir(
+            "/fuentes/" + ID + "/datos", metodo="HEAD")
+        self.assertEqual(codigo, 200)
+        self.assertEqual(cuerpo, b"")
+        self.assertTrue(encabezados.get("ETag"))
+
+    def test_mcp_datos_fuente(self):
+        """DADO MCP inicializado CUANDO tools/call datos_fuente
+        ENTONCES resultado JSON con hojas y sin isError."""
+        cuerpo = {"jsonrpc": "2.0", "id": 7, "method": "tools/call",
+                  "params": {"name": "datos_fuente",
+                             "arguments": {"id": ID}}}
+        peticion = urllib.request.Request(
+            self.base + "/mcp",
+            data=json.dumps(cuerpo).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST")
+        with urllib.request.urlopen(peticion, timeout=10) as r:
+            r = json.loads(r.read())
+        resultado = r["result"]
+        self.assertFalse(resultado["isError"])
+        datos = json.loads(resultado["content"][0]["text"])
+        self.assertEqual(datos["id"], ID)
+        self.assertIn("Catalogo", datos["hojas"])
 
 
 if __name__ == "__main__":

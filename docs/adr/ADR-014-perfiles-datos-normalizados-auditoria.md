@@ -1,10 +1,13 @@
 # ADR-014: Perfiles estructurales, datos normalizados (nivel 2) y
 # auditoría por agente de IA
 
-Estado: aceptado (fase 1 implementada en esta misma rama: contrato
-`perfil-de-fuente v1` + validador `infosalud/perfiles.py` + SPEC-11
-+ tests; fases 2–4 —endpoint `/datos`, dimensiones, auditoría—
-pendientes, cada una con SPEC y tests propios)
+Estado: aceptado (fases 1-2 implementadas en esta misma rama:
+fase 1 — contrato `perfil-de-fuente v1` + validador
+`infosalud/perfiles.py` + SPEC-11 + tests; fase 2 — endpoint
+`/fuentes/{id}/datos` con ETag compuesto, 304, HEAD, tool MCP
+`datos_fuente`, módulo `infosalud/datos.py` + SPEC-12 + tests.
+Fases 3-4 — dimensiones, auditoría— pendientes, cada una con SPEC
+y tests propios)
 Fecha: 2026-09-03
 
 Contexto: el servicio (ADR-013) es un servidor de archivos con

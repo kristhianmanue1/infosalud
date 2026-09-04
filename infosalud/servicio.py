@@ -19,11 +19,19 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlsplit, parse_qs
 
 from infosalud import __version__
+from infosalud import datos
 from infosalud.catalogo import ErrorCatalogo, cargar_catalogo
+from infosalud.datos import TOP_FILAS_DEFECTO
 from infosalud.diccionario import (
     ErrorDiccionario,
     cargar as cargar_diccionario,
     ruta_diccionario,
+)
+from infosalud.exportar import MAX_FILAS
+from infosalud.perfiles import (
+    ErrorPerfil,
+    cargar as cargar_perfil,
+    ruta_perfil,
 )
 
 PROTOCOL_VERSION_MCP = "2025-06-18"
@@ -106,6 +114,7 @@ def _mapa(catalogo):
                       "/fuentes/{id}/campos", "/fuentes/{id}/historia",
                       "/fuentes/{id}/archivo",
                       "/fuentes/{id}/archivo/meta",
+                      "/fuentes/{id}/datos?hoja=&max_filas=",
                       "/fuentes/{id}/exportar?formato=csv|sqlite",
                       "POST /mcp (JSON-RPC 2.0)"],
     }
@@ -260,6 +269,43 @@ def _archivo_binario(ruta_catalogo, id_fuente):
             CONTENT_TYPES.get(extension, "application/octet-stream"))
 
 
+def _datos(ruta_catalogo, id_fuente, hoja=None, max_filas=None):
+    """Adaptador del nivel 2 (ADR-014 fase 2, SPEC-12): verifica
+    integridad y perímetro, carga el perfil y delega en
+    infosalud.datos.construir. Sin perfil el cuerpo lleva
+    `perfil_aplicado: false` — la normalización garantizada exige
+    perfil. Devuelve (cuerpo, etag)."""
+    if max_filas is None:
+        max_filas = TOP_FILAS_DEFECTO
+    if not isinstance(max_filas, int) or isinstance(max_filas, bool) \
+            or not 1 <= max_filas <= MAX_FILAS:
+        raise ErrorServicio(400, f"max_filas: entero 1..{MAX_FILAS}")
+    catalogo = _cargar_catalogo(ruta_catalogo)
+    fuente = _fuente(catalogo, id_fuente)
+    meta = _archivo_meta(ruta_catalogo, id_fuente)
+    if meta["estado_integridad"] != "verificado":
+        raise ErrorServicio(
+            409, "integridad alterada: el sha256 del archivo local "
+                 "no coincide con el registrado")
+    verificacion = _verificacion_con_archivo(fuente)
+    ruta = _ruta_confinada(ruta_catalogo, verificacion["ruta_local"])
+    try:
+        perfil = cargar_perfil(ruta_perfil(ruta_catalogo, id_fuente))
+    except ErrorPerfil as exc:
+        raise ErrorServicio(
+            500, f"perfil corrupto: {exc}") from exc
+    try:
+        return datos.construir(
+            ruta, id_fuente, perfil,
+            {"sha256": meta["sha256"],
+             "sha256_registrado": meta["sha256_registrado"],
+             "estado_integridad": meta["estado_integridad"],
+             "fecha_verificacion": meta["corte"]},
+            hoja, max_filas)
+    except datos.ErrorDatos as exc:
+        raise ErrorServicio(exc.codigo, exc.mensaje) from exc
+
+
 def _exportar_zip(ruta_catalogo, id_fuente, formato):
     """Corre fuente-exportar a directorio temporal y devuelve el zip
     con los productos (ADR-011); el temporal se elimina al salir."""
@@ -331,6 +377,17 @@ HERRAMIENTAS = [
                     "GET /fuentes/{id}/archivo.",
      "inputSchema": {"type": "object", "properties": {
          "id": {"type": "string"}}, "required": ["id"]}},
+    {"name": "datos_fuente",
+     "description": "Datos normalizados (nivel 2, ADR-014): filas "
+                    "del archivo verificado segmentadas por el "
+                    "perfil estructural (datos y totales aparte), "
+                    "con procedencia sha256 y ETag compuesto. Sin "
+                    "perfil sirve filas crudas (perfil_aplicado: "
+                    "false).",
+     "inputSchema": {"type": "object", "properties": {
+         "id": {"type": "string"},
+         "hoja": {"type": "string"},
+         "max_filas": {"type": "integer"}}, "required": ["id"]}},
     {"name": "exportar_fuente",
      "description": "Exporta el archivo verificado a CSV o SQLite con "
                     "evidencia (ADR-011) en el directorio de "
@@ -402,6 +459,11 @@ def _llamada_tool(ruta_catalogo, nombre, argumentos):
                 if fila["seccion"] == seccion]
             cobertura["total"] = len(cobertura["cobertura"])
         return cobertura
+    if nombre == "datos_fuente":
+        cuerpo, _etag = _datos(
+            ruta_catalogo, _obligatorio(argumentos, "id"),
+            argumentos.get("hoja"), argumentos.get("max_filas"))
+        return cuerpo
     if nombre == "exportar_fuente":
         return _exportar_resumen(
             ruta_catalogo, _obligatorio(argumentos, "id"),
@@ -488,20 +550,60 @@ class Manejador(BaseHTTPRequestHandler):
     server_version = "infosalud-servicio/" + __version__
     timeout = 30  # corta conexiones colgadas (Content-Length mentiroso)
 
+    _head = False  # HEAD: mismos encabezados, sin cuerpo (fase 2)
+
     def _autorizado(self):
         token = getattr(self.server, "token", None)
         if not token:
             return True
         return self.headers.get("Authorization", "") == f"Bearer {token}"
 
-    def _enviar_json(self, codigo, objeto):
+    def _enviar_json(self, codigo, objeto, encabezados=None):
         cuerpo = json.dumps(objeto, ensure_ascii=False).encode("utf-8")
         self.send_response(codigo)
         self.send_header("Content-Type",
                          "application/json; charset=utf-8")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        for clave, valor in (encabezados or {}).items():
+            self.send_header(clave, valor)
         self.send_header("Content-Length", str(len(cuerpo)))
         self.end_headers()
-        self.wfile.write(cuerpo)
+        if not self._head:
+            self.wfile.write(cuerpo)
+
+    def do_HEAD(self):  # noqa: N802 (API de http.server)
+        """HEAD = GET sin cuerpo (mismos encabezados; ADR-014 fase 2:
+        ETag/Cache-Control auditable sin transferir el contenido)."""
+        self._head = True
+        try:
+            self.do_GET()
+        finally:
+            self._head = False
+
+    def _enviar_datos(self, id_fuente, query):
+        """GET/HEAD /fuentes/{id}/datos con caching condicional:
+        304 ante If-None-Match; Cache-Control public sólo con API
+        abierto (con token: private, no-store — corrección #2)."""
+        max_filas = query.get("max_filas")
+        if max_filas is not None:
+            try:
+                max_filas = int(max_filas)
+            except ValueError:
+                raise ErrorServicio(400, "max_filas: entero") from None
+        cuerpo, etag = _datos(self.server.catalogo, id_fuente,
+                              query.get("hoja"), max_filas)
+        cache = ("private, no-store" if getattr(self.server, "token",
+                                                None)
+                 else "public, max-age=86400")
+        if self.headers.get("If-None-Match") == etag:
+            self.send_response(304)
+            self.send_header("ETag", etag)
+            self.send_header("Cache-Control", cache)
+            self.send_header("X-Content-Type-Options", "nosniff")
+            self.end_headers()
+            return
+        self._enviar_json(200, cuerpo,
+                          {"ETag": etag, "Cache-Control": cache})
 
     def do_GET(self):  # noqa: N802 (API de http.server)
         if not self._autorizado():
@@ -534,16 +636,22 @@ class Manejador(BaseHTTPRequestHandler):
                 if len(piezas) == 3 and piezas[2] == "historia":
                     return self._enviar_json(
                         200, _historia(catalogo, piezas[1]))
+                if len(piezas) == 3 and piezas[2] == "datos":
+                    return self._enviar_datos(piezas[1], query)
                 if len(piezas) == 3 and piezas[2] == "archivo":
                     datos, nombre, tipo = _archivo_binario(
                         self.server.catalogo, piezas[1])
                     self.send_response(200)
                     self.send_header("Content-Type", tipo)
+                    self.send_header("X-Content-Type-Options",
+                                     "nosniff")
                     self.send_header("Content-Disposition",
                                      f'attachment; filename="{nombre}"')
                     self.send_header("Content-Length", str(len(datos)))
                     self.end_headers()
-                    return self.wfile.write(datos)
+                    if not self._head:
+                        return self.wfile.write(datos)
+                    return
                 if (len(piezas) == 4 and piezas[2] == "archivo"
                         and piezas[3] == "meta"):
                     return self._enviar_json(
@@ -555,12 +663,16 @@ class Manejador(BaseHTTPRequestHandler):
                         query.get("formato", "csv"))
                     self.send_response(200)
                     self.send_header("Content-Type", "application/zip")
+                    self.send_header("X-Content-Type-Options",
+                                     "nosniff")
                     self.send_header("Content-Disposition",
                                      f'attachment; filename="{nombre}"')
                     self.send_header("Content-Length",
                                      str(len(cuerpo)))
                     self.end_headers()
-                    return self.wfile.write(cuerpo)
+                    if not self._head:
+                        return self.wfile.write(cuerpo)
+                    return
             raise ErrorServicio(404, f"ruta desconocida: {ruta}")
         except ErrorServicio as exc:
             return self._enviar_json(exc.codigo, {"error": exc.mensaje})

@@ -243,13 +243,32 @@ API JSON (Content-Type application/json en todos los casos):
        sha256_registrado, corte, fecha_descarga, url_origen_imss,
        origen: "IMSS", estado_integridad: verificado|alterado,
        estado_semantico: sin_evaluar, descarga_url}
+  GET /fuentes/{id}/datos?hoja=&max_filas=
+                          → datos normalizados (nivel 2, ADR-014
+                            fase 2, SPEC-12): {id, contrato:
+                            "datos-v1", perfil, perfil_aplicado,
+                            hojas_sin_perfil, procedencia {sha256,
+                            sha256_registrado, estado_integridad,
+                            fecha_verificacion}, hojas, etag}. Con
+                            perfil: filas segmentadas {encabezados,
+                            datos, totales, fuera_de_rango,
+                            requiere_revision, truncado}; sin perfil:
+                            filas crudas. ETag COMPUESTO (huella +
+                            sello del perfil + forma): 304 ante
+                            If-None-Match. Cache-Control: public,
+                            max-age=86400 con API abierto;
+                            private, no-store con token. 409 si la
+                            integridad viva difiere de la registrada
   GET /fuentes/{id}/exportar?formato=csv|sqlite
                          → zip en memoria con los productos de
                            fuente-exportar (ADR-011) generados en
                            directorio temporal por petición
 Errores HTTP: 400 E-VALID; 401 sin token válido; 404 E-NOEXISTE;
-405 método no permitido; 500 fallo de entorno (catálogo ausente o
-inválido). Cuerpo de error: {"error": mensaje}.
+405 método no permitido; 409 integridad alterada; 500 fallo de
+entorno (catálogo ausente o inválido). Cuerpo de error:
+{"error": mensaje}. HEAD disponible en las rutas GET (mismos
+encabezados, sin cuerpo). Toda respuesta lleva
+X-Content-Type-Options: nosniff.
 
 MCP (JSON-RPC 2.0; POST /mcp; modo sin sesión):
   initialize → protocolVersion "2025-06-18", capabilities {tools:{}},
@@ -257,6 +276,7 @@ MCP (JSON-RPC 2.0; POST /mcp; modo sin sesión):
   tools/list → mapa_servicio, buscar_fuentes(q, seccion?, formato?),
                detalle_fuente(id), diccionario_fuente(id),
                historia_fuente(id), archivo_fuente(id),
+               datos_fuente(id, hoja?, max_filas?),
                exportar_fuente(id, formato?)
   tools/call → {content: [{type: "text", text: <json>}], isError}
   Errores: -32601 método desconocido; -32602 parámetros/ herramienta

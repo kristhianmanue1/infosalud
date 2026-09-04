@@ -61,8 +61,9 @@ INFOSALUD_SERVICIO_TOKEN=... python3 -m infosalud servir
 API JSON de sólo lectura (`/`, `/healthz`, `/fuentes`,
 `/fuentes/{id}`, `/fuentes/{id}/campos`, `/fuentes/{id}/historia`,
 `/fuentes/{id}/archivo` —binario verificado—,
-`/fuentes/{id}/archivo/meta`, `/fuentes/{id}/exportar`) y MCP
-(JSON-RPC 2.0 en `POST /mcp`, 7 herramientas). Sólo stdlib; no muta
+`/fuentes/{id}/archivo/meta`, `/fuentes/{id}/datos`,
+`/fuentes/{id}/exportar`) y MCP
+(JSON-RPC 2.0 en `POST /mcp`, 8 herramientas). Sólo stdlib; no muta
 el catálogo ni descarga del portal (contrato `servicio-infosalud v1`).
 
 
