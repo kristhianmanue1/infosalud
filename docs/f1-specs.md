@@ -317,6 +317,11 @@ Casos:
   ENTONCES el ETag CAMBIA.
 - DADO el archivo alterado tras la verificación CUANDO GET /datos
   ENTONCES 409 y el contenido jamás se sirve.
+- DADO columnas_numericas y filas_total declaradas CUANDO GET
+  /datos ENTONCES la hoja incluye `conciliacion` con Σ(detalles)
+  comparada contra cada total (tolerancia declarada; parser
+  tolera comas de millar, $ y %); descuadres → `reconciliado:
+  false` con ejemplos, sin bloquear el dato.
 Invariantes:
 - La procedencia viaja con el dato (sha256 vivo en cada respuesta).
 - Sólo lectura; el catálogo no se muta; sin red.

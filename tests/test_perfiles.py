@@ -117,6 +117,45 @@ class PruebaValidarPerfil(unittest.TestCase):
         self.assertEqual(r["datos"], [["01", "5"], ["02", "7"]])
         self.assertEqual(r["fuera_de_rango"], 0)
 
+    def test_conciliacion_numerica(self):
+        """DADO columnas numéricas y fila de total declarada CUANDO
+        segmentar ENTONCES Σ(detalles) ≈ total con tolerancia;
+        DADO un total descuadrado ENTONCES reconciliado false con
+        ejemplos (parser tolera comas de millar)."""
+        from infosalud.datos import segmentar
+        declaracion = {"nombre": "H", "tipo": "datos",
+                       "fila_encabezados": 1,
+                       "columnas": ["CLAVE", "Poblacion"],
+                       "columnas_numericas": ["Poblacion"],
+                       "filas_datos": {"desde": 3, "hasta": 4},
+                       "filas_total": [1], "tolerancia": 0.005}
+        filas = [["Total Nacional", "56.17"],
+                 ["CLAVE", "Poblacion"],
+                 ["01", "20.5"],
+                 ["02", "35.67"]]
+        r = segmentar(declaracion, filas, 100)
+        c = r["conciliacion"]
+        self.assertTrue(c["reconciliado"])
+        self.assertEqual(c["filas"][0]["columnas_conciliadas"], 1)
+        filas[0] = ["Total Nacional", "99"]
+        r = segmentar(declaracion, filas, 100)
+        c = r["conciliacion"]
+        self.assertFalse(c["reconciliado"])
+        self.assertTrue(c["filas"][0]["ejemplos_descuadre"])
+
+    def test_conciliacion_no_aplica_sin_numericas(self):
+        """DADO filas_total sin columnas_numericas CUANDO segmentar
+        ENTONCES conciliacion es None (no se inventan sumas)."""
+        from infosalud.datos import segmentar
+        declaracion = {"nombre": "H", "tipo": "datos",
+                       "fila_encabezados": 1,
+                       "columnas": ["CLAVE", "Poblacion"],
+                       "filas_datos": {"desde": 2, "hasta": 3},
+                       "filas_total": [1]}
+        r = segmentar(declaracion,
+                      [["Total", "5"], ["01", "2"], ["02", "3"]], 100)
+        self.assertIsNone(r["conciliacion"])
+
     def test_clave_primaria_debe_estar_en_columnas(self):
         """DADO clave_primaria fuera de columnas ENTONCES rechazo."""
         hoja = dict(PERFIL_VALIDO["hojas"][0], clave_primaria="nope")

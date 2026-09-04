@@ -94,6 +94,78 @@ def construir(ruta_archivo, id_fuente, perfil, procedencia,
     return cuerpo, etag
 
 
+def _a_numero(valor):
+    """Convierte una celda a float (parser numérico tolerante:
+    comas de millar, $ y %); None si no es numérica."""
+    if isinstance(valor, (int, float)) and \
+            not isinstance(valor, bool):
+        return float(valor)
+    if not isinstance(valor, str):
+        return None
+    limpio = valor.strip().replace(",", "").replace("$", "")
+    limpio = limpio.replace("%", "").strip()
+    if not limpio or limpio in {"-", "--"}:
+        return None
+    try:
+        return float(limpio)
+    except ValueError:
+        return None
+
+
+def _conciliar(declaracion, filas, datos, filas_total_indices,
+               tolerancia):
+    """Reconciliación numérica (ADR-014, corrección adversarial #5):
+    para cada fila de total declarada y cada columna numérica,
+    compara Σ(detalles) contra el total con tolerancia relativa.
+    Devuelve el bloque 'conciliacion' o None si no aplica."""
+    columnas = declaracion.get("columnas") or []
+    numericas = declaracion.get("columnas_numericas") or []
+    if not numericas or not filas_total_indices:
+        return None
+    tolerancia = declaracion.get("tolerancia") or tolerancia
+    indices = [(i, c) for i, c in enumerate(columnas)
+               if c in numericas]
+    filas_reporte = []
+    reconciliado = True
+    for t in filas_total_indices:
+        if not 1 <= t <= len(filas):
+            continue
+        fila_total = filas[t - 1]
+        ok, mal, ejemplos = 0, 0, []
+        for indice, columna in indices:
+            if indice >= len(fila_total):
+                continue
+            total = _a_numero(fila_total[indice])
+            if total is None:
+                continue
+            suma = sum(
+                v for v in (_a_numero(fila[indice])
+                            for fila in datos
+                            if indice < len(fila))
+                if v is not None)
+            cuadra = abs(suma - total) <= tolerancia * max(
+                1.0, abs(total))
+            if cuadra:
+                ok += 1
+            else:
+                mal += 1
+                if len(ejemplos) < 3:
+                    ejemplos.append({"columna": columna,
+                                     "suma": suma, "total": total})
+        filas_reporte.append({
+            "fila": t,
+            "columnas_conciliadas": ok,
+            "columnas_descuadradas": mal,
+            **({"ejemplos_descuadre": ejemplos} if ejemplos else {}),
+        })
+        if mal:
+            reconciliado = False
+    if not filas_reporte:
+        return None
+    return {"reconciliado": reconciliado, "tolerancia": tolerancia,
+            "filas": filas_reporte}
+
+
 def segmentar(declaracion, filas, max_filas):
     """Aplica el rango declarado: los totales van aparte (separación,
     no eliminación). `fuera_de_rango` cuenta filas con contenido
@@ -113,6 +185,11 @@ def segmentar(declaracion, filas, max_filas):
     fuera = [i for i in range(hasta + 1, len(filas) + 1)
              if i not in totales_declarados
              and any(c not in ("", None) for c in filas[i - 1])]
+    conciliacion = None
+    if declaracion.get("filas_total") \
+            and declaracion.get("columnas_numericas"):
+        conciliacion = _conciliar(declaracion, filas, datos,
+                                  totales_declarados, 0.005)
     return {
         "tipo": "datos",
         "fila_encabezados": fila_enc,
@@ -127,6 +204,7 @@ def segmentar(declaracion, filas, max_filas):
         "fuera_de_rango": len(fuera),
         "requiere_revision": bool(fuera),
         "truncado": len(datos) > max_filas,
+        "conciliacion": conciliacion,
     }
 
 

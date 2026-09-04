@@ -44,6 +44,19 @@ Página índice `recursos-cuumsp-2025` + 11 cortes mensuales
   tablas por hoja, notas intercaladas). Requiere diseño antes de
   declarar rangos.
 
+## Diseño pendiente: hojas multi-bloque
+
+Las hojas multi-bloque (varias tablas con encabezados propios en
+una misma hoja, p. ej. `seguimiento-productividad-semanal-2025`)
+no se resuelven con un solo `filas_datos` por hoja. Propuesta de
+diseño (enmienda compatible futura): segmentos declarados —
+`segmentos: [{nombre, fila_encabezados, filas_datos, ...}]` por
+hoja, donde cada segmento es una tabla independiente; la respuesta
+de `/datos` expondría `hojas/{nombre}/segmentos/{nombre}`. Requiere
+enmienda del contrato + SPEC antes de implementar; el perfil
+actual (un rango por hoja) sigue siendo válido para hojas de tabla
+única.
+
 ## Hallazgos del perfilado
 
 - Los archivos SIAIS traen portada/títulos (filas 1-7) y

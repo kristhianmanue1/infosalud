@@ -1,0 +1,349 @@
+{
+  "id": "estadisticas-nacionales-cifras-2025",
+  "huella_base": "d9095b1d10dccceea2f61501d7be59c92a02bb8031fca7cc42a1648e2e950566",
+  "fecha": "2026-09-04",
+  "version_perfil": 1,
+  "hojas": [
+    {
+      "nombre": "Consultas",
+      "tipo": "datos",
+      "fila_encabezados": 3,
+      "fila_encabezados_sub": 4,
+      "columnas": [
+        "Clave ",
+        "Nombre OOAD o UMAE",
+        "Consulta Externa",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "filas_datos": {
+        "desde": 7,
+        "hasta": 67
+      },
+      "clave_primaria": "Clave ",
+      "filas_total": [
+        5,
+        6
+      ]
+    },
+    {
+      "nombre": "Egresos",
+      "tipo": "datos",
+      "fila_encabezados": 4,
+      "fila_encabezados_sub": 5,
+      "columnas": [
+        "Clave ",
+        "Nombre OOAD o UMAE",
+        "Atenciones Hospitalarias",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Atenciones Hospitalarias",
+        "",
+        "Atenciones Hospitalarias",
+        "",
+        "",
+        "Atenciones Hospitalarias",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "filas_datos": {
+        "desde": 9,
+        "hasta": 69
+      },
+      "clave_primaria": "Clave ",
+      "filas_total": [
+        7,
+        8
+      ]
+    },
+    {
+      "nombre": " Aux Dx",
+      "tipo": "datos",
+      "fila_encabezados": 3,
+      "fila_encabezados_sub": 4,
+      "columnas": [
+        "Clave ",
+        "Nombre OOAD o UMAE",
+        "Auxiliares de Diagnóstico (estudios o Sesiones)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "filas_datos": {
+        "desde": 7,
+        "hasta": 67
+      },
+      "clave_primaria": "Clave ",
+      "filas_total": [
+        5,
+        6
+      ]
+    },
+    {
+      "nombre": "Aux Tx",
+      "tipo": "datos",
+      "fila_encabezados": 3,
+      "fila_encabezados_sub": 4,
+      "columnas": [
+        "Clave ",
+        "Nombre OOAD o UMAE",
+        "Auxiliares de Tratamiento (estudios o Sesiones)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "filas_datos": {
+        "desde": 7,
+        "hasta": 67
+      },
+      "clave_primaria": "Clave ",
+      "filas_total": [
+        5,
+        6
+      ]
+    },
+    {
+      "nombre": "33 Procedimientos",
+      "tipo": "datos",
+      "fila_encabezados": 3,
+      "fila_encabezados_sub": 4,
+      "columnas": [
+        "Clave ",
+        "Nombre OOAD o UMAE",
+        "33 Procedimientos fuera de Quirofáno",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "filas_datos": {
+        "desde": 7,
+        "hasta": 67
+      },
+      "clave_primaria": "Clave ",
+      "filas_total": [
+        5,
+        6
+      ]
+    },
+    {
+      "nombre": "Atenciones Prof. de Salud",
+      "tipo": "datos",
+      "fila_encabezados": 3,
+      "fila_encabezados_sub": 4,
+      "columnas": [
+        "Clave ",
+        "Nombre OOAD o UMAE",
+        "",
+        "Atenciones Profesionales de Salud",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "filas_datos": {
+        "desde": 7,
+        "hasta": 67
+      },
+      "clave_primaria": "Clave ",
+      "filas_total": [
+        5,
+        6
+      ]
+    },
+    {
+      "nombre": "Mortalidad",
+      "tipo": "datos",
+      "fila_encabezados": 3,
+      "fila_encabezados_sub": 4,
+      "columnas": [
+        "Clave ",
+        "Nombre OOAD o UMAE",
+        "Defunciones",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "filas_datos": {
+        "desde": 7,
+        "hasta": 139
+      },
+      "clave_primaria": "Clave ",
+      "filas_total": [
+        5,
+        6
+      ]
+    },
+    {
+      "nombre": "PAMF Mes",
+      "tipo": "datos",
+      "fila_encabezados": 3,
+      "fila_encabezados_sub": 4,
+      "columnas": [
+        "Clave ",
+        "Nombre OOAD o UMAE",
+        "Población Adscrita a Médico Familiar (PAMF)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "filas_datos": {
+        "desde": 6,
+        "hasta": 40
+      },
+      "clave_primaria": "Clave ",
+      "filas_total": [
+        5
+      ]
+    },
+    {
+      "nombre": "Banco de Sangre",
+      "tipo": "datos",
+      "fila_encabezados": 10,
+      "fila_encabezados_sub": 11,
+      "columnas": [
+        "Clave ",
+        "Nombre OOAD o UMAE",
+        "B A N C O   D E   S A N G R E ",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "filas_datos": {
+        "desde": 14,
+        "hasta": 74
+      },
+      "clave_primaria": "Clave ",
+      "filas_total": [
+        12,
+        13
+      ]
+    },
+    {
+      "nombre": "Control",
+      "tipo": "otra"
+    }
+  ],
+  "notas": "Encabezado compuesto: fila de grupo + fila sub (Egresos tiene una tercera fila de encabezado en f6, no expuesta). Filas de total (Nacional / Total Delegaciones / Total OOAD) declaradas en filas_total, fuera del rango de datos. Fila final '**' de nota excluida del rango. columnas = fila de grupo tal como viene en el origen (celdas '' = celdas combinadas del grupo)."
+}
