@@ -22,11 +22,14 @@ CAMPOS_HOJA = {"nombre", "tipo", "fila_encabezados",
                "fila_encabezados_sub", "columnas",
                "filas_datos", "clave_primaria", "claves_foraneas",
                "columnas_numericas", "filas_total", "filas_nota",
-               "tolerancia", "segmentos"}
+               "tolerancia", "segmentos", "conciliaciones"}
 CAMPOS_SEGMENTO = {"nombre", "fila_encabezados",
                    "fila_encabezados_sub", "columnas",
                    "filas_datos", "clave_primaria", "filas_total",
-                   "columnas_numericas", "tolerancia"}
+                   "columnas_numericas", "tolerancia",
+                   "conciliaciones"}
+CAMPOS_CONCILIACION = {"nombre", "filas", "total_fila",
+                       "columnas", "tolerancia"}
 
 
 class ErrorPerfil(Exception):
@@ -165,6 +168,9 @@ def _validar_hojas(hojas):
                         "{desde, hasta}")
         errores.extend(_validar_rango(hoja, prefijo, columnas))
         errores.extend(_validar_tolerancia(hoja, prefijo))
+        if hoja.get("conciliaciones"):
+            errores.extend(_validar_conciliaciones(
+                hoja, prefijo, columnas or []))
     return errores
 
 
@@ -246,6 +252,62 @@ def _validar_segmentos(segmentos, prefijo):
                     f"{pref}.columnas_numericas: no declaradas en "
                     f"columnas: {', '.join(fuera)}")
         tolerancia = segmento.get("tolerancia")
+        if tolerancia is not None and (
+                not isinstance(tolerancia, (int, float))
+                or isinstance(tolerancia, bool) or tolerancia <= 0):
+            errores.append(
+                f"{pref}.tolerancia: no es número > 0")
+        if segmento.get("conciliaciones"):
+            errores.extend(_validar_conciliaciones(
+                segmento, pref, columnas or []))
+    return errores
+
+
+def _validar_conciliaciones(declaracion, prefijo, columnas):
+    """Valida los grupos de conciliación (enmienda 2026-09-04):
+    Σ(filas) ≈ total_fila por columna numérica, con semántica de
+    agregación explícita (qué filas suman a qué total)."""
+    errores = []
+    grupos = declaracion.get("conciliaciones")
+    if not isinstance(grupos, list) or not grupos:
+        return [f"{prefijo}.conciliaciones: falta (lista con al "
+                "menos un grupo)"]
+    for posicion, grupo in enumerate(grupos):
+        pref = f"{prefijo}.conciliaciones[{posicion}]"
+        if not isinstance(grupo, dict):
+            errores.append(f"{pref}: se esperaba un objeto")
+            continue
+        for campo in grupo:
+            if campo not in CAMPOS_CONCILIACION:
+                errores.append(
+                    f"{pref}: campo '{campo}' no declarado")
+        nombre = grupo.get("nombre")
+        if not isinstance(nombre, str) or not 1 <= len(nombre) <= 100:
+            errores.append(f"{pref}.nombre: falta o excede 1..100")
+        filas = grupo.get("filas")
+        if not isinstance(filas, list) or not filas or not all(
+                isinstance(f, int) and not isinstance(f, bool)
+                and f >= 1 for f in filas):
+            errores.append(
+                f"{pref}.filas: falta o no es lista de enteros >= 1")
+        total_fila = grupo.get("total_fila")
+        if not isinstance(total_fila, int) \
+                or isinstance(total_fila, bool) or total_fila < 1:
+            errores.append(
+                f"{pref}.total_fila: falta o no es entero >= 1")
+        elif isinstance(filas, list) and total_fila in filas:
+            errores.append(
+                f"{pref}.total_fila: la fila de total no puede ser "
+                "sumando de sí misma")
+        columnas_grupo = grupo.get("columnas")
+        if columnas_grupo is not None and isinstance(columnas, list):
+            fuera = [c for c in columnas_grupo
+                     if not isinstance(c, str) or c not in columnas]
+            if fuera:
+                errores.append(
+                    f"{pref}.columnas: no declaradas: "
+                    f"{', '.join(fuera)}")
+        tolerancia = grupo.get("tolerancia")
         if tolerancia is not None and (
                 not isinstance(tolerancia, (int, float))
                 or isinstance(tolerancia, bool) or tolerancia <= 0):

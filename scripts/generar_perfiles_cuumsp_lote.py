@@ -17,7 +17,6 @@ from infosalud.perfiles import guardar, ruta_perfil, validar
 CATALOGO = "data/fuentes.json"
 FECHA = "2026-09-04"
 FILA_ENCABEZADOS = 10
-CLAVE = "CLUES  Salud"
 HOJAS_DESCRIPTIVAS = {"Indice", "Diccionario", "Diccionari",
                       "Control de Cambios", "Histórico",
                       "Anexos COVID"}
@@ -51,33 +50,32 @@ def main():
             print(f"{id_fuente}: sin hoja 'Unidad Médica', se omite")
             fallos += 1
             continue
-        columnas = um[FILA_ENCABEZADOS - 1]
-        if CLAVE not in columnas:
-            # Algunas entregas (2021) intercalan notas antes del
-            # encabezado: localizar la fila con 'CLUES' en el
-            # prefijo de la hoja.
-            for i in range(FILA_ENCABEZADOS,
-                           min(FILA_ENCABEZADOS + 10, len(um))):
-                if CLAVE in um[i]:
-                    fila_enc_local = i + 1
-                    break
-            else:
-                print(f"{id_fuente}: '{CLAVE}' no en encabezados, "
-                      "se omite")
-                fallos += 1
-                continue
-            columnas = um[fila_enc_local - 1]
-            fila_enc = fila_enc_local
-        else:
-            fila_enc = FILA_ENCABEZADOS
+        # Localizar la fila de encabezados: contiene una celda con
+        # 'CLUES' (con uno o dos espacios según la entrega).
+        fila_enc = None
+        for i in range(FILA_ENCABEZADOS - 1,
+                       min(FILA_ENCABEZADOS + 20, len(um))):
+            if any(str(c).strip().upper().startswith("CLUES")
+                          for c in um[i]):
+                fila_enc = i + 1
+                break
+        if fila_enc is None:
+            print(f"{id_fuente}: sin fila de encabezados con CLUES, "
+                  "se omite")
+            fallos += 1
+            continue
+        columnas = um[fila_enc - 1]
+        clave_real = next(c for c in columnas
+                          if str(c).strip().upper().startswith("CLUES"))
         con = [i for i in range(fila_enc + 1, len(um) + 1)
-               if any(c.strip() for c in um[i - 1])]
+               if any(str(c).strip() for c in um[i - 1]
+                      if c is not None)]
         perfil_hojas = [{
             "nombre": "Unidad Médica", "tipo": "datos",
             "fila_encabezados": fila_enc,
             "columnas": columnas,
             "filas_datos": {"desde": con[0], "hasta": con[-1]},
-            "clave_primaria": CLAVE,
+            "clave_primaria": clave_real,
         }]
         for nombre in hojas_leidas:
             if nombre == "Unidad Médica":
@@ -101,7 +99,7 @@ def main():
         guardar(ruta_perfil(CATALOGO, id_fuente), perfil)
         ok += 1
         print(f"{id_fuente}: OK (datos {con[0]}..{con[-1]}, "
-              f"{len(columnas)} columnas)")
+              f"{len(columnas)} columnas, enc f{fila_enc})")
     print(f"--- lote terminado: {ok} OK, {fallos} omitidos/fallidos")
     return 1 if fallos and not ok else 0
 

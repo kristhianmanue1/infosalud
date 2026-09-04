@@ -166,6 +166,49 @@ def _conciliar(declaracion, filas, datos, filas_total_indices,
             "filas": filas_reporte}
 
 
+def _conciliar_grupo(declaracion, filas, grupo, tolerancia):
+    """Concilia un grupo declarado: Σ(filas del grupo) ≈ total_fila
+    por columna (semántica de agregación explícita, enmienda
+    2026-09-04). Devuelve el reporte del grupo o None si no aplica."""
+    columnas = declaracion.get("columnas") or []
+    objetivo = grupo.get("columnas") \
+        or declaracion.get("columnas_numericas") or []
+    total_fila = grupo.get("total_fila")
+    if not objetivo or not isinstance(total_fila, int) \
+            or not 1 <= total_fila <= len(filas):
+        return None
+    fila_total = filas[total_fila - 1]
+    indices = [(i, c) for i, c in enumerate(columnas)
+               if c in objetivo]
+    ok, mal, ejemplos = 0, 0, []
+    for indice, columna in indices:
+        if indice >= len(fila_total):
+            continue
+        total = _a_numero(fila_total[indice])
+        if total is None:
+            continue
+        suma = sum(
+            v for v in (_a_numero(filas[f - 1][indice])
+                        for f in grupo["filas"]
+                        if f - 1 < len(filas)
+                        and indice < len(filas[f - 1]))
+            if v is not None)
+        cuadra = abs(suma - total) <= tolerancia * max(
+            1.0, abs(total))
+        if cuadra:
+            ok += 1
+        else:
+            mal += 1
+            if len(ejemplos) < 3:
+                ejemplos.append({"columna": columna,
+                                 "suma": suma, "total": total})
+    return {"nombre": grupo["nombre"], "fila": total_fila,
+            "columnas_conciliadas": ok,
+            "columnas_descuadradas": mal,
+            **({"ejemplos_descuadre": ejemplos} if ejemplos else {}),
+            "reconciliado": mal == 0 and ok > 0}
+
+
 def segmentar(declaracion, filas, max_filas):
     """Hoja tipo datos: tabla única (campos de hoja) o multi-bloque
     (lista `segmentos`, enmienda 2026-09-04 — cada segmento es una
@@ -212,7 +255,24 @@ def _tabla(declaracion, filas, max_filas, nombre=None, fuera_hasta=None):
              and any(str(c).strip() for c in filas[i - 1]
                      if c is not None)]
     conciliacion = None
-    if declaracion.get("filas_total") \
+    grupos = declaracion.get("conciliaciones") or []
+    if grupos:
+        # Semántica de agregación explícita: sólo los grupos
+        # declarados se concilian (el Σ ciego sobre todas las filas
+        # no reproduce totales por nivel).
+        conciliacion = {"reconciliado": True, "tolerancia": 0.005,
+                        "filas": [], "grupos": []}
+        for grupo in grupos:
+            reporte = _conciliar_grupo(declaracion, filas, grupo,
+                                       0.005)
+            if reporte is None:
+                continue
+            conciliacion["grupos"].append(reporte)
+            if not reporte["reconciliado"]:
+                conciliacion["reconciliado"] = False
+        if not conciliacion["grupos"]:
+            conciliacion = None
+    elif declaracion.get("filas_total") \
             and declaracion.get("columnas_numericas"):
         conciliacion = _conciliar(declaracion, filas, datos,
                                   totales_declarados, 0.005)

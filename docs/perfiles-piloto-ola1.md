@@ -69,16 +69,28 @@ evidencia del intento.
 
 ## Perfiles por lote de los cortes CUUMSP (2026-09-04)
 
-`scripts/generar_perfiles_cuumsp_lote.py`: 53 cortes CUUMSP
-(2021–2026) perfilados por lote con su patrón común (hoja
-'Unidad Médica', encabezados en fila 10 — fila 13 en 2021, con
-notas intercaladas—, clave `CLUES  Salud`, 37-40 columnas;
-hojas no tabulares declaradas descriptivas). 6 cortes de 2021
-requirieron localización dinámica del encabezado. Corrección
-incluida: `fuera_de_rango` ignora celdas de sólo espacios
-(artefacto real detectado en dic-2021 f1472). Verificado en vivo:
-`perfil_aplicado: true` y `fuera_de_rango: 0` en los cortes
-sondeados de cada año. Total de perfiles en `data/perfiles/`: 60.
+`scripts/generar_perfiles_cuumsp_lote.py`: los 67 cortes CUUMSP
+xlsx (2021–2026, incluidos los 14 de las brechas) perfilados por
+lote: hoja 'Unidad Médica' con encabezado localizado dinámicamente
+(fila 10; fila 13 en 2021 que intercala notas), clave
+`CLUES  Salud`, 37-40 columnas; hojas no tabulares declaradas
+descriptivas. Correcciones incluidas: `fuera_de_rango` ignora
+celdas de sólo espacios (artefacto real en dic-2021 f1472) y la
+búsqueda de encabezado exige celda que INICIE con 'CLUES' (la nota
+de 2021 menciona CLUES dentro de una URL). Verificado en vivo:
+`perfil_aplicado: true`, `fuera_de_rango: 0` en cortes de cada año.
+Total de perfiles en `data/perfiles/`: 75.
+
+### Serie CUUMSP cerrada
+
+Con las brechas localizadas en el fragmento `seccion/6` (páginas
+`cuumsp2021n`, `cuumsp202312`, `cuumsp202401n`), la serie 2021–2026
+quedó completa: 12 cortes por año (2021: 12, 2022: 12, 2023: 12,
+2024: 12, 2025: 13, 2026: 8+agosto) + páginas índice registradas
+(`recursos-cuumsp-2021n/2022/202312/202401n/2025/2026`). Sólo
+`recursos-cuumsp-mayo-2023` permanece `inaccesible` (el archivo no
+existe en el portal en ninguna variante de nombre). Además, el
+fragmento revela páginas para 2012–2020: material de olas futuras.
 
 ## columnas_numericas activadas (2026-09-04, v2)
 

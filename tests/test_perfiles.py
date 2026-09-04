@@ -257,6 +257,42 @@ class PruebaValidarPerfil(unittest.TestCase):
         self.assertTrue(all(s["fuera_de_rango"] == 0
                             for s in segmentos))
 
+    def test_conciliaciones_por_grupo(self):
+        """DADO grupos de agregación declarados (enmienda
+        2026-09-04) CUANDO segmentar ENTONCES cada grupo concilia
+        Σ(sus filas) contra su total; DADO un grupo descuadrado
+        ENTONCES reconciliado false nombrando el grupo. El chequeo
+        ciego de filas_total se suprime al haber semántica."""
+        from infosalud.datos import segmentar
+        declaracion = {"nombre": "H", "tipo": "datos",
+                       "fila_encabezados": 1,
+                       "columnas": ["CLAVE", "TOTAL"],
+                       "columnas_numericas": ["TOTAL"],
+                       "filas_datos": {"desde": 2, "hasta": 6},
+                       "conciliaciones": [
+                           {"nombre": "Delegaciones",
+                            "filas": [2], "total_fila": 3},
+                           {"nombre": "UMAE",
+                            "filas": [4, 5], "total_fila": 6}]}
+        filas = [["CLAVE", "TOTAL"],
+                 ["01", "100"],                      # delegación
+                 ["Total Delegaciones", "100"],      # f3 total
+                 ["4A", "10"], ["4B", "20"],         # UMAE
+                 ["Total UMAE", "30"]]               # f6 total
+        r = segmentar(declaracion, filas, 100)
+        c = r["conciliacion"]
+        self.assertTrue(c["reconciliado"])
+        self.assertEqual([g["nombre"] for g in c["grupos"]],
+                         ["Delegaciones", "UMAE"])
+        filas[1] = ["01", "999"]  # romper el grupo Delegaciones
+        r = segmentar(declaracion, filas, 100)
+        c = r["conciliacion"]
+        self.assertFalse(c["reconciliado"])
+        deleg = next(g for g in c["grupos"]
+                     if g["nombre"] == "Delegaciones")
+        self.assertFalse(deleg["reconciliado"])
+        self.assertTrue(deleg["ejemplos_descuadre"])
+
     def test_segmentar_ignora_celdas_basura(self):
         """DADO filas posteriores al rango con celdas de sólo
         espacios o apóstrofes (artefactos de conversión) CUANDO

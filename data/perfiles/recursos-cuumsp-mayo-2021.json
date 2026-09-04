@@ -1,0 +1,78 @@
+{
+  "id": "recursos-cuumsp-mayo-2021",
+  "huella_base": "f80cfdc9bc9a00e458dd596704f556783e8bc87a6bdbfc0d7e295ae9bb2301aa",
+  "fecha": "2026-09-04",
+  "version_perfil": 1,
+  "hojas": [
+    {
+      "nombre": "Unidad Médica",
+      "tipo": "datos",
+      "fila_encabezados": 13,
+      "columnas": [
+        "Región 2021",
+        "CLUES  Salud",
+        "Clave Personal",
+        "Unidad de Información PREI",
+        "Clave Ubicación Admin.",
+        "Clave Presupuestal",
+        "Clave Delegación o UMAE",
+        "Nombre Delegación o UMAE",
+        "Relación Delegación-UMAE",
+        "Unidad Presupuestal",
+        "Nivel de Atención ",
+        "Denominación Unidad",
+        "Tipo de Servicio",
+        "Descripción Tipo Servicio",
+        "Número de Unidad",
+        "Nombre Unidad",
+        "Ubicación o Denominación",
+        "Dirección",
+        "Tipo de Vialidad",
+        "Nombre de Vialidad",
+        "Entre Vialidades",
+        "Número Exterior",
+        "Tipo de Asentamiento",
+        "Nombre del Asentamiento",
+        "Código postal",
+        "Clave Municipio o Delegación ",
+        "Municipio o Delegación ",
+        "Clave Localidad",
+        "Localidad",
+        "Clave Entidad Federativa",
+        "Entidad Federativa",
+        "Clave Jurisdicción Sanitaria",
+        "Jurisdicción Sanitaria",
+        "Latitud",
+        "Longitud",
+        "Inicio de Productividad",
+        "Grado de Marginación"
+      ],
+      "filas_datos": {
+        "desde": 14,
+        "hasta": 1468
+      },
+      "clave_primaria": "CLUES  Salud"
+    },
+    {
+      "nombre": "Indice",
+      "tipo": "descriptiva"
+    },
+    {
+      "nombre": "Anexos COVID",
+      "tipo": "descriptiva"
+    },
+    {
+      "nombre": "Diccionari",
+      "tipo": "descriptiva"
+    },
+    {
+      "nombre": "Control de Cambios",
+      "tipo": "descriptiva"
+    },
+    {
+      "nombre": "Histórico",
+      "tipo": "descriptiva"
+    }
+  ],
+  "notas": "Perfil por lote (patrón común de la entrega mensual). Sin filas de total declaradas: verificación de totales pendiente (fase 3). Hojas tabulares secundarias aún sin declarar."
+}
