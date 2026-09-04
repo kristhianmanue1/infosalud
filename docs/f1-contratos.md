@@ -331,6 +331,19 @@ Entrada (campos cerrados):
           cada uno >= 1, FUERA del rango de datos] — filas de nota
           al pie conocidas (ej. '** Conforme a lo indicado...'); no
           cuentan como fuera_de_rango ni entran al dato
+    segmentos: lista [opcional, enmienda 2026-09-04, >= 2] de
+          {nombre: string [1..100, único], fila_encabezados: entero
+          >= 1, fila_encabezados_sub: entero opcional, columnas:
+          lista de string, filas_datos: {desde, hasta},
+          clave_primaria: string opcional, filas_total: lista de
+          enteros opcional (FUERA del rango del segmento),
+          columnas_numericas: lista opcional, tolerancia: número
+          opcional > 0} — declara las tablas independientes de una
+          hoja multi-bloque; al usarla, los campos fila_
+          encabezados/columnas/filas_datos/clave_primaria/columnas_
+          numericas se declaran dentro de cada segmento, no en la
+          hoja; el fuera_de_rango de cada segmento se acota a su
+          bloque (hasta el encabezado del siguiente)
     columnas: lista de string [opcional; obligatoria cuando
           tipo=datos]
     filas_datos: {desde: entero >= 1, hasta: entero >= desde}

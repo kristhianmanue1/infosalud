@@ -117,6 +117,47 @@ class PruebaValidarPerfil(unittest.TestCase):
         self.assertEqual(r["datos"], [["01", "5"], ["02", "7"]])
         self.assertEqual(r["fuera_de_rango"], 0)
 
+    def test_segmentos_validos_e_invalidos(self):
+        """DADO una hoja multi-bloque CUANDO se valida ENTONCES
+        acepta ≥2 segmentos con nombre único y rechaza: un solo
+        segmento, campos de hoja junto a segmentos, nombres
+        duplicados y totales dentro del rango del segmento."""
+        segmento_a = {"nombre": "Medicina Familiar",
+                      "fila_encabezados": 14,
+                      "columnas": ["OOAD/UMAE", "2019", "2020"],
+                      "filas_datos": {"desde": 17, "hasta": 76}}
+        segmento_b = {"nombre": "Especialidades",
+                      "fila_encabezados": 14,
+                      "columnas": ["OOAD/UMAE", "2019", "2020"],
+                      "filas_datos": {"desde": 17, "hasta": 76}}
+        ok = dict(PERFIL_VALIDO["hojas"][0])
+        hoja_multi = {"nombre": "Multi", "tipo": "datos",
+                      "segmentos": [segmento_a, segmento_b]}
+        self.assertEqual(validar(dict(PERFIL_VALIDO,
+                                      hojas=[hoja_multi])), [])
+        # un solo segmento no tiene sentido
+        uno = dict(hoja_multi, segmentos=[segmento_a])
+        self.assertTrue(any("segmentos" in e
+                            for e in validar(dict(PERFIL_VALIDO,
+                                                  hojas=[uno]))))
+        # campo de hoja junto a segmentos
+        mezcla = dict(hoja_multi, filas_datos={"desde": 1,
+                                               "hasta": 2})
+        self.assertTrue(any("filas_datos" in e
+                            for e in validar(dict(PERFIL_VALIDO,
+                                                  hojas=[mezcla]))))
+        # nombre duplicado
+        dup = dict(hoja_multi, segmentos=[segmento_a, segmento_a])
+        self.assertTrue(any("duplicado" in e
+                            for e in validar(dict(PERFIL_VALIDO,
+                                                  hojas=[dup]))))
+        # total dentro del rango del segmento
+        con_total = dict(segmento_a, filas_total=[20])
+        mal = dict(hoja_multi, segmentos=[con_total, segmento_b])
+        self.assertTrue(any("filas_total" in e
+                            for e in validar(dict(PERFIL_VALIDO,
+                                                  hojas=[mal]))))
+
     def test_conciliacion_numerica(self):
         """DADO columnas numéricas y fila de total declarada CUANDO
         segmentar ENTONCES Σ(detalles) ≈ total con tolerancia;
@@ -183,6 +224,38 @@ class PruebaValidarPerfil(unittest.TestCase):
         r = segmentar(declaracion, filas, 100)
         self.assertEqual(r["fuera_de_rango"], 1)  # sólo la 99 NUEVA
         self.assertTrue(r["requiere_revision"])
+
+    def test_segmentar_multi_bloque(self):
+        """DADO una hoja con dos segmentos CUANDO segmentar ENTONCES
+        la respuesta trae cada tabla independiente con su nombre,
+        encabezados, datos y totales."""
+        from infosalud.datos import segmentar
+        declaracion = {"nombre": "Multi", "tipo": "datos",
+                       "segmentos": [
+                           {"nombre": "Medicina Familiar",
+                            "fila_encabezados": 1,
+                            "columnas": ["OOAD", "2019"],
+                            "filas_datos": {"desde": 2, "hasta": 3},
+                            "filas_total": []},
+                           {"nombre": "Especialidades",
+                            "fila_encabezados": 5,
+                            "columnas": ["OOAD", "2019"],
+                            "filas_datos": {"desde": 6, "hasta": 7},
+                            "filas_total": []}]}
+        filas = [["OOAD", "2019"], ["AGU", "10"], ["BCN", "20"],
+                 ["", ""], ["OOAD", "2019"], ["AGU", "1"],
+                 ["BCN", "2"], ["", ""]]
+        r = segmentar(declaracion, filas, 100)
+        self.assertEqual(r["tipo"], "datos")
+        segmentos = r["segmentos"]
+        self.assertEqual([s["nombre"] for s in segmentos],
+                         ["Medicina Familiar", "Especialidades"])
+        self.assertEqual(segmentos[0]["datos"],
+                         [["AGU", "10"], ["BCN", "20"]])
+        self.assertEqual(segmentos[1]["datos"],
+                         [["AGU", "1"], ["BCN", "2"]])
+        self.assertTrue(all(s["fuera_de_rango"] == 0
+                            for s in segmentos))
 
     def test_segmentar_ignora_celdas_basura(self):
         """DADO filas posteriores al rango con celdas de sólo

@@ -22,7 +22,11 @@ CAMPOS_HOJA = {"nombre", "tipo", "fila_encabezados",
                "fila_encabezados_sub", "columnas",
                "filas_datos", "clave_primaria", "claves_foraneas",
                "columnas_numericas", "filas_total", "filas_nota",
-               "tolerancia"}
+               "tolerancia", "segmentos"}
+CAMPOS_SEGMENTO = {"nombre", "fila_encabezados",
+                   "fila_encabezados_sub", "columnas",
+                   "filas_datos", "clave_primaria", "filas_total",
+                   "columnas_numericas", "tolerancia"}
 
 
 class ErrorPerfil(Exception):
@@ -139,16 +143,114 @@ def _validar_hojas(hojas):
             errores.append(
                 f"{prefijo}.columnas: falta o no es lista de textos")
         if tipo == "datos":
-            if not isinstance(columnas, list) or not columnas:
-                errores.append(
-                    f"{prefijo}: tipo 'datos' exige columnas "
-                    "declaradas")
-            if not isinstance(hoja.get("filas_datos"), dict):
-                errores.append(
-                    f"{prefijo}: tipo 'datos' exige filas_datos "
-                    "{desde, hasta}")
+            if hoja.get("segmentos"):
+                for campo in ("fila_encabezados", "columnas",
+                              "filas_datos", "clave_primaria",
+                              "columnas_numericas"):
+                    if hoja.get(campo) is not None:
+                        errores.append(
+                            f"{prefijo}: con 'segmentos', el campo "
+                            f"'{campo}' se declara dentro de cada "
+                            "segmento, no en la hoja")
+                errores.extend(_validar_segmentos(
+                    hoja["segmentos"], prefijo))
+            else:
+                if not isinstance(columnas, list) or not columnas:
+                    errores.append(
+                        f"{prefijo}: tipo 'datos' exige columnas "
+                        "declaradas")
+                if not isinstance(hoja.get("filas_datos"), dict):
+                    errores.append(
+                        f"{prefijo}: tipo 'datos' exige filas_datos "
+                        "{desde, hasta}")
         errores.extend(_validar_rango(hoja, prefijo, columnas))
         errores.extend(_validar_tolerancia(hoja, prefijo))
+    return errores
+
+
+def _validar_segmentos(segmentos, prefijo):
+    """Valida los segmentos de una hoja multi-bloque (enmienda
+    2026-09-04): cada segmento es una tabla con nombre único y las
+    mismas reglas de rango/clave/totales que una hoja."""
+    errores = []
+    if not isinstance(segmentos, list) or len(segmentos) < 2:
+        return [f"{prefijo}.segmentos: se esperaba una lista con al "
+                "menos dos segmentos (una tabla única no requiere "
+                "segmentos)"]
+    nombres = set()
+    for posicion, segmento in enumerate(segmentos):
+        pref = f"{prefijo}.segmentos[{posicion}]"
+        if not isinstance(segmento, dict):
+            errores.append(f"{pref}: se esperaba un objeto")
+            continue
+        for campo in segmento:
+            if campo not in CAMPOS_SEGMENTO:
+                errores.append(
+                    f"{pref}: campo '{campo}' no declarado")
+        nombre = segmento.get("nombre")
+        if not isinstance(nombre, str) or not 1 <= len(nombre) <= 100:
+            errores.append(f"{pref}.nombre: falta o excede 1..100")
+            continue
+        pref = f"{prefijo}.segmentos[{nombre}]"
+        if nombre in nombres:
+            errores.append(f"{pref}: nombre de segmento duplicado")
+        nombres.add(nombre)
+        fila_enc = segmento.get("fila_encabezados")
+        if not isinstance(fila_enc, int) or isinstance(fila_enc, bool) \
+                or fila_enc < 1:
+            errores.append(
+                f"{pref}.fila_encabezados: falta o no es entero >= 1")
+        columnas = segmento.get("columnas")
+        if not isinstance(columnas, list) or not columnas \
+                or not all(isinstance(c, str) for c in columnas):
+            errores.append(
+                f"{pref}.columnas: falta o no es lista de textos")
+        rango = segmento.get("filas_datos")
+        if not isinstance(rango, dict) or not isinstance(
+                rango.get("desde"), int) or isinstance(
+                rango.get("desde"), bool) or rango.get("desde", 0) < 1 \
+                or rango.get("hasta", 0) < rango.get("desde", 1):
+            errores.append(
+                f"{pref}.filas_datos: se esperaba {{desde, hasta}} "
+                "enteros con 1 <= desde <= hasta")
+        clave = segmento.get("clave_primaria")
+        if clave is not None:
+            if not isinstance(clave, str) or not 1 <= len(clave) <= 100:
+                errores.append(
+                    f"{pref}.clave_primaria: excede 1..100")
+            elif isinstance(columnas, list) and clave not in columnas:
+                errores.append(
+                    f"{pref}.clave_primaria: '{clave}' no está en "
+                    "columnas")
+        filas_total = segmento.get("filas_total")
+        if filas_total is not None:
+            if not isinstance(filas_total, list) or not all(
+                    isinstance(f, int) and not isinstance(f, bool)
+                    and f >= 1 for f in filas_total):
+                errores.append(
+                    f"{pref}.filas_total: no es lista de enteros >= 1")
+            elif isinstance(rango, dict) and isinstance(
+                    rango.get("desde"), int):
+                if any(rango["desde"] <= f <= rango["hasta"]
+                       for f in filas_total):
+                    errores.append(
+                        f"{pref}.filas_total: una fila de total está "
+                        "dentro del rango del segmento (FUERA, "
+                        "ADR-014)")
+        numericas = segmento.get("columnas_numericas")
+        if numericas is not None and isinstance(columnas, list):
+            fuera = [c for c in numericas
+                     if not isinstance(c, str) or c not in columnas]
+            if fuera:
+                errores.append(
+                    f"{pref}.columnas_numericas: no declaradas en "
+                    f"columnas: {', '.join(fuera)}")
+        tolerancia = segmento.get("tolerancia")
+        if tolerancia is not None and (
+                not isinstance(tolerancia, (int, float))
+                or isinstance(tolerancia, bool) or tolerancia <= 0):
+            errores.append(
+                f"{pref}.tolerancia: no es número > 0")
     return errores
 
 

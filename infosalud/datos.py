@@ -167,6 +167,29 @@ def _conciliar(declaracion, filas, datos, filas_total_indices,
 
 
 def segmentar(declaracion, filas, max_filas):
+    """Hoja tipo datos: tabla única (campos de hoja) o multi-bloque
+    (lista `segmentos`, enmienda 2026-09-04 — cada segmento es una
+    tabla independiente con nombre, rango y totales propios)."""
+    if declaracion.get("segmentos"):
+        segmentos = declaracion["segmentos"]
+        resultados = []
+        for i, segmento in enumerate(segmentos):
+            # Ventana de fuera_de_rango acotada al bloque: termina
+            # donde inicia el encabezado del siguiente segmento.
+            fuera_hasta = None
+            if i + 1 < len(segmentos):
+                siguiente = segmentos[i + 1].get("fila_encabezados")
+                fuera_hasta = (siguiente - 1
+                               if isinstance(siguiente, int)
+                               else None)
+            resultados.append(_tabla(segmento, filas, max_filas,
+                                     nombre=segmento.get("nombre"),
+                                     fuera_hasta=fuera_hasta))
+        return {"tipo": "datos", "segmentos": resultados}
+    return _tabla(declaracion, filas, max_filas)
+
+
+def _tabla(declaracion, filas, max_filas, nombre=None, fuera_hasta=None):
     """Aplica el rango declarado: los totales van aparte (separación,
     no eliminación). `fuera_de_rango` cuenta filas con contenido
     DESPUÉS del rango (hasta) no declaradas como totales — el caso
@@ -182,7 +205,8 @@ def segmentar(declaracion, filas, max_filas):
     def _fila(n):
         return filas[n - 1] if n and n <= len(filas) else None
 
-    fuera = [i for i in range(hasta + 1, len(filas) + 1)
+    limite = fuera_hasta if fuera_hasta is not None else len(filas)
+    fuera = [i for i in range(hasta + 1, limite + 1)
              if i not in totales_declarados
              and i not in notas_declaradas
              and any(str(c).strip() for c in filas[i - 1]
@@ -207,6 +231,7 @@ def segmentar(declaracion, filas, max_filas):
         "requiere_revision": bool(fuera),
         "truncado": len(datos) > max_filas,
         "conciliacion": conciliacion,
+        **({"nombre": nombre} if nombre else {}),
     }
 
 
