@@ -17,6 +17,7 @@ import sys
 from infosalud import __version__
 from infosalud.catalogo import (
     ErrorCatalogo,
+    bloque_catalogo,
     cargar_catalogo,
     guardar_catalogo,
     validar_fuente,
@@ -209,20 +210,26 @@ def _fuente_alta(args):
         print(f"ERROR: {error}", file=sys.stderr)
     if errores:
         return 1
+    # ADR-015 (SPEC-10): todo el read-modify-write dentro del lock.
     try:
-        catalogo = cargar_catalogo(args.catalogo)
+        with bloque_catalogo(args.catalogo):
+            catalogo = cargar_catalogo(args.catalogo)
+            if _buscar_fuente(catalogo, fuente["id"]) is not None:
+                return _salir(args,
+                              f"id: duplicado '{fuente['id']}'", 1)
+            # Ronda adversarial 2026-09-03: parent_source_id debe
+            # apuntar a una fuente ya registrada (sin referencias
+            # colgantes).
+            parent = fuente.get("parent_source_id")
+            if parent is not None and _buscar_fuente(
+                    catalogo, parent) is None:
+                return _salir(args,
+                              f"parent_source_id: no existe '{parent}'",
+                              1)
+            catalogo["fuentes"].append(fuente)
+            guardar_catalogo(args.catalogo, catalogo)
     except ErrorCatalogo as exc:
         return _salir(args, str(exc), 1)
-    if _buscar_fuente(catalogo, fuente["id"]) is not None:
-        return _salir(args, f"id: duplicado '{fuente['id']}'", 1)
-    # Ronda adversarial 2026-09-03: parent_source_id debe apuntar a
-    # una fuente ya registrada (sin referencias colgantes).
-    parent = fuente.get("parent_source_id")
-    if parent is not None and _buscar_fuente(catalogo, parent) is None:
-        return _salir(args,
-                      f"parent_source_id: no existe '{parent}'", 1)
-    catalogo["fuentes"].append(fuente)
-    guardar_catalogo(args.catalogo, catalogo)
     _emitir(args, {"alta": "ok", "fuente": fuente},
             f"alta: {fuente['id']}")
     return 0
@@ -522,20 +529,22 @@ def _agregar_verificacion(catalogo_ruta, catalogo, fuente, ruta,
 
 
 def _vigencia_registrar(args):
+    # ADR-015 (SPEC-10): todo el read-modify-write dentro del lock.
     try:
-        catalogo = cargar_catalogo(args.catalogo)
+        with bloque_catalogo(args.catalogo):
+            catalogo = cargar_catalogo(args.catalogo)
+            fuente = _buscar_fuente(catalogo, args.id)
+            if fuente is None:
+                return _salir(args, f"id inexistente: '{args.id}'", 2)
+            if not isinstance(fuente.get("verificaciones"), list):
+                return _salir(
+                    args,
+                    f"fuente '{args.id}' sin 'verificaciones' "
+                    "(catálogo inválido)", 1)
+            verificacion = _agregar_verificacion(
+                args.catalogo, catalogo, fuente, args.archivo)
     except ErrorCatalogo as exc:
         return _salir(args, str(exc), 1)
-    fuente = _buscar_fuente(catalogo, args.id)
-    if fuente is None:
-        return _salir(args, f"id inexistente: '{args.id}'", 2)
-    if not isinstance(fuente.get("verificaciones"), list):
-        return _salir(
-            args,
-            f"fuente '{args.id}' sin 'verificaciones' (catálogo inválido)",
-            1)
-    verificacion = _agregar_verificacion(
-        args.catalogo, catalogo, fuente, args.archivo)
     if verificacion["resultado"] == "inaccesible":
         return _salir(
             args, f"archivo ilegible: {verificacion['causa']}", 1)
@@ -551,50 +560,58 @@ def _vigencia_verificar(args):
     """Descarga la fuente (GET sólo lectura, ADR-008) y registra la
     verificación con evidencia. Fail-closed: todo fallo queda como
     `inaccesible` con causa; nunca éxito inferido."""
+    # ADR-015 (SPEC-10): todo el read-modify-write dentro del lock,
+    # incluida la descarga (serializa escritores, no lectores).
     try:
-        catalogo = cargar_catalogo(args.catalogo)
+        with bloque_catalogo(args.catalogo):
+            catalogo = cargar_catalogo(args.catalogo)
+            fuente = _buscar_fuente(catalogo, args.id)
+            if fuente is None:
+                return _salir(args, f"id inexistente: '{args.id}'", 2)
+            if not isinstance(fuente.get("verificaciones"), list):
+                return _salir(
+                    args,
+                    f"fuente '{args.id}' sin 'verificaciones' "
+                    "(catálogo inválido)", 1)
+            if not fuente.get("url"):
+                return _salir(
+                    args, f"fuente '{args.id}' sin url registrada", 1)
+            url = fuente["url"]
+            url_previa = None
+            if fuente.get("url_listado"):
+                try:
+                    enlaces = listar_archivos(fuente["url_listado"])
+                except ErrorRed as exc:
+                    return _salir(
+                        args, f"listado histórico ilegible: {exc}", 1)
+                if not enlaces:
+                    return _salir(
+                        args, "listado histórico sin enlaces a "
+                        "archivos: no se descarga nada "
+                        "(fail-closed, ADR-012)", 1)
+                _texto, url_ultima = mas_reciente(enlaces)
+                if url_ultima != url:
+                    url_previa, url = url, url_ultima
+            destino = (args.destino
+                       or _destino_por_defecto(url, args.id))
+            try:
+                descargar(url, destino, fuente.get("formato", "otro"))
+            except (ErrorRed, OSError) as exc:
+                verificacion = _agregar_verificacion(
+                    args.catalogo, catalogo, fuente, destino,
+                    causa=str(exc))
+                return _salir(args, f"descarga fallida: "
+                              f"{verificacion['causa']}", 1)
+            if url_previa:
+                # Giro de versión (ADR-012): el registro vigila la
+                # última ingresada; la anterior queda en url_previa.
+                fuente["url"] = url
+            verificacion = _agregar_verificacion(
+                args.catalogo, catalogo, fuente, destino,
+                url_previa=url_previa,
+                **_estructura_observada(fuente, destino))
     except ErrorCatalogo as exc:
         return _salir(args, str(exc), 1)
-    fuente = _buscar_fuente(catalogo, args.id)
-    if fuente is None:
-        return _salir(args, f"id inexistente: '{args.id}'", 2)
-    if not isinstance(fuente.get("verificaciones"), list):
-        return _salir(
-            args,
-            f"fuente '{args.id}' sin 'verificaciones' (catálogo inválido)",
-            1)
-    if not fuente.get("url"):
-        return _salir(args, f"fuente '{args.id}' sin url registrada", 1)
-    url = fuente["url"]
-    url_previa = None
-    if fuente.get("url_listado"):
-        try:
-            enlaces = listar_archivos(fuente["url_listado"])
-        except ErrorRed as exc:
-            return _salir(args, f"listado histórico ilegible: {exc}", 1)
-        if not enlaces:
-            return _salir(args, "listado histórico sin enlaces a "
-                          "archivos: no se descarga nada "
-                          "(fail-closed, ADR-012)", 1)
-        _texto, url_ultima = mas_reciente(enlaces)
-        if url_ultima != url:
-            url_previa, url = url, url_ultima
-    destino = args.destino or _destino_por_defecto(url, args.id)
-    try:
-        descargar(url, destino, fuente.get("formato", "otro"))
-    except (ErrorRed, OSError) as exc:
-        verificacion = _agregar_verificacion(
-            args.catalogo, catalogo, fuente, destino, causa=str(exc))
-        return _salir(args, f"descarga fallida: "
-                      f"{verificacion['causa']}", 1)
-    if url_previa:
-        # Giro de versión (ADR-012): el registro vigila la última
-        # ingresada; la anterior queda documentada en url_previa.
-        fuente["url"] = url
-    verificacion = _agregar_verificacion(
-        args.catalogo, catalogo, fuente, destino,
-        url_previa=url_previa,
-        **_estructura_observada(fuente, destino))
     _emitir(args, {"id": args.id, "resultado": verificacion["resultado"],
                    "fecha": verificacion["fecha"],
                    "huella": verificacion["huella"],

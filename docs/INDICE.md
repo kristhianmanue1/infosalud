@@ -43,13 +43,20 @@ sustituye.
 
 ## Tareas y decisiones abiertas
 
-- ADR-014 (propuesto): perfiles estructurales + datos normalizados
-  + auditoría por agente.
-- ADR-015 (candidato): lock de catálogo (carrera de escritores).
+- ADR-014 (aceptado, fase 1 implementada):
+  `adr/ADR-014-perfiles-datos-normalizados-auditoria.md` — contrato
+  `perfil-de-fuente v1` + validador (`infosalud/perfiles.py`) +
+  SPEC-11 + tests. Fases 2–4 (`/datos`, dimensiones, auditoría)
+  pendientes con SPEC y tests propios.
+- ADR-015 (aceptado, implementado): `adr/ADR-015-lock-catalogo.md`
+  — lock flock en los tres escritores de la CLI (SPEC-10 + tests,
+  `tests/test_lock.py`).
 - Conciliación FN-19/20: espera OOAD de prueba y total oficial del
   área.
 - Lector xlsb / conversión por lote (IFU, egresos).
-- Serie histórica IFU/CUUMSP completa (por olas).
+- Serie histórica IFU/CUUMSP completa: por olas — plan redactado en
+  `plan-olas-serie-historica-ifu-cuumsp.md` (ola 1 = CUUMSP 2025;
+  ejecución pendiente de autorización).
 
 ## Convenciones del repositorio
 

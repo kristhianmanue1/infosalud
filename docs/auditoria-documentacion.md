@@ -58,7 +58,8 @@ misma auditoría** (ver §3).
 
 - Perfiles estructurales y `/datos`: requieren ADR-014 (propuesto,
   especificación endurecida por adversariales).
-- Lock de catálogo: ADR-015 pendiente.
+- Lock de catálogo: ADR-015 implementado (SPEC-10, lock flock en
+  los tres escritores de la CLI).
 - Conciliación FN-19/20: espera OOAD de prueba + total oficial del
   área (fuera del control del agente).
 - Serie histórica IFU/CUUMSP completa: por olas.
