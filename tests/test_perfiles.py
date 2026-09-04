@@ -77,6 +77,17 @@ class PruebaValidarPerfil(unittest.TestCase):
             self.assertTrue(any(quitar in e
                                 for e in validar(perfil)))
 
+    def test_columnas_con_huecos_posicionales(self):
+        """DADO columnas con celdas vacías de posición (columna A sin
+        encabezado en el origen) CUANDO se valida ENTONCES es válido
+        (los vacíos son posiciones, no nombres)."""
+        hoja = dict(PERFIL_VALIDO["hojas"][0],
+                    columnas=["", "OOAD", "CVE_PRESUPUESTAL"])
+        hoja.pop("columnas_numericas", None)
+        hoja["clave_primaria"] = "CVE_PRESUPUESTAL"
+        perfil = dict(PERFIL_VALIDO, hojas=[hoja])
+        self.assertEqual(validar(perfil), [])
+
     def test_clave_primaria_debe_estar_en_columnas(self):
         """DADO clave_primaria fuera de columnas ENTONCES rechazo."""
         hoja = dict(PERFIL_VALIDO["hojas"][0], clave_primaria="nope")

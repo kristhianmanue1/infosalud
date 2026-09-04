@@ -133,8 +133,7 @@ def _validar_hojas(hojas):
         columnas = hoja.get("columnas")
         if columnas is not None and (
                 not isinstance(columnas, list) or not columnas
-                or not all(isinstance(c, str) and c
-                           for c in columnas)):
+                or not all(isinstance(c, str) for c in columnas)):
             errores.append(
                 f"{prefijo}.columnas: falta o no es lista de textos")
         if tipo == "datos":

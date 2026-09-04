@@ -1,0 +1,69 @@
+{
+  "id": "poblacion-usuaria-23n-simoc-unidad-2025",
+  "huella_base": "72a70b71a0d556d12799466cf35d462ac5a725a2a08ee62f89bc655140065525",
+  "fecha": "2026-09-04",
+  "version_perfil": 1,
+  "hojas": [
+    {
+      "nombre": "Población_usuaria_2025_Esp",
+      "tipo": "datos",
+      "fila_encabezados": 11,
+      "columnas": [
+        "",
+        "OOAD",
+        "UNIDAD",
+        "CVE_PRESUPUESTAL",
+        "No Derechohabiente",
+        "Asegurado(a)",
+        "Beneficiario esposa(o) o concubina(rio) de asegurado(a)",
+        "Beneficiarios hijos de asegurado(a)",
+        "Beneficiarios padres de asegurado(a)",
+        "Pensionado",
+        "Beneficiarios de pensionado",
+        "Beneficiarios hijo de asegurado (gemelar)",
+        "Beneficiarios hijo de asegurado (tercer hijo[a])",
+        "Beneficiarios hijo de asegurado (cuarto hijo[a])",
+        "Total"
+      ],
+      "filas_datos": {
+        "desde": 13,
+        "hasta": 317
+      },
+      "clave_primaria": "CVE_PRESUPUESTAL",
+      "filas_total": [
+        12
+      ]
+    },
+    {
+      "nombre": "Población_usuaria_2025_Urg",
+      "tipo": "datos",
+      "fila_encabezados": 11,
+      "columnas": [
+        "",
+        "OOAD",
+        "UNIDAD",
+        "CVE_PRESUPUESTAL",
+        "No Derechohabiente",
+        "Asegurado(a)",
+        "Beneficiario esposa(o) o concubina(rio) de asegurado(a)",
+        "Beneficiarios hijos de asegurado(a)",
+        "Beneficiarios padres de asegurado(a)",
+        "Pensionado",
+        "Beneficiarios de pensionado",
+        "Beneficiarios hijo de asegurado (gemelar)",
+        "Beneficiarios hijo de asegurado (tercer hijo[a])",
+        "Beneficiarios hijo de asegurado (cuarto hijo[a])",
+        "Total"
+      ],
+      "filas_datos": {
+        "desde": 13,
+        "hasta": 287
+      },
+      "clave_primaria": "CVE_PRESUPUESTAL",
+      "filas_total": [
+        12
+      ]
+    }
+  ],
+  "notas": "Fila 12 = total nacional por hoja (declarada en filas_total)."
+}
