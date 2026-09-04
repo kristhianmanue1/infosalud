@@ -18,7 +18,8 @@ from pathlib import Path
 TIPOS_HOJA = {"datos", "descriptiva", "totales", "otra"}
 CAMPOS_PERFIL = {"id", "huella_base", "fecha", "version_perfil",
                  "hojas", "notas"}
-CAMPOS_HOJA = {"nombre", "tipo", "fila_encabezados", "columnas",
+CAMPOS_HOJA = {"nombre", "tipo", "fila_encabezados",
+               "fila_encabezados_sub", "columnas",
                "filas_datos", "clave_primaria", "claves_foraneas",
                "columnas_numericas", "filas_total", "tolerancia"}
 
@@ -151,13 +152,25 @@ def _validar_hojas(hojas):
 
 
 def _validar_fila_entera(hoja, prefijo):
-    """fila_encabezados: entero >= 1 opcional."""
-    fila = hoja.get("fila_encabezados")
-    if fila is not None and (
-            not isinstance(fila, int) or isinstance(fila, bool)
-            or fila < 1):
-        return [f"{prefijo}.fila_encabezados: no es entero >= 1"]
-    return []
+    """fila_encabezados / fila_encabezados_sub: enteros >= 1
+    opcionales (la _sub declara la segunda fila de un encabezado
+    compuesto, enmienda 2026-09-04)."""
+    errores = []
+    for campo in ("fila_encabezados", "fila_encabezados_sub"):
+        fila = hoja.get(campo)
+        if fila is not None and (
+                not isinstance(fila, int) or isinstance(fila, bool)
+                or fila < 1):
+            errores.append(f"{prefijo}.{campo}: no es entero >= 1")
+    sub = hoja.get("fila_encabezados_sub")
+    principal = hoja.get("fila_encabezados")
+    if sub is not None and principal is not None \
+            and isinstance(sub, int) and isinstance(principal, int) \
+            and sub <= principal:
+        errores.append(
+            f"{prefijo}.fila_encabezados_sub: debe ser posterior a "
+            "fila_encabezados")
+    return errores
 
 
 def _validar_rango(hoja, prefijo, columnas):

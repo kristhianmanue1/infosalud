@@ -314,6 +314,10 @@ Entrada (campos cerrados):
     nombre: string [obligatorio] [1..200 chars] — único por perfil
     tipo: enum [obligatorio]: datos | descriptiva | totales | otra
     fila_encabezados: entero [opcional] [>= 1]
+    fila_encabezados_sub: entero [opcional] [>= 1, > fila_
+          encabezados] — segunda fila de un encabezado compuesto
+          (enmienda 2026-09-04; ej. Cifras Nacionales: grupo en la
+          fila principal, subgrupo en la sub)
     columnas: lista de string [opcional; obligatoria cuando
           tipo=datos]
     filas_datos: {desde: entero >= 1, hasta: entero >= desde}

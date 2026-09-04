@@ -88,6 +88,35 @@ class PruebaValidarPerfil(unittest.TestCase):
         perfil = dict(PERFIL_VALIDO, hojas=[hoja])
         self.assertEqual(validar(perfil), [])
 
+    def test_fila_encabezados_sub(self):
+        """DADO una hoja con encabezado compuesto CUANDO se valida
+        ENTONCES acepta la fila sub posterior y rechaza la anterior
+        o igual a la principal (enmienda 2026-09-04)."""
+        base = dict(PERFIL_VALIDO["hojas"][0])
+        ok = dict(base, fila_encabezados=3, fila_encabezados_sub=4)
+        self.assertEqual(validar(dict(PERFIL_VALIDO, hojas=[ok])), [])
+        mal = dict(base, fila_encabezados=4, fila_encabezados_sub=4)
+        self.assertTrue(any("fila_encabezados_sub" in e
+                            for e in validar(dict(PERFIL_VALIDO,
+                                                  hojas=[mal]))))
+
+    def test_segmentar_expone_encabezados_sub(self):
+        """DADO un perfil con fila_encabezados_sub CUANDO segmentar
+        ENTONCES la respuesta incluye ambas filas de encabezado."""
+        from infosalud.datos import segmentar
+        filas = [["Clave", "Grupo"], ["", "Total"], ["01", "5"],
+                 ["02", "7"]]
+        declaracion = {"nombre": "H", "tipo": "datos",
+                       "fila_encabezados": 1,
+                       "fila_encabezados_sub": 2,
+                       "columnas": ["Clave", "Grupo"],
+                       "filas_datos": {"desde": 3, "hasta": 4}}
+        r = segmentar(declaracion, filas, 100)
+        self.assertEqual(r["encabezados"], ["Clave", "Grupo"])
+        self.assertEqual(r["encabezados_sub"], ["", "Total"])
+        self.assertEqual(r["datos"], [["01", "5"], ["02", "7"]])
+        self.assertEqual(r["fuera_de_rango"], 0)
+
     def test_clave_primaria_debe_estar_en_columnas(self):
         """DADO clave_primaria fuera de columnas ENTONCES rechazo."""
         hoja = dict(PERFIL_VALIDO["hojas"][0], clave_primaria="nope")

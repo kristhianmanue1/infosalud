@@ -10772,6 +10772,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "poblacion-usuaria-1n-unidad-2004-2025-convertido",
+      "seccion": "poblacion",
+      "titulo": "Población usuaria 1N 2004-2025 — conversión xlsx (derivado)",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacionUsuaria/Pob_Usuaria_SIAIS_2004_2025_Primer_Nivel_Unidad_18032026.xls",
+      "formato": "xlsx",
+      "periodicidad": "anual",
+      "notas": "Derivado: conversión LibreOffice headless del original xls (id poblacion-usuaria-1n-unidad-2004-2025, huella b294479c87cc237f6f94de0196d37c6aab08926f998302f21aa3c2790b5365ef) hecha 2026-09-04; el original manda",
+      "verificaciones": [
+        {
+          "fecha": "2026-09-03",
+          "ruta_local": "data/convertidos/poblacion-usuaria-1n-unidad-2004-2025/Pob_Usuaria_SIAIS_2004_2025_Primer_Nivel_Unidad_18032026.xlsx",
+          "resultado": "vigente",
+          "huella": "180c7f5b3642121700552e3539e314932ff55679c11291d098b55eeb6f5602a7"
+        }
+      ]
     }
   ]
 }

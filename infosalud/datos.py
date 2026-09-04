@@ -105,17 +105,22 @@ def segmentar(declaracion, filas, max_filas):
     totales_declarados = declaracion.get("filas_total") or []
     datos = filas[desde - 1:hasta]
     fila_enc = declaracion.get("fila_encabezados")
+    fila_sub = declaracion.get("fila_encabezados_sub")
+
+    def _fila(n):
+        return filas[n - 1] if n and n <= len(filas) else None
+
     fuera = [i for i in range(hasta + 1, len(filas) + 1)
              if i not in totales_declarados
              and any(c not in ("", None) for c in filas[i - 1])]
     return {
         "tipo": "datos",
         "fila_encabezados": fila_enc,
+        "encabezados": _fila(fila_enc),
+        "encabezados_sub": (_fila(fila_sub)
+                            if fila_sub else None),
         "columnas": declaracion.get("columnas"),
         "filas_datos": {"desde": desde, "hasta": hasta},
-        "encabezados": (filas[fila_enc - 1]
-                        if fila_enc and fila_enc <= len(filas)
-                        else None),
         "datos": datos[:max_filas],
         "totales": [filas[t - 1] for t in totales_declarados
                     if 1 <= t <= len(filas)],
