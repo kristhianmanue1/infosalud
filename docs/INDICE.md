@@ -60,7 +60,10 @@ sustituye.
   (multi-bloque, diseño de segmentos propuesto).
 - Ola 2 CUUMSP 2021–2024 ejecutada (2026-09-04): 34 cortes nuevos
   `vigente` + índice 2022 (catálogo 119 fuentes); brechas MAYO-21,
-  ENE/FEB-23 y 11 meses de 2024 sin localizar (`perfiles-piloto-ola1.md`).
+  ENE/FEB-23 y 11 meses de 2024 sin localizar
+  (`perfiles-piloto-ola1.md`).
+- Perfiles por lote de los 53 cortes CUUMSP 2021-2026 (60 perfiles
+  totales en `data/perfiles/`).
 - Conciliación FN-19/20: espera OOAD de prueba y total oficial del
   área.
 - Lector xlsb / conversión por lote (IFU, egresos).

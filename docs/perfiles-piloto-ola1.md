@@ -67,6 +67,19 @@ evidencia del intento.
   tablas por hoja, notas intercaladas). Propuesta de diseño:
   `segmentos` por hoja (ver abajo); requiere enmienda + SPEC.
 
+## Perfiles por lote de los cortes CUUMSP (2026-09-04)
+
+`scripts/generar_perfiles_cuumsp_lote.py`: 53 cortes CUUMSP
+(2021–2026) perfilados por lote con su patrón común (hoja
+'Unidad Médica', encabezados en fila 10 — fila 13 en 2021, con
+notas intercaladas—, clave `CLUES  Salud`, 37-40 columnas;
+hojas no tabulares declaradas descriptivas). 6 cortes de 2021
+requirieron localización dinámica del encabezado. Corrección
+incluida: `fuera_de_rango` ignora celdas de sólo espacios
+(artefacto real detectado en dic-2021 f1472). Verificado en vivo:
+`perfil_aplicado: true` y `fuera_de_rango: 0` en los cortes
+sondeados de cada año. Total de perfiles en `data/perfiles/`: 60.
+
 ## Fase 3 implementada: conciliación numérica
 
 `/datos` incluye ahora el bloque `conciliacion` por hoja cuando el
