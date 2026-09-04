@@ -53,6 +53,9 @@ sustituye.
 - ADR-015 (aceptado, implementado): `adr/ADR-015-lock-catalogo.md`
   — lock flock en los tres escritores de la CLI (SPEC-10 + tests,
   `tests/test_lock.py`).
+- Perfiles estructurales ola 1 (piloto CEPI): 3/6 en producción
+  (`perfiles-piloto-ola1.md`); xls sin lector (1), encabezados
+  compuestos / multi-bloque (2) pendientes de diseño.
 - Conciliación FN-19/20: espera OOAD de prueba y total oficial del
   área.
 - Lector xlsb / conversión por lote (IFU, egresos).
