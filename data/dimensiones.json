@@ -26,6 +26,14 @@
         "DESC_SUBDELEGACION",
         "FEC_ALTA"
       ]
+    },
+    "ooad": {
+      "fuente": "catalogo-ooad-subdelegaciones-convertido",
+      "hoja": "febrero 2025",
+      "clave": "CVE_DELEGACION",
+      "atributos": [
+        "DESC_DELEGACION"
+      ]
     }
   }
 }
