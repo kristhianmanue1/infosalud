@@ -2,7 +2,7 @@
   "id": "seguimiento-productividad-semanal-2025",
   "huella_base": "39175c9a02145d182cfe8caa72906ff5b0a2fde39b9a23c3c27f37cc82fafd57",
   "fecha": "2026-09-04",
-  "version_perfil": 1,
+  "version_perfil": 2,
   "hojas": [
     {
       "nombre": "Resumen Atenciones 2019-2025",
@@ -10,31 +10,31 @@
       "fila_encabezados": 14,
       "columnas": [
         "",
-        "OOAD/UMAE",
-        "Medicina Familiar",
         "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "Especialidades",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "Intervenciones Quirúrgicas\n(Cirugías principales)",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "Meta 2025",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "Meta 2025",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "Meta 2025"
       ],
       "filas_datos": {
         "desde": 17,
@@ -48,6 +48,24 @@
         78,
         79,
         80
+      ],
+      "columnas_numericas": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "Meta 2025",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "Meta 2025"
       ]
     },
     {
@@ -122,6 +140,11 @@
         13199,
         13200,
         13201
+      ],
+      "columnas_numericas": [
+        "Clave Presupuestal",
+        "Año",
+        "Semana ACUMULADA"
       ]
     },
     {
@@ -196,8 +219,12 @@
         2059,
         2060,
         2061
+      ],
+      "columnas_numericas": [
+        "Año",
+        "Semana ACUMULADA"
       ]
     }
   ],
-  "notas": "Columna A vacía en todo el archivo (posicional). Resumen: encabezado compuesto (grupos Medicina Familiar/Especialidades/Intervenciones quirúrgicas + años 2019-2025 y Meta 2025 en la fila sub) con Total Nacional en f16 (filas_total). Consulta e IQX: notas de Fuente/Nota al final declaradas en filas_nota."
+  "notas": "Columna A vacía (posicional). Resumen: encabezado compuesto (grupos + años 2019-2025 y Meta 2025 en fila sub, usada como columnas) con Total Nacional en f16. v2: columnas numéricas por muestreo (>= 80% parseable); conciliación activa contra las filas de total."
 }

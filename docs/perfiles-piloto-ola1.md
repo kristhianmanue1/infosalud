@@ -80,6 +80,25 @@ incluida: `fuera_de_rango` ignora celdas de sólo espacios
 `perfil_aplicado: true` y `fuera_de_rango: 0` en los cortes
 sondeados de cada año. Total de perfiles en `data/perfiles/`: 60.
 
+## columnas_numericas activadas (2026-09-04, v2)
+
+Perfiles de cifras-nacionales y productividad semanal a v2 con
+`columnas_numericas` por muestreo (>= 80% parseable) y columnas
+renombradas desde la fila sub (los nombres de métrica). Scripts:
+`scripts/activar_numericas_cifras.py` y
+`scripts/activar_numericas_productividad.py`.
+
+Resultados de la conciliación en vivo:
+- productividad (Resumen): **reconciliado True — 24/24 columnas
+  exactas** (Σ delegaciones = Total Nacional, ±0.5%).
+- cifras PAMF Mes: **reconciliado True — 21/21**.
+- cifras Consultas y Mortalidad: `reconciliado False` — honesto y
+  valioso: Σ(filas) mezcla delegaciones + UMAE + categorías fuera
+  de IMSS, que no suma contra el total declarado. La conciliación
+  advisory revela que falta declarar la semántica de agregación de
+  filas (qué filas suman a qué total) — insumo directo para la
+  fase de dimensiones, no un bug del parser.
+
 ## Fase 3 implementada: conciliación numérica
 
 `/datos` incluye ahora el bloque `conciliacion` por hoja cuando el
