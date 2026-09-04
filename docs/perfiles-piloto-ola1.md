@@ -117,12 +117,20 @@ Todos los grupos verificados aritméticamente antes de declararse
 (enmienda `conciliaciones`): Delegaciones / UMAE / Nacional por
 hoja. Resultados en `/datos`:
 
-| Hoja | Resultado |
-|---|---|
-| Consultas, Aux Dx, Aux Tx, 33 Procedimientos, Atenciones Prof., Egresos | `reconciliado: True` (3 grupos exactos) |
-| PAMF Mes | `reconciliado: True` (21/21 por filas_total) |
-| Mortalidad | `reconciliado: True` (Nacional acotado a col. `Total`: las categorías por edad no tienen desglose fuera de IMSS) |
-| Banco de Sangre | `reconciliado: False` — hallazgo real: `TOTAL DE MILILITROS TRANSFUNDIDOS` (Σ 13.97M vs 14.56M declarado) y `TOTAL DE TRANSFUSIONES` (62,875 vs 65,624) no cuadran contra Σ de las filas del rango; los bancos declarados no explican el total nacional. Observado para revisión semántica del área (la conciliación advisory califica, no bloquea). |
+- Consultas, Aux Dx, Aux Tx, 33 Procedimientos, Atenciones
+  Prof. y Egresos: `reconciliado: True` — 3 grupos exactos
+  (Delegaciones / UMAE / Nacional).
+- PAMF Mes: `reconciliado: True` (21/21 por `filas_total`).
+- Mortalidad: `reconciliado: True` (Nacional acotado a la columna
+  `Total`: las categorías por edad no tienen desglose fuera de
+  IMSS).
+- Banco de Sangre: `reconciliado: False` — **hallazgo real**:
+  `TOTAL DE MILILITROS TRANSFUNDIDOS` (Σ 13.97M vs 14.56M
+  declarado) y `TOTAL DE TRANSFUSIONES` (62,875 vs 65,624) no
+  cuadran contra Σ de las filas del rango; los bancos declarados
+  no explican el total nacional. Observado para revisión
+  semántica del área (la conciliación advisory califica, no
+  bloquea).
 
 ## Fase 3 implementada: conciliación numérica
 
