@@ -552,5 +552,27 @@ class PruebaDatosFuente(unittest.TestCase):
         self.assertIn("Catalogo", datos["hojas"])
 
 
+    def test_hoja_ausente_y_perfil_desactualizado(self):
+        """Ronda adversarial 2026-09-04: DADO un perfil que declara
+        una hoja que ya no existe en el archivo ENTONCES la hoja se
+        marca ausente_del_archivo + requiere_revision (H-1); DADO
+        huella_base del perfil distinta del archivo ENTONCES el
+        cuerpo lo declara (M-1)."""
+        self._escribir_perfil({
+            "id": ID, "huella_base": "b" * 64,
+            "fecha": "2026-09-04", "version_perfil": 1,
+            "hojas": [{"nombre": "HojaQueYaNoExiste",
+                       "tipo": "datos",
+                       "fila_encabezados": 1,
+                       "columnas": ["A"],
+                       "filas_datos": {"desde": 2, "hasta": 3}}]})
+        codigo, cuerpo = self._json_datos()
+        self.assertEqual(codigo, 200)
+        hoja = cuerpo["hojas"]["HojaQueYaNoExiste"]
+        self.assertTrue(hoja["ausente_del_archivo"])
+        self.assertTrue(hoja["requiere_revision"])
+        self.assertTrue(cuerpo["perfil_huella_desactualizada"])
+
+
 if __name__ == "__main__":
     unittest.main()

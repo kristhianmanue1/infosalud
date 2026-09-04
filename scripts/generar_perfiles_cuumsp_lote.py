@@ -37,6 +37,15 @@ def main():
             fallos += 1
             continue
         ver = verificaciones[-1]
+        # Ronda adversarial 2026-09-04, H-4: si ya existe un perfil,
+        # no se pisa (podría contener refinamientos v2+ con
+        # conciliaciones/totales hechos a mano). Reportar y seguir.
+        destino = ruta_perfil(CATALOGO, id_fuente)
+        if destino.is_file():
+            print(f"{id_fuente}: ya tiene perfil "
+                  f"({destino.name}), se omite")
+            fallos += 1
+            continue
         try:
             hojas_leidas = {h["hoja"]: h["filas"]
                             for h in leer_filas(ver["ruta_local"],

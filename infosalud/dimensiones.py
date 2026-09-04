@@ -112,6 +112,8 @@ def construir(ruta_catalogo, nombre, fuente, hoja, clave, atributos):
         llave = "-".join(valores)
         claves[llave] = {a: (fila[i] if i < len(fila) else None)
                          for a, i in indices_atributos}
+    atributos_omitidos = [a for a in atributos
+                          if a not in columnas]
     return {
         "dimension": nombre,
         "contrato": "dimension-v1",
@@ -119,6 +121,8 @@ def construir(ruta_catalogo, nombre, fuente, hoja, clave, atributos):
         "hoja": hoja,
         "clave": partes_clave,
         "atributos": [a for a, _ in indices_atributos],
+        **({"atributos_omitidos": atributos_omitidos}
+           if atributos_omitidos else {}),
         "procedencia": cuerpo["procedencia"],
         "perfil_version": (cuerpo["perfil"] or {}).get(
             "version_perfil"),

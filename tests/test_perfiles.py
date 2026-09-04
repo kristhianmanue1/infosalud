@@ -127,9 +127,9 @@ class PruebaValidarPerfil(unittest.TestCase):
                       "columnas": ["OOAD/UMAE", "2019", "2020"],
                       "filas_datos": {"desde": 17, "hasta": 76}}
         segmento_b = {"nombre": "Especialidades",
-                      "fila_encabezados": 14,
+                      "fila_encabezados": 80,
                       "columnas": ["OOAD/UMAE", "2019", "2020"],
-                      "filas_datos": {"desde": 17, "hasta": 76}}
+                      "filas_datos": {"desde": 81, "hasta": 120}}
         ok = dict(PERFIL_VALIDO["hojas"][0])
         hoja_multi = {"nombre": "Multi", "tipo": "datos",
                       "segmentos": [segmento_a, segmento_b]}
@@ -256,6 +256,63 @@ class PruebaValidarPerfil(unittest.TestCase):
                          [["AGU", "1"], ["BCN", "2"]])
         self.assertTrue(all(s["fuera_de_rango"] == 0
                             for s in segmentos))
+
+    def test_segmentos_orden_solapamiento(self):
+        """Ronda adversarial 2026-09-04 (H-2): DADO segmentos
+        desordenados o con rangos solapados ENTONCES rechazo (las
+        ventanas de fuera_de_rango degenerarían en silencio)."""
+        a = {"nombre": "A", "fila_encabezados": 10,
+             "columnas": ["X"], "filas_datos": {"desde": 11,
+                                                "hasta": 20}}
+        b = {"nombre": "B", "fila_encabezados": 5,
+             "columnas": ["X"], "filas_datos": {"desde": 21,
+                                                "hasta": 30}}
+        c = {"nombre": "C", "fila_encabezados": 30,
+             "columnas": ["X"], "filas_datos": {"desde": 15,
+                                                "hasta": 40}}
+        hoja = {"nombre": "M", "tipo": "datos",
+                "segmentos": [a, b]}
+        errores = validar(dict(PERFIL_VALIDO, hojas=[hoja]))
+        self.assertTrue(any("desordenados" in e for e in errores))
+        hoja = {"nombre": "M", "tipo": "datos",
+                "segmentos": [a, c]}
+        errores = validar(dict(PERFIL_VALIDO, hojas=[hoja]))
+        self.assertTrue(any("solapados" in e for e in errores))
+
+    def test_con_segmentos_los_campos_de_hoja_se_rechazan(self):
+        """Ronda adversarial 2026-09-04 (H-3): DADO segmentos con
+        conciliaciones/filas_total/filas_nota a nivel hoja ENTONCES
+        rechazo (se aceptarían y el runtime los ignoraría)."""
+        seg = {"nombre": "A", "fila_encabezados": 1,
+               "columnas": ["X"], "filas_datos": {"desde": 2,
+                                                  "hasta": 3}}
+        for campo, valor in (("filas_total", [5]),
+                             ("filas_nota", [9]),
+                             ("conciliaciones", [{"nombre": "g",
+                                                  "filas": [2],
+                                                  "total_fila": 3}]),
+                             ("tolerancia", 0.4)):
+            hoja = {"nombre": "M", "tipo": "datos",
+                    "segmentos": [seg], campo: valor}
+            errores = validar(dict(PERFIL_VALIDO, hojas=[hoja]))
+            self.assertTrue(any(campo in e for e in errores), campo)
+
+    def test_tolerancia_con_techo(self):
+        """Ronda adversarial 2026-09-04 (L-2): DADO tolerancia 1e9
+        ENTONCES rechazo (neutralizaría la conciliación advisory)."""
+        hoja = dict(PERFIL_VALIDO["hojas"][0], tolerancia=1e9)
+        perfil = dict(PERFIL_VALIDO, hojas=[hoja])
+        self.assertTrue(any("tolerancia" in e
+                            for e in validar(perfil)))
+
+    def test_segmento_sub_posterior_al_principal(self):
+        """Ronda adversarial 2026-09-04: DADO fila_encabezados_sub
+        <= fila_encabezados en un segmento ENTONCES rechazo."""
+        seg = dict(PERFIL_VALIDO["hojas"][0], fila_encabezados=4,
+                   fila_encabezados_sub=4)
+        perfil = dict(PERFIL_VALIDO, hojas=[seg])
+        self.assertTrue(any("fila_encabezados_sub" in e
+                            for e in validar(perfil)))
 
     def test_conciliaciones_por_grupo(self):
         """DADO grupos de agregación declarados (enmienda

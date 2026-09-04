@@ -147,9 +147,15 @@ def _validar_hojas(hojas):
                 f"{prefijo}.columnas: falta o no es lista de textos")
         if tipo == "datos":
             if hoja.get("segmentos"):
+                # Con segmentos, TODO lo tabular vive en cada
+                # segmento: aceptarlo a nivel hoja sería aceptar
+                # declaraciones que el runtime ignora en silencio
+                # (ronda adversarial 2026-09-04, H-3).
                 for campo in ("fila_encabezados", "columnas",
                               "filas_datos", "clave_primaria",
-                              "columnas_numericas"):
+                              "columnas_numericas", "filas_total",
+                              "filas_nota", "conciliaciones",
+                              "tolerancia"):
                     if hoja.get(campo) is not None:
                         errores.append(
                             f"{prefijo}: con 'segmentos', el campo "
@@ -228,6 +234,17 @@ def _validar_segmentos(segmentos, prefijo):
                 errores.append(
                     f"{pref}.clave_primaria: '{clave}' no está en "
                     "columnas")
+        sub = segmento.get("fila_encabezados_sub")
+        if sub is not None and (
+                not isinstance(sub, int) or isinstance(sub, bool)
+                or sub < 1):
+            errores.append(
+                f"{pref}.fila_encabezados_sub: no es entero >= 1")
+        elif sub is not None and isinstance(fila_enc, int) \
+                and sub <= fila_enc:
+            errores.append(
+                f"{pref}.fila_encabezados_sub: debe ser posterior a "
+                "fila_encabezados")
         filas_total = segmento.get("filas_total")
         if filas_total is not None:
             if not isinstance(filas_total, list) or not all(
@@ -254,12 +271,33 @@ def _validar_segmentos(segmentos, prefijo):
         tolerancia = segmento.get("tolerancia")
         if tolerancia is not None and (
                 not isinstance(tolerancia, (int, float))
-                or isinstance(tolerancia, bool) or tolerancia <= 0):
+                or isinstance(tolerancia, bool)
+                or not 0 < tolerancia <= TOLERANCIA_MAXIMA):
             errores.append(
-                f"{pref}.tolerancia: no es número > 0")
+                f"{pref}.tolerancia: no es número en (0, "
+                f"{TOLERANCIA_MAXIMA}]")
         if segmento.get("conciliaciones"):
             errores.extend(_validar_conciliaciones(
                 segmento, pref, columnas or []))
+    # Orden y no-solapamiento (ronda adversarial 2026-09-04, H-2):
+    # los segmentos se declaran en orden de hoja y sus rangos no se
+    # cruzan; lo contrario hace que las ventanas de fuera_de_rango
+    # degeneren en silencio.
+    especificados = [s for s in segmentos if isinstance(s, dict)
+                     and isinstance(s.get("fila_encabezados"), int)
+                     and isinstance(s.get("filas_datos"), dict)
+                     and isinstance(s["filas_datos"].get("desde"), int)
+                     and isinstance(s["filas_datos"].get("hasta"), int)]
+    for previo, siguiente in zip(especificados, especificados[1:]):
+        if siguiente["fila_encabezados"] <= previo["fila_encabezados"]:
+            errores.append(
+                f"{prefijo}.segmentos: desordenados — '{siguiente.get('nombre')}' "
+                "tiene fila_encabezados <= que el segmento anterior")
+        if siguiente["filas_datos"]["desde"] <= previo["filas_datos"]["hasta"]:
+            errores.append(
+                f"{prefijo}.segmentos: solapados — el rango de "
+                f"'{siguiente.get('nombre')}' empieza antes de que "
+                f"termine '{previo.get('nombre')}'")
     return errores
 
 
@@ -310,9 +348,11 @@ def _validar_conciliaciones(declaracion, prefijo, columnas):
         tolerancia = grupo.get("tolerancia")
         if tolerancia is not None and (
                 not isinstance(tolerancia, (int, float))
-                or isinstance(tolerancia, bool) or tolerancia <= 0):
+                or isinstance(tolerancia, bool)
+                or not 0 < tolerancia <= TOLERANCIA_MAXIMA):
             errores.append(
-                f"{pref}.tolerancia: no es número > 0")
+                f"{pref}.tolerancia: no es número en (0, "
+                f"{TOLERANCIA_MAXIMA}]")
     return errores
 
 
@@ -426,12 +466,19 @@ def _validar_rango(hoja, prefijo, columnas):
     return errores
 
 
+TOLERANCIA_MAXIMA = 0.5
+
+
 def _validar_tolerancia(hoja, prefijo):
-    """tolerancia: número > 0 opcional (reconciliación ADR-014)."""
+    """tolerancia: número > 0 opcional con techo (ronda adversarial
+    2026-09-04, L-2: una tolerancia enorme neutraliza la
+    conciliación advisory)."""
     tolerancia = hoja.get("tolerancia")
     if tolerancia is None:
         return []
     if not isinstance(tolerancia, (int, float)) \
-            or isinstance(tolerancia, bool) or tolerancia <= 0:
-        return [f"{prefijo}.tolerancia: no es número > 0"]
+            or isinstance(tolerancia, bool) or not 0 < tolerancia \
+            <= TOLERANCIA_MAXIMA:
+        return [f"{prefijo}.tolerancia: no es número en (0, "
+                f"{TOLERANCIA_MAXIMA}]"]
     return []

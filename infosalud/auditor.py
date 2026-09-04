@@ -101,10 +101,16 @@ def auditar(ruta_catalogo, id_fuente):
     informe["huella_informe"] = hashlib.sha256(cuerpo).hexdigest()
     destino = ruta_auditorias(ruta_catalogo, id_fuente)
     destino.mkdir(parents=True, exist_ok=True)
-    nombre = f"{date.today().isoformat()}-{nueva.get('fecha')}.json"
-    (destino / nombre).write_text(
+    hora = datetime.now().strftime("%H%M%S")
+    # Nombre con hora: dos auditorías el mismo día no se pisan
+    # (ronda adversarial 2026-09-04, M-5). Escritura atómica
+    # (temporal + rename): un corte no deja JSON truncado (L-6).
+    nombre = f"{date.today().isoformat()}-{hora}.json"
+    temporal = destino / (nombre + ".tmp")
+    temporal.write_text(
         json.dumps(informe, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8")
+    temporal.replace(destino / nombre)
     return informe
 
 

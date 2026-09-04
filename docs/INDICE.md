@@ -71,6 +71,9 @@ sustituye.
   `plan-olas-serie-historica-ifu-cuumsp.md` (ola 1 = CUUMSP 2025;
   ejecución pendiente de autorización).
 
+- Ronda adversarial 2026-09-04: `ronda-adversarial-2026-09-04.md`
+  (11 hallazgos sobre segmentos/conciliaciones/dimensiones/auditoría;
+  10 corregidos, debilitamientos documentados).
 ## Convenciones del repositorio
 
 - Español, líneas ~80 columnas, markdown.

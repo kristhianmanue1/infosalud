@@ -11,12 +11,14 @@ la huella sola sólo sirve para `/archivo` (corrección adversarial
 
 import hashlib
 import json
+import re
 
 from infosalud.estructura import ErrorEstructura, leer_filas
 from infosalud.exportar import MAX_FILAS
 
 FORMA_DATOS = "datos-v1"
 TOP_FILAS_DEFECTO = 20_000
+_NUMERO_VALIDO = re.compile(r"-?\d+(\.\d+)?")
 
 
 class ErrorDatos(Exception):
@@ -63,12 +65,21 @@ def construir(ruta_archivo, id_fuente, perfil, procedencia,
                 404, f"hoja no declarada en el perfil: '{hoja}'")
         for nombre in (list(declaradas) if hoja is None else [hoja]):
             declaracion = declaradas[nombre]
+            ausente = nombre not in hojas_leidas
             filas = hojas_leidas.get(nombre, [])
             if declaracion.get("tipo") != "datos":
-                hojas_respuesta[nombre] = {"tipo": declaracion["tipo"]}
+                hojas_respuesta[nombre] = {"tipo": declaracion["tipo"],
+                                           "ausente_del_archivo":
+                                               ausente}
                 continue
             hojas_respuesta[nombre] = segmentar(
                 declaracion, filas, max_filas)
+            if ausente:
+                # Ronda adversarial 2026-09-04, H-1: una hoja
+                # declarada y ausente del archivo es pérdida del
+                # 100% del dato — nunca se enmascara como limpio.
+                hojas_respuesta[nombre]["ausente_del_archivo"] = True
+                hojas_respuesta[nombre]["requiere_revision"] = True
         sin_perfil = sorted(set(hojas_leidas) - set(declaradas))
     else:
         if hoja is not None and hoja not in hojas_leidas:
@@ -81,11 +92,15 @@ def construir(ruta_archivo, id_fuente, perfil, procedencia,
                 "truncado": len(filas) > max_filas}
     etag = calcular_etag(procedencia["sha256"], sello_perfil,
                          hoja, max_filas)
+    perfil_desactualizado = bool(
+        perfil and perfil.get("huella_base")
+        and perfil["huella_base"] != procedencia["sha256"])
     cuerpo = {
         "id": id_fuente,
         "contrato": FORMA_DATOS,
         "perfil": perfil_resumen,
         "perfil_aplicado": perfil is not None,
+        "perfil_huella_desactualizada": perfil_desactualizado,
         "hojas_sin_perfil": sin_perfil,
         "procedencia": procedencia,
         "hojas": hojas_respuesta,
@@ -96,7 +111,9 @@ def construir(ruta_archivo, id_fuente, perfil, procedencia,
 
 def _a_numero(valor):
     """Convierte una celda a float (parser numérico tolerante:
-    comas de millar, $ y %); None si no es numérica."""
+    comas de millar, $ y %); None si no es numérica. Debe ser
+    finita y sin guiones bajos ('inf', 'nan' y '1_0' se rechazan:
+    ronda adversarial 2026-09-04, M-3)."""
     if isinstance(valor, (int, float)) and \
             not isinstance(valor, bool):
         return float(valor)
@@ -105,6 +122,8 @@ def _a_numero(valor):
     limpio = valor.strip().replace(",", "").replace("$", "")
     limpio = limpio.replace("%", "").strip()
     if not limpio or limpio in {"-", "--"}:
+        return None
+    if not _NUMERO_VALIDO.fullmatch(limpio):
         return None
     try:
         return float(limpio)
@@ -266,6 +285,12 @@ def _tabla(declaracion, filas, max_filas, nombre=None, fuera_hasta=None):
             reporte = _conciliar_grupo(declaracion, filas, grupo,
                                        0.005)
             if reporte is None:
+                # Ronda adversarial 2026-09-04, M-2: un grupo
+                # declarado y no evaluable no desaparece en silencio.
+                conciliacion["grupos"].append({
+                    "nombre": grupo.get("nombre"),
+                    "no_evaluado": True, "reconciliado": False})
+                conciliacion["reconciliado"] = False
                 continue
             conciliacion["grupos"].append(reporte)
             if not reporte["reconciliado"]:
