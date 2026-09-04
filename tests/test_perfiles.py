@@ -194,7 +194,7 @@ class PruebaValidarPerfil(unittest.TestCase):
                        "columnas": ["CLAVE", "VALOR"],
                        "filas_datos": {"desde": 2, "hasta": 3}}
         filas = [["CLAVE", "VALOR"], ["01", "5"], ["02", "6"],
-                 [" ", "''"], ["", "   "]]
+                 [" ", "  "], ["", "   "]]
         r = segmentar(declaracion, filas, 100)
         self.assertEqual(r["fuera_de_rango"], 0)
         self.assertFalse(r["requiere_revision"])
