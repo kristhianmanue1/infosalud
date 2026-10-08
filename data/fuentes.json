@@ -23882,6 +23882,362 @@
           ]
         }
       ]
+    },
+    {
+      "id": "recursos-cuumsp-septiembre-2026",
+      "seccion": "recursos",
+      "titulo": "CUUMSP septiembre 2026 (catálogo de unidades médicas)",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/unidades/CUUMSP_SEPTIEMBRE_2026_14092026.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "aliases": [
+        "CUUMSP",
+        "Catálogo Único de Unidades Médicas",
+        "CUUMSP septiembre 2026"
+      ],
+      "parent_source_id": "recursos-cuumsp-2026",
+      "corte_declarado": "septiembre 2026",
+      "notas": "Archivo hijo de la página índice CUUMSP 2026",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/recursos-cuumsp-septiembre-2026/CUUMSP_SEPTIEMBRE_2026_14092026.xlsx",
+          "resultado": "vigente",
+          "huella": "c048b38c4cbdfc09a2f55604eb1fdf917739b3306c1820e8b3390e5576aa4a96"
+        },
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/recursos-cuumsp-septiembre-2026/CUUMSP_SEPTIEMBRE_2026_14092026.xlsx",
+          "resultado": "vigente",
+          "huella": "c048b38c4cbdfc09a2f55604eb1fdf917739b3306c1820e8b3390e5576aa4a96",
+          "estructura": [
+            {
+              "hoja": "Indice",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Unidad Médica",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Unidad y UMAA",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Anexos COVID",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Total Unidades x Del",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Total Unidades x tipo",
+              "columnas": [
+                "",
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Detalle UAMF",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Total UAMF",
+              "columnas": [
+                "        ",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Diccionari",
+              "columnas": [
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Control de Cambios",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Histórico",
+              "columnas": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "hoja": "Cat_reg_2021",
+              "columnas": [
+                "CVE_DEL",
+                "CVE_REG",
+                "Nom_Región",
+                "Antes",
+                "Nom_Del",
+                "",
+                "",
+                "",
+                "INDICE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recursos-ifu-nacional-agosto-2026",
+      "seccion": "recursos",
+      "titulo": "IFU nacional agosto 2026 (xlsb)",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/IFU/IFU_nacional_Agosto2026_17092026.xlsb",
+      "formato": "otro",
+      "periodicidad": "mensual",
+      "notas": "Infraestructura Física Usada nacional mensual; serie en paginas/ifu_2026.html; xlsb fuera de lectores (ADR pendiente)",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/recursos-ifu-nacional-agosto-2026/IFU_nacional_Agosto2026_17092026.xlsb",
+          "resultado": "vigente",
+          "huella": "48c57cb18aead7d735f5ddf35f58787df047e929a86cac89a8f0216142161445"
+        },
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/recursos-ifu-nacional-agosto-2026/IFU_nacional_Agosto2026_17092026.xlsb",
+          "resultado": "vigente",
+          "huella": "48c57cb18aead7d735f5ddf35f58787df047e929a86cac89a8f0216142161445"
+        }
+      ]
     }
   ]
 }
