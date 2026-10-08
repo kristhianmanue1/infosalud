@@ -1,0 +1,15 @@
+{
+ "version": 1,
+ "fuentes": [
+  {
+   "fuente": "recursos-ifu-nacional-agosto-2026-convertido",
+   "hoja": "Unidad",
+   "columna": "Clave Presupuestal"
+  },
+  {
+   "fuente": "poblacion-adscrita-ago-2026",
+   "hoja": "Pob. Adsc.",
+   "columna": "Cve Presupuestal"
+  }
+ ]
+}

@@ -65,3 +65,28 @@ launchctl load ~/Library/LaunchAgents/com.infosalud.tailscaled.plist
   expone el conteo `auditorias_requieren_revision`).
 - Toda verificación de vigencia es la única fuente del estado
   "vigente/cambiada/inaccesible"; nunca inferir por nombre de archivo.
+
+## Sondeo quincenal del portal (PREGUNTA-1 resuelta, 2026-10-08)
+
+Autorizado por el operador: consulta automatizada y periódica del
+portal cada 15 días. Implementación operativa (no es código del
+servicio; ADR-004 intacto):
+
+- **Script**: `scripts/sondear_portal.py` — GET de sólo lectura a
+  las páginas índice (cuumsp2026, ifu_2026, poblacion2026), extrae
+  enlaces a archivos y compara contra `data/fuentes.json`. Nunca
+  muta el catálogo ni descarga binarios. Salida: informe en
+  `data/sondeos/<fecha>.json`; código 3 si hay ediciones nuevas,
+  0 si todo está registrado.
+- **Agenda**: launchd `com.infosalud.sondeo` (plist en
+  `scripts/`, instalado en `~/Library/LaunchAgents`): días 1 y 15
+  a las 09:00, log en `data/sondeos/launchd.log`.
+- **Flujo tras un sondeo con novedades**: alta con `fuente-alta`
+  (hijas de la página índice correspondiente) → descarga y
+  `vigencia-registrar` → perfil (lote CUUMSP / generadores) →
+  diccionario → si es un corte CUUMSP, re-correr
+  `scripts/generar_dimension_unidades.py` (F2 del ADR-016) y
+  actualizar `data/cobertura-unidades.json` con la edición vigente.
+- **Replicar en otro host**: copiar el plist, ajustar las rutas
+  absolutas y `launchctl load ~/Library/LaunchAgents/
+  com.infosalud.sondeo.plist`.
