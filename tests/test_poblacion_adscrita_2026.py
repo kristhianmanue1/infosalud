@@ -38,7 +38,30 @@ class TestPoblacionAdscrita2026(unittest.TestCase):
         for id_fuente in IDS:
             perfil = cargar_perfil(ruta_perfil(CATALOGO, id_fuente))
             self.assertEqual(validar(perfil), [], id_fuente)
-            self.assertEqual(perfil["version_perfil"], 1, id_fuente)
+            self.assertEqual(perfil["version_perfil"], 2, id_fuente)
+
+    def test_fase2_hojas_compuestas_declaradas(self):
+        """Fase 2: las 3 hojas con encabezado compuesto declaradas
+        con fila_encabezados_sub y doble conciliación."""
+        for id_fuente in IDS:
+            perfil = cargar_perfil(ruta_perfil(CATALOGO, id_fuente))
+            nombres = {h["nombre"] for h in perfil["hojas"]}
+            self.assertEqual(
+                nombres,
+                {"Pob. Adsc.", "Grupo de Edad MF", "Grupos de Edad RT",
+                 "Modalidades"}, id_fuente)
+            for hoja in perfil["hojas"]:
+                if hoja["nombre"] == "Pob. Adsc.":
+                    self.assertNotIn("fila_encabezados_sub", hoja,
+                                     id_fuente)
+                    continue
+                self.assertIn("fila_encabezados_sub", hoja, id_fuente)
+                grupos = {g["nombre"]: g
+                          for g in hoja["conciliaciones"]}
+                self.assertEqual(set(grupos), {"Unidades", "OOAD"},
+                                 (id_fuente, hoja["nombre"]))
+                self.assertEqual(len(grupos["OOAD"]["filas"]), 35,
+                                 (id_fuente, hoja["nombre"]))
 
     def test_layout_y_conciliacion_doble_declarada(self):
         for id_fuente in IDS:
@@ -92,12 +115,19 @@ class TestPoblacionAdscritaEnVivo(unittest.TestCase):
                      leer_filas(str(RAIZ / ruta),
                                 max_filas=MAX_FILAS)}
             perfil = cargar_perfil(ruta_perfil(CATALOGO, id_fuente))
-            reporte = segmentar(perfil["hojas"][0],
-                                hojas["Pob. Adsc."], MAX_FILAS)
-            self.assertEqual(reporte["fuera_de_rango"], 0, id_fuente)
-            self.assertFalse(reporte["requiere_revision"], id_fuente)
-            for grupo in reporte["conciliacion"]["grupos"]:
-                self.assertTrue(grupo["reconciliado"],
-                                (id_fuente, grupo["nombre"]))
-                self.assertEqual(grupo["columnas_descuadradas"], 0,
-                                 (id_fuente, grupo["nombre"]))
+            for declaracion in perfil["hojas"]:
+                reporte = segmentar(declaracion,
+                                    hojas[declaracion["nombre"]],
+                                    MAX_FILAS)
+                self.assertEqual(reporte["fuera_de_rango"], 0,
+                                 (id_fuente, declaracion["nombre"]))
+                self.assertFalse(reporte["requiere_revision"],
+                                 (id_fuente, declaracion["nombre"]))
+                for grupo in reporte["conciliacion"]["grupos"]:
+                    self.assertTrue(grupo["reconciliado"],
+                                    (id_fuente, declaracion["nombre"],
+                                     grupo["nombre"]))
+                    self.assertEqual(
+                        grupo["columnas_descuadradas"], 0,
+                        (id_fuente, declaracion["nombre"],
+                         grupo["nombre"]))
