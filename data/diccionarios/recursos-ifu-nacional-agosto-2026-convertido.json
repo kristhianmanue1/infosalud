@@ -1,0 +1,78 @@
+{
+  "id": "recursos-ifu-nacional-agosto-2026-convertido",
+  "descripcion": "Infraestructura Física Usada (IFU) nacional agosto 2026, conversión xlsx del xlsb original: inventario de camas, consultorios, quirófanos y equipamiento por unidad.",
+  "uso": "Hojas Unidad/50100/60000/71200/Quirófanos/Equipamiento/OOAD_UMAE comparten las columnas de identificación declaradas; las demás columnas son indicadores numericos cuyo encabezado es la clave del inventario (p. ej. 50100). Total Nacional fila 17, datos desde 18 (ver perfil). BAJAS Y CAMBIOS: ESTATUS A/B/C, Clave de Variable y 5 Valor*. Solicitudes: idSolicitud, cvePresupuestal, fechaSolicitud, usuario, Estatus, Asunto, Estado Sol.",
+  "campos": [
+    {
+      "nombre": "Región",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Clave OOAD/ UMAE",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "OOAD/ UMAE",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Tipo de Servicio",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Unidad Presupuestal",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Nombre de la Unidad",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Clave Presupuestal",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Entidad",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Clave de Municipio (INEGI)",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Municipio (INEGI)",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Clave de Localidad (INEGI)",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Nombre de Localidad (INEGI)",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Colonia, Calle y Número",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Código Postal",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Tipo de Unidad",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Tipo de Inmueble",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Iniciación de Servicios (día-mes-año)",
+      "tipo": "otro",
+      "descripcion": "Fecha de inicio de servicios"
+    }
+  ],
+  "huella_base": "7c7caf3c477bc6dc4a9391ef821143771b9a2334a4b696733a5dbce8588748bd",
+  "fecha": "2026-10-08"
+}

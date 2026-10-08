@@ -1,0 +1,170 @@
+{
+  "id": "recursos-cuumsp-septiembre-2026",
+  "descripcion": "Catálogo Único de Unidades Médicas y Sedes de Premios (CUUMSP), corte septiembre 2026: una fila por unidad médica con claves, domicilio, georreferencia y estatus administrativo.",
+  "uso": "Hoja Unidad Médica (encabezados fila 10, datos desde 11). La clave de cruce es CLUES Salud y la Clave Presupuestal. Las demas hojas son descriptivas o resúmenes, perfiladas aparte.",
+  "campos": [
+    {
+      "nombre": "Región 2021",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "CLUES  Salud",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Clave Personal",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Unidad de Información PREI",
+      "tipo": "otro"
+    },
+    {
+      "nombre": "Clave Ubicación Admin",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Clave Presupuestal",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Clave Delegación o UMAE",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Nombre Delegación o UMAE",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Relación Delegación-UMAE",
+      "tipo": "otro"
+    },
+    {
+      "nombre": "Unidad Presupuestal",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Nivel de Atención",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Denominación Unidad",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Tipo de Servicio",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Descripción Tipo Servicio",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Número de Unidad",
+      "tipo": "numero"
+    },
+    {
+      "nombre": "Nombre Unidad",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Ubicación o Denominación",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Dirección",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Tipo de Vialidad",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Nombre de Vialidad",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Entre Vialidades",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Número Exterior",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Tipo de Asentamiento",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Nombre del Asentamiento",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Código postal",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Clave Municipio o Delegación",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Municipio o Delegación",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Clave Localidad",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Localidad",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Clave Entidad Federativa",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Entidad Federativa",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Clave Jurisdicción Sanitaria",
+      "tipo": "clave"
+    },
+    {
+      "nombre": "Jurisdicción Sanitaria",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "LATITUD",
+      "tipo": "numero"
+    },
+    {
+      "nombre": "LONGITUD",
+      "tipo": "numero"
+    },
+    {
+      "nombre": "Inicio de Productividad",
+      "tipo": "otro",
+      "descripcion": "Fecha de inicio de productividad como serial de Excel"
+    },
+    {
+      "nombre": "Grado de Marginación",
+      "tipo": "texto"
+    },
+    {
+      "nombre": "Licencia de Funcionamiento",
+      "tipo": "otro"
+    },
+    {
+      "nombre": "Aviso de Funcionamiento",
+      "tipo": "otro"
+    },
+    {
+      "nombre": "Fecha de Construcción",
+      "tipo": "otro"
+    }
+  ],
+  "huella_base": "c048b38c4cbdfc09a2f55604eb1fdf917739b3306c1820e8b3390e5576aa4a96",
+  "fecha": "2026-10-08"
+}

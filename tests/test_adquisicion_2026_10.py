@@ -9,6 +9,11 @@ import unittest
 from pathlib import Path
 
 from infosalud.datos import segmentar
+from infosalud.diccionario import (
+    cargar as cargar_diccionario,
+    ruta_diccionario,
+    validar as validar_diccionario,
+)
 from infosalud.estructura import leer_filas
 from infosalud.exportar import MAX_FILAS
 from infosalud.perfiles import (
@@ -84,6 +89,45 @@ class TestAdquisicionOctubre2026(unittest.TestCase):
         ver = _huella_vigente(ID_IFU_AGO)
         perfil = cargar_perfil(ruta_perfil(CATALOGO, ID_IFU_AGO))
         self.assertEqual(perfil["huella_base"], ver["huella"])
+
+
+class TestDiccionariosAdquisicionOctubre2026(unittest.TestCase):
+    """Capa semántica (ADR-009): las 10 fuentes tabulares nuevas
+    deben tener diccionario válido con huella sincronizada."""
+
+    IDS_CON_DICCIONARIO = (
+        ID_CUUMSP, ID_IFU_AGO,
+        *(f"poblacion-adscrita-{m}-2026" for m in
+          ("ene", "feb", "mar", "abr", "may", "jun", "jul", "ago")))
+
+    def test_los_10_diccionarios_son_validos(self):
+        for id_fuente in self.IDS_CON_DICCIONARIO:
+            dic = cargar_diccionario(
+                ruta_diccionario(CATALOGO, id_fuente))
+            self.assertEqual(validar_diccionario(dic), [], id_fuente)
+            self.assertEqual(dic["id"], id_fuente)
+
+    def test_diccionarios_campos_y_huella_sincronizada(self):
+        esperado = {ID_CUUMSP: 40, ID_IFU_AGO: 17}
+        for id_fuente in self.IDS_CON_DICCIONARIO:
+            dic = cargar_diccionario(
+                ruta_diccionario(CATALOGO, id_fuente))
+            self.assertGreaterEqual(len(dic["campos"]), 4, id_fuente)
+            if id_fuente in esperado:
+                self.assertEqual(len(dic["campos"]),
+                                 esperado[id_fuente], id_fuente)
+            huella = _huella_vigente(id_fuente)["huella"]
+            self.assertEqual(dic["huella_base"], huella, id_fuente)
+
+    def test_campos_tipos_dentro_del_enum(self):
+        tipos = {"texto", "numero", "fecha", "clave", "booleano",
+                 "otro"}
+        for id_fuente in self.IDS_CON_DICCIONARIO:
+            dic = cargar_diccionario(
+                ruta_diccionario(CATALOGO, id_fuente))
+            for campo in dic["campos"]:
+                self.assertIn(campo["tipo"], tipos,
+                              (id_fuente, campo["nombre"]))
 
 @unittest.skipUnless(XLSX_CUUMSP.is_file(),
                      "el xlsx del CUUMSP no está en el clone")

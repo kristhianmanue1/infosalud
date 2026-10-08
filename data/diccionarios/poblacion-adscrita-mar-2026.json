@@ -1,0 +1,69 @@
+{
+  "id": "poblacion-adscrita-mar-2026",
+  "descripcion": "Población Adscrita marzo 2026 por unidad médica: adscritos totales, titulares y beneficiarios, adscripción a médico familiar y población asegurada por ramo.",
+  "uso": "Hoja Pob. Adsc. (encabezados fila 10, total Nacional fila 11, datos desde 12 intercalando 35 subtotales TOTAL OOAD). Las filas de unidades son el nivel de detalle; conciliación Unidades y OOAD contra el Nacional. Hojas Grupo de Edad MF, Grupos de Edad RT (población por edad y género) y Modalidades (población por modalidad 0-44) comparten las mismas claves.",
+  "campos": [
+    {
+      "nombre": "Clave OOAD",
+      "tipo": "clave",
+      "descripcion": "Clave de la delegación (OOAD) o UMAE"
+    },
+    {
+      "nombre": "Delegación",
+      "tipo": "texto",
+      "descripcion": "Nombre de la delegación o UMAE"
+    },
+    {
+      "nombre": "Cve Presupuestal",
+      "tipo": "clave",
+      "descripcion": "Clave presupuestal de la unidad; los subtotales por OOAD traen XX000000000000 y el total Nacional 000000000000 con Unidad T O T A L"
+    },
+    {
+      "nombre": "Unidad",
+      "tipo": "texto",
+      "descripcion": "Nombre de la unidad; TOTAL OOAD y T O T A L marcan subtotales"
+    },
+    {
+      "nombre": "Población Adscrita a la Unidad Total",
+      "tipo": "numero",
+      "descripcion": "Población adscrita total de la unidad"
+    },
+    {
+      "nombre": "Población Adscrita a la Unidad Titulares",
+      "tipo": "numero",
+      "descripcion": "Población adscrita titulares"
+    },
+    {
+      "nombre": "Población Adscrita a la Unidad Beneficiarios",
+      "tipo": "numero",
+      "descripcion": "Población adscrita beneficiarios"
+    },
+    {
+      "nombre": "Población Adscrita a Médico Familiar",
+      "tipo": "numero",
+      "descripcion": "Población adscrita a médico familiar"
+    },
+    {
+      "nombre": "Población Asegurada a la Unidad para el ramo de seguro de Riesgos de Trabajo /1",
+      "tipo": "numero",
+      "descripcion": "Ramo de Riesgos de Trabajo; /1 incluye modalidades indicadas en notas al pie"
+    },
+    {
+      "nombre": "Población Asegurada a la Unidad para el ramo de Enfermedad General y Materna/2",
+      "tipo": "numero",
+      "descripcion": "Ramo de Enfermedad General y Materna"
+    },
+    {
+      "nombre": "Población Asegurada a la Unidad para el ramo de Invalidez /3",
+      "tipo": "numero",
+      "descripcion": "Ramo de Invalidez"
+    },
+    {
+      "nombre": "Población de Trabajadores IMSS Asegurada a la Unidad /4",
+      "tipo": "numero",
+      "descripcion": "Trabajadores IMSS; /4 incluye Régimen Ordinario y extraordinarios"
+    }
+  ],
+  "huella_base": "dc63c97ef54ed3cd831b4bd265ff88b0fe9b10141e7ae33d19ae3e858dce3862",
+  "fecha": "2026-10-08"
+}
