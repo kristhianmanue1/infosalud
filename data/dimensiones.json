@@ -1,39 +1,61 @@
 {
-  "version": 1,
-  "dimensiones": {
-    "servicio": {
-      "fuente": "catalogo-servicios-especialidades-maestro",
-      "hoja": "Catálogo_Maestro_de_Servicios",
-      "clave": "CLAVE",
-      "atributos": [
-        "DESCRIPCIÓN",
-        "RAMA DE LA MEDICINA O TRONCAL",
-        "UBICACIÓN",
-        "QX",
-        "SEXO",
-        "VIGENTE"
-      ]
-    },
-    "subdelegacion": {
-      "fuente": "catalogo-ooad-subdelegaciones-convertido",
-      "hoja": "febrero 2025",
-      "clave": [
-        "CVE_DELEGACION",
-        "CVE_SUBDELEGACION"
-      ],
-      "atributos": [
-        "DESC_DELEGACION",
-        "DESC_SUBDELEGACION",
-        "FEC_ALTA"
-      ]
-    },
-    "ooad": {
-      "fuente": "catalogo-ooad-subdelegaciones-convertido",
-      "hoja": "febrero 2025",
-      "clave": "CVE_DELEGACION",
-      "atributos": [
-        "DESC_DELEGACION"
-      ]
-    }
+ "version": 1,
+ "dimensiones": {
+  "servicio": {
+   "fuente": "catalogo-servicios-especialidades-maestro",
+   "hoja": "Catálogo_Maestro_de_Servicios",
+   "clave": "CLAVE",
+   "atributos": [
+    "DESCRIPCIÓN",
+    "RAMA DE LA MEDICINA O TRONCAL",
+    "UBICACIÓN",
+    "QX",
+    "SEXO",
+    "VIGENTE"
+   ]
+  },
+  "subdelegacion": {
+   "fuente": "catalogo-ooad-subdelegaciones-convertido",
+   "hoja": "febrero 2025",
+   "clave": [
+    "CVE_DELEGACION",
+    "CVE_SUBDELEGACION"
+   ],
+   "atributos": [
+    "DESC_DELEGACION",
+    "DESC_SUBDELEGACION",
+    "FEC_ALTA"
+   ]
+  },
+  "ooad": {
+   "fuente": "catalogo-ooad-subdelegaciones-convertido",
+   "hoja": "febrero 2025",
+   "clave": "CVE_DELEGACION",
+   "atributos": [
+    "DESC_DELEGACION"
+   ]
+  },
+  "unidades": {
+   "fuente": "recursos-cuumsp-septiembre-2026",
+   "hoja": "Unidad Médica",
+   "clave": "Clave Presupuestal",
+   "atributos": [
+    "CLUES  Salud",
+    "Clave Delegación o UMAE",
+    "Nombre Delegación o UMAE",
+    "Denominación Unidad",
+    "Nombre Unidad",
+    "Nivel de Atención ",
+    "Tipo de Servicio",
+    "Descripción Tipo Servicio",
+    "Entidad Federativa",
+    "Clave Municipio o Delegación ",
+    "Municipio o Delegación ",
+    "Código postal",
+    "LATITUD",
+    "LONGITUD",
+    "Grado de Marginación"
+   ]
   }
+ }
 }
