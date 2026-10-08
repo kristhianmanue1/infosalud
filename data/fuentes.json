@@ -24238,6 +24238,25 @@
           "huella": "48c57cb18aead7d735f5ddf35f58787df047e929a86cac89a8f0216142161445"
         }
       ]
+    },
+    {
+      "id": "recursos-ifu-nacional-agosto-2026-convertido",
+      "seccion": "recursos",
+      "titulo": "IFU nacional agosto 2026 — conversión xlsx (derivado)",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/IFU/IFU_nacional_Agosto2026_17092026.xlsb",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "parent_source_id": "recursos-ifu-nacional-agosto-2026",
+      "corte_declarado": "agosto 2026",
+      "notas": "Derivado: conversión LibreOffice headless (26.8.1) del original xlsb (id recursos-ifu-nacional-agosto-2026, huella 48c57cb18aead7d735f5ddf35f58787df047e929a86cac89a8f0216142161445) hecha 2026-10-08; el original manda",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/convertidos/recursos-ifu-nacional-agosto-2026/IFU_nacional_Agosto2026_17092026.xlsx",
+          "resultado": "vigente",
+          "huella": "7c7caf3c477bc6dc4a9391ef821143771b9a2334a4b696733a5dbce8588748bd"
+        }
+      ]
     }
   ]
 }
