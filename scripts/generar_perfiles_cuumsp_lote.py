@@ -15,7 +15,7 @@ from infosalud.estructura import leer_filas
 from infosalud.perfiles import guardar, ruta_perfil, validar
 
 CATALOGO = "data/fuentes.json"
-FECHA = "2026-09-04"
+FECHA = "2026-10-08"
 FILA_ENCABEZADOS = 10
 HOJAS_DESCRIPTIVAS = {"Indice", "Diccionario", "Diccionari",
                       "Control de Cambios", "Histórico",
