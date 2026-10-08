@@ -90,3 +90,25 @@ servicio; ADR-004 intacto):
 - **Replicar en otro host**: copiar el plist, ajustar las rutas
   absolutas y `launchctl load ~/Library/LaunchAgents/
   com.infosalud.sondeo.plist`.
+
+## Inspección SSL de Fortinet sobre api.halt-to-safe.dev (2026-10-08)
+
+Hallazgo verificado desde el host del servicio: el TLS hacia
+`api.halt-to-safe.dev:443` es interceptado por el FortiGate de la
+red IMSS — el certificado presentado está firmado por la CA
+Fortinet (CN=halt-to-safe.dev, issuer F2K60FTK23900408), no por
+Cloudflare. Consecuencias:
+
+- Ningún cliente TLS estándar (curl, python, clientes MCP) valida
+  el certificado desde la red IMSS: falla
+  CERTIFICATE_VERIFY_FAILED aunque el túnel y el servicio estén
+  sanos.
+- En otros entornos de la misma red el dominio ni siquiera resuelve
+  DNS (ERR_NAME_NOT_RESOLVED) — fallo de resolución local, no
+  evidencia de caída del servicio.
+- **Vías válidas de consumo**: desde red IMSS,
+  `http://172.25.0.115:8081` (intranet, sin TLS); desde fuera de la
+  red IMSS, `https://api.halt-to-safe.dev/mcp` (Cloudflare sirve el
+  certificado real). No confiar ni instalar la CA Fortinet.
+- El estado real del servicio se comprueba en el host:
+  `curl http://127.0.0.1:8081/healthz`.
