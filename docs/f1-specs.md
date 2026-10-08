@@ -440,3 +440,33 @@ Invariantes:
 - Esquema cerrado; `huella_base` sha256 obligatoria; `fecha` ISO.
 - Los totales declarados quedan fuera del rango de datos.
 - El perfil no altera la máquina de estados de vigencia.
+
+## SPEC-14 [cubre: ADR-016 — cobertura de la dimensión unidades]
+
+Comportamiento: `GET /dimensiones/unidades/cobertura` y la
+herramienta MCP `cobertura_unidades` comparan, en vivo sobre
+archivos verificados, las claves presupuestales de cada fuente
+declarada en `data/cobertura-unidades.json` (esquema cerrado:
+{fuente, hoja, columna}) contra el maestro de la dimensión
+`unidades`, excluyendo subtotales (XX000000000000 y 000000000000),
+y reportan dentro/fuera con la lista explícita de claves fuera.
+La config se actualiza deliberadamente con cada corte nuevo
+(ADR-016, H-5); el cálculo nunca muta el catálogo.
+Entradas: `GET /dimensiones/unidades/cobertura`; MCP
+cobertura_unidades {dimension?}.
+Salidas: contrato `cobertura-unidades-v1` con maestro (fuente,
+total), procedencia sha256 y por fuente: total, dentro, fuera y
+fuera_claves.
+Errores: 404 sin config de cobertura o dimensión sin cobertura
+implementada; 500 config corrupta o columna ausente del perfil;
+409 integridad alterada (heredado de la verificación).
+Casos:
+- DADO las fuentes declaradas con archivos verificados ENTONCES
+  cada una reporta total/dentro/fuera con fuera_claves explícitas.
+- DADO una fila con clave de subtotal (TOTAL OOAD / Nacional)
+  ENTONCES se excluye del conteo.
+- DADO una dimensión sin cobertura implementada ENTONCES 404.
+Invariantes:
+- Cálculo de sólo lectura sobre archivos verificados (sha256 vs
+  catálogo); sin red.
+- La lista fuera_claves es explícita: nunca un conteo sin detalle.

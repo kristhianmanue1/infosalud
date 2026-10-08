@@ -21,6 +21,7 @@ from urllib.parse import urlsplit, parse_qs
 from infosalud import __version__
 from infosalud import auditor
 from infosalud import datos
+from infosalud import cobertura
 from infosalud import dimensiones
 from infosalud.catalogo import ErrorCatalogo, cargar_catalogo
 from infosalud.datos import TOP_FILAS_DEFECTO
@@ -112,7 +113,8 @@ def _mapa(catalogo):
         "adr": "ADR-013",
         "resumen": _resumen(catalogo),
         "endpoints": ["/", "/healthz", "/cobertura",
-                      "/dimensiones/{nombre}", "/fuentes",
+                      "/dimensiones/{nombre}",
+                      "/dimensiones/{nombre}/cobertura", "/fuentes",
                       "/fuentes/{id}",
                       "/fuentes/{id}/campos", "/fuentes/{id}/historia",
                       "/fuentes/{id}/archivo",
@@ -329,6 +331,20 @@ def _dimension(ruta_catalogo, nombre):
         raise ErrorServicio(exc.codigo, exc.mensaje) from exc
 
 
+def _cobertura_unidades(ruta_catalogo, nombre):
+    """Cobertura de una dimensión (ADR-016 F3): claves de las fuentes
+    declaradas en data/cobertura-unidades.json contra el maestro,
+    con la lista explícita de claves fuera. Sólo `unidades` en v1."""
+    if nombre != "unidades":
+        raise ErrorServicio(
+            404, f"sin cobertura implementada para la dimensión "
+                 f"'{nombre}'")
+    try:
+        return cobertura.construir(ruta_catalogo, nombre)
+    except cobertura.ErrorDimension as exc:
+        raise ErrorServicio(exc.codigo, exc.mensaje) from exc
+
+
 def _exportar_zip(ruta_catalogo, id_fuente, formato):
     """Corre fuente-exportar a directorio temporal y devuelve el zip
     con los productos (ADR-011); el temporal se elimina al salir."""
@@ -418,6 +434,14 @@ HERRAMIENTAS = [
                     "procedencia sha256.",
      "inputSchema": {"type": "object", "properties": {
          "nombre": {"type": "string"}}, "required": ["nombre"]}},
+    {"name": "cobertura_unidades",
+     "description": "Cobertura de la dimensión unidades (ADR-016): "
+                    "claves presupuestales de cada fuente declarada "
+                    "en data/cobertura-unidades.json contra el "
+                    "maestro, con dentro/fuera y la lista explícita "
+                    "de claves fuera.",
+     "inputSchema": {"type": "object", "properties": {
+         "dimension": {"type": "string"}}}},
     {"name": "exportar_fuente",
      "description": "Exporta el archivo verificado a CSV o SQLite con "
                     "evidencia (ADR-011) en el directorio de "
@@ -497,6 +521,10 @@ def _llamada_tool(ruta_catalogo, nombre, argumentos):
     if nombre == "dimension":
         return _dimension(ruta_catalogo,
                           _obligatorio(argumentos, "nombre"))
+    if nombre == "cobertura_unidades":
+        return _cobertura_unidades(
+            ruta_catalogo,
+            argumentos.get("dimension", "unidades"))
     if nombre == "exportar_fuente":
         return _exportar_resumen(
             ruta_catalogo, _obligatorio(argumentos, "id"),
@@ -658,10 +686,14 @@ class Manejador(BaseHTTPRequestHandler):
                 return self._enviar_json(
                     200, _cobertura(catalogo))
             if ruta.startswith("/dimensiones/"):
-                nombre_dimension = ruta.split("/", 2)[2]
+                cola = ruta.split("/", 2)[2]
+                if cola.endswith("/cobertura"):
+                    return self._enviar_json(
+                        200, _cobertura_unidades(
+                            self.server.catalogo,
+                            cola[:-len("/cobertura")]))
                 return self._enviar_json(
-                    200, _dimension(self.server.catalogo,
-                                    nombre_dimension))
+                    200, _dimension(self.server.catalogo, cola))
             piezas = [p for p in ruta.split("/") if p]
             if piezas and piezas[0] == "fuentes":
                 if len(piezas) == 1:

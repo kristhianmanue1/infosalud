@@ -22,3 +22,7 @@ data/descargas/
 # versionada vive en data/fuentes.json y data/diccionarios/)
 data/exportaciones/
 data/convertidos/
+
+# Sondeos operativos del portal (informes por corrida; el estado
+# versionado vive en data/fuentes.json)
+data/sondeos/
