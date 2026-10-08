@@ -24257,6 +24257,200 @@
           "huella": "7c7caf3c477bc6dc4a9391ef821143771b9a2334a4b696733a5dbce8588748bd"
         }
       ]
+    },
+    {
+      "id": "poblacion-adscrita-2026",
+      "seccion": "poblacion",
+      "titulo": "Población Adscrita 2026 (página índice mensual)",
+      "url": "http://infosalud.imss.gob.mx:8080/PAGINAS/poblacion2026.html",
+      "formato": "html",
+      "periodicidad": "anual",
+      "notas": "Índice mensual de la Población Adscrita por unidad; hijos en ARCHIVOS/poblacion/",
+      "verificaciones": []
+    },
+    {
+      "id": "poblacion-adscrita-ene-2026",
+      "seccion": "poblacion",
+      "titulo": "Población Adscrita enero 2026",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacion/Poblaci%C3%B3n%20Adscrita_Ene2026.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "aliases": [
+        "Población Adscrita",
+        "Población Adscrita enero 2026"
+      ],
+      "parent_source_id": "poblacion-adscrita-2026",
+      "corte_declarado": "enero 2026",
+      "notas": "Archivo hijo de la página índice poblacion2026.html",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/poblacion-adscrita-ene-2026/Población Adscrita_Ene2026.xlsx",
+          "resultado": "vigente",
+          "huella": "ce8a6e4f2582e47414c1205bd0375cadf8d9c9b30274f0990f976f4b6fa9940f"
+        }
+      ]
+    },
+    {
+      "id": "poblacion-adscrita-feb-2026",
+      "seccion": "poblacion",
+      "titulo": "Población Adscrita febrero 2026",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacion/Poblaci%C3%B3n%20Adscrita_Feb2026.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "aliases": [
+        "Población Adscrita",
+        "Población Adscrita febrero 2026"
+      ],
+      "parent_source_id": "poblacion-adscrita-2026",
+      "corte_declarado": "febrero 2026",
+      "notas": "Archivo hijo de la página índice poblacion2026.html",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/poblacion-adscrita-feb-2026/Población Adscrita_Feb2026.xlsx",
+          "resultado": "vigente",
+          "huella": "70f12c6d096d2b3ef4a880089a191a7fc31cecf8ff10db4d242dd993c33a2c52"
+        }
+      ]
+    },
+    {
+      "id": "poblacion-adscrita-mar-2026",
+      "seccion": "poblacion",
+      "titulo": "Población Adscrita marzo 2026",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacion/Poblaci%C3%B3n%20Adscrita_Mar2026.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "aliases": [
+        "Población Adscrita",
+        "Población Adscrita marzo 2026"
+      ],
+      "parent_source_id": "poblacion-adscrita-2026",
+      "corte_declarado": "marzo 2026",
+      "notas": "Archivo hijo de la página índice poblacion2026.html",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/poblacion-adscrita-mar-2026/Población Adscrita_Mar2026.xlsx",
+          "resultado": "vigente",
+          "huella": "dc63c97ef54ed3cd831b4bd265ff88b0fe9b10141e7ae33d19ae3e858dce3862"
+        }
+      ]
+    },
+    {
+      "id": "poblacion-adscrita-abr-2026",
+      "seccion": "poblacion",
+      "titulo": "Población Adscrita abril 2026",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacion/Poblaci%C3%B3n%20Adscrita_Abr2026.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "aliases": [
+        "Población Adscrita",
+        "Población Adscrita abril 2026"
+      ],
+      "parent_source_id": "poblacion-adscrita-2026",
+      "corte_declarado": "abril 2026",
+      "notas": "Archivo hijo de la página índice poblacion2026.html",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/poblacion-adscrita-abr-2026/Población Adscrita_Abr2026.xlsx",
+          "resultado": "vigente",
+          "huella": "2b70aac9db16784dfc7edfbf296e09377f003c48ca19b786e66fef688c3a6d52"
+        }
+      ]
+    },
+    {
+      "id": "poblacion-adscrita-may-2026",
+      "seccion": "poblacion",
+      "titulo": "Población Adscrita mayo 2026",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacion/Poblaci%C3%B3n%20Adscrita_May2026.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "aliases": [
+        "Población Adscrita",
+        "Población Adscrita mayo 2026"
+      ],
+      "parent_source_id": "poblacion-adscrita-2026",
+      "corte_declarado": "mayo 2026",
+      "notas": "Archivo hijo de la página índice poblacion2026.html",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/poblacion-adscrita-may-2026/Población Adscrita_May2026.xlsx",
+          "resultado": "vigente",
+          "huella": "87f1cb960079761bc01ce8f5b9193a6802895f209db04dc45ad74263b6a014f5"
+        }
+      ]
+    },
+    {
+      "id": "poblacion-adscrita-jun-2026",
+      "seccion": "poblacion",
+      "titulo": "Población Adscrita junio 2026",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacion/Poblaci%C3%B3n%20Adscrita_Jun2026.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "aliases": [
+        "Población Adscrita",
+        "Población Adscrita junio 2026"
+      ],
+      "parent_source_id": "poblacion-adscrita-2026",
+      "corte_declarado": "junio 2026",
+      "notas": "Archivo hijo de la página índice poblacion2026.html",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/poblacion-adscrita-jun-2026/Población Adscrita_Jun2026.xlsx",
+          "resultado": "vigente",
+          "huella": "d8351fda4ed2892750ff30b97004f9697975446cb6aee90910fb06dd422f3a67"
+        }
+      ]
+    },
+    {
+      "id": "poblacion-adscrita-jul-2026",
+      "seccion": "poblacion",
+      "titulo": "Población Adscrita julio 2026",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacion/Poblaci%C3%B3n%20Adscrita_Jul2026.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "aliases": [
+        "Población Adscrita",
+        "Población Adscrita julio 2026"
+      ],
+      "parent_source_id": "poblacion-adscrita-2026",
+      "corte_declarado": "julio 2026",
+      "notas": "Archivo hijo de la página índice poblacion2026.html",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/poblacion-adscrita-jul-2026/Población Adscrita_Jul2026.xlsx",
+          "resultado": "vigente",
+          "huella": "e78ca1be7b4eab6ec1ff12c4b8203e1258468bc7299e0aaf26c17c0260e444aa"
+        }
+      ]
+    },
+    {
+      "id": "poblacion-adscrita-ago-2026",
+      "seccion": "poblacion",
+      "titulo": "Población Adscrita agosto 2026",
+      "url": "http://infosalud.imss.gob.mx:8080/ARCHIVOS/poblacion/Poblaci%C3%B3n%20Adscrita_Ago2026.xlsx",
+      "formato": "xlsx",
+      "periodicidad": "mensual",
+      "aliases": [
+        "Población Adscrita",
+        "Población Adscrita agosto 2026"
+      ],
+      "parent_source_id": "poblacion-adscrita-2026",
+      "corte_declarado": "agosto 2026",
+      "notas": "Archivo hijo de la página índice poblacion2026.html",
+      "verificaciones": [
+        {
+          "fecha": "2026-10-08",
+          "ruta_local": "data/descargas/poblacion-adscrita-ago-2026/Población Adscrita_Ago2026.xlsx",
+          "resultado": "vigente",
+          "huella": "1b8c9b0da9b4fb7689f8a9ecc7eeb2df9f1537a07957f7e11773d18edfe06b01"
+        }
+      ]
     }
   ]
 }
