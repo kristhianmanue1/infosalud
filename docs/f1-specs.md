@@ -102,6 +102,10 @@ Errores:
 - Fallo de red (sin conexión, timeout, tamaño excedido, redirect
   externo) o contenido no reconocido → estado `inaccesible`
   registrado con su causa, salida 1; nunca éxito inferido.
+- Fuente derivada (`parent_source_id` presente, enmienda
+  2026-10-08) → salida 1 antes de descargar, sin cambios: la
+  verificación automática no aplica a derivados; el registro
+  procede por `vigencia-registrar` con el archivo local.
 Casos:
 - DADO una fuente registrada con el portal disponible CUANDO se
   ejecuta `vigencia-verificar <id>` ENTONCES el archivo queda en
@@ -116,6 +120,10 @@ Casos:
 - DADO una respuesta HTTP 200 con contenido que no corresponde al
   formato declarado (p. ej. HTML para un xlsx) ENTONCES se rechaza
   y se registra `inaccesible` con esa causa.
+- DADO una fuente derivada de otra (`parent_source_id`, enmienda
+  2026-10-08) CUANDO se ejecuta `vigencia-verificar` ENTONCES se
+  rechaza con salida 1, sin descarga y sin verificación registrada
+  (el error lo declara).
 Invariantes:
 - Sólo GET, sólo al host de la URL registrada, sin redirects a otro
   host; nada se envía al portal.

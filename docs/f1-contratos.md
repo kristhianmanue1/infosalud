@@ -171,7 +171,10 @@ Entrada:
     Si la fuente tiene `url_listado` (ADR-012), verifica la última
     ingresada del listado; si difiere de la URL registrada, actualiza
     `url` y registra `url_previa` (históricos sólo bajo pedido
-    expreso)
+    expreso). Enmienda 2026-10-08: una fuente con `parent_source_id`
+    (derivada) se rechaza con salida 1 antes de descargar — su `url`
+    es la de la fuente madre y su huella corresponde al archivo
+    derivado local; el registro procede por `vigencia-registrar`
   vigencia-historia <id>: lista el historial cronológico
 
 Salida: texto plano; código 0 en éxito.

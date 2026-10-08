@@ -575,6 +575,19 @@ def _vigencia_verificar(args):
             fuente = _buscar_fuente(catalogo, args.id)
             if fuente is None:
                 return _salir(args, f"id inexistente: '{args.id}'", 2)
+            if fuente.get("parent_source_id"):
+                # Enmienda 2026-10-08: una fuente derivada registra
+                # en su `url` la de la fuente madre y su huella
+                # corresponde al archivo derivado local; verificar
+                # automáticamente compararía cosas distintas y
+                # apendaría una `cambiada` espuria. Se rechaza antes
+                # de descargar.
+                return _salir(
+                    args,
+                    f"fuente derivada '{args.id}' (madre "
+                    f"'{fuente['parent_source_id']}'): la verificación "
+                    "automática no aplica; registre el archivo local "
+                    "derivado con vigencia-registrar", 1)
             if not isinstance(fuente.get("verificaciones"), list):
                 return _salir(
                     args,
