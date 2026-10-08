@@ -74,6 +74,13 @@ sustituye.
 - Ronda adversarial 2026-09-04: `ronda-adversarial-2026-09-04.md`
   (11 hallazgos sobre segmentos/conciliaciones/dimensiones/auditoría;
   10 corregidos, debilitamientos documentados).
+- Ronda adversarial 2026-10-08: `ronda-adversarial-2026-10-08.md`
+  (8 hallazgos sobre la dimensión `unidades`: unicidad de clave,
+  nombres verbatim, tipos crudos, frescura, cobertura; tratados
+  antes de implementar).
+- ADR-016: `adr/ADR-016-dimensiones-canonicas-unidades.md` —
+  dimensión canónica `unidades` (maestro por Clave Presupuestal
+  desde el CUUMSP más fresco) y cobertura de llaves registrada.
 - Ronda adversarial sobre el análisis de la minuta Garma
   (2026-09-04):
   `ronda-adversarial-analisis-minuta-garma-2026-09-04.md`
