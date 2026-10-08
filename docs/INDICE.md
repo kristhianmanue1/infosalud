@@ -80,6 +80,12 @@ sustituye.
   (autorrevisión: retracta H-1/H-2, refina las 6 recomendaciones a
   una secuencia propositiva de 6 pasos).
 
+- Análisis de relaciones entre fuentes (2026-10-08):
+  `analisis-relaciones-fuentes-2026-10.md` — llaves de cruce medidas,
+  cobertura real entre CUUMSP/IFU/Población (universos no idénticos:
+  25 y 17 unidades fuera), opciones A-D y recomendación de dimensiones
+  canónicas servidas (propone ADR-016).
+
 ## Convenciones del repositorio
 
 - Español, líneas ~80 columnas, markdown.
