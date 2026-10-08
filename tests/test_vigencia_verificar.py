@@ -129,6 +129,31 @@ class PruebaVigenciaVerificar(unittest.TestCase):
         self.assertEqual(salida["resultado"], "cambiada")
         self.assertEqual(len(self._historial()), 2)
 
+    def test_fuente_derivada_se_rechaza_sin_descarga(self):
+        """Enmienda 2026-10-08: DADO una fuente con parent_source_id
+        CUANDO vigencia-verificar ENTONCES salida 1 (error de fuente
+        derivada), sin descarga y sin verificación registrada."""
+        catalogo = {"version": 1, "fuentes": [
+            {"id": "madre-prueba", "seccion": "catalogos",
+             "titulo": "Fuente madre",
+             "url": f"http://127.0.0.1:{self.puerto}/madre.xlsx",
+             "formato": "xlsx", "verificaciones": []},
+            {"id": ID, "seccion": "catalogos", "titulo": "Derivada",
+             "url": f"http://127.0.0.1:{self.puerto}/hija.xlsx",
+             "formato": "xlsx", "parent_source_id": "madre-prueba",
+             "verificaciones": []},
+        ]}
+        with open(self.ruta_catalogo, "w", encoding="utf-8") as archivo:
+            json.dump(catalogo, archivo)
+        self.servidor.contenido = XLSX_A
+        salida = self._ejecutar()
+        self.assertIn("derivada", salida["error"])
+        with open(self.ruta_catalogo, encoding="utf-8") as archivo:
+            hija = next(f for f in json.load(archivo)["fuentes"]
+                        if f["id"] == ID)
+        self.assertEqual(hija["verificaciones"], [])
+        self.assertFalse(os.path.isfile(self.destino))
+
     def test_html_para_xlsx_se_rechaza(self):
         """DADO HTTP 200 con HTML para un xlsx ENTONCES inaccesible."""
         self.servidor.contenido = HTML
